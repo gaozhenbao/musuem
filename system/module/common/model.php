@@ -674,7 +674,11 @@ class commonModel extends model
 
         $config->requestType = $config->frontRequestType;
         $link = helper::createLink($module, $method, $vars, $alias);
-        $link = str_replace($_SERVER['SCRIPT_NAME'], '/index.php', $link);
+        if($_SERVER['CONTEXT_PREFIX']){
+            $link = str_replace($_SERVER['SCRIPT_NAME'], $_SERVER['CONTEXT_PREFIX'].'index.php', $link);
+        }else{
+            $link = str_replace($_SERVER['SCRIPT_NAME'], '/index.php', $link);
+        }
         $config->requestType = 'GET';
 
         return $link;
