@@ -9,10 +9,10 @@
           <td colspan="3" class='w-p40'><?php echo html::input('realname', $user->realname, "class='form-control'");?></td><td></td>
         </tr>
         <tr>
-          <th><?php echo '角色';?></th>
-            <td>管理员<input name='admin' type='radio' value='super' <?php if($user->admin == 'super') echo 'checked';?>></td>
-            <td>教师<input name='admin' type='radio' value='common' <?php if($user->admin == 'common') echo 'checked';?>></td>
-            <td>学生<input name='admin' type='radio' value='no' <?php if($user->admin == 'no') echo 'checked';?>></td>
+          <th><?php echo $lang->user->role;?></th>
+            <td><?php echo $lang->user->admin;?><input name='admin' type='radio' value='super' <?php if($user->admin == 'super') echo 'checked';?>></td>
+            <td><?php echo $lang->user->teacher;?><input name='admin' type='radio' value='common' <?php if($user->admin == 'common') echo 'checked';?>></td>
+            <td><?php echo $lang->user->student;?><input name='admin' type='radio' value='no' <?php if($user->admin == 'no') echo 'checked';?>></td>
             <td></td>
         </tr>  
         <tr>
