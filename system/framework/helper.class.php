@@ -374,8 +374,12 @@ class helper
         $items = explode('.', $domain);
         $postfix = str_replace($items[0] . '.', '', $domain);
         if(strpos($config->domainPostfix, "|$postfix|") !== false) return $items[0];
-        
-        $postfix = str_replace($items[0] . '.' . $items[1] . '.', '', $domain);
+
+        if(isset($items[1])){
+            $postfix = str_replace($items[0] . '.' . $items[1] . '.', '', $domain);
+        }else{
+            $postfix = str_replace($items[0] . '.', '', $domain);
+        }
         if(strpos($config->domainPostfix, "|$postfix|") !== false) return $items[1];
 
         return $siteCode = $domain;

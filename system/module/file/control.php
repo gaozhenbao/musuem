@@ -57,7 +57,8 @@ class file extends control
         if($file)
         {
             if(!$this->file->checkSavePath()) $this->send(array('error' => 1, 'message' => $this->lang->file->errorUnwritable));
-            if(!in_array(strtolower($file['extension']), $this->config->file->imageExtensions)) $this->send(array('error' => 1, 'message' => $this->lang->fail));
+//            if(!in_array(strtolower($file['extension']), $this->config->file->imageExtensions)) $this->send(array('error' => 1, 'message' => $this->lang->fail));
+            if(strpos($this->config->file->allowed, ',' . strtolower($file['extension']) . ',') === false) $this->send(array('error' => 1, 'message' => $this->lang->file->noAllowed));
             move_uploaded_file($file['tmpname'], $this->file->savePath . $file['pathname']);
 
             if(in_array(strtolower($file['extension']), $this->config->file->imageExtensions) !== false)
