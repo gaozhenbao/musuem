@@ -120,6 +120,7 @@ define('TABLE_MESSAGE',        $config->db->prefix . 'message');
 define('TABLE_WX_PUBLIC',      $config->db->prefix . 'wx_public');
 define('TABLE_WX_MESSAGE',     $config->db->prefix . 'wx_message');
 define('TABLE_WX_RESPONSE',    $config->db->prefix . 'wx_response');
+define('TABLE_COSLER',         $config->db->prefix . 'cosler');
 
 /* Include extension config files. */
 $extConfigFiles = glob($configRoot . 'ext' . DS . '*.php');
