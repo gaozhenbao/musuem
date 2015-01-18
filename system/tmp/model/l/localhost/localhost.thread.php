@@ -1,5 +1,5 @@
 <?php
-helper::import('D:\wamp\apps\musuem\system\module\thread\model.php');
+helper::import('E:\PHPRoot\musuem\system\module\thread\model.php');
 class extthreadModel extends threadModel 
 {
 
