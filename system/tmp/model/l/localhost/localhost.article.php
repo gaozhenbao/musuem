@@ -1,5 +1,5 @@
 <?php
-helper::import('D:\wamp\apps\musuem\system\module\article\model.php');
+helper::import('E:\PHPRoot\musuem\system\module\article\model.php');
 class extarticleModel extends articleModel 
 {
 

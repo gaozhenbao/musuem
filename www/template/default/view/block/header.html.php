@@ -8,7 +8,7 @@
  * @package     block
  * @version     $Id$
  * @link        http://www.chanzhi.org
-*/
+*/XSAXX
 ?>
 <header id='header' class='clearfix'>
   <div id='headTitle'>

@@ -1,5 +1,5 @@
 <?php
-helper::import('D:\wamp\apps\musuem\system\module\book\model.php');
+helper::import('E:\PHPRoot\musuem\system\module\book\model.php');
 class extbookModel extends bookModel 
 {
 
