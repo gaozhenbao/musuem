@@ -13,6 +13,7 @@
 <?php include '../../common/view/header.admin.html.php';?>
 <?php include '../../common/view/treeview.html.php';?>
 <?php js::set('categoryID', $categoryID);?>
+<?php if($type != 'grade'):?>
 <div class='panel'>
   <div class='panel-heading'>
   <?php if($type == 'blog'):?>
@@ -73,4 +74,5 @@
     <tfoot><tr><td colspan='7'><?php $pager->show();?></td></tr></tfoot>
   </table>
 </div>
+<?php endif;?>
 <?php include '../../common/view/footer.admin.html.php';?>

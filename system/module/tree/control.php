@@ -11,7 +11,7 @@
  */
 class tree extends control
 {
-    const NEW_CHILD_COUNT        = 5;
+    const NEW_CHILD_COUNT        = 1;
     const WEICHAT_MAINMENU_COUNT = 3;
     const WEICHAT_SUBMENU_COUNT  = 5;
 
@@ -64,7 +64,11 @@ class tree extends control
         $userFunc = $isWechatMenu ? array('treeModel', 'createWechatMenuLink') : array('treeModel', 'createManageLink');
         $this->view->treeMenu = $this->tree->getTreeMenu($type, 0, $userFunc);
 
-        $this->view->title    = $this->lang->tree->common;
+        if($type == 'grade'){
+            $this->view->title    = $this->lang->tree->commonGrade;
+        }else{
+            $this->view->title    = $this->lang->tree->common;
+        }
         $this->view->type     = $type;
         $this->view->root     = $root;
         $this->view->children = $this->tree->getChildren($root, $type);

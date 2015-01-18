@@ -41,12 +41,17 @@ $lang->tree->placeholder->link = '输入链接，可以是站外链接';
 /* Lang items for article, products. */
 $lang->category = new stdclass();
 $lang->category->common   = '类目';
+$lang->category->commonGrade   = '班级管理';
+$lang->category->commonGradeList   = '年级列表';
 $lang->category->name     = '类目名称';
+$lang->category->nameGrade     = '年级名称';
 $lang->category->alias    = '别名';
 $lang->category->parent   = '上级类目';
+$lang->category->parentGrade   = '所属年级';
 $lang->category->desc     = '描述';
 $lang->category->keywords = '关键词';
 $lang->category->children = "子类目";
+$lang->category->childrenGrade = "班级";
 $lang->category->isLink   = '跳转';
 $lang->category->link     = '链接';
 
