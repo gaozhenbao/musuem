@@ -79,7 +79,7 @@ class article extends control
      * @return void
      */
     public function admin($type = 'article', $categoryID = 0, $orderBy = 'id_desc', $recTotal = 0, $recPerPage = 20, $pageID = 1)
-    {   
+    {
         $this->lang->article->menu = $this->lang->$type->menu;
         $this->lang->menuGroups->article = $type;
 
@@ -89,10 +89,15 @@ class article extends control
         $families = $categoryID ? $this->loadModel('tree')->getFamily($categoryID, $type) : '';
         $articles = $this->article->getList($type, $families, $orderBy, $pager);
 
+
         if($type != 'page') 
         {
             $this->view->treeModuleMenu = $this->loadModel('tree')->getTreeMenu($type, 0, array('treeModel', 'createAdminLink'));
-            $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manage);
+            if($type != 'grade'){
+                $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manage);
+            }else{
+                $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manageGrade);
+            }
         }
 
         $this->view->title      = $this->lang->$type->admin;
@@ -134,7 +139,11 @@ class article extends control
         if($type != 'page') 
         {
             $this->view->treeModuleMenu = $this->loadModel('tree')->getTreeMenu($type, 0, array('treeModel', 'createAdminLink'));
-            $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manage);
+            if($type != 'grade'){
+                $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manage);
+            }else{
+                $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manageGrade);
+            }
         }
 
         $this->view->title           = $this->lang->{$type}->create;
@@ -175,7 +184,11 @@ class article extends control
         if($type != 'page') 
         {
             $this->view->treeModuleMenu = $this->loadModel('tree')->getTreeMenu($type, 0, array('treeModel', 'createAdminLink'));
-            $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manage);
+            if($type != 'grade'){
+                $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manage);
+            }else{
+                $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manageGrade);
+            }
         }
 
         $this->view->title      = $this->lang->article->edit;

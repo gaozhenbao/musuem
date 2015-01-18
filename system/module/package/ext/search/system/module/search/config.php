@@ -12,6 +12,7 @@ $config->search->fields->article->editedDate = 'editedDate';
 $config->search->fields->article->params     = 'category,alias';
 
 $config->search->fields->blog = $config->search->fields->article;
+$config->search->fields->grade = $config->search->fields->article;
 $config->search->fields->page = $config->search->fields->article;
 
 $config->search->fields->product = new stdclass();

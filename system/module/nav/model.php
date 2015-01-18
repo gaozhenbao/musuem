@@ -49,6 +49,7 @@ class navModel extends model
     {
         $systemNavs = $this->config->nav->system;
         unset($systemNavs->blog);
+        unset($systemNavs->grade);
         unset($systemNavs->forum);
         unset($systemNavs->book);
         unset($systemNavs->message);

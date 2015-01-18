@@ -38,8 +38,8 @@ $lang->site->setQQOauth    = "QQ接入";
 $lang->site->oauthHelp     = "使用帮助";
 
 $lang->site->typeList = new stdclass();
-$lang->site->typeList->portal = '企业门户';
-$lang->site->typeList->blog   = '个人博客';
+$lang->site->typeList->portal = '海洋博物馆';
+//$lang->site->typeList->blog   = '个人博客';
 
 $lang->site->statusList = new stdclass();
 $lang->site->statusList->normal = '正常';

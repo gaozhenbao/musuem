@@ -24,6 +24,8 @@
     <?php echo $lang->blog->create;?>
     <?php elseif($type == 'page'):?>
     <?php echo $lang->page->create;?>
+    <?php elseif($type == 'grade'):?>
+    <?php echo $lang->grade->create;?>
     <?php else:?>
     <?php echo $lang->article->create;?>
     <?php endif;?>

@@ -21,6 +21,9 @@
   <?php elseif($type == 'page'):?>
   <strong><i class="icon-list-ul"></i> <?php echo $lang->page->list;?></strong>
   <div class='panel-actions'><?php echo html::a($this->inlink('create', "type={$type}"), '<i class="icon-plus"></i> ' . $lang->page->create, 'class="btn btn-primary"');?></div>
+  <?php elseif($type == 'grade'):?>
+  <strong><i class="icon-list-ul"></i> <?php echo $lang->grade->list;?></strong>
+  <div class='panel-actions'><?php echo html::a($this->inlink('create', "type={$type}&category={$categoryID}"), '<i class="icon-plus"></i> ' . $lang->grade->create, 'class="btn btn-primary"');?></div>
   <?php else:?>
   <strong><i class="icon-list-ul"></i> <?php echo $lang->article->list;?></strong>
   <div class='panel-actions'><?php echo html::a($this->inlink('create', "type={$type}&category={$categoryID}"), '<i class="icon-plus"></i> ' . $lang->article->create, 'class="btn btn-primary"');?></div>

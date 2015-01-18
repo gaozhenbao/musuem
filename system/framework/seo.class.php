@@ -294,6 +294,16 @@ class uri
         return $link . '.' . $config->default->view;
     }
 
+    public static function createGradeIndex($params, $alias)
+    {
+        global $config;
+
+        $link = $config->webRoot . 'grade';
+        if(isset($alias['category']) and trim($alias['category']) != '') return $link . '/' . $alias['category'] . '.' . $config->default->view;
+        if(!empty($params)) return $link . '/c' . array_shift($params) . '.' . $config->default->view;
+        return $link . '.' . $config->default->view;
+    }
+
     /**
      * Create blog view.
      *
@@ -306,6 +316,16 @@ class uri
         global $config;
 
         $link = 'blog/' . array_shift($params);
+        if($alias['name']) $link .= '_' . $alias['name'];
+
+        return $config->webRoot . $link . '.' . $config->default->view;
+    }
+
+    public static function createGradeView($params, $alias)
+    {
+        global $config;
+
+        $link = 'grade/' . array_shift($params);
         if($alias['name']) $link .= '_' . $alias['name'];
 
         return $config->webRoot . $link . '.' . $config->default->view;

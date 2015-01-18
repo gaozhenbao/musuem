@@ -575,6 +575,18 @@ class commonModel extends model
         if($article) echo '<li>' . $article->title . '</li>';
     }
 
+    public function printGrade($module, $article)
+    {
+        if(empty($module->pathNames)) return '';
+
+        $divider = $this->lang->divider;
+        foreach($module->pathNames as $moduleID => $moduleName)
+        {
+            echo '<li>' . html::a(inlink('index', "moduleID=$moduleID", "category=" . $this->config->seo->alias->grade[$moduleID]), $moduleName) . '</li>';
+        }
+        if($article) echo '<li>' . $article->title . '</li>';
+    }
+
     /**
      * Print the position bar of book module.
      * 

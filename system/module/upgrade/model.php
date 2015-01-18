@@ -193,6 +193,9 @@ class upgradeModel extends model
        $blog  = $this->dao->select("count(*) as count")->from(TABLE_CATEGORY)->where('type')->eq('blog')->fetch('count');
        if($blog)  $modules[] = 'blog';
 
+        $grade  = $this->dao->select("count(*) as count")->from(TABLE_CATEGORY)->where('type')->eq('grade')->fetch('count');
+        if($grade)  $modules[] = 'grade';
+
        $forum = $this->dao->select("count(*) as count")->from(TABLE_CATEGORY)->where('type')->eq('forum')->fetch('count');
        if($forum) 
        {
@@ -472,7 +475,22 @@ class upgradeModel extends model
         $this->dao->insert(TABLE_LAYOUT)->set('page')->eq('blog_index')->set('region')->eq('side')->set('blocks')->eq($blockID . ',')->exec();
         $this->dao->insert(TABLE_LAYOUT)->set('page')->eq('blog_view')->set('region')->eq('side')->set('blocks')->eq($blockID . ',')->exec();
         return !dao::isError();
-    }   
+    }
+
+    public function setGradeBlocks()
+    {
+        $blocks = array();
+        $blocks['en']    = array('type' => 'gradeTree', 'title' => 'Blog Category', 'content' => '{"showChildren":"1"}');
+        $blocks['zh-cn'] = array('type' => 'gradeTree', 'title' => '班级分类',      'content' => '{"showChildren":"1"}');
+        $blocks['zh-tw'] = array('type' => 'gradeTree', 'title' => '班级分类',      'content' => '{"showChildren":"1"}');
+        $block = $blocks[$this->config->site->lang];
+        $this->dao->insert(TABLE_BLOCK)->data($block)->exec();
+        $blockID = $this->dao->lastInsertID();
+
+        $this->dao->insert(TABLE_LAYOUT)->set('page')->eq('grade_index')->set('region')->eq('side')->set('blocks')->eq($blockID . ',')->exec();
+        $this->dao->insert(TABLE_LAYOUT)->set('page')->eq('grade_view')->set('region')->eq('side')->set('blocks')->eq($blockID . ',')->exec();
+        return !dao::isError();
+    }
 
     /**
      * Set page blocks.

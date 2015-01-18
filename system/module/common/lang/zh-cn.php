@@ -112,13 +112,14 @@ $lang->menu = new stdclass();
 $lang->menu->admin    = '首页|admin|index|';
 $lang->menu->article  = '文章|article|admin|';
 $lang->menu->blog     = '博客|article|admin|type=blog';
+$lang->menu->grade    = '班级|article|admin|type=grade';
 $lang->menu->product  = '产品|product|admin|';
 $lang->menu->book     = '手册|book|admin|';
 $lang->menu->page     = '单页|article|admin|type=page';
 $lang->menu->forum    = '论坛|forum|admin|';
 $lang->menu->site     = '站点|site|setbasic|';
 $lang->menu->ui       = '界面|ui|setlogo|';
-$lang->menu->company  = '公司|company|setbasic|';
+$lang->menu->company  = '学校|company|setbasic|';
 $lang->menu->user     = '会员|user|admin|';
 $lang->menu->feedback = '反馈|message|admin|';
 $lang->menu->package  = '扩展|package|browse|';
@@ -144,6 +145,11 @@ $lang->article->menu->browse = '所有文章|article|admin|';
 $lang->blog = new stdclass();
 $lang->blog->menu = new stdclass();
 $lang->blog->menu->browse = '所有博客|article|admin|type=blog';
+
+/* Menu of grade module. */
+$lang->grade = new stdclass();
+$lang->grade->menu = new stdclass();
+$lang->grade->menu->browse = '所有班级|article|admin|type=grade';
 
 /* Menu of page module. */
 $lang->page = new stdclass();
@@ -214,7 +220,7 @@ $lang->site->menu->wechat   = array('link' => '微信设置|wechat|admin|', 'ali
 
 /* Menu of company module. */
 $lang->company->menu = new stdclass();
-$lang->company->menu->basic   = '公司信息|company|setbasic|';
+$lang->company->menu->basic   = '学校信息|company|setbasic|';
 $lang->company->menu->contact = '联系方式|company|setcontact|';
 
 /* Menu of tree module. */

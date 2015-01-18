@@ -50,6 +50,11 @@ $lang->blog->list   = '博客列表';
 $lang->blog->create = '发布博客';
 $lang->blog->edit   = '编辑博客';
 
+$lang->grade->admin  = '维护班级';
+$lang->grade->list   = '班级列表';
+$lang->grade->create = '添加班级';
+$lang->grade->edit   = '编辑班级';
+
 $lang->page->admin  = '维护单页';
 $lang->page->list   = '单页列表';
 $lang->page->create = '添加单页';

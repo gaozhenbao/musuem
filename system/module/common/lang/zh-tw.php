@@ -212,7 +212,7 @@ $lang->site->menu->wechat   = array('link' => '微信設置|wechat|admin|', 'ali
 
 /* Menu of company module. */
 $lang->company->menu = new stdclass();
-$lang->company->menu->basic   = '公司信息|company|setbasic|';
+$lang->company->menu->basic   = '学校信息|company|setbasic|';
 $lang->company->menu->contact = '聯繫方式|company|setcontact|';
 
 /* Menu of tree module. */

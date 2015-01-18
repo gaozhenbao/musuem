@@ -38,6 +38,12 @@ class tree extends control
             $this->lang->menuGroups->tree = 'blog';
         }
 
+        if($type == 'grade')
+        {
+            $this->lang->tree->menu = $this->lang->grade->menu;
+            $this->lang->menuGroups->tree = 'grade';
+        }
+
         if($type == 'product')
         {
             $this->lang->tree->menu = $this->lang->product->menu;

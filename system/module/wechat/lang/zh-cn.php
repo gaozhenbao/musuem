@@ -63,6 +63,7 @@ $lang->wechat->response->sourceList['manual'] = '输入';
 $lang->wechat->response->moduleList['index']   = '首页';
 $lang->wechat->response->moduleList['company'] = '关于我们';
 $lang->wechat->response->moduleList['blog']    = '博客';
+$lang->wechat->response->moduleList['grade']    = '班级';
 $lang->wechat->response->moduleList['forum']   = '论坛';
 $lang->wechat->response->moduleList['book']    = '手册';
 $lang->wechat->response->moduleList['manual']  = '自定义';

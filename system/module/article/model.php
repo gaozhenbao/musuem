@@ -92,9 +92,7 @@ class articleModel extends model
                 ->orderBy('id_desc')
                 ->page($pager)
                 ->fetchAll('id');
-        }
-        else
-        {
+        }else{
             /* Get articles(use groupBy to distinct articles).  */
             $articles = $this->dao->select('t1.*, t2.category')->from(TABLE_ARTICLE)->alias('t1')
                 ->leftJoin(TABLE_RELATION)->alias('t2')->on('t1.id = t2.id')
@@ -148,7 +146,7 @@ class articleModel extends model
             ->groupBy('objectID')
             ->fetchPairs('objectID', 'count');
         foreach($articles as $article) $article->comments = isset($comments[$article->id]) ? $comments[$article->id] : 0;
- 
+
         return $articles;
     }
 

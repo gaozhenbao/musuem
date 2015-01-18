@@ -16,7 +16,10 @@ $config->seo->alias->method['forum']['browse']   = 'board';
 $config->seo->alias->method['thread']['view']    = 'view';  
 
 $config->seo->alias->method['blog']['browse']    = 'index';  
-$config->seo->alias->method['blog']['view']      = 'view';  
+$config->seo->alias->method['blog']['view']      = 'view';
+
+$config->seo->alias->method['grade']['browse']    = 'index';
+$config->seo->alias->method['grade']['view']      = 'view';
 
 $config->seo->alias->method['book']['browse']    = 'browse';  
 $config->seo->alias->method['book']['view']      = 'read';  

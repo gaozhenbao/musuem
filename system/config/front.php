@@ -22,6 +22,9 @@ $config->rights->guest['article']['view']   = 'view';
 $config->rights->guest['blog']['index']  = 'index';
 $config->rights->guest['blog']['view']   = 'view';
 
+$config->rights->guest['grade']['index']  = 'index';
+$config->rights->guest['grade']['view']   = 'view';
+
 $config->rights->guest['product']['index']  = 'index';
 $config->rights->guest['product']['browse'] = 'browse';
 $config->rights->guest['product']['view']   = 'view';

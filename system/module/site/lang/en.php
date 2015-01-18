@@ -40,6 +40,7 @@ $lang->site->oauthHelp     = "Help";
 $lang->site->typeList = new stdclass();
 $lang->site->typeList->portal = 'Portal';
 $lang->site->typeList->blog   = 'Blog';
+$lang->site->typeList->grade   = 'Grade';
 
 $lang->site->statusList = new stdclass();
 $lang->site->statusList->normal = 'Normal';

@@ -401,5 +401,7 @@ INSERT INTO `eps_layout` (`page`, `region`, `blocks`, `template`) VALUES
 ('message_index', 'side', '[{"id":"9","grid":"","titleless":0,"borderless":0}]', 'default'),
 ('blog_index', 'side', '[{"id":"8","grid":"","titleless":0,"borderless":0}]', 'default'),
 ('blog_view', 'side', '[{"id":"8","grid":"","titleless":0,"borderless":0}]', 'default'),
+('grade_index', 'side', '[{"id":"13","grid":"","titleless":0,"borderless":0}]', 'default'),
+('grade_view', 'side', '[{"id":"13","grid":"","titleless":0,"borderless":0}]', 'default'),
 ('page_index', 'side', '[{"id":"2","grid":"","titleless":0,"borderless":0},{"id":"9","grid":"","titleless":0,"borderless":0}]', 'default'),
 ('page_view', 'side', '[{"id":"2","grid":"","titleless":0,"borderless":0},{"id":"9","grid":"","titleless":0,"borderless":0}]', 'default');
