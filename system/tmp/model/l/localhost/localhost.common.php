@@ -1,5 +1,5 @@
 <?php
-helper::import('D:\wamp\apps\musuem\system\module\common\model.php');
+helper::import('E:\PHPRoot\musuem\system\module\common\model.php');
 class extcommonModel extends commonModel 
 {
 

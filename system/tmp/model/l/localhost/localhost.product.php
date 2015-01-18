@@ -1,5 +1,5 @@
 <?php
-helper::import('D:\wamp\apps\musuem\system\module\product\model.php');
+helper::import('E:\PHPRoot\musuem\system\module\product\model.php');
 class extproductModel extends productModel 
 {
 
