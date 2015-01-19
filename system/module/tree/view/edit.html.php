@@ -23,16 +23,20 @@ $themeRoot = $webRoot . "theme/";
   <div class='panel'>
     <div class='panel-heading'><strong><i class="icon-pencil"></i> <?php echo $lang->tree->edit;?></strong></div>
     <div class='panel-body'>
-      <div class='form-group'> 
+      <div class='form-group'>
         <label class='col-md-2 control-label'><?php echo $lang->category->parent;?></label>
         <div class='col-md-4'><?php echo html::select('parent', $optionMenu, $category->parent, "class='chosen form-control'");?></div>
       </div>
-      <div class='form-group'> 
-        <label class='col-md-2 control-label'><?php echo $lang->category->name;?></label>
+      <div class='form-group'>
+          <?php if($category->type == 'grade'):?>
+              <label class='col-md-2 control-label'><?php echo $lang->category->nameGrade;?></label>
+          <?php else:?>
+              <label class='col-md-2 control-label'><?php echo $lang->category->name;?></label>
+          <?php endif;?>
         <div class='col-md-9 required'>
           <div class="input-group">
             <?php echo html::input('name', $category->name, "class='form-control'");?>
-            <?php if($category->type != 'forum' or $category->parent != 0):?>
+            <?php if(($category->type != 'forum' or $category->parent != 0) && $category->type != 'grade'):?>
             <span class="input-group-addon w-70px">
               <label class='checkbox'>
                 <?php $checked = $category->link ? 'checked' : '';?>
@@ -43,14 +47,15 @@ $themeRoot = $webRoot . "theme/";
           </div>
         </div>
       </div>
-      <?php if($category->type != 'forum' or $category->parent != 0):?>
-      <div class='form-group link'> 
+      <?php if(($category->type != 'forum' or $category->parent != 0)  && $category->type != 'grade'):?>
+      <div class='form-group link'>
         <label class='col-md-2 control-label'><?php echo $lang->category->link;?></label>
         <div class='col-md-9 required'><?php echo html::input('link', $category->link, "class='form-control' placeholder='{$lang->tree->placeholder->link}'");?></div>
       </div>
       <?php endif;?>
+        <?php if($category->type != 'grade'):?>
       <div class='categoryInfo'>
-        <div class='form-group'> 
+        <div class='form-group'>
           <label class='col-md-2 control-label'><?php echo $lang->category->alias;?></label>
           <div class='col-md-9'>
             <div class="input-group">
@@ -60,11 +65,11 @@ $themeRoot = $webRoot . "theme/";
             </div>
           </div>
         </div>
-        <div class='form-group'> 
+        <div class='form-group'>
           <label class='col-md-2 control-label'><?php echo $lang->category->keywords;?></label>
           <div class='col-md-9'><?php echo html::input('keywords', $category->keywords, "class='form-control'");?></div>
         </div>
-        <div class='form-group'> 
+        <div class='form-group'>
           <label class='col-md-2 control-label'><?php echo $lang->category->desc;?></label>
           <div class='col-md-9'><?php echo html::textarea('desc', htmlspecialchars($category->desc), "class='form-control' rows=3'");?></div>
         </div>
@@ -74,13 +79,14 @@ $themeRoot = $webRoot . "theme/";
         <div class='form-group'>
           <label class='col-md-2 control-label'><?php echo $lang->category->moderators;?></label>
           <div class='col-md-9'><?php echo html::input('moderators', $category->moderators, "class='form-control' placeholder='{$lang->board->placeholder->moderators}'");?></div>
-        </div>  
+        </div>
         <div class='form-group'>
           <label class='col-md-2 control-label'><?php echo $lang->category->readonly;?></label>
           <div class='col-md-4'><?php echo html::radio('readonly', $lang->category->readonlyList, $category->readonly);?></div>
-        </div>  
+        </div>
         <?php endif;?>
       </div>
+        <?php endif;?>
       <div class='form-group'>
         <label class='col-md-2'></label>
         <div class='col-md-4'><?php echo html::submitButton() . html::hidden('type', $category->type);?></div>
