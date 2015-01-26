@@ -645,6 +645,8 @@ CREATE TABLE `eps_user` (
   `reset` char(64) NOT NULL,
   `locked` datetime NOT NULL,
   `public` varchar(30) NOT NULL DEFAULT '0',
+  `gradeId` int(4) NOT NULL DEFAULT '0',
+  `classId` int(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `admin` (`admin`),
   KEY `account` (`account`,`password`)

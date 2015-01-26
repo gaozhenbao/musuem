@@ -158,6 +158,12 @@ class userModel extends model
     {
         $this->checkPassword();
 
+        if(isset($_POST['grade'])){
+            $gradeArr = explode(',',$_POST['grade']);
+            $_POST['gradeId'] = $gradeArr[0];
+            $_POST['classId'] = $gradeArr[1];
+            unset($_POST['grade']);
+        }
         $user = fixer::input('post')
             ->setForce('join', date('Y-m-d H:i:s'))
             ->setForce('last', helper::now())
@@ -175,8 +181,8 @@ class userModel extends model
             ->batchCheck($this->config->user->require->register, 'notempty')
             ->check('account', 'unique')
             ->check('account', 'account')
-            ->check('email', 'email')
-            ->check('email', 'unique')
+//            ->check('email', 'email')
+//            ->check('email', 'unique')
             ->exec();
     }
 
@@ -644,5 +650,17 @@ class userModel extends model
             ->fetch('account');
         if(!$account) return false;
         return $this->getByAccount($account);
+    }
+
+
+    public function getAllGradesandClasses()
+    {
+        $grades = $this->dao->select('g.gradeId,g.name as gradeName,c.classId,c.name as className')->from(TABLE_GRADE)->alias('g')
+            ->leftJoin(TABLE_CLASS)->alias('c')->on('g.gradeId = c.gradeId')
+            ->orderBy('g.order,c.order')
+            ->fetchAll();
+
+        if(!$grades) return false;
+        return $grades;
     }
 }

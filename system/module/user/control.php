@@ -64,7 +64,16 @@ class user extends control
             $referer = urlencode($_SERVER['HTTP_REFERER']);
         }
 
+        $grades = $this->user->getAllGradesandClasses();
+        $gradeArr = array();
+        foreach($grades as $key => $value){
+                $gradeArr[$value->gradeId]['name'] = $value->gradeName;
+                $gradeArr[$value->gradeId]['gradeId'] = $value->gradeId;
+                $gradeArr[$value->gradeId]['class'][$value->classId] = $value->className;
+        }
+
         $this->view->referer = $referer;
+        $this->view->grades = $gradeArr;
         $this->display();
     }
 

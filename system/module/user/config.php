@@ -2,7 +2,7 @@
 $config->user->resetExpired = 3*86400;
 
 $config->user->require = new stdclass();
-$config->user->require->register = 'account,realname,email,password1';
+$config->user->require->register = 'account,realname,password1';
 $config->user->require->edit     = 'realname,email';
 
 $config->user->default = new stdclass();

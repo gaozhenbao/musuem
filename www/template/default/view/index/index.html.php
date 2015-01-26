@@ -9,8 +9,8 @@
                 	<div class="logreg">
                     	<table width="100%" border="0" cellspacing="0" cellpadding="0" height="32">
                           <tr>
-                            <td align="center">登陆</td>
-                            <td align="center">注册</td>
+                            <td align="center"><a href="index.php?m=user&f=login">登陆</a></td>
+                            <td align="center"><a href="index.php?m=user&f=register">注册</a></td>
                           </tr>
                         </table>
 
@@ -28,7 +28,7 @@
 </div>
 <div class="footer">
 	<div class="footer_txt">
-    	<div class="foot_list"><a href="/index.php?m=article&f=browse&moduleID=10"><img src="<?php echo $imgRoot?>images/icon_1.png" width="181" height="188"></a></div>
+    	<div class="foot_list"><a href="index.php?m=article&f=browse&moduleID=10"><img src="<?php echo $imgRoot?>images/icon_1.png" width="181" height="188"></a></div>
         <div class="foot_list"><a href="#"><img src="<?php echo $imgRoot?>images/icon_2.png" width="181" height="188"></a></div>
         <div class="foot_list"><a href="#"><img src="<?php echo $imgRoot?>images/icon_3.png" width="181" height="188"></a></div>
         <div class="foot_list"><a href="#"><img src="<?php echo $imgRoot?>images/icon_4.png" width="181" height="188"></a></div>
