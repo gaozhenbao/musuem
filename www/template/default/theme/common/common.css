@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document 公共CSS */
+body{ font-size:12px;padding:0px;margin:0px; font-family: "微软雅黑","Microsoft yahei",Tahoma,Verdana,Arial,sans-serif;}
+td,dl,dt,dd{margin: 0px;padding: 0px;list-style-type: none;}
+ul{list-style-type:none;}
+ul li{padding:0px; margin:0px;}
+img{border:none;}
+*div,ul,img{margin:0;padding:0;}
+a:link{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:active{ text-decoration:none;}
+a:hover{ text-decoration:none;}
+
+
+.header{ width:100%; height:110px; margin:0 auto; background:url(images/header_bg.gif) repeat-x;filter:alpha(opacity=90); -moz-opacity:0.9; opacity:0.9;}
+	.top{ width:1080px; height:110px; margin:0 auto;}
+	.top_logotxt{ width:330px; height:57px; float:left; }
+	.top_rght{ width:233px; height:57px; float:right;}
+		.logreg{ width:114px; height:32px; background:url(images/loginregbg.jpg) no-repeat; color:#009fcc; font-size:14px;}
+	.top_icon{ width:116px; height:110px; margin:0 auto; background:url(images/logo_icon.png) no-repeat;}
