@@ -1,47 +1,46 @@
 <?php if($extView = $this->getExtViewFile(__FILE__)){include $extView; return helper::cd();}?>
-<?php include TPL_ROOT . 'common/header.lite.html.php';?>
-<div class='page-container'>
-  <?php $this->block->printRegion($layouts, 'all', 'top');?>
-  <?php $topNavs = $this->loadModel('nav')->getNavs('top');?>
-  <nav id='navbar' class='navbar' role='navigation'>
-    <div class='navbar-header'>
-      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbarCollapse'>
-        <span class='icon-bar'></span>
-        <span class='icon-bar'></span>
-        <span class='icon-bar'></span>
-      </button>
-      <a class='navbar-brand' href='/'><i class='icon-home'></i></a>
-    </div>
-    <div class='collapse navbar-collapse' id='navbarCollapse'>
-      <ul class='nav navbar-nav'>
-        <?php foreach($topNavs as $nav1):?>
-          <?php if(empty($nav1->children)):?>
-            <li class='<?php echo $nav1->class?>'><?php echo html::a($nav1->url, $nav1->title, !empty($nav1->target) ? "target='$nav1->target'" : '');?></li>
-            <?php else: ?>
-              <li class="dropdown <?php echo $nav1->class?>">
-                <?php echo html::a($nav1->url, $nav1->title . " <b class='caret'></b>", 'class="dropdown-toggle" data-toggle="dropdown" ' . (!empty($nav1->target) ? "target='$nav1->target'" : ''));?>
-                <ul class='dropdown-menu' role='menu'>
-                  <?php foreach($nav1->children as $nav2):?>
-                    <?php if(empty($nav2->children)):?>
-                      <li class='<?php echo $nav2->class?>'><?php echo html::a($nav2->url, $nav2->title, !empty($nav2->target) ? "target='$nav2->target'" : '');?></li>
-                    <?php else: ?>
-                      <li class='dropdown-submenu <?php echo $nav2->class?>'>
-                        <?php echo html::a($nav2->url, $nav2->title, !empty($nav2->target) ? "target='$nav2->target'" : '');?>
-                        <ul class='dropdown-menu' role='menu'>
-                          <?php foreach($nav2->children as $nav3):?>
-                          <li><?php echo html::a($nav3->url, $nav3->title, !empty($nav3->target) ? "target='$nav3->target'" : '');?></li>
-                          <?php endforeach;?>
-                        </ul>
-                      </li>
-                    <?php endif;?>
-                  <?php endforeach;?><!-- end nav2 -->
-                </ul>
-            </li>
-          <?php endif;?>
-        <?php endforeach;?><!-- end nav1 -->
-      </ul>
-    </div>
-  </nav>
+<?php
+$webRoot   = $config->webRoot;
+$jsRoot    = $webRoot . "js/";
+$themeRoot = $webRoot . "template/default/theme/";
+?>
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head profile="http://www.w3.org/2005/10/profile">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control"  content="no-transform">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <?php if($this->app->getModuleName() == 'user' and $this->app->getMethodName() == 'deny'):?>
+  <meta http-equiv='refresh' content="5;url='<?php echo helper::createLink('index');?>'">
+  <?php endif;?>
+  <link href="<?php echo $themeRoot?>common/common.css" rel="stylesheet" type="text/css" />
+<head>
+<body>
+<div class="header">
+	<div class="top">
+    	<div class="top_rght">
+        	<table width="200" border="0" cellpadding="0" cellspacing="0" height="57">
+              <tr>
+                <td width="120">
+                	<div class="logreg">
+                    	<table width="100%" border="0" cellspacing="0" cellpadding="0" height="32">
+                          <tr>
+                            <td align="center">登陆</td>
+                            <td align="center">注册</td>
+                          </tr>
+                        </table>
 
-  <div class='page-wrapper'>
-    <div class='page-content'>
+                    </div>
+                </td>
+                <td align="center"><img src="<?php echo $themeRoot?>common/images/sound_off.png" width="29" height="26"></td>
+                <td align="center"><img src="<?php echo $themeRoot?>common/images/sound_on.png" width="29" height="26"></td>
+              </tr>
+            </table>
+
+      </div>
+      <?php $logo = json_decode($config->site->logo);?>
+   	  <div class="top_logotxt" style="background:url(<?php if(!empty($logo->webPath)){echo $logo->webPath;}else{echo $themeRoot.'common/image/logo.jpg';};?>) no-repeat;"></div>
+      <div class="top_icon"></div>
+    </div>
+</div>
