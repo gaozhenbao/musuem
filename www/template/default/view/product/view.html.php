@@ -10,9 +10,9 @@
  * @link        http://www.chanzhi.org
  */
 ?>
-<?php
-include TPL_ROOT . 'common/header.html.php';
-include TPL_ROOT . 'common/treeview.html.php';
+<?php 
+include TPL_ROOT . 'common/header.html.php'; 
+include TPL_ROOT . 'common/treeview.html.php'; 
 
 /* set categoryPath for topNav highlight. */
 js::set('path',  $product->path);
