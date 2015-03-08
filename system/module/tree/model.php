@@ -402,7 +402,6 @@ class treeModel extends model
             ->setDefault('readonly', 0)
             ->setIF(!$this->post->isLink, 'link', '')
             ->get();
-
         $category->alias    = seo::unify($category->alias, '-');
         $category->keywords = seo::unify($category->keywords, ',');
 
@@ -460,6 +459,7 @@ class treeModel extends model
         return !dao::isError();
     }
 
+    
     /**
      * Manage children of one category.
      * 

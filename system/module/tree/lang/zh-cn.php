@@ -49,6 +49,7 @@ $lang->category->keywords = '关键词';
 $lang->category->children = "子类目";
 $lang->category->isLink   = '跳转';
 $lang->category->link     = '链接';
+$lang->category->imgurl     = '标题图片';
 
 /* Lang items for forum. */
 $lang->board = new stdclass();

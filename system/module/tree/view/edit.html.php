@@ -19,6 +19,7 @@ $themeRoot = $webRoot . "theme/";
 <?php include '../../common/view/kindeditor.html.php';?>
 <?php js::set('type', $category->type);?>
 <?php js::set('link', $lang->category->link);?>
+
 <form method='post' class='form-horizontal' id='editForm' action="<?php echo inlink('edit', 'categoryID='.$category->id);?>">
   <div class='panel'>
     <div class='panel-heading'><strong><i class="icon-pencil"></i> <?php echo $lang->tree->edit;?></strong></div>
@@ -63,6 +64,24 @@ $themeRoot = $webRoot . "theme/";
         <div class='form-group'> 
           <label class='col-md-2 control-label'><?php echo $lang->category->keywords;?></label>
           <div class='col-md-9'><?php echo html::input('keywords', $category->keywords, "class='form-control'");?></div>
+        </div>
+          <div class='form-group'> 
+          <label class='col-md-2 control-label'><?php echo $lang->category->imgurl?></label>
+          <div class='col-md-9'><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="230"><?php echo html::file('imgurl_f', $category->imgurl, "class='form-control'");?></td>
+              <td><input type="button"  id="idphoto_front_btn" onClick="ajaxFileUpload('imgurl_f');" value="上传"></td>
+              <td><?php
+                if($category->imgurl <> ''){
+                    echo '<span id="toppic"><img src="'.$category->imgurl.'" width="50" height="50"><span>';
+                }else{
+                    echo '<span id="toppic"><span>';
+                }
+              ?></td>
+            </tr>
+          </table>
+              <?php echo html::hidden('imgurl', $category->imgurl, "class='form-control' id='imgurl'");?>
+          </div>
         </div>
         <div class='form-group'> 
           <label class='col-md-2 control-label'><?php echo $lang->category->desc;?></label>
