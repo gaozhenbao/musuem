@@ -26,8 +26,8 @@ $themeRoot = $webRoot . "template/default/theme/";
                 	<div class="logreg">
                     	<table width="100%" border="0" cellspacing="0" cellpadding="0" height="32">
                           <tr>
-                            <td align="center">登陆</td>
-                            <td align="center">注册</td>
+                              <td align="center"><a href="index.php?m=user&f=login">登陆</a></td>
+                              <td align="center"><a href="index.php?m=user&f=register">注册</a></td>
                           </tr>
                         </table>
 

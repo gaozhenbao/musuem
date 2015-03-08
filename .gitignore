@@ -1,4 +1,7 @@
 /.idea
-/system/tmp/log/
+/nbproject
+/nbproject/*
+/system/tmp
 /www/data/upload/
-/nbproject/private/
+/system/config/my.php
+

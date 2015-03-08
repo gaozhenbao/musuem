@@ -31,6 +31,7 @@ $lang->user->wangwang  = '旺旺';
 $lang->user->mobile    = '手机';
 $lang->user->phone     = '电话';
 $lang->user->company   = '公司/组织';
+$lang->user->grade     = '班级';
 $lang->user->address   = '通讯地址';
 $lang->user->zipcode   = '邮编';
 $lang->user->join      = '注册日期';
@@ -109,7 +110,7 @@ $lang->user->register->common      = '注册';
 $lang->user->register->welcome     = '欢迎注册成为会员';
 $lang->user->register->why         = '欢迎注册成为我们的会员，您可以享受更多的服务。';
 $lang->user->register->lblUserInfo = '用户信息';
-$lang->user->register->lblAccount  = '必须是三位以上的英文字母或数字';
+$lang->user->register->lblAccount  = '建议使用自己名字的汉语拼音';
 $lang->user->register->lblPassword = '数字和字母组成，六位以上';
 
 $lang->user->notice = new stdclass();

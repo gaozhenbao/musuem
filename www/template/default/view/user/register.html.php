@@ -13,10 +13,6 @@
           <div class='col-sm-9'><?php echo html::input('realname', '', "class='form-control'");?></div>
         </div>
         <div class='form-group'>
-          <label class="col-sm-3 control-label"><?php echo $lang->user->email;?></label>
-          <div class='col-sm-9'><?php echo html::input('email', '', "class='form-control' autocomplete='off'") . '';?></div>
-        </div>
-        <div class='form-group'>
           <label class="col-sm-3 control-label"><?php echo $lang->user->password;?></label>
           <div class='col-sm-9'><?php echo html::password('password1', '', "class='form-control' autocomplate='off' placeholder='" . $lang->user->register->lblPassword . "'");?></div>
         </div>
@@ -24,14 +20,22 @@
           <label class="col-sm-3 control-label"><?php echo $lang->user->password2;?></label>
           <div class='col-sm-9'><?php echo html::password('password2', '', "class='form-control'");?></div>
         </div>
-        <div class='form-group'>
+        <div class='form-group' style="display: none">
           <label class="col-sm-3 control-label"><?php echo $lang->user->company;?></label>
           <div class='col-sm-9'><?php echo html::input('company', '', "class='form-control'");?></div>
         </div>
-        <div class='form-group'>
-          <label class="col-sm-3 control-label"><?php echo $lang->user->phone;?></label>
-          <div class='col-sm-9'><?php echo html::input('phone', '', "class='form-control'");?></div>
-        </div>
+          <div class='form-group'>
+              <label class="col-sm-3 control-label"><?php echo $lang->user->grade;?></label>
+              <div class='col-sm-9'>
+                  <select name="grade"  class="col-sm-6" style="height:34px">
+                      <?php foreach( $grades as $key=>$grade):?>
+                          <?php foreach($grade['class'] as $k=>$class):?>
+                              <option value="<?php echo $key.','.$k;?>" style=";height:22px"><?php echo $grade['name'].'&nbsp;&nbsp;'.$class;?></option>
+                          <?php endforeach;?>
+                      <?php endforeach;?>
+                  </select>
+              </div>
+          </div>
         <div class='form-group'>
           <div class="col-sm-3"></div>
           <div class='col-sm-9'><?php echo html::submitButton($lang->register,'btn btn-primary btn-block') . html::hidden('referer', $referer);?></div>

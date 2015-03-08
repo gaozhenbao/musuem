@@ -1,7 +1,11 @@
 <form method='post' class='form-horizontal' id='childForm' action="<?php echo $this->inlink('children', "type=$type&category=$parent");?>">
   <div class='panel'>
     <div class='panel-heading'>
+        <?php if($type != 'grade'):?>
     <strong><?php echo $parent ? $lang->category->children . ' <i class="icon-double-angle-right"></i> ' : $lang->category->common; ?></strong>
+        <?php else:?>
+    <strong><?php echo $parent ? $lang->category->childrenGrade . ' <i class="icon-double-angle-right"></i> ' : $lang->category->commonGradeList; ?></strong>
+    <?php endif;?>
     <?php
     foreach($origins as $origin)
     {
@@ -16,7 +20,7 @@
       {
           echo "<div class='form-group category'>";
           echo "<div class='col-xs-6 col-md-4 col-md-offset-2'>" . html::input("children[$child->id]", $child->name, "class='form-control'") . "</div>";
-          if(!$isWechatMenu) echo "<div class='col-xs-6 col-md-4'>" . html::input("alias[$child->id]", $child->alias, "class='form-control' placeholder='{$this->lang->category->alias}'") . '</div>';
+          if(!$isWechatMenu && $type != 'grade') echo "<div class='col-xs-6 col-md-4'>" . html::input("alias[$child->id]", $child->alias, "class='form-control' placeholder='{$this->lang->category->alias}'") . '</div>';
           echo "<div class='col-xs-6 col-md-2'><i class='icon-move sort-handle'> </i></div>";
           echo html::hidden("mode[$child->id]", 'update');
           echo "</div>";
@@ -28,14 +32,20 @@
             $allowedChildren = $parent ?  tree::WEICHAT_SUBMENU_COUNT : tree::WEICHAT_MAINMENU_COUNT;
             $newChildrenCount = $allowedChildren - count($children);
       }
-        
+
       for($i = 0; $i < $newChildrenCount; $i ++)
       {
           echo "<div class='form-group category'>";
-          echo "<div class='col-xs-6 col-md-4 col-md-offset-2'>" . html::input("children[]", '', "class='form-control' placeholder='{$this->lang->category->name}'") . "</div>";
+          if($type != 'grade'){
+              echo "<div class='col-xs-6 col-md-4 col-md-offset-2'>" . html::input("children[]", '', "class='form-control' placeholder='{$this->lang->category->name}'") . "</div>";
+          }else{
+              echo "<div class='col-xs-6 col-md-4 col-md-offset-2'>" . html::input("children[]", '', "class='form-control' placeholder='{$this->lang->category->nameGrade}'") . "</div>";
+          }
           if(!$isWechatMenu)
           {
-              echo "<div class='col-xs-6 col-md-4'>" . html::input("alias[]", '', "class='form-control' placeholder='{$this->lang->category->alias}'") . '</div>';
+              if($type != 'grade'){
+                  echo "<div class='col-xs-6 col-md-4'>" . html::input("alias[]", '', "class='form-control' placeholder='{$this->lang->category->alias}'") . '</div>';
+              }
               echo "<div class='col-xs-6 col-md-2'>";
               echo "<i class='icon-move sort-handle'> </i>";
               echo html::a('javascript:;', "<i class='icon-plus'></i>", "class='btn btn-link pull-left btn-mini btn-plus'");
@@ -53,14 +63,18 @@
       echo "<div class='form-group'><div class='col-xs-8 col-md-offset-2'>" . html::submitButton() . "</div></div>";
 
       echo html::hidden('parent',   $parent);
-      ?>      
+      ?>
     </div>
   </div>
 </form>
 <div class='child hide'>
   <div class='form-group category'>
-    <div class='col-xs-6 col-md-4 col-md-offset-2'><?php echo  html::input("children[]", '', "class='form-control' placeholder='{$this->lang->category->name}'");?></div>
-    <div class='col-xs-6 col-md-4'><?php echo html::input("alias[]", '', "class='form-control' placeholder='{$this->lang->category->alias}'");?></div>
+      <?php if($type!= 'grade'):?>
+      <div class='col-xs-6 col-md-4 col-md-offset-2'><?php echo  html::input("children[]", '', "class='form-control' placeholder='{$this->lang->category->name}'");?></div>
+      <div class='col-xs-6 col-md-4'><?php echo html::input("alias[]", '', "class='form-control' placeholder='{$this->lang->category->alias}'");?></div>
+      <?php else:?>
+          <div class='col-xs-6 col-md-4 col-md-offset-2'><?php echo  html::input("children[]", '', "class='form-control' placeholder='{$this->lang->category->nameGrade}'");?></div>
+      <?php endif;?>
     <div class='col-xs-6 col-md-2'>
       <?php echo "<i class='icon-move sort-handle'> </i>";?>
       <?php echo html::a('javascript:;', "<i class='icon-plus'></i>", "class='btn btn-link pull-left btn-mini btn-plus'");?>

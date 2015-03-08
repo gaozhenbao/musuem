@@ -13,7 +13,7 @@
 <?php include '../../common/view/header.admin.html.php';?>
 <?php include '../../common/view/kindeditor.html.php';?>
 <?php include '../../common/view/chosen.html.php';?>
-<?php 
+<?php
 js::set('root', $root);
 js::set('type', $type);
 js::set('isWechatMenu', $isWechatMenu);
@@ -23,7 +23,7 @@ js::set('lang', $lang->js);
 <div class='row'>
   <div class='col-md-4'>
     <div class='panel'>
-      <div class='panel-heading'><strong><i class="icon-sitemap"></i> <?php echo $lang->category->common;?></strong></div>
+      <div class='panel-heading'><strong><i class="icon-sitemap"></i> <?php echo ($type!='grade')?$lang->category->common:$lang->category->commonGrade;?></strong></div>
       <div class='panel-body'>
         <div id='treeMenuBox'><?php echo $treeMenu;?></div>
         <?php if($isWechatMenu):?>
