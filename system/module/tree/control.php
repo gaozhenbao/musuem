@@ -10,15 +10,10 @@
  * @version     $Id$
  * @link        http://www.chanzhi.org
  */
-<<<<<<< HEAD
-class tree extends control {
 
-    const NEW_CHILD_COUNT = 5;
-=======
 class tree extends control
 {
-    const NEW_CHILD_COUNT        = 1;
->>>>>>> 3868a6c90e915c73217ca7684ed13e1edd4164c8
+    const NEW_CHILD_COUNT = 5;
     const WEICHAT_MAINMENU_COUNT = 3;
     const WEICHAT_SUBMENU_COUNT = 5;
 
@@ -65,11 +60,9 @@ class tree extends control
         $userFunc = $isWechatMenu ? array('treeModel', 'createWechatMenuLink') : array('treeModel', 'createManageLink');
         $this->view->treeMenu = $this->tree->getTreeMenu($type, 0, $userFunc);
 
-<<<<<<< HEAD
         $this->view->title = $this->lang->tree->common;
         $this->view->type = $type;
         $this->view->root = $root;
-=======
         if($type == 'grade'){
             $this->view->title    = $this->lang->tree->commonGrade;
         }else{
@@ -77,7 +70,6 @@ class tree extends control
         }
         $this->view->type     = $type;
         $this->view->root     = $root;
->>>>>>> 3868a6c90e915c73217ca7684ed13e1edd4164c8
         $this->view->children = $this->tree->getChildren($root, $type);
 
         $this->display();

@@ -70,7 +70,6 @@ $themeRoot = $webRoot . "theme/";
           <label class='col-md-2 control-label'><?php echo $lang->category->keywords;?></label>
           <div class='col-md-9'><?php echo html::input('keywords', $category->keywords, "class='form-control'");?></div>
         </div>
-<<<<<<< HEAD
           <div class='form-group'> 
           <label class='col-md-2 control-label'><?php echo $lang->category->imgurl?></label>
           <div class='col-md-9'><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -90,9 +89,7 @@ $themeRoot = $webRoot . "theme/";
           </div>
         </div>
         <div class='form-group'> 
-=======
         <div class='form-group'>
->>>>>>> 3868a6c90e915c73217ca7684ed13e1edd4164c8
           <label class='col-md-2 control-label'><?php echo $lang->category->desc;?></label>
           <div class='col-md-9'><?php echo html::textarea('desc', htmlspecialchars($category->desc), "class='form-control' rows=3'");?></div>
         </div>
