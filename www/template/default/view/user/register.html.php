@@ -1,4 +1,6 @@
 <?php include TPL_ROOT . 'common/header.html.php';?>
+<link rel='stylesheet' href='/template/default/theme/default/all.css?v=3.3' type='text/css' media='screen' />
+<link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
 <div class='panel panel-body'>
   <div class='panel panel-pure' id='reg'>
     <div class='panel-heading'><strong><?php echo $lang->user->register->welcome;?></strong></h4></div>

@@ -3,7 +3,7 @@
     	<table width="1020" border="0" cellspacing="0" cellpadding="0" height="44">
           <tr>
             <td width="575">
-            	<div class="bottom_nav"><a href="?m=article&f=browse&moduleID=10">资料库</a></div>
+            	<div class="bottom_nav"><a href="?m=article&f=browse&moduleID=10&type=2">资料库</a></div>
                 <div class="bottom_nav"><a href="?m=article&f=browse&moduleID=11">人文馆</a></div>
                 <div class="bottom_nav"><a href="?m=article&f=browse&categoryID=12">体验宫</a></div>
                 <div class="bottom_nav"><a href="?m=article&f=browse&categoryID=13">快乐厅</a></div>
