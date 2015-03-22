@@ -77,6 +77,27 @@
       </tr>
       <tbody class='articleInfo'>
       <tr>
+          <th><?php echo $lang->category->imgurl?></th>
+          <td colspan='2'>
+          	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="230"><input type="file" id="imgurl_f" name="imgurl_f"></td>
+              <td width="50"><input type="button"  id="idphoto_front_btn" onClick="ajaxFileUpload('imgurl_f');" value="上传"></td>
+              <td>
+              	<?php
+                if($article->img_url <> ''){
+                    echo '<span id="toppic"><img src="'.$article->img_url.'" width="50" height="50"><span>';
+                }else{
+                    echo '<span id="toppic"><span>';
+                }
+              ?>
+              </td>
+            </tr>
+          </table>
+          </td>
+          <?php echo html::hidden('img_url', $article->img_url, "class='form-control' id='img_url'");?>
+        </tr>
+      <tr>
         <th><?php echo $lang->article->alias;?></th>
         <td colspan='2'>
           <div class='input-group'>

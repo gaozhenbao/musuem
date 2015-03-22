@@ -112,6 +112,19 @@
         </tbody>
         <tbody class='articleInfo'>
         <tr>
+          <th><?php echo $lang->category->imgurl?></th>
+          <td colspan='2'>
+          	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="230"><?php echo html::file('imgurl_f', $category->imgurl, "class='form-control'");?></td>
+              <td width="50"><input type="button"  id="idphoto_front_btn" onClick="ajaxFileUpload('imgurl_f');" value="上传"></td>
+              <td><span id="toppic"><span></td>
+            </tr>
+          </table>
+          </td>
+          <?php echo html::hidden('img_url', '', "class='form-control' id='img_url'");?>
+        </tr>
+        <tr>
           <th><?php echo $lang->article->content;?></th>
           <td colspan='2'><?php echo html::textarea('content', '', "rows='6' class='form-control'");?></td>
         </tr>

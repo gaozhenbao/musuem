@@ -52,21 +52,12 @@ class article extends control {
         } else {
             die($this->fetch('error', 'index'));
         }
-        //资料库单独处理
-        if ($category->alias == 'zlk' || $_GET['pt'] == 'zlk') {
-            $type = $_GET['type'];
-            if ($type == 2 || $type == 3) {
-                              $types = $this->dao->select('id,name,imgurl')->from('eps_category')->where('parent')->eq($_GET['moduleID'])->fetchAll();
-                if($type == 2){
-                    foreach ($types as $key=>$value) {
-                        $chid = $value->id;
-                        $ch_types = $this->dao->select('id,name,imgurl')->from('eps_category')->where('parent')->eq($chid)->fetchAll();
-                        $types[$key]->child = $ch_types;
-                    }
-                }
-            }
+        $types = $this->dao->select('id,name,imgurl')->from('eps_category')->where('parent')->eq($_GET['categoryID'])->fetchAll();
+         foreach ($types as $key=>$value) {
+                   $chid = $value->id;
+                   $ch_types = $this->dao->select('id,name,imgurl')->from('eps_category')->where('parent')->eq($chid)->fetchAll();
+                   $types[$key]->child = $ch_types;
         }
-       
         $this->view->title = $title;
         $this->view->keywords = $keywords;
         $this->view->desc = $desc;
