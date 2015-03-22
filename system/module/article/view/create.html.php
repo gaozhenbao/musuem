@@ -29,6 +29,9 @@
     <?php else:?>
     <?php echo $lang->article->create;?>
     <?php endif;?>
+          <script>
+              v.editors = {"id":["content","xingtai","fenbu","shulei","mingzi"],"tools":"full"};
+          </script>
   </strong></div>
   <div class='panel-body'>
     <form method='post' role='form' id='ajaxForm'>
@@ -68,6 +71,14 @@
             </div>
           </td>
         </tr>
+        <tr>
+          <th><?php echo $lang->article->en_title;?></th>
+          <td colspan='2'>
+            <div class='input-group'>
+              <?php echo html::input('en_title', '', "class='form-control'");?>
+            </div>
+          </td>
+        </tr>
         <tr class='link'>
           <th><?php echo $lang->article->link;?></th>
           <td colspan='2'>
@@ -102,7 +113,23 @@
         <tbody class='articleInfo'>
         <tr>
           <th><?php echo $lang->article->content;?></th>
-          <td colspan='2'><?php echo html::textarea('content', '', "rows='10' class='form-control'");?></td>
+          <td colspan='2'><?php echo html::textarea('content', '', "rows='6' class='form-control'");?></td>
+        </tr>
+        <tr>
+          <th><?php echo $lang->article->xingtai;?></th>
+          <td colspan='2'><?php echo html::textarea('xingtai', '', "rows='6' class='form-control'");?></td>
+        </tr>
+        <tr>
+          <th><?php echo $lang->article->fenbu;?></th>
+          <td colspan='2'><?php echo html::textarea('fenbu', '', "rows='6' class='form-control'");?></td>
+        </tr>
+         <tr>
+          <th><?php echo $lang->article->shulei;?></th>
+          <td colspan='2'><?php echo html::textarea('shulei', '', "rows='6' class='form-control'");?></td>
+        </tr>
+         <tr>
+          <th><?php echo $lang->article->mingzi;?></th>
+          <td colspan='2'><?php echo html::textarea('mingzi', '', "rows='6' class='form-control'");?></td>
         </tr>
         <tr>
           <th><?php echo $lang->article->addedDate;?></th>

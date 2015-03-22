@@ -10,13 +10,18 @@ js::execute($article->js);
 ?>
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $themeRoot?>zlk_view/zlk_view.css" rel="stylesheet" type="text/css" />
+<script>
+$(document).ready(function(){
+    $("#menu_content,#menu_xingtai,#menu_fenbu,#menu_shulei,#menu_mingzi").click(function(){
+        $(".right_txt").html($("#"+$(this).attr("id")+'_txt').html())
+    })
+})
+</script>
 <!--center-->
     <div class="center">
     	<div class="right">
         	<div class="right_txt">
-            	<p>海蜇为生活在近海营浮游生活的暖性水母，自泳能力较弱，靠发达的内伞环状肌有节律的伸缩，挤压下伞部的海水而获得前进的动力，依伞顶部的方向做缓慢游动，随波逐流喜栖于半咸水、低质为泥，泥沙的河口附近海域，对淡水有一定程度的敏感性，干旱的年份可随潮进入河道</p>
-                <p class="right_img"><img src="<?php echo $themeRoot;?>common/images/right_tmpimg.gif"></p>
-                <p>在风平浪静、多云、阴天或黎明、傍晚，一般都浮在水的上层或表面；遇有大风、强光照射或夜晚，则活动与水的下层。海蜇的中央口及口腕基部愈合，依靠口腕和肩板上众多的吸口及其周围的触指上的刺细胞捕吸食物和防御伤害</p>
+                    <?php echo $article->content; ?>
             </div>
             <div class="page">
             	<table width="100%" border="0" cellspacing="0" cellpadding="0" height="75">
@@ -26,14 +31,6 @@ js::execute($article->js);
                     <td>
                     	<div class="page_2">
                         	<a href="#">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#">4</a>
-                            <a href="#">5</a>
-                            <a href="#">6</a>
-                            <a href="#">7</a>
-                            <a href="#">8</a>
-                            <a href="#">9</a>
                         </div>
                     </td>
                     <td>
@@ -50,20 +47,34 @@ js::execute($article->js);
                     <img src="<?php echo $themeRoot;?>common/images/left_img.gif">
                 </div>
                 <div class="left_txt_txt">
-                    中文名：海蜇<br/>
-                    英文名：JELLYFISH OR SEAJELLY
+                    中文名：<?php echo $article->title; ?><br/>
+                    英文名：<?php echo $article->en_title; ?>
                 </div>
              </div>
              <div class="left_tags">
-             	<div class="tag_nav1 tag_nav">习性</div>
-                <div class="tag_nav2 tag_nav">形态</div>
-                <div class="tag_nav3 tag_nav">分布</div>
-                <div class="tag_nav4 tag_nav">属类</div>
-                <div class="tag_nav5 tag_nav">名字</div>
+                <?php if($article->content <> ''){ ?>
+                    <div class="tag_nav1 tag_nav" id="menu_content">习性</div>
+                <?php } ?>
+                <?php if($article->xingtai <> ''){ ?>
+                    <div class="tag_nav2 tag_nav" id="menu_xingtai">形态</div>
+                <?php } ?>
+                <?php if($article->fenbu <> ''){ ?>
+                    <div class="tag_nav3 tag_nav" id="menu_fenbu">分布</div>
+                <?php } ?>
+                <?php if($article->shulei <> ''){ ?>
+                    <div class="tag_nav4 tag_nav" id="menu_shulei">属类</div>
+                <?php } ?>
+                    <?php if($article->mingzi <> ''){ ?>
+                    <div class="tag_nav5 tag_nav" id="menu_mingzi">名字</div>
+                <?php } ?>
              </div>
         </div>
     </div>
-
+<div class="hidden_content" id="menu_content_txt"><?php echo $article->content; ?></div>
+<div class="hidden_content" id="menu_xingtai_txt"><?php echo $article->xingtai; ?></div>
+<div class="hidden_content" id="menu_fenbu_txt"><?php echo $article->fenbu; ?></div>
+<div class="hidden_content" id="menu_shulei_txt"><?php echo $article->shulei; ?></div>
+<div class="hidden_content" id="menu_mingzi_txt"><?php echo $article->mingzi; ?></div>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" height="80">
   <tr>
     <td>&nbsp;</td>

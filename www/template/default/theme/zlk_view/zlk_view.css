@@ -13,8 +13,9 @@
 			.tag_nav3{ text-align:center; background:url(../common/images/tag_3bg.png) no-repeat;margin:10px 0 0 0;}
 			.tag_nav4{ text-align:center; background:url(../common/images/tag_4bg.png) no-repeat;margin:10px 0 0 0;}
 			.tag_nav5{ text-align:center; background:url(../common/images/tag_5bg.png) no-repeat;margin:10px 0 0 0;}
+		.hidden_content{ display:none;}
 		.right{ width:550px; float:right;background:#ffffff;}
-			.right_txt{ width:490px; float:right;background:#0099cc; padding:15px; color:#FFF; font-size:14px; line-height:25px; text-indent:2em;}
+			.right_txt{ width:490px; float:right;background:#0099cc; padding:15px; color:#FFF; font-size:14px; line-height:25px; text-indent:2em; height:420px; overflow-x:auto;}
 				.right_img{ text-align:center;}
 				.right_img img{ border:10px #FFF solid;}
 				.page{width:520px; float:right; height:75px;background:#0099cc;}
