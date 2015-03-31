@@ -13,12 +13,13 @@ js::execute($article->js);
 <script>
 var now_page = 1;
 $(document).ready(function(){
-    $("#menu_content,#menu_xingtai,#menu_fenbu,#menu_shulei,#menu_mingzi").click(function(){
+    $(".tag_nav").click(function(){
         $(".right_txt").html($("#"+$(this).attr("id")+'_txt').html())
 		$(".page_2").html('');
 		get_page();
     })
-	get_page();
+//	get_page();
+    $('.tag_nav:first').trigger('click');
 	//翻页
 	$(".page_2 a").live("click",function(){
 	  	now_page = parseInt($(this).text());
@@ -89,7 +90,7 @@ function get_page(){
     	<div class="right">
         	<div class="right_txt_scro">
                 <div class="right_txt">
-                        <?php echo $article->content; ?>
+<!--                        --><?php //echo $article->content; ?>
                 </div>
             </div>
             <div class="page">
@@ -121,29 +122,90 @@ function get_page(){
                 </div>
              </div>
              <div class="left_tags">
-                <?php if($article->content <> ''){ ?>
-                    <div class="tag_nav1 tag_nav" id="menu_content">习性</div>
+                 <?php $num = 0; ?>
+                 <?php if( $num < 5 && $article->mingzi <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_mingzi">名字</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->shulei <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_shulei">属类</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->fenlei <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_fenlei">分类</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->fenbu <> ''){ $num++;?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_fenbu">分布</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->qixidi <> ''){ $num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_qixidi">栖息地</div>
+                 <?php } ?>
+                <?php if($num < 5 && $article->xingtai <> ''){$num++; ?>
+                    <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_xingtai">形态</div>
                 <?php } ?>
-                <?php if($article->xingtai <> ''){ ?>
-                    <div class="tag_nav2 tag_nav" id="menu_xingtai">形态</div>
-                <?php } ?>
-                <?php if($article->fenbu <> ''){ ?>
-                    <div class="tag_nav3 tag_nav" id="menu_fenbu">分布</div>
-                <?php } ?>
-                <?php if($article->shulei <> ''){ ?>
-                    <div class="tag_nav4 tag_nav" id="menu_shulei">属类</div>
-                <?php } ?>
-                    <?php if($article->mingzi <> ''){ ?>
-                    <div class="tag_nav5 tag_nav" id="menu_mingzi">名字</div>
-                <?php } ?>
+                 <?php if($num < 5 && $article->jiegou <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_jiegou">结构</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->xixing <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_xixing">习性</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->shixing <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_shixing">食性</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->fanzhi <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_fanzhi">繁殖</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->fayu <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_fayu">发育</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->qiyuan <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_qiyuan">起源</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->wenhua <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_wenhua">文化</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->yongtu <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_yongtu">用途</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->xianzhuang <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_xianzhuang">现状</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->tupian <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_tupian">图片</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->qita <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_qita">其他</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->dinianji <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_dinianji">低年级</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->zhongnianji <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_zhongnianji">中年级</div>
+                 <?php } ?>
+                 <?php if($num < 5 && $article->gaonianji <> ''){$num++; ?>
+                     <div class="tag_nav<?php echo $num;?> tag_nav" id="menu_gaonianji">高年级</div>
+                 <?php } ?>
              </div>
         </div>
     </div>
-<div class="hidden_content" id="menu_content_txt"><?php echo htmlspecialchars_decode($article->content); ?></div>
-<div class="hidden_content" id="menu_xingtai_txt"><?php echo htmlspecialchars_decode($article->xingtai); ?></div>
-<div class="hidden_content" id="menu_fenbu_txt"><?php echo htmlspecialchars_decode($article->fenbu); ?></div>
-<div class="hidden_content" id="menu_shulei_txt"><?php echo htmlspecialchars_decode($article->shulei); ?></div>
 <div class="hidden_content" id="menu_mingzi_txt"><?php echo htmlspecialchars_decode($article->mingzi); ?></div>
+<div class="hidden_content" id="menu_shulei_txt"><?php echo htmlspecialchars_decode($article->shulei); ?></div>
+<div class="hidden_content" id="menu_fenlei_txt"><?php echo htmlspecialchars_decode($article->fenlei); ?></div>
+<div class="hidden_content" id="menu_fenbu_txt"><?php echo htmlspecialchars_decode($article->fenbu); ?></div>
+<div class="hidden_content" id="menu_qixidi_txt"><?php echo htmlspecialchars_decode($article->qixidi); ?></div>
+<div class="hidden_content" id="menu_xingtai_txt"><?php echo htmlspecialchars_decode($article->xingtai); ?></div>
+<div class="hidden_content" id="menu_jiegou_txt"><?php echo htmlspecialchars_decode($article->jiegou); ?></div>
+<div class="hidden_content" id="menu_xixing_txt"><?php echo htmlspecialchars_decode($article->xixing); ?></div>
+<div class="hidden_content" id="menu_shixing_txt"><?php echo htmlspecialchars_decode($article->shixing); ?></div>
+<div class="hidden_content" id="menu_fanzhi_txt"><?php echo htmlspecialchars_decode($article->fanzhi); ?></div>
+<div class="hidden_content" id="menu_fayu_txt"><?php echo htmlspecialchars_decode($article->fayu); ?></div>
+<div class="hidden_content" id="menu_qiyuan_txt"><?php echo htmlspecialchars_decode($article->qiyuan); ?></div>
+<div class="hidden_content" id="menu_wenhua_txt"><?php echo htmlspecialchars_decode($article->wenhua); ?></div>
+<div class="hidden_content" id="menu_yongtu_txt"><?php echo htmlspecialchars_decode($article->yongtu); ?></div>
+<div class="hidden_content" id="menu_xianzhuang_txt"><?php echo htmlspecialchars_decode($article->xianzhuang); ?></div>
+<div class="hidden_content" id="menu_tupian_txt"><?php echo htmlspecialchars_decode($article->tupian); ?></div>
+<div class="hidden_content" id="menu_qita_txt"><?php echo htmlspecialchars_decode($article->qita); ?></div>
+<div class="hidden_content" id="menu_dinianji_txt"><?php echo htmlspecialchars_decode($article->dinianji); ?></div>
+<div class="hidden_content" id="menu_zhongnianji_txt"><?php echo htmlspecialchars_decode($article->zhongnianji); ?></div>
+<div class="hidden_content" id="menu_gaonianji_txt"><?php echo htmlspecialchars_decode($article->gaonianji); ?></div>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" height="80">
   <tr>
     <td>&nbsp;</td>

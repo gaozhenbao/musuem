@@ -30,7 +30,7 @@
     <?php echo $lang->article->create;?>
     <?php endif;?>
           <script>
-              v.editors = {"id":["content","xingtai","fenbu","shulei","mingzi"],"tools":"full"};
+              v.editors = {"id":["content","xingtai","fenbu","shulei","mingzi","fenlei","qixidi","jiegou","xixing","shixing","fanzhi","fayu","qiyuan","wenhua","yongtu","xianzhuang","tupian","qita","dinianji","zhongnianji","gaonianji"],"tools":"full"};
           </script>
   </strong></div>
   <div class='panel-body'>
@@ -87,28 +87,28 @@
           </td>
         </tr>
         <tbody class='articleInfo'>
-        <tr>
-          <th><?php echo $lang->article->alias;?></th>
-          <td colspan='2'>
-            <div class='input-group'>
-              <?php if($type == 'page'):?>
-              <span class='input-group-addon'>http://<?php echo $this->server->http_host . $config->webRoot;?>page/</span>
-              <?php else:?>
-              <span class='input-group-addon'>http://<?php echo $this->server->http_host . $config->webRoot . $type;?>/id_</span>
-              <?php endif;?>
-              <?php echo html::input('alias', '', "class='form-control' placeholder='{$lang->alias}'");?>
-              <span class="input-group-addon w-70px">.html</span>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th><?php echo $lang->article->keywords;?></th>
-          <td colspan='2'><?php echo html::input('keywords', '', "class='form-control'");?></td>
-        </tr>
-        <tr>
-          <th><?php echo $lang->article->summary;?></th>
-          <td colspan='2'><?php echo html::textarea('summary', '', "rows='2' class='form-control'");?></td>
-        </tr>
+<!--        <tr>-->
+<!--          <th>--><?php //echo $lang->article->alias;?><!--</th>-->
+<!--          <td colspan='2'>-->
+<!--            <div class='input-group'>-->
+<!--              --><?php //if($type == 'page'):?>
+<!--              <span class='input-group-addon'>http://--><?php //echo $this->server->http_host . $config->webRoot;?><!--page/</span>-->
+<!--              --><?php //else:?>
+<!--              <span class='input-group-addon'>http://--><?php //echo $this->server->http_host . $config->webRoot . $type;?><!--/id_</span>-->
+<!--              --><?php //endif;?>
+<!--              --><?php //echo html::input('alias', '', "class='form-control' placeholder='{$lang->alias}'");?>
+<!--              <span class="input-group-addon w-70px">.html</span>-->
+<!--            </div>-->
+<!--          </td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <th>--><?php //echo $lang->article->keywords;?><!--</th>-->
+<!--          <td colspan='2'>--><?php //echo html::input('keywords', '', "class='form-control'");?><!--</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <th>--><?php //echo $lang->article->summary;?><!--</th>-->
+<!--          <td colspan='2'>--><?php //echo html::textarea('summary', '', "rows='2' class='form-control'");?><!--</td>-->
+<!--        </tr>-->
         </tbody>
         <tbody class='articleInfo'>
         <tr>
@@ -124,29 +124,90 @@
           </td>
           <?php echo html::hidden('img_url', '', "class='form-control' id='img_url'");?>
         </tr>
+        <tr style="display: none">
+            <th><?php echo $lang->article->content;?></th>
+            <td colspan='2'><?php echo html::textarea('content', '默认内容', "rows='6' class='form-control'");?></td>
+        </tr>
         <tr>
             <th><?php echo $lang->article->mingzi;?></th>
-            <td colspan='2'><?php echo html::textarea('mingzi', '', "rows='6' class='form-control'");?></td>
+            <td colspan='2'><?php echo html::textarea('mingzi', '', "rows='4' class='form-control'");?></td>
         </tr>
         <tr>
             <th><?php echo $lang->article->shulei;?></th>
-            <td colspan='2'><?php echo html::textarea('shulei', '', "rows='6' class='form-control'");?></td>
+            <td colspan='2'><?php echo html::textarea('shulei', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->fenlei;?></th>
+            <td colspan='2'><?php echo html::textarea('fenlei', '', "rows='4' class='form-control'");?></td>
         </tr>
         <tr>
             <th><?php echo $lang->article->fenbu;?></th>
-            <td colspan='2'><?php echo html::textarea('fenbu', '', "rows='6' class='form-control'");?></td>
+            <td colspan='2'><?php echo html::textarea('fenbu', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->qixidi;?></th>
+            <td colspan='2'><?php echo html::textarea('qixidi', '', "rows='4' class='form-control'");?></td>
         </tr>
         <tr>
             <th><?php echo $lang->article->xingtai;?></th>
-            <td colspan='2'><?php echo html::textarea('xingtai', '', "rows='6' class='form-control'");?></td>
+            <td colspan='2'><?php echo html::textarea('xingtai', '', "rows='4' class='form-control'");?></td>
         </tr>
         <tr>
-          <th><?php echo $lang->article->content;?></th>
-          <td colspan='2'><?php echo html::textarea('content', '', "rows='6' class='form-control'");?></td>
+            <th><?php echo $lang->article->jiegou;?></th>
+            <td colspan='2'><?php echo html::textarea('jiegou', '', "rows='4' class='form-control'");?></td>
         </tr>
-
-
-
+        <tr>
+            <th><?php echo $lang->article->xixing;?></th>
+            <td colspan='2'><?php echo html::textarea('xixing', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->shixing;?></th>
+            <td colspan='2'><?php echo html::textarea('shixing', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->fanzhi;?></th>
+            <td colspan='2'><?php echo html::textarea('fanzhi', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->fayu;?></th>
+            <td colspan='2'><?php echo html::textarea('fayu', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->qiyuan;?></th>
+            <td colspan='2'><?php echo html::textarea('qiyuan', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->wenhua;?></th>
+            <td colspan='2'><?php echo html::textarea('wenhua', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->yongtu;?></th>
+            <td colspan='2'><?php echo html::textarea('yongtu', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->xianzhuang;?></th>
+            <td colspan='2'><?php echo html::textarea('xianzhuang', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->tupian;?></th>
+            <td colspan='2'><?php echo html::textarea('tupian', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->qita;?></th>
+            <td colspan='2'><?php echo html::textarea('qita', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->dinianji;?></th>
+            <td colspan='2'><?php echo html::textarea('dinianji', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->zhongnianji;?></th>
+            <td colspan='2'><?php echo html::textarea('zhongnianji', '', "rows='4' class='form-control'");?></td>
+        </tr>
+        <tr>
+            <th><?php echo $lang->article->gaonianji;?></th>
+            <td colspan='2'><?php echo html::textarea('gaonianji', '', "rows='4' class='form-control'");?></td>
+        </tr>
 
         <tr>
           <th><?php echo $lang->article->addedDate;?></th>

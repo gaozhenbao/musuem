@@ -1,7 +1,6 @@
 <?php
-define('HTTP_URL','http://localhost/school');
-$config->installed    = true;	
-$config->debug        = false;
+$config->installed    = true;
+$config->debug        = true;
 $config->requestType  = 'GET';	
 $config->db->host     = 'localhost';	
 $config->db->port     = '3306';	

@@ -18,6 +18,7 @@ $lang->article->categories = '类目';
 $lang->article->title      = '标题';
 $lang->article->en_title      = '英文标题';
 $lang->article->alias      = '别名';
+$lang->article->content = '内容';
 
 $lang->article->mingzi= '名字';
 $lang->article->shulei= '属类';
@@ -26,7 +27,7 @@ $lang->article->fenbu= '分布';
 $lang->article->qixidi= '栖息地';
 $lang->article->xingtai = '形态';
 $lang->article->jiegou = '结构';
-$lang->article->content = '习性';
+$lang->article->xixing = '习性';
 $lang->article->shixing = '食性';
 $lang->article->fanzhi = '繁殖';
 $lang->article->fayu = '发育';
