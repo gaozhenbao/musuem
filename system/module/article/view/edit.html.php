@@ -16,6 +16,9 @@
 <?php include '../../common/view/kindeditor.html.php';?>
 <?php include '../../common/view/chosen.html.php';?>
 <?php include '../../common/view/codeeditor.html.php';?>
+ <script>
+              v.editors = {"id":["content","xingtai","fenbu","shulei","mingzi"],"tools":"full"};
+          </script>
 <div class='panel'>
   <div class='panel-heading'><strong><i class='icon-edit'></i> <?php echo $type == 'blog' ? $lang->blog->edit : ($type == 'page' ? $lang->page->edit : $lang->article->edit);?></strong></div>
   <div class='panel-body'>
@@ -57,6 +60,14 @@
           </div>
         </td>
       </tr>
+      <tr>
+        <th><?php echo $lang->article->en_title;?></th>
+        <td colspan='2'>
+          <div class='input-group'>
+            <?php echo html::input('en_title', $article->en_title, "class='form-control'");?>
+          </div>
+        </td>
+      </tr>
       <tr class='link'>
         <th><?php echo $lang->article->link;?></th>
         <td colspan='2'>
@@ -65,6 +76,27 @@
         </td>
       </tr>
       <tbody class='articleInfo'>
+      <tr>
+          <th><?php echo $lang->category->imgurl?></th>
+          <td colspan='2'>
+          	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="230"><input type="file" id="imgurl_f" name="imgurl_f"></td>
+              <td width="50"><input type="button"  id="idphoto_front_btn" onClick="ajaxFileUpload('imgurl_f');" value="上传"></td>
+              <td>
+              	<?php
+                if($article->img_url <> ''){
+                    echo '<span id="toppic"><img src="'.$article->img_url.'" width="50" height="50"><span>';
+                }else{
+                    echo '<span id="toppic"><span>';
+                }
+              ?>
+              </td>
+            </tr>
+          </table>
+          </td>
+          <?php echo html::hidden('img_url', $article->img_url, "class='form-control' id='img_url'");?>
+        </tr>
       <tr>
         <th><?php echo $lang->article->alias;?></th>
         <td colspan='2'>
@@ -89,10 +121,27 @@
       </tr>
       </tbody>
       <tbody class='articleInfo'>
+        <tr>
+          <th><?php echo $lang->article->mingzi;?></th>
+          <td colspan='2'><?php echo html::textarea('mingzi', $article->mingzi, "rows='6' class='form-control'");?></td>
+        </tr>
+                 <tr>
+          <th><?php echo $lang->article->shulei;?></th>
+          <td colspan='2'><?php echo html::textarea('shulei', $article->shulei, "rows='6' class='form-control'");?></td>
+        </tr>
+                <tr>
+          <th><?php echo $lang->article->fenbu;?></th>
+          <td colspan='2'><?php echo html::textarea('fenbu', $article->fenbu, "rows='6' class='form-control'");?></td>
+        </tr>
+              <tr>
+          <th><?php echo $lang->article->xingtai;?></th>
+          <td colspan='2'><?php echo html::textarea('xingtai', $article->xingtai, "rows='6' class='form-control'");?></td>
+        </tr>
       <tr>
         <th><?php echo $lang->article->content;?></th>
-        <td colspan='2'><?php echo html::textarea('content', htmlspecialchars($article->content), "rows='10' class='form-control'");?></td>
+        <td colspan='2'><?php echo html::textarea('content', $article->content, "rows='10' class='form-control'");?></td>
       </tr>
+
       <tr>
         <th><?php echo $lang->article->addedDate;?></th>
         <td>

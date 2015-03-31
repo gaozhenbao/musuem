@@ -15,6 +15,8 @@ $themeRoot = $webRoot . "template/default/theme/";
   <meta http-equiv='refresh' content="5;url='<?php echo helper::createLink('index');?>'">
   <?php endif;?>
   <link href="<?php echo $themeRoot?>common/common.css" rel="stylesheet" type="text/css" />
+  <script src="<?php echo $themeRoot?>common/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="<?php echo $themeRoot?>common/common.js" type="text/javascript"></script>
 <head>
 <body>
 <div class="header">
@@ -40,7 +42,7 @@ $themeRoot = $webRoot . "template/default/theme/";
 
       </div>
       <?php $logo = json_decode($config->site->logo);?>
-   	  <div class="top_logotxt" style="background:url(<?php if(!empty($logo->webPath)){echo $logo->webPath;}else{echo $themeRoot.'common/image/logo.jpg';};?>) no-repeat;"></div>
-      <div class="top_icon"></div>
+   	  <div class="top_logotxt" style="background:url(<?php if(!empty($logo->webPath)){echo $logo->webPath;}else{echo $themeRoot.'common/image/logo.jpg';};?>) no-repeat;"><a href="/"></a></div>
+      <div class="top_icon"><a href="/"></a></div>
     </div>
 </div>

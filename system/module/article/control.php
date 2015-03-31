@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The control file of article module of chanzhiEPS.
  *
@@ -9,22 +10,22 @@
  * @version     $Id$
  * @link        http://www.chanzhi.org
  */
-class article extends control
-{
-    /** 
+class article extends control {
+
+    /**
      * The index page, locate to the first category or home page if no category.
      * 
      * @access public
      * @return void
      */
-    public function index()
-    {   
+    public function index() {
         $category = $this->loadModel('tree')->getFirst('article');
-        if($category) $this->locate(inlink('browse', "category=$category->id"));
+        if ($category)
+            $this->locate(inlink('browse', "category=$category->id"));
         $this->locate($this->createLink('index'));
-    }   
+    }
 
-    /** 
+    /**
      * Browse article in front.
      * 
      * @param int    $categoryID   the category id
@@ -32,41 +33,43 @@ class article extends control
      * @access public
      * @return void
      */
-    public function browse($categoryID = 0, $pageID = 1)
-    {   
+    public function browse($categoryID = 0, $pageID = 1) {
         $category = $this->loadModel('tree')->getByID($categoryID, 'article');
-
-        if($category->link) helper::header301($category->link);
+        if ($category->link)
+            helper::header301($category->link);
 
         $this->app->loadClass('pager', $static = true);
         $pager = new pager($recTotal = 0, $this->config->article->recPerPage, $pageID);
 
         $categoryID = is_numeric($categoryID) ? $categoryID : $category->id;
-        $articles   = $this->article->getList('article', $this->tree->getFamily($categoryID, 'article'), 'addedDate_desc', $pager);
+        $articles = $this->article->getList('article', $this->tree->getFamily($categoryID, 'article'), 'addedDate_desc', $pager);
 
-        if($category)
-        {
-            $title    = $category->name;
+        if ($category) {
+            $title = $category->name;
             $keywords = trim($category->keywords . ' ' . $this->config->site->keywords);
-            $desc     = strip_tags($category->desc);
+            $desc = strip_tags($category->desc);
             $this->session->set('articleCategory', $category->id);
-        }
-        else
-        {
+        } else {
             die($this->fetch('error', 'index'));
         }
-
-        $this->view->title     = $title;
-        $this->view->keywords  = $keywords;
-        $this->view->desc      = $desc;
-        $this->view->category  = $category;
-        $this->view->articles  = $articles;
-        $this->view->pager     = $pager;
-        $this->view->contact   = $this->loadModel('company')->getContact();
+        $types = $this->dao->select('id,name,imgurl,`desc`')->from('eps_category')->where('parent')->eq($_GET['categoryID'])->fetchAll();
+         foreach ($types as $key=>$value) {
+                   $chid = $value->id;
+                   $ch_types = $this->dao->select('id,name,imgurl,`desc`')->from('eps_category')->where('parent')->eq($chid)->fetchAll();
+                   $types[$key]->child = $ch_types;
+        }
+        $this->view->title = $title;
+        $this->view->keywords = $keywords;
+        $this->view->desc = $desc;
+        $this->view->category = $category;
+        $this->view->articles = $articles;
+        $this->view->pager = $pager;
+        $this->view->types = $types;
+        $this->view->contact = $this->loadModel('company')->getContact();
 
         $this->display();
     }
-    
+
     /**
      * Browse article in admin.
      * 
@@ -78,8 +81,7 @@ class article extends control
      * @access public
      * @return void
      */
-    public function admin($type = 'article', $categoryID = 0, $orderBy = 'id_desc', $recTotal = 0, $recPerPage = 20, $pageID = 1)
-    {
+    public function admin($type = 'article', $categoryID = 0, $orderBy = 'id_desc', $recTotal = 0, $recPerPage = 20, $pageID = 1) {
         $this->lang->article->menu = $this->lang->$type->menu;
         $this->lang->menuGroups->article = $type;
 
@@ -90,25 +92,24 @@ class article extends control
         $articles = $this->article->getList($type, $families, $orderBy, $pager);
 
 
-        if($type != 'page') 
-        {
+        if ($type != 'page') {
             $this->view->treeModuleMenu = $this->loadModel('tree')->getTreeMenu($type, 0, array('treeModel', 'createAdminLink'));
-            if($type != 'grade'){
+            if ($type != 'grade') {
                 $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manage);
-            }else{
+            } else {
                 $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manageGrade);
             }
         }
 
-        $this->view->title      = $this->lang->$type->admin;
-        $this->view->type       = $type;
+        $this->view->title = $this->lang->$type->admin;
+        $this->view->type = $type;
         $this->view->categoryID = $categoryID;
-        $this->view->articles   = $articles;
-        $this->view->pager      = $pager;
-        $this->view->orderBy    = $orderBy;
+        $this->view->articles = $articles;
+        $this->view->pager = $pager;
+        $this->view->orderBy = $orderBy;
 
         $this->display();
-    }   
+    }
 
     /**
      * Create an article.
@@ -118,38 +119,35 @@ class article extends control
      * @access public
      * @return void
      */
-    public function create($type = 'article', $categoryID = '')
-    {
+    public function create($type = 'article', $categoryID = '') {
         $this->lang->article->menu = $this->lang->{$type}->menu;
         $this->lang->menuGroups->article = $type;
 
         $categories = $this->loadModel('tree')->getOptionMenu($type, 0, $removeRoot = true);
-        if(empty($categories) && $type != 'page')
-        {
+        if (empty($categories) && $type != 'page') {
             die(js::locate($this->createLink('tree', 'redirect', "type=$type")));
         }
 
-        if($_POST)
-        {
+        if ($_POST) {
             $this->article->create($type);
-            if(dao::isError()) $this->send(array('result' => 'fail', 'message' => dao::getError()));
-            $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'locate'=>inlink('admin', "type=$type")));
+            if (dao::isError())
+                $this->send(array('result' => 'fail', 'message' => dao::getError()));
+            $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'locate' => inlink('admin', "type=$type")));
         }
 
-        if($type != 'page') 
-        {
+        if ($type != 'page') {
             $this->view->treeModuleMenu = $this->loadModel('tree')->getTreeMenu($type, 0, array('treeModel', 'createAdminLink'));
-            if($type != 'grade'){
+            if ($type != 'grade') {
                 $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manage);
-            }else{
+            } else {
                 $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manageGrade);
             }
         }
 
-        $this->view->title           = $this->lang->{$type}->create;
+        $this->view->title = $this->lang->{$type}->create;
         $this->view->currentCategory = $categoryID;
-        $this->view->categories      = $this->loadModel('tree')->getOptionMenu($type, 0, $removeRoot = true);
-        $this->view->type            = $type;
+        $this->view->categories = $this->loadModel('tree')->getOptionMenu($type, 0, $removeRoot = true);
+        $this->view->type = $type;
 
         $this->display();
     }
@@ -162,39 +160,36 @@ class article extends control
      * @access public
      * @return void
      */
-    public function edit($articleID, $type)
-    {
+    public function edit($articleID, $type) {
         $this->lang->article->menu = $this->lang->$type->menu;
         $this->lang->menuGroups->article = $type;
 
-        $article    = $this->article->getByID($articleID, $replaceTag = false);
+        $article = $this->article->getByID($articleID, $replaceTag = false);
         $categories = $this->loadModel('tree')->getOptionMenu($type, 0, $removeRoot = true);
-        if(empty($categories) && $type != 'page')
-        {
+        if (empty($categories) && $type != 'page') {
             die(js::alert($this->lang->tree->noCategories) . js::locate($this->createLink('tree', 'browse', "type=$type")));
         }
 
-        if($_POST)
-        {
+        if ($_POST) {
             $this->article->update($articleID, $type);
-            if(dao::isError()) $this->send(array('result' => 'fail', 'message' => dao::getError()));
+            if (dao::isError())
+                $this->send(array('result' => 'fail', 'message' => dao::getError()));
             $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'locate' => inlink('admin', "type=$type")));
         }
 
-        if($type != 'page') 
-        {
+        if ($type != 'page') {
             $this->view->treeModuleMenu = $this->loadModel('tree')->getTreeMenu($type, 0, array('treeModel', 'createAdminLink'));
-            if($type != 'grade'){
+            if ($type != 'grade') {
                 $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manage);
-            }else{
+            } else {
                 $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manageGrade);
             }
         }
 
-        $this->view->title      = $this->lang->article->edit;
-        $this->view->article    = $article;
+        $this->view->title = $this->lang->article->edit;
+        $this->view->article = $article;
         $this->view->categories = $categories;
-        $this->view->type       = $type;
+        $this->view->type = $type;
         $this->display();
     }
 
@@ -205,13 +200,12 @@ class article extends control
      * @access public
      * @return void
      */
-    public function view($articleID)
-    {
-        $article  = $this->article->getByID($articleID);
-        if(!$article) die($this->fetch('error', 'index'));
+    public function view($articleID) {
+        $article = $this->article->getByID($articleID);
+        if (!$article)
+            die($this->fetch('error', 'index'));
 
-        if($article->link)
-        {
+        if ($article->link) {
             $this->dao->update(TABLE_ARTICLE)->set('views = views + 1')->where('id')->eq($articleID)->exec();
             helper::header301($article->link);
         }
@@ -221,34 +215,30 @@ class article extends control
         $category = $category[0]->id;
 
         $currentCategory = $this->session->articleCategory;
-        if($currentCategory > 0)
-        {
-            if(isset($article->categories[$currentCategory]))
-            {
-                $category = $currentCategory;  
-            }
-            else
-            {
-                foreach($article->categories as $articleCategory)
-                {
-                    if(strpos($articleCategory->path, $currentCategory)) $category = $articleCategory->id;
+        if ($currentCategory > 0) {
+            if (isset($article->categories[$currentCategory])) {
+                $category = $currentCategory;
+            } else {
+                foreach ($article->categories as $articleCategory) {
+                    if (strpos($articleCategory->path, $currentCategory))
+                        $category = $articleCategory->id;
                 }
             }
         }
 
         $category = $this->loadModel('tree')->getByID($category);
 
-        $title    = $article->title . ' - ' . $category->name;
+        $title = $article->title . ' - ' . $category->name;
         $keywords = $article->keywords . ' ' . $category->keywords . ' ' . $this->config->site->keywords;
-        $desc     = strip_tags($article->summary);
-        
-        $this->view->title       = $title;
-        $this->view->keywords    = $keywords;
-        $this->view->desc        = $desc;
-        $this->view->article     = $article;
+        $desc = strip_tags($article->summary);
+
+        $this->view->title = $title;
+        $this->view->keywords = $keywords;
+        $this->view->desc = $desc;
+        $this->view->article = $article;
         $this->view->prevAndNext = $this->article->getPrevAndNext($article->id, $category->id);
-        $this->view->category    = $category;
-        $this->view->contact     = $this->loadModel('company')->getContact();
+        $this->view->category = $category;
+        $this->view->contact = $this->loadModel('company')->getContact();
 
         $this->dao->update(TABLE_ARTICLE)->set('views = views + 1')->where('id')->eq($articleID)->exec();
 
@@ -262,9 +252,9 @@ class article extends control
      * @access public
      * @return void
      */
-    public function delete($articleID)
-    {
-        if($this->article->delete($articleID)) $this->send(array('result' => 'success'));
+    public function delete($articleID) {
+        if ($this->article->delete($articleID))
+            $this->send(array('result' => 'success'));
         $this->send(array('result' => 'fail', 'message' => dao::getError()));
     }
 
@@ -275,20 +265,18 @@ class article extends control
      * @access public
      * @return void
      */
-    public function setCss($articleID)
-    {
+    public function setCss($articleID) {
         $article = $this->article->getByID($articleID);
-        if($_POST)
-        {
-            if($this->article->setCss($articleID)) $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'locate' => inlink('admin', "type={$article->type}")));
+        if ($_POST) {
+            if ($this->article->setCss($articleID))
+                $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'locate' => inlink('admin', "type={$article->type}")));
             $this->send(array('result' => 'fail', 'message' => dao::getError()));
         }
 
-        $this->view->title   = $this->lang->article->css;
+        $this->view->title = $this->lang->article->css;
         $this->view->article = $article;
         $this->display();
     }
-
 
     /**
      * Set js.
@@ -297,17 +285,17 @@ class article extends control
      * @access public
      * @return void
      */
-    public function setJs($articleID)
-    {
+    public function setJs($articleID) {
         $article = $this->article->getByID($articleID);
-        if($_POST)
-        {
-            if($this->article->setJs($articleID)) $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'locate' => inlink('admin', "type={$article->type}")));
+        if ($_POST) {
+            if ($this->article->setJs($articleID))
+                $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'locate' => inlink('admin', "type={$article->type}")));
             $this->send(array('result' => 'fail', 'message' => dao::getError()));
         }
 
-        $this->view->title   = $this->lang->article->js;
+        $this->view->title = $this->lang->article->js;
         $this->view->article = $article;
         $this->display();
     }
+
 }
