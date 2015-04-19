@@ -4933,3 +4933,17 @@
   SELECT id, alias FROM eps_category WHERE type  = 'forum'
   SELECT id, alias FROM eps_category WHERE type  = 'blog'
 
+20150419 22:29:58: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150419 22:29:59: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+

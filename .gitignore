@@ -1,0 +1,7 @@
+www/data/upload
+/www/data/upload
+.idea/
+system/tmp
+system/config/my.php
+system/tmp/log/*
+/system/tmp/log/*
