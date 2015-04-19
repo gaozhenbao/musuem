@@ -4863,3 +4863,31 @@
   SELECT SQL_CALC_FOUND_ROWS  u.*, o.provider as provider, openID as openID FROM eps_user AS u  LEFT JOIN eps_oauth AS o  ON u.account = o.account  wHeRe 1  
   SELECT u.*, o.provider as provider, openID as openID FROM eps_user AS u  LEFT JOIN eps_oauth AS o  ON u.account = o.account  WHERE 1  ORDER BY id asc
 
+20150419 21:35:58: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150419 21:35:59: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150419 21:41:58: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150419 21:41:59: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
