@@ -17,8 +17,10 @@
 				all_length = 0;
 				$(".center_content").animate({left:length+'px'});
 			}else{
+				$(this).removeClass("left_navbg1").addClass("right_navbg2")
 				return false;
 			}
+			$("#left_nav").removeClass("left_navbg2").addClass("left_navbg1")
 		})
 		
 		$("#left_nav").click(function(){
@@ -31,8 +33,10 @@
 				all_length = parseInt(size*312);
 				$(".center_content").animate({left:length+'px'});
 			}else{
+				$(this).removeClass("right_navbg1").addClass("left_navbg2")
 				return false;
 			}
+			$("#right_nav").removeClass("right_navbg2").addClass("right_navbg1")
 		})
 		
 	})
@@ -54,7 +58,7 @@
 
                             <span class="center_navtitle">
 
-                                <div class="center_navtitletxt"><?php echo $value->name;?></div>
+                                <a href="./?m=article&f=browse&categoryID=<?php echo $value->id; ?>&type=3&pt=zlk"><div class="center_navtitletxt"><?php echo $value->name;?></div></a>
 
                                 <div class="center_navmenu">
 
