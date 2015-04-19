@@ -6,8 +6,8 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(../common/images/bg.
 		.center_list{ width:8888px; height:565px; float:left; position:absolute; left:0px; top:0px;}
 			.center_list ul{ margin:0px; padding:0px;}
 			.center_list ul li{ width:240px; height:565px; float:left; overflow-y:hidden;}
-			.center_listspace{ width:70px; height:565px; float:left; }
-			.center_listtxt{ width:240px; height:275px;}
+			.center_listspace{ width:20px; height:565px; float:left; }
+			.center_listtxt{ width:240px; height:270px;}
 				.center_listimg{ width:220px; height:220px; padding:10px;background:#FFF;}
 				.center_listimg img{ width:220px; height:220px;}
 				.center_listtitle{ width:240px; height:35px; margin:5px 0 0 0; background:#0099ff; line-height:35px; text-align:center; color:#FFF; font-size:16px;}

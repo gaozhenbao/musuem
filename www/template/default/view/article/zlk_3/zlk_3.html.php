@@ -3,7 +3,7 @@
 <script>
 	$(document).ready(function(){
 		var size = parseInt($(".center_list li").size());
-		var all_length = size*240+(size-1)*70;
+		var all_length = size*240+(size-1)*20;
 		var liwidth = 310;
 		var winwidth = parseInt($(".center_s").width());
 		$("#right_nav").click(function(){
@@ -16,8 +16,10 @@
 				all_length = 0;
 				$(".center_list").animate({left:length+'px'});
 			}else{
+				$(this).removeClass("left_navbg1").addClass("right_navbg2")
 				return false;
 			}
+			$("#left_nav").removeClass("left_navbg2").addClass("left_navbg1")
 		})
 		
 		$("#left_nav").click(function(){
@@ -27,11 +29,13 @@
 				$(".center_list").animate({left:length+'px'});
 			}else if(offset <0 && -offset < liwidth){
 				var length = 0;
-				all_length = size*240+(size-1)*70;
+				all_length = size*240+(size-1)*20;
 				$(".center_list").animate({left:length+'px'});
 			}else{
+				$(this).removeClass("right_navbg1").addClass("left_navbg2")
 				return false;
 			}
+			$("#right_nav").removeClass("right_navbg2").addClass("right_navbg1")
 		})
 		
 	})
