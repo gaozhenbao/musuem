@@ -1,6 +1,6 @@
 <?php
 $config->installed    = true;
-$config->debug        = true;
+$config->debug        = false;
 $config->requestType  = 'GET';	
 $config->db->host     = 'localhost';	
 $config->db->port     = '3306';	

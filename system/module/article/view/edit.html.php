@@ -16,13 +16,9 @@
 <?php include '../../common/view/kindeditor.html.php';?>
 <?php include '../../common/view/chosen.html.php';?>
 <?php include '../../common/view/codeeditor.html.php';?>
- <script>
-<<<<<<< HEAD
-              v.editors = {"id":["content","xingtai","fenbu","shulei","mingzi","fenlei","qixidi","jiegou","xixing","shixing","fanzhi","fayu","qiyuan","wenhua","yongtu","xianzhuang","tupian","qita","dinianji","zhongnianji","gaonianji"],"tools":"full"};
-=======
-              v.editors = {"id":["content","xingtai","fenbu","shulei","mingzi"],"tools":"full"};
->>>>>>> 5035c051f727e09290e22f6097713717c5d3f54c
-          </script>
+<script>
+      v.editors = {"id":["content","xingtai","fenbu","shulei","mingzi","fenlei","qixidi","jiegou","xixing","shixing","fanzhi","fayu","qiyuan","wenhua","yongtu","xianzhuang","tupian","qita","dinianji","zhongnianji","gaonianji"],"tools":"full"};
+</script>
 <div class='panel'>
   <div class='panel-heading'><strong><i class='icon-edit'></i> <?php echo $type == 'blog' ? $lang->blog->edit : ($type == 'page' ? $lang->page->edit : $lang->article->edit);?></strong></div>
   <div class='panel-body'>
@@ -101,7 +97,6 @@
           </td>
           <?php echo html::hidden('img_url', $article->img_url, "class='form-control' id='img_url'");?>
         </tr>
-<<<<<<< HEAD
 <!--      <tr>-->
 <!--        <th>--><?php //echo $lang->article->alias;?><!--</th>-->
 <!--        <td colspan='2'>-->
@@ -129,21 +124,6 @@
       <tr style="display: none">
           <th><?php echo $lang->article->content;?></th>
           <td colspan='2'><?php echo html::textarea('content', $article->content, "rows='6' class='form-control'");?></td>
-=======
-      <tr>
-        <th><?php echo $lang->article->alias;?></th>
-        <td colspan='2'>
-          <div class='input-group'>
-            <?php if($type == 'page'):?>
-            <span class="input-group-addon">http://<?php echo $this->server->http_host . $config->webRoot?>page/</span>
-            <?php else:?>
-            <span class="input-group-addon">http://<?php echo $this->server->http_host . $config->webRoot . $type?>/id_</span>
-            <?php endif;?>
-            <?php echo html::input('alias', $article->alias, "class='form-control' placeholder='{$lang->alias}'");?>
-            <span class='input-group-addon w-70px'>.html</span>
-          </div>
-        </td>
->>>>>>> 5035c051f727e09290e22f6097713717c5d3f54c
       </tr>
       <tr>
           <th><?php echo $lang->article->mingzi;?></th>
