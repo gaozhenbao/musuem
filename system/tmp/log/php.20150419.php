@@ -237,3 +237,10 @@
 15:42:47 Trying to get property of non-object in D:\wamp\apps\musuem\system\module\article\view\create.html.php on line 119 when visiting /school/admin.php?m=article&f=create&type=article&categoryID=11
 
 15:43:06 Trying to get property of non-object in D:\wamp\apps\musuem\system\module\article\model.php on line 433 when visiting /school/admin.php?m=article&f=admin
+
+14:05:58 syntax error, unexpected '
+14:05:59 syntax error, unexpected '
+14:11:58 syntax error, unexpected '
+14:11:59 syntax error, unexpected '
+14:17:58 syntax error, unexpected '
+14:17:59 syntax error, unexpected '

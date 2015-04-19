@@ -55,7 +55,7 @@
 </div>
 <DIV class="footer">
 	<?php foreach($types as $value){?>
-    	<a href="./?m=article&f=browse&categoryID=<?php echo $value->id; ?>&type=list&pt=rwg"><img src="<?php echo $themeRoot?>rwg/images/sz1.png" width="123" height="266"></a>
+    	<a href="./?m=article&f=browse&categoryID=<?php echo $value->id; ?>&type=2&pt=rwg"><img src="<?php echo $value->imgurl; ?>" width="123" height="266"></a>
     <?php } ?>
 </DIV>
 <?php include TPL_ROOT . 'common/footer.html.php';?>

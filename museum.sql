@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2015-03-29 21:32:12
+Date: 2015-03-11 23:19:43
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -22,15 +22,10 @@ DROP TABLE IF EXISTS `eps_article`;
 CREATE TABLE `eps_article` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(150) NOT NULL,
-  `en_title` varchar(150) DEFAULT NULL COMMENT '英文名称',
   `alias` varchar(100) NOT NULL,
   `keywords` varchar(150) NOT NULL,
   `summary` text NOT NULL,
   `content` text NOT NULL,
-  `xingtai` text COMMENT '形态',
-  `fenbu` text COMMENT '分布',
-  `shulei` text COMMENT '属类',
-  `mingzi` text COMMENT '名字',
   `source` enum('original','copied','translational') NOT NULL,
   `copySite` varchar(60) NOT NULL,
   `copyURL` varchar(255) NOT NULL,
@@ -46,26 +41,21 @@ CREATE TABLE `eps_article` (
   `link` varchar(255) NOT NULL,
   `css` text NOT NULL,
   `js` text NOT NULL,
-  `img_url` varchar(255) DEFAULT NULL COMMENT '图片url',
-  `imgurl_f` varchar(255) DEFAULT NULL COMMENT '多余列',
   PRIMARY KEY (`id`),
   KEY `order` (`order`),
   KEY `views` (`views`),
   KEY `sticky` (`sticky`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eps_article
 -- ----------------------------
-INSERT INTO `eps_article` VALUES ('1', '单页', null, 'danye1', '', '', '单页单页单页单页单页单页单页单页单页', null, null, null, null, 'original', '', '', '', '', '2014-12-30 21:11:00', '2014-12-30 21:16:52', 'normal', 'page', '5', '0', '0', '', '', '', null, null);
-INSERT INTO `eps_article` VALUES ('2', '啊哈哈哈', null, '', '阿萨德发顺丰', '阿萨德fad', '阿萨德发射点发烧饭', null, null, null, null, 'original', '', '', 'admin', '', '2015-01-10 10:06:00', '2015-01-10 10:07:06', 'normal', 'blog', '1', '0', '0', '', '', '', null, null);
-INSERT INTO `eps_article` VALUES ('4', '海蜇的故事', '', 'haizehe', '海蜇的故事', '海蜇的故事', '<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事海蜇的故事海蜇的故事海蜇的故事</p>\r\n<p><br />\r\n</p>\r\n<p><span style=\"background-color:#EE33EE;\">海蜇的故事</span></p>\r\n<p><span style=\"background-color:#EE33EE;\">海蜇的故事</span></p>\r\n<p><span style=\"background-color:#EE33EE;\">海蜇的故事</span></p>\r\n<p><span style=\"background-color:#EE33EE;\">海蜇的故事海蜇的故事海蜇的故事海蜇的故事</span></p>\r\n<p><br />\r\n</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事海蜇的故事海蜇的故事海蜇的故事</p>\r\n<p><br />\r\n</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事海蜇的故事海蜇的故事海蜇的故事</p>\r\n<p><br />\r\n</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事海蜇的故事海蜇的故事海蜇的故事</p>\r\n<p><br />\r\n</p>\r\n<p><span style=\"background-color:#006600;\">海蜇的故事</span></p>\r\n<p><span style=\"background-color:#006600;\">海蜇的故事</span></p>\r\n<p><span style=\"background-color:#006600;\">海蜇的故事</span></p>\r\n<p><span style=\"background-color:#006600;\">海蜇的故事海蜇的故事海</span>蜇的故事海蜇的故事</p>\r\n<p><br />\r\n</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事海蜇的故事海蜇的故事海蜇的故事</p>\r\n<p><br />\r\n</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事海蜇的故事海蜇的故事海蜇的故事</p>\r\n<p><br />\r\n</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事海蜇的故事海蜇的故事海蜇的故事</p>\r\n<p><br />\r\n</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事</p>\r\n<p>海蜇的故事海蜇的故事海蜇的故事海蜇的故事</p>\r\n<p><br />\r\n</p>\r\n<p><span style=\"color:#4C33E5;\">海蜇的故事</span></p>\r\n<p><span style=\"color:#4C33E5;\">海蜇的故事</span></p>\r\n<p><span style=\"color:#4C33E5;\">海蜇的故事</span></p>\r\n<p>海蜇的故事海蜇的故事海蜇的故事海蜇的故事</p>', '海蜇的故事', '海蜇的故事', '海蜇的故事', '海蜇的故事', 'original', '', '', 'admin', 'admin', '2015-01-18 20:27:00', '2015-03-29 17:20:51', 'normal', 'article', '108', '0', '0', '', '', '', '', '');
-INSERT INTO `eps_article` VALUES ('5', '人文馆', null, '', '', '', 'dsdsa', null, null, null, null, 'original', '', '', 'admin', '', '2015-02-01 11:26:00', '2015-02-01 11:26:21', 'normal', 'article', '2', '0', '0', '', '', '', null, null);
-INSERT INTO `eps_article` VALUES ('6', '欢乐厅', '', '', '', '', 'dfsf', '', '', '', '', 'original', '', '', 'admin', 'admin', '2015-02-01 11:26:00', '2015-03-22 18:24:16', 'normal', 'article', '10', '0', '0', '', '', '', '', null);
-INSERT INTO `eps_article` VALUES ('7', '是多少', null, '', '速度', '', '速度', null, null, null, null, 'original', '', '', 'admin', '', '2015-03-08 17:42:00', '2015-03-08 17:42:33', 'normal', 'article', '3', '0', '0', '', '', '', null, null);
-INSERT INTO `eps_article` VALUES ('8', 'wwwwwwww', 'ss', '', 'wwwwwwww', 'wwwwwwwww', 'wwwwwwwwww', 'aaa', '', '', '', 'original', '', '', 'admin', 'admin', '2015-03-15 22:41:00', '2015-03-22 18:15:53', 'normal', 'article', '72', '0', '0', '', '', '', '/data/upload/201503/5d44f1ba736fa5b47fd2a8034144a536.png', null);
-INSERT INTO `eps_article` VALUES ('9', 'dddddddddddddddddd', 'dddddddddddddd', '', 'dddddddd', 'ddddddddddd', 'dddddd', '', '', '', 'd', 'original', '', '', 'admin', 'admin', '2015-03-22 17:17:00', '2015-03-22 18:12:35', 'normal', 'article', '3', '0', '0', '', '', '', null, null);
-INSERT INTO `eps_article` VALUES ('10', 'sss', 'ssssssssssssss', '', 'ssssss', 'sssssssss', 's', 's', '', '', '', 'original', '', '', 'admin', 'admin', '2015-03-22 18:06:00', '2015-03-22 18:27:46', 'normal', 'article', '0', '0', '0', '', '', '', '/data/upload/201503/392f40325c54d4bb8f5b72127004b6bb.png', '');
+INSERT INTO `eps_article` VALUES ('1', '单页', 'danye1', '', '', '单页单页单页单页单页单页单页单页单页', 'original', '', '', '', '', '2014-12-30 21:11:00', '2014-12-30 21:16:52', 'normal', 'page', '5', '0', '0', '', '', '');
+INSERT INTO `eps_article` VALUES ('2', '啊哈哈哈', '', '阿萨德发顺丰', '阿萨德fad', '阿萨德发射点发烧饭', 'original', '', '', 'admin', '', '2015-01-10 10:06:00', '2015-01-10 10:07:06', 'normal', 'blog', '1', '0', '0', '', '', '');
+INSERT INTO `eps_article` VALUES ('4', '海蜇的故事', 'haizehe', '海蜇的故事', '海蜇的故事', '海蜇的故事', 'original', '', '', 'admin', 'admin', '2015-01-18 20:27:00', '2015-03-08 17:42:11', 'normal', 'article', '14', '0', '0', '', '', '');
+INSERT INTO `eps_article` VALUES ('5', '人文馆', '', '', '', 'dsdsa', 'original', '', '', 'admin', '', '2015-02-01 11:26:00', '2015-02-01 11:26:21', 'normal', 'article', '2', '0', '0', '', '', '');
+INSERT INTO `eps_article` VALUES ('6', '欢乐厅', '', '', '', 'dfsf', 'original', '', '', 'admin', '', '2015-02-01 11:26:00', '2015-02-01 11:26:51', 'normal', 'article', '10', '0', '0', '', '', '');
+INSERT INTO `eps_article` VALUES ('7', '是多少', '', '速度', '', '速度', 'original', '', '', 'admin', '', '2015-03-08 17:42:00', '2015-03-08 17:42:33', 'normal', 'article', '1', '0', '0', '', '', '');
 
 -- ----------------------------
 -- Table structure for `eps_block`
@@ -153,62 +143,47 @@ CREATE TABLE `eps_category` (
   `replyID` mediumint(8) unsigned NOT NULL,
   `link` varchar(255) NOT NULL,
   `imgurl` varchar(255) DEFAULT NULL COMMENT '标题图片地址',
-  `imgurl_f` varchar(255) DEFAULT NULL COMMENT '多余列，勿删',
   PRIMARY KEY (`id`),
   KEY `tree` (`type`),
   KEY `order` (`order`),
   KEY `parent` (`parent`),
   KEY `path` (`path`)
-) ENGINE=MyISAM AUTO_INCREMENT=83 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eps_category
 -- ----------------------------
-INSERT INTO `eps_category` VALUES ('1', '论坛-资料库', 'zlk', '测试论坛功能', '', '0', ',1,', '1', '10', 'forum', '0', ',高振宝,', '0', '0', '', '2014-12-29 22:02:49', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('2', '论坛-畅想园', 'cxy', '', '', '0', ',2,', '1', '20', 'forum', '0', '', '0', '0', '', '2014-12-29 22:02:49', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('3', '海洋资料库', 'hyzlk', '二级资料库<br />', '', '1', ',1,3,', '2', '10', 'forum', '1', ',高振宝,', '0', '0', '', '2014-12-29 22:05:22', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('4', '动物资料库', 'dongwu', '动物', '动物', '1', ',1,4,', '2', '20', 'forum', '0', ',gaozhenbao,', '0', '0', '', '2014-12-29 22:08:51', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('5', '板块A', 'abc', '', '', '2', ',2,5,', '2', '10', 'forum', '0', '', '0', '0', '', '2014-12-29 22:12:03', '0', '0', 'http://localhost/school/index.php', null, null);
-INSERT INTO `eps_category` VALUES ('6', '123', '', '', '', '0', ',6,', '1', '10', 'product', '0', '', '0', '0', '', '2015-01-05 22:15:14', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('10', '资料库', 'zlk', '', '', '0', ',10,', '1', '10', 'article', '0', '', '0', '0', '', '2015-01-18 20:27:29', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('8', '我的博客', '', '', '', '0', ',8,', '1', '10', 'blog', '0', '', '0', '0', '', '2015-01-10 10:06:25', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('9', '博客', '', '', '', '8', ',8,9,', '2', '10', 'blog', '0', '', '0', '0', '', '2015-01-10 10:06:37', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('15', '动物馆', '', '', '', '10', ',10,15,', '2', '10', 'article', '0', '', '0', '0', '', '2015-03-08 17:35:10', '0', '0', '', '/data/upload/201503/3305906adca6449f55e73e6a8f386184.png', null);
-INSERT INTO `eps_category` VALUES ('11', '人文馆', 'rwg', '', '', '0', ',11,', '1', '20', 'article', '0', '', '0', '0', '', '2015-02-01 11:25:34', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('12', '体验宫', 'tyg', '', '', '0', ',12,', '1', '30', 'article', '0', '', '0', '0', '', '2015-02-01 11:25:34', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('13', '快乐厅', 'klt', '', '', '0', ',13,', '1', '40', 'article', '0', '', '0', '0', '', '2015-02-01 11:25:34', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('14', '畅想园', 'cxy', '', '', '0', ',14,', '1', '50', 'article', '0', '', '0', '0', '', '2015-02-01 11:25:34', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('16', '植物馆', '', '', '', '10', ',10,16,', '2', '20', 'article', '0', '', '0', '0', '', '2015-03-08 17:35:10', '0', '0', '', '/data/upload/201503/e1dcb10970d0f32a6b7148b9c180ecf2.png', null);
-INSERT INTO `eps_category` VALUES ('17', '矿产馆', '', '', '', '10', ',10,17,', '2', '30', 'article', '0', '', '0', '0', '', '2015-03-08 17:35:10', '0', '0', '', '/data/upload/201503/8c7db173c27292b69652d1e8e6b88a91.png', null);
-INSERT INTO `eps_category` VALUES ('18', '鱼类馆', '', '', '', '15', ',10,15,18,', '3', '10', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/bdccacae8f28ad9ffe5fa04d884ca56a.png', null);
-INSERT INTO `eps_category` VALUES ('19', '爬行馆', '', '', '', '15', ',10,15,19,', '3', '20', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/ce31ae5d57d58ed8a3c573cc4a374a1c.png', null);
-INSERT INTO `eps_category` VALUES ('20', '贝类馆', '', '', '', '15', ',10,15,20,', '3', '30', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/3a078f4e889f8abae04ec96409d49b19.png', null);
-INSERT INTO `eps_category` VALUES ('21', '海兽馆', '', '', '', '15', ',10,15,21,', '3', '40', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/848e3733b7a4727bf6b984a1177c4c9f.png', null);
-INSERT INTO `eps_category` VALUES ('22', '虾蟹馆', '', '', '', '15', ',10,15,22,', '3', '50', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/2fdaa43b72e8f16b0ee3a059e8ed0efe.png', null);
-INSERT INTO `eps_category` VALUES ('23', '珊瑚馆', '', '', '', '15', ',10,15,23,', '3', '60', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/fac82cc74e77f604c0b3cb579f41605c.png', null);
-INSERT INTO `eps_category` VALUES ('24', '海鸟馆', '', '', '', '15', ',10,15,24,', '3', '70', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/5abb26afab1e04aeb8880ed7f6860798.png', null);
-INSERT INTO `eps_category` VALUES ('25', '藻类植物馆', '', '', '', '16', ',10,16,25,', '3', '10', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:50', '0', '0', '', '/data/upload/201503/8769863d2b48bd7357d62315863765c5.png', null);
-INSERT INTO `eps_category` VALUES ('26', '蕨类植物馆', '', '', '', '16', ',10,16,26,', '3', '20', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:50', '0', '0', '', '/data/upload/201503/2ffa4e8c395a32bd5ae14013a809cd4f.png', null);
-INSERT INTO `eps_category` VALUES ('27', '种子植物馆', '', '', '', '16', ',10,16,27,', '3', '30', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:50', '0', '0', '', '/data/upload/201503/bae8d6019b0cda032f4b7c652333a98f.png', null);
-INSERT INTO `eps_category` VALUES ('28', '矿物馆一', '', '', '', '17', ',10,17,28,', '3', '10', 'article', '0', '', '0', '0', '', '2015-03-08 17:37:24', '0', '0', '', '/data/upload/201503/fd9ba47aa1e82844fb883b5f081bab0f.png', null);
-INSERT INTO `eps_category` VALUES ('29', '矿物馆二', '', '', '', '17', ',10,17,29,', '3', '20', 'article', '0', '', '0', '0', '', '2015-03-08 17:37:24', '0', '0', '', '/data/upload/201503/444240b3bc59991008a35a13c47b6d0e.png', null);
-INSERT INTO `eps_category` VALUES ('30', '矿物馆三', '', '', '', '17', ',10,17,30,', '3', '30', 'article', '0', '', '0', '0', '', '2015-03-08 17:37:24', '0', '0', '', '/data/upload/201503/44ecb04730d4f5ef3c9ae5983e0ada73.png', null);
-INSERT INTO `eps_category` VALUES ('31', '矿物馆四', '', '', '', '17', ',10,17,31,', '3', '40', 'article', '0', '', '0', '0', '', '2015-03-08 17:37:24', '0', '0', '', '/data/upload/201503/86dde10d36de41bfc8bb245057f703a2.png', null);
-INSERT INTO `eps_category` VALUES ('32', '矿物馆五', '', '', '', '17', ',10,17,32,', '3', '50', 'article', '0', '', '0', '0', '', '2015-03-08 17:37:24', '0', '0', '', '/data/upload/201503/7ef6d5282cbc2b920267fdb79f32cd17.png', null);
-INSERT INTO `eps_category` VALUES ('33', '海洋考古', 'hykg', '', '', '12', ',12,33,', '2', '10', 'article', '0', '', '0', '0', '', '2015-03-22 17:15:52', '0', '0', '', '/data/upload/201503/4e959a9413a945f8ff10e71a62d8fd54.png', null);
-INSERT INTO `eps_category` VALUES ('34', '海洋探索', 'hyts', '', '', '12', ',12,34,', '2', '20', 'article', '0', '', '0', '0', '', '2015-03-22 17:15:52', '0', '0', '', '/data/upload/201503/3428d323e7435515fb5e0e6e3c01151e.png', null);
-INSERT INTO `eps_category` VALUES ('35', '未解之谜', 'wjzm', '', '', '12', ',12,35,', '2', '30', 'article', '0', '', '0', '0', '', '2015-03-22 17:15:52', '0', '0', '', '/data/upload/201503/763e4284888d57836b3f825c8441891d.png', null);
-INSERT INTO `eps_category` VALUES ('36', '海洋文学', 'hywx', '海洋文学介绍<br />', '', '11', ',11,36,', '2', '10', 'article', '0', '', '0', '0', '', '2015-03-29 17:29:10', '0', '0', '', '/data/upload/201503/8bc0a11a930dab356cdd94c4fa32483b.png', '');
-INSERT INTO `eps_category` VALUES ('37', '海洋历史', 'hyls', '海洋历史介绍', '', '11', ',11,37,', '2', '20', 'article', '0', '', '0', '0', '', '2015-03-29 17:29:10', '0', '0', '', '', '');
-INSERT INTO `eps_category` VALUES ('38', '海洋地理', 'hydl', '海洋地理介绍', '', '11', ',11,38,', '2', '30', 'article', '0', '', '0', '0', '', '2015-03-29 17:29:10', '0', '0', '', '', '');
-INSERT INTO `eps_category` VALUES ('39', '海洋艺术', 'hyys', '海洋艺术介绍', '', '11', ',11,39,', '2', '40', 'article', '0', '', '0', '0', '', '2015-03-29 17:29:10', '0', '0', '', '', '');
-INSERT INTO `eps_category` VALUES ('40', '海洋民俗', 'hyms', '海洋民俗介绍', '', '11', ',11,40,', '2', '50', 'article', '0', '', '0', '0', '', '2015-03-29 17:29:10', '0', '0', '', '', '');
-INSERT INTO `eps_category` VALUES ('41', '海洋军事', 'hyjs', '海洋军事介绍', '', '11', ',11,41,', '2', '60', 'article', '0', '', '0', '0', '', '2015-03-29 17:29:10', '0', '0', '', '', '');
-INSERT INTO `eps_category` VALUES ('42', '海洋旅游', 'hyly', '海洋旅游介绍', '', '11', ',11,42,', '2', '70', 'article', '0', '', '0', '0', '', '2015-03-29 17:29:10', '0', '0', '', '', '');
-INSERT INTO `eps_category` VALUES ('43', '海上运动', 'hsyd', '海上运动介绍', '', '11', ',11,43,', '2', '80', 'article', '0', '', '0', '0', '', '2015-03-29 17:29:10', '0', '0', '', '/data/upload/201503/74b72f48e107cf9c4e3961ccaeb79d59.png', '');
-INSERT INTO `eps_category` VALUES ('80', '海洋电影', 'hydy', '', '', '13', ',13,44,', '2', '10', 'article', '0', '', '0', '0', '', '2015-03-29 18:02:27', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('81', '海洋动画', 'hydh', '', '', '13', ',13,45,', '2', '20', 'article', '0', '', '0', '0', '', '2015-03-29 18:02:27', '0', '0', '', null, null);
-INSERT INTO `eps_category` VALUES ('82', '海洋游戏', 'hyyx', '', '', '13', ',13,46,', '2', '30', 'article', '0', '', '0', '0', '', '2015-03-29 18:02:27', '0', '0', '', null, null);
+INSERT INTO `eps_category` VALUES ('1', '论坛-资料库', 'zlk', '测试论坛功能', '', '0', ',1,', '1', '10', 'forum', '0', ',高振宝,', '0', '0', '', '2014-12-29 22:02:49', '0', '0', '', null);
+INSERT INTO `eps_category` VALUES ('2', '论坛-畅想园', 'cxy', '', '', '0', ',2,', '1', '20', 'forum', '0', '', '0', '0', '', '2014-12-29 22:02:49', '0', '0', '', null);
+INSERT INTO `eps_category` VALUES ('3', '海洋资料库', 'hyzlk', '二级资料库<br />', '', '1', ',1,3,', '2', '10', 'forum', '1', ',高振宝,', '0', '0', '', '2014-12-29 22:05:22', '0', '0', '', null);
+INSERT INTO `eps_category` VALUES ('4', '动物资料库', 'dongwu', '动物', '动物', '1', ',1,4,', '2', '20', 'forum', '0', ',gaozhenbao,', '0', '0', '', '2014-12-29 22:08:51', '0', '0', '', null);
+INSERT INTO `eps_category` VALUES ('5', '板块A', 'abc', '', '', '2', ',2,5,', '2', '10', 'forum', '0', '', '0', '0', '', '2014-12-29 22:12:03', '0', '0', 'http://localhost/school/index.php', null);
+INSERT INTO `eps_category` VALUES ('6', '123', '', '', '', '0', ',6,', '1', '10', 'product', '0', '', '0', '0', '', '2015-01-05 22:15:14', '0', '0', '', null);
+INSERT INTO `eps_category` VALUES ('10', '资料库', 'zlk', '', '', '0', ',10,', '1', '10', 'article', '0', '', '0', '0', '', '2015-01-18 20:27:29', '0', '0', '', null);
+INSERT INTO `eps_category` VALUES ('8', '我的博客', '', '', '', '0', ',8,', '1', '10', 'blog', '0', '', '0', '0', '', '2015-01-10 10:06:25', '0', '0', '', null);
+INSERT INTO `eps_category` VALUES ('9', '博客', '', '', '', '8', ',8,9,', '2', '10', 'blog', '0', '', '0', '0', '', '2015-01-10 10:06:37', '0', '0', '', null);
+INSERT INTO `eps_category` VALUES ('15', '动物馆', '', '', '', '10', ',10,15,', '2', '10', 'article', '0', '', '0', '0', '', '2015-03-08 17:35:10', '0', '0', '', '/data/upload/201503/3305906adca6449f55e73e6a8f386184.png');
+INSERT INTO `eps_category` VALUES ('11', '人文馆', 'rwg', '', '', '0', ',11,', '1', '20', 'article', '0', '', '0', '0', '', '2015-02-01 11:25:34', '0', '0', '', null);
+INSERT INTO `eps_category` VALUES ('12', '体验宫', 'tyg', '', '', '0', ',12,', '1', '30', 'article', '0', '', '0', '0', '', '2015-02-01 11:25:34', '0', '0', '', null);
+INSERT INTO `eps_category` VALUES ('13', '快乐厅', 'klt', '', '', '0', ',13,', '1', '40', 'article', '0', '', '0', '0', '', '2015-02-01 11:25:34', '0', '0', '', null);
+INSERT INTO `eps_category` VALUES ('14', '畅想园', 'cxy', '', '', '0', ',14,', '1', '50', 'article', '0', '', '0', '0', '', '2015-02-01 11:25:34', '0', '0', '', null);
+INSERT INTO `eps_category` VALUES ('16', '植物馆', '', '', '', '10', ',10,16,', '2', '20', 'article', '0', '', '0', '0', '', '2015-03-08 17:35:10', '0', '0', '', '/data/upload/201503/e1dcb10970d0f32a6b7148b9c180ecf2.png');
+INSERT INTO `eps_category` VALUES ('17', '矿产馆', '', '', '', '10', ',10,17,', '2', '30', 'article', '0', '', '0', '0', '', '2015-03-08 17:35:10', '0', '0', '', '/data/upload/201503/8c7db173c27292b69652d1e8e6b88a91.png');
+INSERT INTO `eps_category` VALUES ('18', '鱼类馆', '', '', '', '15', ',10,15,18,', '3', '10', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/bdccacae8f28ad9ffe5fa04d884ca56a.png');
+INSERT INTO `eps_category` VALUES ('19', '爬行馆', '', '', '', '15', ',10,15,19,', '3', '20', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/ce31ae5d57d58ed8a3c573cc4a374a1c.png');
+INSERT INTO `eps_category` VALUES ('20', '贝类馆', '', '', '', '15', ',10,15,20,', '3', '30', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/3a078f4e889f8abae04ec96409d49b19.png');
+INSERT INTO `eps_category` VALUES ('21', '海兽馆', '', '', '', '15', ',10,15,21,', '3', '40', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/848e3733b7a4727bf6b984a1177c4c9f.png');
+INSERT INTO `eps_category` VALUES ('22', '虾蟹馆', '', '', '', '15', ',10,15,22,', '3', '50', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/2fdaa43b72e8f16b0ee3a059e8ed0efe.png');
+INSERT INTO `eps_category` VALUES ('23', '珊瑚馆', '', '', '', '15', ',10,15,23,', '3', '60', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/fac82cc74e77f604c0b3cb579f41605c.png');
+INSERT INTO `eps_category` VALUES ('24', '海鸟馆', '', '', '', '15', ',10,15,24,', '3', '70', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:19', '0', '0', '', '/data/upload/201503/5abb26afab1e04aeb8880ed7f6860798.png');
+INSERT INTO `eps_category` VALUES ('25', '藻类植物馆', '', '', '', '16', ',10,16,25,', '3', '10', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:50', '0', '0', '', '/data/upload/201503/8769863d2b48bd7357d62315863765c5.png');
+INSERT INTO `eps_category` VALUES ('26', '蕨类植物馆', '', '', '', '16', ',10,16,26,', '3', '20', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:50', '0', '0', '', '/data/upload/201503/2ffa4e8c395a32bd5ae14013a809cd4f.png');
+INSERT INTO `eps_category` VALUES ('27', '种子植物馆', '', '', '', '16', ',10,16,27,', '3', '30', 'article', '0', '', '0', '0', '', '2015-03-08 17:36:50', '0', '0', '', '/data/upload/201503/bae8d6019b0cda032f4b7c652333a98f.png');
+INSERT INTO `eps_category` VALUES ('28', '矿物馆一', '', '', '', '17', ',10,17,28,', '3', '10', 'article', '0', '', '0', '0', '', '2015-03-08 17:37:24', '0', '0', '', '/data/upload/201503/fd9ba47aa1e82844fb883b5f081bab0f.png');
+INSERT INTO `eps_category` VALUES ('29', '矿物馆二', '', '', '', '17', ',10,17,29,', '3', '20', 'article', '0', '', '0', '0', '', '2015-03-08 17:37:24', '0', '0', '', '/data/upload/201503/444240b3bc59991008a35a13c47b6d0e.png');
+INSERT INTO `eps_category` VALUES ('30', '矿物馆三', '', '', '', '17', ',10,17,30,', '3', '30', 'article', '0', '', '0', '0', '', '2015-03-08 17:37:24', '0', '0', '', '/data/upload/201503/44ecb04730d4f5ef3c9ae5983e0ada73.png');
+INSERT INTO `eps_category` VALUES ('31', '矿物馆四', '', '', '', '17', ',10,17,31,', '3', '40', 'article', '0', '', '0', '0', '', '2015-03-08 17:37:24', '0', '0', '', '/data/upload/201503/86dde10d36de41bfc8bb245057f703a2.png');
+INSERT INTO `eps_category` VALUES ('32', '矿物馆五', '', '', '', '17', ',10,17,32,', '3', '50', 'article', '0', '', '0', '0', '', '2015-03-08 17:37:24', '0', '0', '', '/data/upload/201503/7ef6d5282cbc2b920267fdb79f32cd17.png');
 
 -- ----------------------------
 -- Table structure for `eps_config`
@@ -535,9 +510,6 @@ INSERT INTO `eps_relation` VALUES ('article', '4', '18');
 INSERT INTO `eps_relation` VALUES ('article', '5', '11');
 INSERT INTO `eps_relation` VALUES ('article', '6', '13');
 INSERT INTO `eps_relation` VALUES ('article', '7', '17');
-INSERT INTO `eps_relation` VALUES ('article', '8', '18');
-INSERT INTO `eps_relation` VALUES ('article', '9', '33');
-INSERT INTO `eps_relation` VALUES ('article', '10', '33');
 INSERT INTO `eps_relation` VALUES ('blog', '2', '9');
 INSERT INTO `eps_relation` VALUES ('product', '1', '6');
 INSERT INTO `eps_relation` VALUES ('product', '2', '6');
@@ -630,7 +602,7 @@ CREATE TABLE `eps_search_index` (
   UNIQUE KEY `object` (`objectType`,`objectID`),
   KEY `addedDate` (`addedDate`),
   FULLTEXT KEY `content` (`title`,`content`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eps_search_index
@@ -639,13 +611,10 @@ INSERT INTO `eps_search_index` VALUES ('1', 'article', '1', ' 21333 39029', ' 21
 INSERT INTO `eps_search_index` VALUES ('2', 'product', '1', ' CHANPIN1', ' ASDFASDFASDFASDFASDFASFASDFASD', '{\"category\":\"\",\"alias\":\"\"}', '2015-01-05 22:18:45', '2015-01-05 22:18:45', 'normal');
 INSERT INTO `eps_search_index` VALUES ('3', 'product', '2', ' 25308 25308 25308 25308 21543', ' 21571 21571 21571 38169 38169 38169', '{\"category\":\"\",\"alias\":\"\"}', '2015-01-06 22:36:17', '2015-01-06 22:36:17', 'normal');
 INSERT INTO `eps_search_index` VALUES ('4', 'article', '2', ' 21834 21704 21704 21704', ' 38463 33832 24503 fad 38463 33832 24503 21457 23556 28857 21457 28903 39277 38463 33832 24503 21457 39034 20016', '{\"category\":\"\",\"alias\":\"\"}', '2015-01-10 10:06:00', '2015-01-10 10:07:06', 'normal');
-INSERT INTO `eps_search_index` VALUES ('30', 'article', '4', ' 28023 34567 30340 25925 20107', ' 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107', '{\"category\":\"\",\"alias\":\"haizehe\"}', '2015-01-18 20:27:00', '2015-03-29 17:20:51', 'normal');
+INSERT INTO `eps_search_index` VALUES ('9', 'article', '4', ' 28023 34567 30340 25925 20107', ' 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107 28023 34567 30340 25925 20107', '{\"category\":\"\",\"alias\":\"haizehe\"}', '2015-01-18 20:27:00', '2015-03-08 17:42:11', 'normal');
 INSERT INTO `eps_search_index` VALUES ('7', 'article', '5', ' 20154 25991 39302', ' dsdsa', '{\"category\":\"\",\"alias\":\"\"}', '2015-02-01 11:26:00', '2015-02-01 11:26:21', 'normal');
-INSERT INTO `eps_search_index` VALUES ('23', 'article', '6', ' 27426 20048 21381', ' dfsf', '{\"category\":\"\",\"alias\":\"\"}', '2015-02-01 11:26:00', '2015-03-22 18:24:16', 'normal');
+INSERT INTO `eps_search_index` VALUES ('8', 'article', '6', ' 27426 20048 21381', ' dfsf', '{\"category\":\"\",\"alias\":\"\"}', '2015-02-01 11:26:00', '2015-02-01 11:26:51', 'normal');
 INSERT INTO `eps_search_index` VALUES ('10', 'article', '7', ' 26159 22810 23569', ' 36895 24230 36895 24230', '{\"category\":\"\",\"alias\":\"\"}', '2015-03-08 17:42:00', '2015-03-08 17:42:33', 'normal');
-INSERT INTO `eps_search_index` VALUES ('21', 'article', '8', ' wwwwwwww', ' wwwwwwwwwwwwwwwwwwwwwwwwwww', '{\"category\":\"\",\"alias\":\"\"}', '2015-03-15 22:41:00', '2015-03-22 18:15:53', 'normal');
-INSERT INTO `eps_search_index` VALUES ('19', 'article', '9', ' dddddddddddddddddd', ' ddddddddddddddddddddddddd', '{\"category\":\"\",\"alias\":\"\"}', '2015-03-22 17:17:00', '2015-03-22 18:12:35', 'normal');
-INSERT INTO `eps_search_index` VALUES ('28', 'article', '10', ' sss', ' ssssssssssssssss', '{\"category\":\"\",\"alias\":\"\"}', '2015-03-22 18:06:00', '2015-03-22 18:27:46', 'normal');
 
 -- ----------------------------
 -- Table structure for `eps_tag`
@@ -660,7 +629,7 @@ CREATE TABLE `eps_tag` (
   KEY `tag` (`tag`),
   KEY `rank` (`rank`),
   KEY `link` (`link`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of eps_tag
@@ -670,9 +639,6 @@ INSERT INTO `eps_tag` VALUES ('2', '错错错', '', '1');
 INSERT INTO `eps_tag` VALUES ('3', '阿萨德发顺丰', '', '1');
 INSERT INTO `eps_tag` VALUES ('4', '海蜇的故事', '', '1');
 INSERT INTO `eps_tag` VALUES ('5', '速度', '', '1');
-INSERT INTO `eps_tag` VALUES ('6', 'wwwwwwww', '', '1');
-INSERT INTO `eps_tag` VALUES ('7', 'dddddddd', '', '1');
-INSERT INTO `eps_tag` VALUES ('8', 'ssssss', '', '1');
 
 -- ----------------------------
 -- Table structure for `eps_thread`
@@ -747,7 +713,7 @@ CREATE TABLE `eps_user` (
 -- ----------------------------
 -- Records of eps_user
 -- ----------------------------
-INSERT INTO `eps_user` VALUES ('1', 'admin', '5df5c29ae86331e1b5b526ad90d767e4', 'admin', '', 'super', '', '0000-00-00', 'u', '', '', '', '', '', '', '', '', '', '', '', '', '25', '127.0.0.1', '2015-03-29 16:21:08', '0', '', '2014-12-29 21:29:48', '', '0000-00-00 00:00:00', '0');
+INSERT INTO `eps_user` VALUES ('1', 'admin', '5df5c29ae86331e1b5b526ad90d767e4', 'admin', '', 'super', '', '0000-00-00', 'u', '', '', '', '', '', '', '', '', '', '', '', '', '11', '127.0.0.1', '2015-03-11 22:54:20', '0', '', '2014-12-29 21:29:48', '', '0000-00-00 00:00:00', '0');
 INSERT INTO `eps_user` VALUES ('2', 'gaozhenbao', '97b423e48a56f1bec6b5dbf1d5cd8946', '高振宝', '', 'common', '', '0000-00-00', 'u', '11917496@qq.com', '', '', '', '', '', '', '', '1234567', '随便', '', '', '2', '127.0.0.1', '2014-12-29 21:58:57', '0', '', '2014-12-29 21:58:57', '', '0000-00-00 00:00:00', '0');
 INSERT INTO `eps_user` VALUES ('3', 'gzb', '3f5e6c55d80b7c0ca5a45b25268a05e9', 'gao', '', 'no', '', '0000-00-00', 'u', 'gao@123.com', '', '', '', '', '', '', '', '', '', '', '', '2', '127.0.0.1', '2014-12-30 21:54:39', '0', '', '2014-12-30 21:54:39', '', '0000-00-00 00:00:00', '0');
 

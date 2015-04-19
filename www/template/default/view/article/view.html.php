@@ -206,6 +206,7 @@ function get_page(){
 <div class="hidden_content" id="menu_dinianji_txt"><?php echo htmlspecialchars_decode($article->dinianji); ?></div>
 <div class="hidden_content" id="menu_zhongnianji_txt"><?php echo htmlspecialchars_decode($article->zhongnianji); ?></div>
 <div class="hidden_content" id="menu_gaonianji_txt"><?php echo htmlspecialchars_decode($article->gaonianji); ?></div>
+
 <table width="100%" border="0" cellspacing="0" cellpadding="0" height="80">
   <tr>
     <td>&nbsp;</td>
@@ -217,7 +218,7 @@ function get_page(){
           <tr>
             <td width="575">ABCDEFGHIJKLMNOPQRSTUVWXYZ</td>
             <td class="nav_1" width="255">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按首字母查询其他海洋生物</td>
-            <td class="nav_2" width="100">返回前页</td>
+            <td class="nav_2" width="100"><span id="reback">返回前页</span></td>
             <td align="center"><img src="<?php echo $themeRoot?>/common/images/b_img.gif" width="36" height="38"></td>
           </tr>
         </table>

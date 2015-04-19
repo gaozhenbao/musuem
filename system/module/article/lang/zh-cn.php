@@ -18,6 +18,7 @@ $lang->article->categories = '类目';
 $lang->article->title      = '标题';
 $lang->article->en_title      = '英文标题';
 $lang->article->alias      = '别名';
+
 $lang->article->content = '内容';
 
 $lang->article->mingzi= '名字';

@@ -17,6 +17,17 @@ $themeRoot = $webRoot . "template/default/theme/";
   <link href="<?php echo $themeRoot?>common/common.css" rel="stylesheet" type="text/css" />
   <script src="<?php echo $themeRoot?>common/jquery-1.7.1.min.js" type="text/javascript"></script>
     <script src="<?php echo $themeRoot?>common/common.js" type="text/javascript"></script>
+    <?php
+    	  if(!isset($title))   $title    = '';
+  if(!empty($title))   $title   .= $lang->minus;
+  if(empty($keywords)) $keywords = $config->site->keywords;
+  if(empty($desc))     $desc     = $config->site->desc;
+
+  echo html::title($title . $config->site->name);
+  echo html::meta('keywords',    strip_tags($keywords));
+  echo html::meta('description', strip_tags($desc));
+  if(isset($this->config->site->meta)) echo $this->config->site->meta;
+	?>
 <head>
 <body>
 <div class="header">

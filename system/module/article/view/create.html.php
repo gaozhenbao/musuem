@@ -30,7 +30,11 @@
     <?php echo $lang->article->create;?>
     <?php endif;?>
           <script>
+<<<<<<< HEAD
               v.editors = {"id":["content","xingtai","fenbu","shulei","mingzi","fenlei","qixidi","jiegou","xixing","shixing","fanzhi","fayu","qiyuan","wenhua","yongtu","xianzhuang","tupian","qita","dinianji","zhongnianji","gaonianji"],"tools":"full"};
+=======
+              v.editors = {"id":["content","xingtai","fenbu","shulei","mingzi"],"tools":"full"};
+>>>>>>> 5035c051f727e09290e22f6097713717c5d3f54c
           </script>
   </strong></div>
   <div class='panel-body'>
