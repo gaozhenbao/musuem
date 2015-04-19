@@ -125,25 +125,29 @@
           <?php echo html::hidden('img_url', '', "class='form-control' id='img_url'");?>
         </tr>
         <tr>
-          <th><?php echo $lang->article->content;?></th>
-          <td colspan='2'><?php echo html::textarea('content', '', "rows='6' class='form-control'");?></td>
+          <th><?php echo $lang->article->mingzi;?></th>
+          <td colspan='2'><?php echo html::textarea('mingzi', '', "rows='6' class='form-control'");?></td>
         </tr>
-        <tr>
+                 <tr>
+          <th><?php echo $lang->article->shulei;?></th>
+          <td colspan='2'><?php echo html::textarea('shulei', '', "rows='6' class='form-control'");?></td>
+        </tr>
+               <tr>
+          <th><?php echo $lang->article->fenbu;?></th>
+          <td colspan='2'><?php echo html::textarea('fenbu', '', "rows='6' class='form-control'");?></td>
+        </tr>
+                <tr>
           <th><?php echo $lang->article->xingtai;?></th>
           <td colspan='2'><?php echo html::textarea('xingtai', '', "rows='6' class='form-control'");?></td>
         </tr>
         <tr>
-          <th><?php echo $lang->article->fenbu;?></th>
-          <td colspan='2'><?php echo html::textarea('fenbu', '', "rows='6' class='form-control'");?></td>
+          <th><?php echo $lang->article->content;?></th>
+          <td colspan='2'><?php echo html::textarea('content', '', "rows='6' class='form-control'");?></td>
         </tr>
-         <tr>
-          <th><?php echo $lang->article->shulei;?></th>
-          <td colspan='2'><?php echo html::textarea('shulei', '', "rows='6' class='form-control'");?></td>
-        </tr>
-         <tr>
-          <th><?php echo $lang->article->mingzi;?></th>
-          <td colspan='2'><?php echo html::textarea('mingzi', '', "rows='6' class='form-control'");?></td>
-        </tr>
+
+ 
+
+         
         <tr>
           <th><?php echo $lang->article->addedDate;?></th>
           <td>

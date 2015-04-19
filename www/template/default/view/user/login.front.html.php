@@ -71,4 +71,4 @@ a .icon-sina{background-position: 0 -48px;}
     </div>
   </div>
 </div>
-<?php include TPL_ROOT . 'common/footer.html.php';?>
+<?php //include TPL_ROOT . 'common/footer.html.php';?>

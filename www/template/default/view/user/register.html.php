@@ -46,4 +46,4 @@
     </div>
   </div>    
 </div>
-<?php include TPL_ROOT . 'common/footer.html.php'; ?>
+<?php //include TPL_ROOT . 'common/footer.html.php'; ?>

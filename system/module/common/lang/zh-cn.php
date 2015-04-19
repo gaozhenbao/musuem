@@ -111,18 +111,18 @@ $lang->sitemap->common = '站点地图';
 $lang->menu = new stdclass();
 $lang->menu->admin    = '首页|admin|index|';
 $lang->menu->article  = '文章|article|admin|';
-$lang->menu->blog     = '博客|article|admin|type=blog';
+//$lang->menu->blog     = '博客|article|admin|type=blog';
 $lang->menu->grade    = '班级|article|admin|type=grade';
-$lang->menu->product  = '产品|product|admin|';
-$lang->menu->book     = '手册|book|admin|';
+//$lang->menu->product  = '产品|product|admin|';
+//$lang->menu->book     = '手册|book|admin|';
 $lang->menu->page     = '单页|article|admin|type=page';
-$lang->menu->forum    = '论坛|forum|admin|';
+//$lang->menu->forum    = '论坛|forum|admin|';
 $lang->menu->site     = '站点|site|setbasic|';
 $lang->menu->ui       = '界面|ui|setlogo|';
 $lang->menu->company  = '学校|company|setbasic|';
 $lang->menu->user     = '会员|user|admin|';
 $lang->menu->feedback = '反馈|message|admin|';
-$lang->menu->package  = '扩展|package|browse|';
+//$lang->menu->package  = '扩展|package|browse|';
 
 /* Menu groups setting. */
 $lang->menuGroups = new stdclass();

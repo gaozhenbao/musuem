@@ -52,10 +52,10 @@ class article extends control {
         } else {
             die($this->fetch('error', 'index'));
         }
-        $types = $this->dao->select('id,name,imgurl')->from('eps_category')->where('parent')->eq($_GET['categoryID'])->fetchAll();
+        $types = $this->dao->select('id,name,imgurl,`desc`')->from('eps_category')->where('parent')->eq($_GET['categoryID'])->fetchAll();
          foreach ($types as $key=>$value) {
                    $chid = $value->id;
-                   $ch_types = $this->dao->select('id,name,imgurl')->from('eps_category')->where('parent')->eq($chid)->fetchAll();
+                   $ch_types = $this->dao->select('id,name,imgurl,`desc`')->from('eps_category')->where('parent')->eq($chid)->fetchAll();
                    $types[$key]->child = $ch_types;
         }
         $this->view->title = $title;

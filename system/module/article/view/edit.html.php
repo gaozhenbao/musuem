@@ -121,26 +121,27 @@
       </tr>
       </tbody>
       <tbody class='articleInfo'>
+               <tr>
+          <th><?php echo $lang->article->mingzi;?></th>
+          <td colspan='2'><?php echo html::textarea('mingzi', $article->mingzi, "rows='6' class='form-control'");?></td>
+        </tr>
+                 <tr>
+          <th><?php echo $lang->article->shulei;?></th>
+          <td colspan='2'><?php echo html::textarea('shulei', $article->shulei, "rows='6' class='form-control'");?></td>
+        </tr>
+                <tr>
+          <th><?php echo $lang->article->fenbu;?></th>
+          <td colspan='2'><?php echo html::textarea('fenbu', $article->fenbu, "rows='6' class='form-control'");?></td>
+        </tr>
+              <tr>
+          <th><?php echo $lang->article->xingtai;?></th>
+          <td colspan='2'><?php echo html::textarea('xingtai', $article->xingtai, "rows='6' class='form-control'");?></td>
+        </tr>
       <tr>
         <th><?php echo $lang->article->content;?></th>
-        <td colspan='2'><?php echo html::textarea('content', htmlspecialchars($article->content), "rows='10' class='form-control'");?></td>
+        <td colspan='2'><?php echo html::textarea('content', $article->content, "rows='10' class='form-control'");?></td>
       </tr>
-      <tr>
-          <th><?php echo $lang->article->xingtai;?></th>
-          <td colspan='2'><?php echo html::textarea('xingtai', htmlspecialchars($article->xingtai), "rows='6' class='form-control'");?></td>
-        </tr>
-        <tr>
-          <th><?php echo $lang->article->fenbu;?></th>
-          <td colspan='2'><?php echo html::textarea('fenbu', htmlspecialchars($article->fenbu), "rows='6' class='form-control'");?></td>
-        </tr>
-         <tr>
-          <th><?php echo $lang->article->shulei;?></th>
-          <td colspan='2'><?php echo html::textarea('shulei', htmlspecialchars($article->shulei), "rows='6' class='form-control'");?></td>
-        </tr>
-         <tr>
-          <th><?php echo $lang->article->mingzi;?></th>
-          <td colspan='2'><?php echo html::textarea('mingzi', htmlspecialchars($article->mingzi), "rows='6' class='form-control'");?></td>
-        </tr>
+
       <tr>
         <th><?php echo $lang->article->addedDate;?></th>
         <td>

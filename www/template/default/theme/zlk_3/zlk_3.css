@@ -1,9 +1,9 @@
 body{ font-size:12px;padding:0px;margin:0px; background:url(../common/images/bg.jpg) repeat-x; font-family: "微软雅黑","Microsoft yahei",Tahoma,Verdana,Arial,sans-serif;}
 	.center{ width:1020px; margin:0 auto;}
 	.center{ width:1020px; margin:0 auto; height:565px; margin-bottom:50px; position:relative;}
-	.center_s{width:1020px; margin:0 auto; height:565px; overflow:hidden;}
+	.center_s{width:1020px; margin:0 auto; height:565px; overflow:hidden; position:relative;}
 	.center_content{ width:135665px;}
-		.center_list{ width:100%; height:565px; float:left;}
+		.center_list{ width:8888px; height:565px; float:left; position:absolute; left:0px; top:0px;}
 			.center_list ul{ margin:0px; padding:0px;}
 			.center_list ul li{ width:240px; height:565px; float:left; overflow-y:hidden;}
 			.center_listspace{ width:70px; height:565px; float:left; }

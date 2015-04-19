@@ -2,10 +2,12 @@ body{background:url(images/rwg_bg.jpg) no-repeat center top;}
 .center{ width:900px; margin:0 auto; }
 	.banner{ width:890px;  margin:0 auto; height:485px;margin-top:-125px;}
 	.banner_center{ width:644px; height:360px; background:url(images/banner_centerbg.png) no-repeat; padding:56px 0 0 0; margin:0 auto; margin:70px 0 0 0;}
-		.banner_txt{ width:474px; height:299px; margin:0 auto; background:#FFF; position:relative;}
+		.banner_txt{ width:474px; height:299px; margin:0 auto; background:#FFF; position:relative; overflow:hidden;}
 			.banner_txt_img{ width:474px; height:299px;}
-			.banner_content{ width:474px; height:100px; background:#63676e;filter:alpha(opacity=90); -moz-opacity:0.9; opacity:0.9; position:absolute; left:0px; bottom:0px;}
-			.banner_contenttitle{ width:32px; height:100px; background:#0099cc; float:left; margin:-10px 0 0 10px; text-align:center; font-size:16px; letter-spacing:10px; font-weight:bold; color:#FFF; padding:0 0 0 8px;}
+		.banner_txt_scro{width:88888px; height:100px; position:absolute; left:0px; bottom:0px; }
+			.banner_content{ width:474px; height:100px; background:#63676e;filter:alpha(opacity=90); -moz-opacity:0.9; opacity:0.9; float:left;}
+			.banner_content a{ color:#FFF;}
+			.banner_contenttitle{ width:32px; height:95px; background:#0099cc; float:left; margin:-10px 0 0 10px; text-align:center; font-size:16px; letter-spacing:10px; font-weight:bold; color:#FFF; padding:5px 0 0 8px;}
 			.bcontent{ width:404px; height:80px; float:left; line-height:25px; color:#FFF; padding:10px; overflow-y:auto; text-align:left;}
 .footer{ width:1080px; height:266px; background:url(images/footer_bg.jpg); margin:0 auto;}
 .footer img{ float:left; margin:0 0 44px 9px;}
