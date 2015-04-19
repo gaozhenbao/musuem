@@ -1327,3 +1327,101 @@
   SELECT t1.id, title, alias FROM eps_article AS t1  LEFT JOIN eps_relation AS t2  ON t1.id = t2.id  WHERE t2.category  = '19' AND t1.addedDate  <= '2015-04-01 03:55:26' AND t1.status  = 'normal' AND t1.addedDate  > '2015-04-01 02:00:00' ORDER BY t1.addedDate LIMIT 1 
   UPDATE eps_article SET  views = views + 1  WHERE id  = '11'
 
+20150401 03:57:07: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150401 04:03:07: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150401 04:09:06: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150401 04:15:07: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150401 04:21:07: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150401 04:27:07: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150401 04:33:07: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150401 04:39:06: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150401 04:50:44: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150401 04:51:07: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150401 04:57:07: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150401 05:03:07: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150401 05:09:07: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+
+20150401 05:15:07: /school/admin.php?m=misc&f=ping&t=html
+  SELECT * FROM eps_config WHERE owner IN ('system','admin') ORDER BY id
+  SELECT alias, id as category, type as module FROM eps_category WHERE alias  != '' AND type IN ('article','product')
+  SELECT alias, id, 'page' as module FROM eps_article WHERE type  = 'page'
+  SELECT id, alias FROM eps_category WHERE type  = 'forum'
+  SELECT id, alias FROM eps_category WHERE type  = 'blog'
+

@@ -33,36 +33,61 @@
 <!--  --><?php //endif;?>
 
   <div class='row'>
-    <div class='col-md-4 col-sm-6'> 
-      <div class="shortcut article-admin">
-        <?php echo html::a($this->createLink('article', 'create'), '<h3>' . $lang->admin->shortcuts->article . '</h3>')?>
+      <div class='col-md-4 col-sm-6'>
+          <div class="shortcut article-admin">
+              <?php echo html::a($this->createLink('article', 'create','type=article&categoryID=10'), '<h3>' . $lang->admin->shortcuts->ziliaoku . '</h3>')?>
+          </div>
       </div>
-    </div>
-    <div class='col-md-4 col-sm-6'>
-      <div class="shortcut product-admin">
-        <?php echo html::a($this->createLink('product', 'create'), '<h3>' . $lang->admin->shortcuts->product . '</h3>')?>
+      <div class='col-md-4 col-sm-6'>
+        <div class="shortcut product-admin">
+          <?php echo html::a($this->createLink('article', 'create','type=article&categoryID=11'), '<h3>' . $lang->admin->shortcuts->renwenguan . '</h3>')?>
+        </div>
       </div>
-    </div>
+      <div class='col-md-4 col-sm-6'>
+        <div class="shortcut site-admin">
+          <?php echo html::a($this->createLink('article', 'create','type=article&categoryID=12'), '<h3>' . $lang->admin->shortcuts->tiyangong . '</h3>')?>
+        </div>
+      </div>
+      <div class='col-md-4 col-sm-6'>
+        <div class="shortcut company-admin">
+          <?php echo html::a($this->createLink('article', 'create','type=article&categoryID=13'), '<h3>' . $lang->admin->shortcuts->kuaileting . '</h3>')?>
+        </div>
+      </div>
+      <div class='col-md-4 col-sm-6'>
+        <div class="shortcut contact-admin">
+          <?php echo html::a($this->createLink('article', 'create','type=article&categoryID=14'), '<h3>' . $lang->admin->shortcuts->changxiangyuan . '</h3>')?>
+        </div>
+      </div>
+<!--    <div class='col-md-4 col-sm-6'> -->
+<!--      <div class="shortcut article-admin">-->
+<!--        --><?php //echo html::a($this->createLink('article', 'create'), '<h3>' . $lang->admin->shortcuts->article . '</h3>')?>
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class='col-md-4 col-sm-6'>-->
+<!--      <div class="shortcut product-admin">-->
+<!--        --><?php //echo html::a($this->createLink('product', 'create'), '<h3>' . $lang->admin->shortcuts->product . '</h3>')?>
+<!--      </div>-->
+<!--    </div>-->
     <div class='col-md-4 col-sm-6'>
       <div class="shortcut feedback-admin">
         <?php echo html::a($this->createLink('message', 'admin'), '<h3>' . $lang->admin->shortcuts->feedback . '</h3>')?>  
       </div>
     </div>
-    <div class='col-md-4 col-sm-6'>
-      <div class="shortcut site-admin">
-        <?php echo html::a($this->createLink('site', 'setBasic'), '<h3>' . $lang->admin->shortcuts->site . '</h3>')?>
-      </div>
-    </div>
-    <div class='col-md-4 col-sm-6'>
-      <div class="shortcut company-admin">
-        <?php echo html::a($this->createLink('company', 'setBasic'), '<h3>' . $lang->admin->shortcuts->company . '</h3>')?>
-      </div>
-    </div>
-    <div class='col-md-4 col-sm-6'>
-      <div class="shortcut contact-admin">
-        <?php echo html::a($this->createLink('company', 'setcontact'), '<h3>' . $lang->admin->shortcuts->contact . '</h3>')?>  
-      </div>
-    </div>      
+<!--    <div class='col-md-4 col-sm-6'>-->
+<!--      <div class="shortcut site-admin">-->
+<!--        --><?php //echo html::a($this->createLink('site', 'setBasic'), '<h3>' . $lang->admin->shortcuts->site . '</h3>')?>
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class='col-md-4 col-sm-6'>-->
+<!--      <div class="shortcut company-admin">-->
+<!--        --><?php //echo html::a($this->createLink('company', 'setBasic'), '<h3>' . $lang->admin->shortcuts->company . '</h3>')?>
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class='col-md-4 col-sm-6'>-->
+<!--      <div class="shortcut contact-admin">-->
+<!--        --><?php //echo html::a($this->createLink('company', 'setcontact'), '<h3>' . $lang->admin->shortcuts->contact . '</h3>')?><!--  -->
+<!--      </div>-->
+<!--    </div>      -->
   </div>
 </div>
 <?php include '../../common/view/footer.admin.html.php';?>

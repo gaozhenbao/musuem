@@ -5,7 +5,9 @@ $path = array_keys($category->pathNames);
 	$type = $_GET['type'];
 	if($type <> ''){
 		$type_url = '_'.$type;
-	}
+	}else{
+        $type_url = '';
+    }
 	$file_url = $prex.$type_url.'/'.$prex.$type_url.'.html.php';
 
 	if($type == 'list'){

@@ -22,7 +22,7 @@ $lang->back2Top   = '返回顶部';
 
 /* Lang items for xirang. */
 $lang->chanzhiEPS     = '蝉知企业门户系统';
-$lang->chanzhiEPSx    = '蝉知';
+$lang->chanzhiEPSx    = '海洋博物馆';
 $lang->agreement      = "已阅读并同意<a href='http://api.chanzhi.org/goto.php?item=license' target='_blank'>《蝉知企业门户系统使用协议》</a>。<span class='text-danger'>未经许可，不得去除蝉知系统的任何标志及链接。</span>";
 $lang->poweredBy      = " <span id='poweredBy'><a href='http://www.chanzhi.org/?v=%s' target='_blank' title='%s'>%s</a></span>";
 $lang->poweredByAdmin = "<span id='poweredBy'>由 <a href='http://www.chanzhi.org/?v=%s' target='_blank' title='%s'>蝉知企业门户系统 %s</a> 强力驱动！</span>";
@@ -110,19 +110,24 @@ $lang->sitemap->common = '站点地图';
 /* The main menus. */
 $lang->menu = new stdclass();
 $lang->menu->admin    = '首页|admin|index|';
-$lang->menu->article  = '文章|article|admin|';
-$lang->menu->blog     = '博客|article|admin|type=blog';
-$lang->menu->grade    = '班级|article|admin|type=grade';
-$lang->menu->product  = '产品|product|admin|';
-$lang->menu->book     = '手册|book|admin|';
-$lang->menu->page     = '单页|article|admin|type=page';
-$lang->menu->forum    = '论坛|forum|admin|';
-$lang->menu->site     = '站点|site|setbasic|';
-$lang->menu->ui       = '界面|ui|setlogo|';
-$lang->menu->company  = '学校|company|setbasic|';
-$lang->menu->user     = '会员|user|admin|';
-$lang->menu->feedback = '反馈|message|admin|';
-$lang->menu->package  = '扩展|package|browse|';
+//$lang->menu->article  = '文章|article|admin|';
+//$lang->menu->blog     = '博客|article|admin|type=blog';
+$lang->menu->ziliaoku  = '资料库|article|admin|type=article&categoryID=10';
+$lang->menu->renwenguan  = '人文馆|article|admin|type=article&categoryID=11';
+$lang->menu->tiyangong  = '体验宫|article|admin|type=article&categoryID=12';
+$lang->menu->kuaileting  = '快乐厅|article|admin|type=article&categoryID=13';
+$lang->menu->changxiangyuan  = '畅想园|article|admin|type=article&categoryID=14';
+//$lang->menu->product  = '产品|product|admin|';
+//$lang->menu->book     = '手册|book|admin|';
+//$lang->menu->page     = '单页|article|admin|type=page';
+//$lang->menu->forum    = '论坛|forum|admin|';
+//$lang->menu->site     = '站点|site|setbasic|';
+//$lang->menu->ui       = '界面|ui|setlogo|';
+//$lang->menu->company  = '学校|company|setbasic|';
+$lang->menu->grade    = '班级管理|article|admin|type=grade';
+$lang->menu->user     = '会员管理|user|admin|';
+$lang->menu->feedback = '留言管理|message|admin|';
+//$lang->menu->package  = '扩展|package|browse|';
 
 /* Menu groups setting. */
 $lang->menuGroups = new stdclass();
