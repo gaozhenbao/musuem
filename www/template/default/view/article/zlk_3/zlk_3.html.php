@@ -4,7 +4,7 @@
 	$(document).ready(function(){
 		var size = parseInt($(".center_list li").size());
 		var all_length = size*240+(size-1)*20;
-		var liwidth = 310;
+		var liwidth = 260;
 		var winwidth = parseInt($(".center_s").width());
 		$("#right_nav").click(function(){
 			var offset = parseInt($('.center_list').css("left"));

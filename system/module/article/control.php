@@ -40,7 +40,6 @@ class article extends control {
 
         $this->app->loadClass('pager', $static = true);
         $pager = new pager($recTotal = 0, $this->config->article->recPerPage, $pageID);
-
         $categoryID = is_numeric($categoryID) ? $categoryID : $category->id;
         $articles = $this->article->getList('article', $this->tree->getFamily($categoryID, 'article'), 'addedDate_desc', $pager);
 
@@ -58,16 +57,21 @@ class article extends control {
                    $ch_types = $this->dao->select('id,name,imgurl,`desc`')->from('eps_category')->where('parent')->eq($chid)->fetchAll();
                    $types[$key]->child = $ch_types;
         }
-        $this->view->title = $title;
-        $this->view->keywords = $keywords;
-        $this->view->desc = $desc;
-        $this->view->category = $category;
-        $this->view->articles = $articles;
-        $this->view->pager = $pager;
-        $this->view->types = $types;
-        $this->view->contact = $this->loadModel('company')->getContact();
-
-        $this->display();
+		if($_GET['sj'] == 'json'){
+			echo json_encode($articles);
+		}else{
+			 $this->view->title = $title;
+			$this->view->keywords = $keywords;
+			$this->view->desc = $desc;
+			$this->view->category = $category;
+			$this->view->articles = $articles;
+			$this->view->pager = $pager;
+			$this->view->types = $types;
+			$this->view->contact = $this->loadModel('company')->getContact();
+	
+			$this->display();
+		}
+       
     }
 
     /**

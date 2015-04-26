@@ -9,13 +9,12 @@ $path = array_keys($category->pathNames);
         $type_url = '';
     }
 	$file_url = $prex.$type_url.'/'.$prex.$type_url.'.html.php';
-
-	if($type == 'list'){
-		include 'news_list/news_list.php';
-	}else if(file_exists($file_url)){
+	if(file_exists($file_url)){
 		include $file_url;
 	}else{
-		echo "<script>alert('链接不存在！');window.location.href='./';</script>";
+		include "news_list/news_list.php";
+	/*	echo "<script>alert('链接不存在！');window.location.href='./';</script>";
 		die();
+		*/
 	}
 ?>

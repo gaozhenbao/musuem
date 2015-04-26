@@ -7,7 +7,7 @@
     <div class='list list-condensed'>
       <header><h2><?php echo $category->name;?></h2></header>
       <section class='items items-hover'>
-        <?php foreach($articles as $article):?>
+        <?php  foreach($articles as $article):?>
         <?php $url = inlink('view', "id=$article->id", "category={$category->alias}&name=$article->alias");?>
         <div class='item'>
           <div class='item-heading'>
