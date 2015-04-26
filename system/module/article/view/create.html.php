@@ -124,9 +124,9 @@
           </td>
           <?php echo html::hidden('img_url', '', "class='form-control' id='img_url'");?>
         </tr>
-        <tr style="display: none">
-            <th><?php echo $lang->article->content;?></th>
-            <td colspan='2'><?php echo html::textarea('content', '默认内容', "rows='6' class='form-control'");?></td>
+        <tr >
+            <th>整体介绍</th>
+            <td colspan='2'><?php echo html::textarea('content', '', "rows='6' class='form-control'");?></td>
         </tr>
         <tr>
             <th><?php echo $lang->article->mingzi;?></th>

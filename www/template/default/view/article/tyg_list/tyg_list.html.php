@@ -22,9 +22,9 @@ function getNewsList(pageID){
 							return;
 						}
 						if(li_txt == ''){
-							li_txt = '<li><div class="center_listtxt"><div class="center_listimg" id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'">'+o_data[i].title+'</a></div></div></div><div class="center_listtxtspace"></div>';
+							li_txt = '<li><div class="center_listtxt"><div class="center_listimg" id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>">'+o_data[i].title+'</a></div></div></div><div class="center_listtxtspace"></div>';
 						}else{
-							li_txt += '<div class="center_listtxt"><div class="center_listimg"  id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'">'+o_data[i].title+'</a></div></div></div></li>';
+							li_txt += '<div class="center_listtxt"><div class="center_listimg"  id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>">'+o_data[i].title+'</a></div></div></div></li>';
 							if(n < count(o_data) -1){
 								li_txt += '<div class="center_listspace"></div>';
 							}

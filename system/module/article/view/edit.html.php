@@ -121,8 +121,8 @@
 <!--      </tr>-->
       </tbody>
       <tbody class='articleInfo'>
-      <tr style="display: none">
-          <th><?php echo $lang->article->content;?></th>
+      <tr>
+          <th>整体介绍</th>
           <td colspan='2'><?php echo html::textarea('content', $article->content, "rows='6' class='form-control'");?></td>
       </tr>
       <tr>
