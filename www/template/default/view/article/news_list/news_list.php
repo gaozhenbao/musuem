@@ -1,5 +1,5 @@
 <link rel='stylesheet' href='/template/default/theme/default/all.css?v=3.3' type='text/css' media='screen' />
-<link href="<?php echo $themeRoot?>zlk_list/zlk_list.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $themeRoot?>zlk/zlk_list.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
 <div class="center">
 <div class='row'>

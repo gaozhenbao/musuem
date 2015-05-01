@@ -10,7 +10,7 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(images/tyg_listbg.jp
 			.center_listtxt{ width:259px; height:262px; position:relative;}
 			.center_title{ width:259px; height:72px; position:absolute; left:0px; bottom:0px; background:#CCC; filter:alpha(opacity=80); -moz-opacity:0.8; opacity:0.8; }
 			.center_title_a{width:259px; text-align:center; line-height:72px; font-weight:bold; font-size:28px; position:absolute; left:0px; bottom:0px; text-align:center; overflow-x:hidden; text-shadow: #158 0 1px 0;}
-			.center_title_a a{ color:#0090f0;}
+			.center_title_a a{ color:#0090f0;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:0 10px 0 10px;}
 				
 		.left_nav{ width:97px; height:97px; position:absolute; left:-105px; top:250px;}
 				.left_navbg1{ background:url(images/left_nav.png)}

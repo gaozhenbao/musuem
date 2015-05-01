@@ -3,3 +3,4 @@ system/tmp
 system/config/my.php
 system/tmp/log/*
 /system/tmp/log/*
+/www/data/*

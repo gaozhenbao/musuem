@@ -8,7 +8,7 @@ $path = array_keys($category->pathNames);
 	}else{
         $type_url = '';
     }
-	$file_url = $prex.$type_url.'/'.$prex.$type_url.'.html.php';
+	$file_url = $prex.'/'.$prex.$type_url.'.html.php';
 	if(file_exists($file_url)){
 		include $file_url;
 	}else{

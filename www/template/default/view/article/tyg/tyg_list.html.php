@@ -13,7 +13,7 @@ function getNewsList(pageID){
 				if(count(o_data) == 0){
 					sj = false;
 				}else{
-					var n =1;
+					var n =0;
 					for(i in o_data){
 						n++;
 						//验证是否已经存在
@@ -22,12 +22,12 @@ function getNewsList(pageID){
 							return;
 						}
 						if(li_txt == ''){
-							li_txt = '<li><div class="center_listtxt"><div class="center_listimg" id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>">'+o_data[i].title+'</a></div></div></div><div class="center_listtxtspace"></div>';
+							li_txt = '<li><div class="center_listtxt"><div class="center_listimg" id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'">'+o_data[i].title+'</a></div></div></div><div class="center_listtxtspace"></div>';
 						}else{
-							li_txt += '<div class="center_listtxt"><div class="center_listimg"  id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>">'+o_data[i].title+'</a></div></div></div></li>';
-							if(n < count(o_data) -1){
+							li_txt += '<div class="center_listtxt"><div class="center_listimg"  id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'">'+o_data[i].title+'</a></div></div></div></li>';
+						//	if(n < count(o_data) -1){
 								li_txt += '<div class="center_listspace"></div>';
-							}
+						//	}
 							$(".center_list>ul").append(li_txt);
 							li_txt = '';
 						}
@@ -57,7 +57,6 @@ function getNewsList(pageID){
 					getNewsList(pageID);
 				}
 			}else if(all_length+offset-winwidth < liwidth && all_length !== 0 && all_length+offset-winwidth > 0){
-				alert(all_length+offset-winwidth);
 				var length = offset - (all_length+offset-winwidth);
 				all_length = 0;
 				$(".center_list").animate({left:length+'px'});

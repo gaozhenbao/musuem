@@ -9,7 +9,7 @@ css::internal($article->css);
 js::execute($article->js);
 ?>
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $themeRoot?>zlk_view/zlk_view.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $themeRoot?>zlk/zlk_view.css" rel="stylesheet" type="text/css" />
 <script>
 var now_page = 1;
 $(document).ready(function(){

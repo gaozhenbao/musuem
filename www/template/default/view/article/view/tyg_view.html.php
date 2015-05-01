@@ -9,15 +9,17 @@ css::internal($article->css);
 js::execute($article->js);
 ?>
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $themeRoot?>rwg/rwg_content.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $themeRoot?>tyg/tyg_view.css" rel="stylesheet" type="text/css" />
 <script>
 var now_page = 1;
 $(document).ready(function(){
-	get_page()
+
+	get_page();
+    $('.tag_nav:first').trigger('click');
 	//翻页
 	$(".page_2 a").live("click",function(){
 	  	now_page = parseInt($(this).text());
-		var top = (now_page -1)*518;
+		var top = (now_page -1)*346;
 		$(".right_txt").animate({scrollTop:top+'px'},100);
 		$(".page_2 a").removeClass("page_2_bg");
 		$(this).addClass('page_2_bg');
@@ -27,7 +29,7 @@ $(document).ready(function(){
 		if(now_page <=2){
 			return;
 		}else{
-			var top = (parseInt(now_page) -1)*518;
+			var top = (parseInt(now_page) -1)*246;
 			$(".right_txt").animate({scrollTop:top+'px'},100);
 			$(".page_2 a").removeClass("page_2_bg");
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
@@ -39,8 +41,8 @@ $(document).ready(function(){
 			return;
 		}else{
 			now_page --;
-			var top = (parseInt(now_page) -1)*518;
-			$(".right_txt").animate({scrollTop:top+'px'},518);
+			var top = (parseInt(now_page) -1)*346;
+			$(".right_txt").animate({scrollTop:top+'px'},100);
 			$(".page_2 a").removeClass("page_2_bg");
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
 		}
@@ -52,7 +54,7 @@ $(document).ready(function(){
 			return;
 		}else{
 			now_page++;
-			var top = (parseInt(now_page) -1)*518;
+			var top = (parseInt(now_page) -1)*346;
 			$(".right_txt").animate({scrollTop:top+'px'},100);
 			$(".page_2 a").removeClass("page_2_bg");
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
@@ -62,9 +64,9 @@ $(document).ready(function(){
 
 function get_page(){
 			//分页
-	var s_h = 518;
+	var s_h = 346;
 	var con_height = parseInt($(".right_txt").height());
-	var n_page = Math.ceil(con_height/s_h);
+	var n_page = Math.ceil(con_height/346);
 	if(n_page ==0){
 		n_page =1;
 	}
@@ -88,8 +90,8 @@ function get_page(){
     </div>
 	<div class="left">
     	<div class="left_txt">
-        	<img src="<?php echo $article->img_url; ?>" width="380" height="372">
-            <div class="left_title"></div><div class="left_title_f"><a href="#"><?php echo $article->title; ?></a></div>
+        	<img src="<?php echo $article->img_url; ?>" width="463" height="474">
+            <div class="left_title"><?php echo $article->title; ?></div>
         </div>
     </div>
     <div class="page">
@@ -110,6 +112,4 @@ function get_page(){
 
             </div>
 </div>
-<?php include TPL_ROOT . 'common/footer.html.php';?>
-</body>
-</html>
+<?php include TPL_ROOT . 'common/footer.html.php';  ?>

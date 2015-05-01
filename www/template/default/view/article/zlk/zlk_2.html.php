@@ -1,4 +1,4 @@
-<link href="<?php echo $themeRoot?>zlk_2/zlk_2.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $themeRoot?>zlk/zlk_2.css" rel="stylesheet" type="text/css" />
 
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
 <script>

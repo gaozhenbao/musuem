@@ -1,4 +1,4 @@
-<link href="<?php echo $themeRoot?>rwg_2/rwg_2.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $themeRoot?>rwg/rwg_2.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
 <script>
 	$(document).ready(function(){
