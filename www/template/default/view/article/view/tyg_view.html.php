@@ -1,5 +1,5 @@
-<?php 
-include TPL_ROOT . 'common/header.html.php'; 
+<?php
+include TPL_ROOT . 'common/header.html.php';
 /* set categoryPath for topNav highlight. */
 js::set('path', $article->path);
 js::set('articleID', $article->id);
@@ -24,7 +24,7 @@ $(document).ready(function(){
 		$(".page_2 a").removeClass("page_2_bg");
 		$(this).addClass('page_2_bg');
 	});
-	
+
 	$(".page_1").click(function(){
 		if(now_page <=2){
 			return;
@@ -35,7 +35,7 @@ $(document).ready(function(){
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
 		}
 	})
-	
+
 		$("#pre_page").click(function(){
 		if(now_page <=1){
 			return;
@@ -47,7 +47,7 @@ $(document).ready(function(){
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
 		}
 	})
-	
+
 			$("#next_page").click(function(){
 				var a_size = $(".page_2 a").size();
 		if(now_page >= a_size){
@@ -66,7 +66,7 @@ function get_page(){
 			//分页
 	var s_h = 346;
 	var con_height = parseInt($(".right_txt").height());
-	var n_page = Math.ceil(con_height/346);
+	var n_page = Math.ceil(con_height/s_h);
 	if(n_page ==0){
 		n_page =1;
 	}
@@ -85,7 +85,12 @@ function get_page(){
 <div class="center">
 	<div class="right">
     	<div class="right_txt">
-        	<?php echo $article->content; ?>
+        	<?php   $keys_array = array('content','xingtai','fenbu','shulei','mingzi','fenlei','xixing','qixidi','jiegou','shixing','fanzhi','fayu','qiyuan','wenhua','yongtu','xianzhuang','tupian','qita','dinianji','zhongnianji','gaonianji');?>
+            <?php foreach($keys_array as $value){ ?>
+                <?php    if(!empty($article->$value) && $article->$value !='默认内容'){ ?>
+                    <?php    echo htmlspecialchars_decode($article->$value); ?>
+                <?php }?>
+                <?php } ?>
         </div>
     </div>
 	<div class="left">
@@ -101,7 +106,7 @@ function get_page(){
                     	<div class="page_1" id="pre_page">上一页</div>                    </td>
                     <td>
                     	<div class="page_2">
-                        	
+
                         </div>
                     </td>
                     <td>

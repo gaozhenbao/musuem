@@ -28,8 +28,8 @@
         </div>
           <div class='form-group'>
               <label class="col-sm-3 control-label"><?php echo $lang->user->grade;?></label>
-              <div class='col-sm-9'>
-                  <select name="grade"  class="col-sm-6" style="height:34px">
+              <div class='col-sm-4'>
+                  <select name="grade"  class="col-sm-9" style="height:34px">
                       <?php foreach( $grades as $key=>$grade):?>
                           <?php foreach($grade['class'] as $k=>$class):?>
                               <option value="<?php echo $key.','.$k;?>" style=";height:22px"><?php echo $grade['name'].'&nbsp;&nbsp;'.$class;?></option>
@@ -37,11 +37,8 @@
                       <?php endforeach;?>
                   </select>
               </div>
+              <div class='col-sm-5'><?php echo html::submitButton($lang->register,'btn btn-primary btn-block') . html::hidden('referer', $referer);?></div>
           </div>
-        <div class='form-group'>
-          <div class="col-sm-3"></div>
-          <div class='col-sm-9'><?php echo html::submitButton($lang->register,'btn btn-primary btn-block') . html::hidden('referer', $referer);?></div>
-        </div>
       </form>
     </div>
   </div>    

@@ -186,7 +186,7 @@ function get_page(){
              </div>
         </div>
     </div>
-<div class="hidden_content" id="menu_mingzi_txt"><?php echo htmlspecialchars_decode($article->mingzi); ?></div>
+<div class="hidden_content" id="menu_mingzi_txt"><?php echo htmlspecialchars_decode($article->content); ?></div>
 <div class="hidden_content" id="menu_shulei_txt"><?php echo htmlspecialchars_decode($article->shulei); ?></div>
 <div class="hidden_content" id="menu_fenlei_txt"><?php echo htmlspecialchars_decode($article->fenlei); ?></div>
 <div class="hidden_content" id="menu_fenbu_txt"><?php echo htmlspecialchars_decode($article->fenbu); ?></div>
