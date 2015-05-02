@@ -57,6 +57,9 @@ class control
      */
     public $dao;
 
+    //mysqli db connect
+    public $db;
+
     /**
      * The $post object, used to access the $_POST var.
      * 
@@ -220,11 +223,18 @@ class control
      */
     public function loadModel($moduleName = '')
     {
+
         if(empty($moduleName)) $moduleName = $this->moduleName;
         $modelFile = helper::setModelFile($moduleName);
 
+        if(!$this->db){
+            global $config;
+            include '../../lib/dao/mysqli.php';
+            $this->db = new DBMySQLi($config->db->host,$config->db->user,$config->db->password,$config->db->name,$config->db->port);
+        }
+
         /* If no model file, try load config. */
-        if(!is_file($modelFile)  or !helper::import($modelFile)) 
+        if(!is_file($modelFile)  or !helper::import($modelFile))
         {
             $this->app->loadConfig($moduleName, false);
             $this->app->loadLang($moduleName);

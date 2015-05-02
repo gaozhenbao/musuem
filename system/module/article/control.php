@@ -205,63 +205,68 @@ class article extends control {
      * @return void
      */
     public function view($articleID) {
-        $article = $this->article->getByID($articleID);
-        if (!$article)
-            die($this->fetch('error', 'index'));
+        if(isset($_GET['s'])){
+            $result = $this->db->query("select * from eps_category");
+        }else{
+            $article = $this->article->getByID($articleID);
+            if (!$article)
+                die($this->fetch('error', 'index'));
 
-        if ($article->link) {
-            $this->dao->update(TABLE_ARTICLE)->set('views = views + 1')->where('id')->eq($articleID)->exec();
-            helper::header301($article->link);
-        }
+            if ($article->link) {
+                $this->dao->update(TABLE_ARTICLE)->set('views = views + 1')->where('id')->eq($articleID)->exec();
+                helper::header301($article->link);
+            }
 
-        /* fetch category for display. */
-        $category = array_slice($article->categories, 0, 1);
-        $category = $category[0]->id;
+            /* fetch category for display. */
+            $category = array_slice($article->categories, 0, 1);
+            $category = $category[0]->id;
 
-        $currentCategory = $this->session->articleCategory;
-        if ($currentCategory > 0) {
-            if (isset($article->categories[$currentCategory])) {
-                $category = $currentCategory;
-            } else {
-                foreach ($article->categories as $articleCategory) {
-                    if (strpos($articleCategory->path, $currentCategory))
-                        $category = $articleCategory->id;
+            $currentCategory = $this->session->articleCategory;
+            if ($currentCategory > 0) {
+                if (isset($article->categories[$currentCategory])) {
+                    $category = $currentCategory;
+                } else {
+                    foreach ($article->categories as $articleCategory) {
+                        if (strpos($articleCategory->path, $currentCategory))
+                            $category = $articleCategory->id;
+                    }
                 }
             }
+
+            $category = $this->loadModel('tree')->getByID($category);
+
+            $title = $article->title . ' - ' . $category->name;
+            $keywords = $article->keywords . ' ' . $category->keywords . ' ' . $this->config->site->keywords;
+            $desc = strip_tags($article->summary);
+            //取上一个，下一个ID
+            if($_GET['pt'] == 'klt'){
+                $id = $_GET['id'];
+                $categoryID = $_GET['categoryID'];
+                $pre = $this->dao->select('id')->from('eps_relation')->where("id < $id AND category = $categoryID")->orderBy("id DESC")->limit(1)->fetchAll();
+                $next = $this->dao->select('id')->from('eps_relation')->where("id > $id AND category = $categoryID")->orderBy("id ASC")->limit(1)->fetchAll();
+            }
+            foreach ($types as $key=>$value) {
+                $chid = $value->id;
+                $ch_types = $this->dao->select('id,name,imgurl,`desc`')->from('eps_category')->where('parent')->eq($chid)->fetchAll();
+                $types[$key]->child = $ch_types;
+            }
+            $this->view->preid = $pre[0]->id;
+            $this->view->nextid = $next[0]->id;
+            $this->view->title = $title;
+            $this->view->keywords = $keywords;
+            $this->view->desc = $desc;
+            $this->view->article->preid = $pre[0]->id;
+            $this->view->article->nextid = $next[0]->id;
+            $this->view->article = $article;
+            $this->view->prevAndNext = $this->article->getPrevAndNext($article->id, $category->id);
+            $this->view->category = $category;
+            $this->view->contact = $this->loadModel('company')->getContact();
+
+            $this->dao->update(TABLE_ARTICLE)->set('views = views + 1')->where('id')->eq($articleID)->exec();
+
+            $this->display();
         }
 
-        $category = $this->loadModel('tree')->getByID($category);
-
-        $title = $article->title . ' - ' . $category->name;
-        $keywords = $article->keywords . ' ' . $category->keywords . ' ' . $this->config->site->keywords;
-        $desc = strip_tags($article->summary);
-		//取上一个，下一个ID
-		if($_GET['pt'] == 'klt'){
-			$id = $_GET['id'];
-			$categoryID = $_GET['categoryID'];
-			$pre = $this->dao->select('id')->from('eps_relation')->where("id < $id AND category = $categoryID")->orderBy("id DESC")->limit(1)->fetchAll();
-			$next = $this->dao->select('id')->from('eps_relation')->where("id > $id AND category = $categoryID")->orderBy("id ASC")->limit(1)->fetchAll();
-		}
-         foreach ($types as $key=>$value) {
-                   $chid = $value->id;
-                   $ch_types = $this->dao->select('id,name,imgurl,`desc`')->from('eps_category')->where('parent')->eq($chid)->fetchAll();
-                   $types[$key]->child = $ch_types;
-        }
-		$this->view->preid = $pre[0]->id;
-		$this->view->nextid = $next[0]->id;
-        $this->view->title = $title;
-        $this->view->keywords = $keywords;
-        $this->view->desc = $desc;
-		$this->view->article->preid = $pre[0]->id;
-		$this->view->article->nextid = $next[0]->id;
-        $this->view->article = $article;
-        $this->view->prevAndNext = $this->article->getPrevAndNext($article->id, $category->id);
-        $this->view->category = $category;
-        $this->view->contact = $this->loadModel('company')->getContact();
-
-        $this->dao->update(TABLE_ARTICLE)->set('views = views + 1')->where('id')->eq($articleID)->exec();
-
-        $this->display();
     }
 
     /**
