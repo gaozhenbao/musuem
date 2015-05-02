@@ -79,6 +79,22 @@
             </div>
           </td>
         </tr>
+        <tr>
+          <th>指导教师</th>
+          <td colspan='2'>
+            <div class='input-group'>
+              <?php echo html::input('daoshi', '', "class='form-control'");?>
+            </div>
+          </td>
+        </tr>
+         <tr>
+          <th>创作时间</th>
+          <td colspan='2'>
+            <div class='input-group'>
+              <?php echo html::input('shijian', '', "class='form-control'");?>
+            </div>
+          </td>
+        </tr>
         <tr class='link'>
           <th><?php echo $lang->article->link;?></th>
           <td colspan='2'>
