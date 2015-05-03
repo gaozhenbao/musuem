@@ -22,7 +22,11 @@ class userModel extends model
      */
     public function getList($pager = null, $user = '', $provider = '', $admin = '')
     {
-        return $this->dao->select('u.*, o.provider as provider, openID as openID')->from(TABLE_USER)->alias('u')
+
+//        $users = $this->db->query("SELECT u.*,g.name as gradeName,c.name as className FROM ".TABLE_USER." u LEFT JOIN ".TABLE_GRADE." g ON u.gradeId= g.gradeId LEFT JOIN ".TABLE_CLASS." c ON u.classId = c.classId");
+        return $this->dao->select('u.*, g.name as gradeName,c.name as className,o.provider as provider, openID as openID')->from(TABLE_USER)->alias('u')
+            ->leftJoin(TABLE_GRADE)->alias('g')->on('u.gradeId= g.gradeId')
+            ->leftJoin(TABLE_CLASS)->alias('c')->on('u.classId = c.classId')
             ->leftJoin(TABLE_OAUTH)->alias('o')->on('u.account = o.account')->where('1')
             ->beginIF($user)
             ->andWhere('u.account')->like("%{$user}%")
@@ -87,7 +91,7 @@ class userModel extends model
         $users = $this->dao->select('account, admin, realname, `join`, last, visits')->from(TABLE_USER)->where('account')->in($users)->fetchAll('account');
         if(!$users) return array();
 
-        foreach($users as $account => $user)
+        foreach($users->rows as $account => $user)
         {
             $user->realname  = empty($user->realname) ? $account : $user->realname;
             $user->shortLast = substr($user->last, 5, -3);

@@ -23,7 +23,7 @@ js::set('admin', $this->get->admin);
         <?php echo html::hidden('m','user') . html::hidden('f','admin');?>
         <div class="input-group">
           <?php
-          echo html::input('user', $this->get->user, "class='form-control search-query' placeholder='{$lang->user->inputUserName}'"); 
+          echo html::input('user', $this->get->user, "class='form-control search-query' placeholder='{$lang->user->inputUserName}'");
           ?>
           <span class="input-group-btn">
             <?php echo html::submitButton($lang->user->searchUser, "btn btn-primary"); ?>
@@ -38,8 +38,8 @@ js::set('admin', $this->get->admin);
         <th><?php echo $lang->user->id;?></th>
         <th><?php echo $lang->user->realname;?></th>
         <th><?php echo $lang->user->account;?></th>
-        <th><?php echo $lang->user->gender;?></th>
-        <th class='text-left'><?php echo $lang->user->company;?></th>
+<!--        <th>--><?php //echo $lang->user->gender;?><!--</th>-->
+        <th><?php echo $lang->user->grade;?></th>
         <th><?php echo $lang->user->join;?></th>
         <th><?php echo $lang->user->visits;?></th>
         <th><?php echo $lang->user->last;?></th>
@@ -54,8 +54,8 @@ js::set('admin', $this->get->admin);
       <td><?php echo $user->id;?></td>
       <td><?php echo $user->realname;?></td>
       <td><?php echo $user->account;?></td>
-      <td><?php $gender = $user->gender; echo $lang->user->genderList->$gender;?></td>
-      <td><?php echo $user->company;?></td>
+<!--      <td>--><?php //$gender = $user->gender; echo $lang->user->genderList->$gender;?><!--</td>-->
+      <td><?php echo $user->gradeName.$user->className;?></td>
       <td><?php echo substr($user->join, 0, 10);?></td>
       <td><?php echo $user->visits;?></td>
       <td><?php echo $user->last;?></td>

@@ -229,7 +229,7 @@ class control
 
         if(!$this->db){
             global $config;
-            include '../../lib/dao/mysqli.php';
+            include_once '../../lib/dao/mysqli.php';
             $this->db = new DBMySQLi($config->db->host,$config->db->user,$config->db->password,$config->db->name,$config->db->port);
         }
 
