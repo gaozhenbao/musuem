@@ -12,7 +12,7 @@
         </div>
         <div class='form-group'>
           <label class="col-sm-3 control-label"><?php echo $lang->user->realname;?></label>
-          <div class='col-sm-9'><?php echo html::input('realname', '', "class='form-control'");?></div>
+          <div class='col-sm-9'><?php echo html::input('realname', '', "class='form-control' placeholder='" . $lang->user->register->lblName . "'");?></div>
         </div>
         <div class='form-group'>
           <label class="col-sm-3 control-label"><?php echo $lang->user->password;?></label>
@@ -20,7 +20,7 @@
         </div>
         <div class='form-group'>
           <label class="col-sm-3 control-label"><?php echo $lang->user->password2;?></label>
-          <div class='col-sm-9'><?php echo html::password('password2', '', "class='form-control'");?></div>
+          <div class='col-sm-9'><?php echo html::password('password2', '', "class='form-control' placeholder='" . $lang->user->register->lblPassword2 . "'");?></div>
         </div>
         <div class='form-group' style="display: none">
           <label class="col-sm-3 control-label"><?php echo $lang->user->company;?></label>

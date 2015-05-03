@@ -107,11 +107,13 @@ $lang->user->genderList->u = '';
 
 $lang->user->register  = new stdclass();
 $lang->user->register->common      = '注册';
-$lang->user->register->welcome     = '欢迎注册成为会员';
+$lang->user->register->welcome     = '欢迎加入海洋博物馆';
 $lang->user->register->why         = '欢迎注册成为我们的会员，您可以享受更多的服务。';
 $lang->user->register->lblUserInfo = '用户信息';
-$lang->user->register->lblAccount  = '建议使用自己名字的汉语拼音';
+$lang->user->register->lblAccount  = '自己名字的汉语拼音就挺好哦';
+$lang->user->register->lblName  = '你叫什么名字?';
 $lang->user->register->lblPassword = '数字和字母组成，六位以上';
+$lang->user->register->lblPassword2 = '要记住你的密码哦';
 
 $lang->user->notice = new stdclass();
 $lang->user->notice->password = '字母和数字组合，最少六位';
