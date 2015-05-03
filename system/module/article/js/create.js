@@ -244,3 +244,27 @@ function ajaxFileUpload(clicks) {
     })
     return false;
 }
+
+function ajaxFileUploadFlv(clicks) {
+    $.ajaxFileUpload({
+        url: '/admin.php?m=tree&f=uploadflv&type=article',
+        secureuri: false,
+        fileElementId: clicks,
+        dataType: 'json',
+        success: function(data, status) {
+            if (typeof (data.error) != 'undefined') {
+                if (data.error != '') {
+                    alert(data.error);
+                } else {
+                    alert('上传成功');
+                    $("#toppic_flv").html('<embed src='+data.msg+' type="application/x-shockwave-flash" width="50" height="50">');
+                    $("#flv_url").val(data.msg);
+                }
+            }
+        },
+        error: function(data, status, e) {
+            alert(e);
+        }
+    })
+    return false;
+}

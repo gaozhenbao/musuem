@@ -117,6 +117,47 @@ class tree extends control
     }
 
     /**
+     * @DESC 上传图片
+     * * */
+    public function uploadflv($categoryID) {
+        $Root = $_SERVER['DOCUMENT_ROOT'];
+        $file = '/data/upload/'.date('Ym').'/';
+        //上传大小为500kb
+        $s_size = 50000 * 1024 * 1024;
+        $s_file_url = $Root.$file;
+        $error = "";
+        $msg = "";
+        $s_file_name = $_FILES['flvurl_f']['name'];
+        $s_file_size = $_FILES['flvurl_f']['size'];
+        $s_file_Tmpname = $_FILES['flvurl_f']['tmp_name'];
+        $a_file_types = explode(".", $_FILES['flvurl_f']['name']);
+        $s_file_type = $a_file_types[count($a_file_types) - 1];
+        if (empty($s_file_Tmpname) || 'none' == $s_file_Tmpname) {
+            $error = '请选择要上传的文件';
+        } else {
+            //验证上传文件大小
+            if ($s_size < $s_file_size) {
+                $error = '文件大小超出限制，请重新上传';
+            }
+            //验证图片格式,支持jpg,png,gif,bmp
+            if ("flv" != strtolower($s_file_type) & "mp4" != strtolower($s_file_type) & "swf" != strtolower($s_file_type)) {
+                $error = '上传格式错误,请重新上传';
+            }
+            //验证目录
+            if(!file_exists($s_file_url)){
+                mkdir($s_file_url);
+            }
+            //满足条件则上传
+            $s_news_name = md5(time()) . '.' . $s_file_type;
+            move_uploaded_file($s_file_Tmpname, $s_file_url . $s_news_name);
+            if (!file_exists($s_file_url . $s_news_name)) {
+                $error = '上传失败！';
+            }
+        }
+        $this->OutputMessage($error, $file . $s_news_name);
+    }
+
+    /**
      * @Description   :输出上传提示信息
      * @Author        :fxw
      * @Param         : $error 上传错误返回信息  $msg 上传成功返回信息

@@ -88,13 +88,6 @@
             </div>
           </td>
         </tr>
-<!--      <tr class='link'>-->
-<!--        <th>--><?php //echo $lang->article->link;?><!--</th>-->
-<!--        <td colspan='2'>-->
-<!--          <div class='required required-wrapper'></div>-->
-<!--          --><?php //echo html::input('link', $article->link, "class='form-control' placeholder='{$lang->article->placeholder->link}'");?>
-<!--        </td>-->
-<!--      </tr>-->
       <tbody class='articleInfo'>
       <tr>
           <th><?php echo $lang->category->imgurl?></th>
@@ -117,24 +110,27 @@
           </td>
           <?php echo html::hidden('img_url', $article->img_url, "class='form-control' id='img_url'");?>
         </tr>
-<!--      <tr>-->
-<!--        <th>--><?php //echo $lang->article->alias;?><!--</th>-->
-<!--        <td colspan='2'>-->
-<!--          <div class='input-group'>-->
-<!--            --><?php //if($type == 'page'):?>
-<!--            <span class="input-group-addon">http://--><?php //echo $this->server->http_host . $config->webRoot?><!--page/</span>-->
-<!--            --><?php //else:?>
-<!--            <span class="input-group-addon">http://--><?php //echo $this->server->http_host . $config->webRoot . $type?><!--/id_</span>-->
-<!--            --><?php //endif;?>
-<!--            --><?php //echo html::input('alias', $article->alias, "class='form-control' placeholder='{$lang->alias}'");?>
-<!--            <span class='input-group-addon w-70px'>.html</span>-->
-<!--          </div>-->
-<!--        </td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <th>--><?php //echo $lang->article->summary;?><!--</th>-->
-<!--        <td colspan='2'>--><?php //echo html::textarea('summary', $article->summary, "rows='2' class='form-control'");?><!--</td>-->
-<!--      </tr>-->
+      <tr>
+          <th>影视文件</th>
+          <td colspan='2'>
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                      <td width="230"><input type="file" id="flvurl_f" name="flvurl_f"></td>
+                      <td width="50"><input type="button"  id="idflv_front_btn" onClick="ajaxFileUploadFlv('flvurl_f');" value="上传"></td>
+                      <td>
+                          <?php
+                          if($article->flv_url <> ''){
+                              echo '<span id="toppic_flv"><embed src="'.$article->flv_url.'" type="application/x-shockwave-flash" width="50" height="50"><span>';
+                          }else{
+                              echo '<span id="toppic_flv"><span>';
+                          }
+                          ?>
+                      </td>
+                  </tr>
+              </table>
+          </td>
+          <?php echo html::hidden('flv_url', $article->flv_url, "class='form-control' id='flv_url'");?>
+      </tr>
       </tbody>
       <tbody class='articleInfo'>
       <tr>

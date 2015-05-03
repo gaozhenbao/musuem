@@ -144,6 +144,27 @@
           </td>
           <?php echo html::hidden('img_url', '', "class='form-control' id='img_url'");?>
         </tr>
+        <tr>
+            <th>影视文件</th>
+            <td colspan='2'>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="230"><input type="file" id="flvurl_f" name="flvurl_f"></td>
+                        <td width="50"><input type="button"  id="idflv_front_btn" onClick="ajaxFileUploadFlv('flvurl_f');" value="上传"></td>
+                        <td>
+                            <?php
+                            if($article->flv_url <> ''){
+                                echo '<span id="toppic_flv"><embed src="'.$article->flv_url.'" type="application/x-shockwave-flash" width="50" height="50"><span>';
+                            }else{
+                                echo '<span id="toppic_flv"><span>';
+                            }
+                            ?>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <?php echo html::hidden('flv_url', $article->flv_url, "class='form-control' id='flv_url'");?>
+        </tr>
         <tr >
             <th>整体介绍</th>
             <td colspan='2'><?php echo html::textarea('content', '', "rows='6' class='form-control'");?></td>
