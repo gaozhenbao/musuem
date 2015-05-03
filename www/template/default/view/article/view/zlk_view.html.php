@@ -234,7 +234,6 @@ function get_page(){
     	<div class="search_txt_1"><a href="#">动物馆</a></div>
         <div class="search_txt_2"><a href="#">大马哈鱼</a></div>
     </div>
-    <div class="search_title"></div>
 </div>
 <script type="text/javascript">
     $('.search-letter').bind('click',function(){
