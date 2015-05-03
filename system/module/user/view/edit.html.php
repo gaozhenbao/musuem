@@ -13,12 +13,12 @@
                 <?php echo html::input('realname', $user->realname, "class='form-control'");?>
               </div>
             </div>
-            <div class='form-group'>
-              <label for='email' class='col-md-2 col-sm-3 control-label'><?php echo $lang->user->email;?></label>
-              <div class='col-md-4 col-sm-6'>
-                <?php echo html::input('email', $user->email, "class='form-control'");?>
-              </div>
-            </div>
+<!--            <div class='form-group'>-->
+<!--              <label for='email' class='col-md-2 col-sm-3 control-label'>--><?php //echo $lang->user->email;?><!--</label>-->
+<!--              <div class='col-md-4 col-sm-6'>-->
+<!--                --><?php //echo html::input('email', $user->email, "class='form-control'");?>
+<!--              </div>-->
+<!--            </div>-->
             <div class='form-group'>
               <label for='password' class='col-md-2 col-sm-3 control-label'><?php echo $lang->user->password;?></label>
               <div class='col-md-4 col-sm-6'>

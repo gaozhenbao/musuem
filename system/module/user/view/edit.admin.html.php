@@ -15,10 +15,10 @@
             <td><?php echo $lang->user->student;?><input name='admin' type='radio' value='no' <?php if($user->admin == 'no') echo 'checked';?>></td>
             <td></td>
         </tr>  
-        <tr>
-          <th><?php echo $lang->user->email;?></th>
-          <td colspan="3"><?php echo html::input('email', $user->email, "class='form-control'");?></td><td></td>
-        </tr>  
+<!--        <tr>-->
+<!--          <th>--><?php //echo $lang->user->email;?><!--</th>-->
+<!--          <td colspan="3">--><?php //echo html::input('email', $user->email, "class='form-control'");?><!--</td><td></td>-->
+<!--        </tr>  -->
         <tr>
           <th><?php echo $lang->user->password;?></th>
           <td colspan="3"><?php echo html::password('password1', '', "class='form-control' autocomplete='off'")?></td><td><span class='text-info'><?php echo $lang->user->control->lblPassword; ?></span></td>
@@ -27,10 +27,23 @@
           <th><?php echo $lang->user->password2;?></th>
           <td colspan="3"><?php echo html::password('password2', '', "class='form-control'");?></td><td></td>
         </tr>  
-        <tr>
-          <th><?php echo $lang->user->company;?></th>
-          <td colspan="3"><?php echo html::input('company', $user->company, "class='form-control'");?></td><td></td>
-        </tr>  
+<!--        <tr>-->
+<!--          <th>--><?php //echo $lang->user->company;?><!--</th>-->
+<!--          <td colspan="3">--><?php //echo html::input('company', $user->company, "class='form-control'");?><!--</td><td></td>-->
+<!--        </tr>  -->
+          <tr>
+          <th><?php echo $lang->user->grade;?></th>
+          <td>
+              <select name="grade"  class="col-sm-9" style="height:34px">
+                  <option value="">请选择班级</option>
+                  <?php foreach( $grades as $key=>$grade):?>
+                      <?php foreach($grade['class'] as $k=>$class):?>
+                          <option value="<?php echo $key.','.$k;?>" <?php if($key==$user->gradeId && $k==$user->classId) echo 'selected';?> style=";height:22px"><?php echo $grade['name'].'&nbsp;&nbsp;'.$class;?></option>
+                      <?php endforeach;?>
+                  <?php endforeach;?>
+              </select>
+          </td>
+          </tr>
         <tr>
           <th><?php echo $lang->user->address;?></th>
           <td colspan="6"><?php echo html::input('address', $user->address, "class='form-control'");?></td>
@@ -51,10 +64,10 @@
           <th><?php echo $lang->user->qq;?></th>
           <td colspan="3"><?php echo html::input('qq', $user->qq, "class='form-control'");?></td><td></td>
         </tr>  
-        <tr>
-          <th><?php echo $lang->user->gtalk;?></th>
-          <td colspan="3"><?php echo html::input('gtalk', $user->gtalk, "class='form-control'");?></td><td></td>
-        </tr>  
+<!--        <tr>-->
+<!--          <th>--><?php //echo $lang->user->gtalk;?><!--</th>-->
+<!--          <td colspan="3">--><?php //echo html::input('gtalk', $user->gtalk, "class='form-control'");?><!--</td><td></td>-->
+<!--        </tr>  -->
         <tr><th></th><td colspan="2"><?php echo html::submitButton();?></td></tr>
       </table>
     </form>        

@@ -270,13 +270,18 @@ class userModel extends model
             ->removeIF(RUN_MODE != 'admin', 'admin')
             ->get();
 
+        $grade = explode(',',$user->grade);
+
+        $user->gradeId = empty($grade[0])?null:$grade[0];
+        $user->classId = isset($grade[1])?$grade[1]:null;
+        unset($user->grade);
         return $this->dao->update(TABLE_USER)
             ->data($user, $skip = 'password1,password2')
             ->autoCheck()
-            ->batchCheck($this->config->user->require->edit, 'notempty')
-            ->check('email', 'email')
-            ->check('email', 'unique', "account!='$account'")
-            ->checkIF($this->post->gtalk != false, 'gtalk', 'email')
+//            ->batchCheck($this->config->user->require->edit, 'notempty')
+//            ->check('email', 'email')
+//            ->check('email', 'unique', "account!='$account'")
+//            ->checkIF($this->post->gtalk != false, 'gtalk', 'email')
             ->where('account')->eq($account)
             ->exec();
     }

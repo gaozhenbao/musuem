@@ -281,6 +281,14 @@ class user extends control
         }
 
         $this->view->user = $this->user->getByAccount($account);
+        $grades = $this->user->getAllGradesandClasses();
+        $gradeArr = array();
+        foreach($grades as $key => $value){
+            $gradeArr[$value->gradeId]['name'] = $value->gradeName;
+            $gradeArr[$value->gradeId]['gradeId'] = $value->gradeId;
+            $gradeArr[$value->gradeId]['class'][$value->classId] = $value->className;
+        }
+        $this->view->grades = $gradeArr;
         if(RUN_MODE == 'admin') 
         { 
             $this->display('user', 'edit.admin');
