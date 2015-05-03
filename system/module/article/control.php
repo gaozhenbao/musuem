@@ -206,7 +206,8 @@ class article extends control {
      */
     public function view($articleID) {
         if(isset($_GET['s'])){
-            $result = $this->db->query("select * from eps_category");
+            $result = $this->db->query("select a.* from ".TABLE_COSLER." a LEFT JOIN ".TABLE_COSLER." c ON c.PY = hzcode('".$this->db->escape($_GET['s'])."') INNER JOIN ".TABLE_RELATION." r ON r.type='article' AND r.category=10 AND r.id=a.id WHERE a.id <> ".$articleID);
+            var_dump($result);
         }else{
             $article = $this->article->getByID($articleID);
             if (!$article)
