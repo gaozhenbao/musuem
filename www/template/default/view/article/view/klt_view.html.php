@@ -10,6 +10,7 @@ js::execute($article->js);
 ?>
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $themeRoot?>klt/klt_view.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<?php echo $themeRoot?>/klt/swfobject.js"></script>
 <script>
 var now_page = 1;
 $(document).ready(function(){
@@ -58,6 +59,10 @@ $(document).ready(function(){
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
 		}
 	})
+	
+	$(".title_close").click(function(){
+		$(".left_title_f,.left_title").hide();
+	})
 })
 
 function get_page(){
@@ -79,6 +84,7 @@ function get_page(){
 }
 
 </script>
+
 <!--center-->
 <div class="center">
 	<div class="right">
@@ -87,9 +93,33 @@ function get_page(){
         </div>
     </div>
 	<div class="left">
-    	<div class="left_txt">
-        	<img src="<?php echo $article->img_url; ?>" width="490" height="498">
-            <div class="left_title"></div><div class="left_title_f"><a href="#"><?php echo $article->title; ?></a></div>
+    	<div class="left_txt" id="CuPlayer">
+        	<?php
+            	if(!empty($article->flv_url)){
+			?>
+        	<script type="text/javascript"> 
+var so = new SWFObject("<?php echo $themeRoot?>/klt/CuPlayerMiniV10_Black_S.swf","CuPlayer","490","498","9","#000000");
+so.addParam("allowfullscreen","true");
+so.addParam("allowscriptaccess","always");
+so.addParam("wmode","opaque");
+so.addParam("quality","high");
+so.addParam("salign","lt");
+so.addVariable("CuPlayerFile","<?php echo $article->flv_url; ?>"); //绝对地址 
+so.addVariable("CuPlayerImage","/cu/FreeDown/Images/flashChangfa2.jpg");
+so.addVariable("CuPlayerShowImage","true");
+so.addVariable("CuPlayerWidth","490");
+so.addVariable("CuPlayerHeight","498");
+so.addVariable("CuPlayerAutoPlay","false");
+so.addVariable("CuPlayerAutoRepeat","false");
+so.addVariable("CuPlayerAutoRepeat","false");
+so.addVariable("CuPlayerShowControl","true");
+so.addVariable("CuPlayerAutoHideControl","false");
+so.write("CuPlayer"); 
+</script>
+<?php }else{ ?>
+<img src="<?php echo $article->img_url; ?>" width="490" height="498">
+<?php } ?>
+            <div class="left_title"></div><div class="left_title_f"><span class="title_close">关闭</span><a href="#"><?php echo $article->title; ?></a></div>
         </div>
     </div>
     <div class="page">
