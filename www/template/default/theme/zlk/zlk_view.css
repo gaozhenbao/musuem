@@ -29,3 +29,11 @@
 			.bottom_txt{ width:1020px; margin:0 auto; height:44px; color:#FFF; font-size:18px; letter-spacing:10px;}
 				.nav_1{ background:url(../common/images/nav_1.gif) 0px 12px no-repeat; letter-spacing:0px;}
 				.nav_2{ background:url(../common/images/nav_2.gif) right center no-repeat;letter-spacing:0px; text-align:right; padding:0 30px 0 0;}
+				.srearch{ width:480px; height:460px; position:fixed; top:50%; left:50%; margin-top:-230px; margin-left:-240px; background:#FFF;}
+				.search_txt{ width:480px; height:400px; overflow-y:auto; overflow-x:hidden;}
+				.search_txt_1{ width:450px; height:40px; line-height:40px; font-size:20px; font-weight:bold; padding:0 0 0 30px;}
+				.search_txt_1 a{ color:#0099cc;}
+				.search_txt_2{ width:430px; height:30px;padding:0 0 0 50px; font-size:16px; font-weight:bold; line-height:30px;}
+				.search_txt_2 a{ color:#000;}
+				.search_title{ width:480px; height:60px; background:#000; line-height:60px; color:#FFF; font-size:24px; letter-spacing:2px; text-align:center;}
+				.search_close{ width:30px; height:20px; position:absolute; top:0px; right:0px; line-height:20px;}

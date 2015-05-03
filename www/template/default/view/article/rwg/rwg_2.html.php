@@ -53,9 +53,9 @@
           <?php if($i%2 <> 0){
 			  $str = '<li><div class="center_listtxt">
 						<div class="center_img">
-							<a href="./?m=article&f=browse&categoryID='.$val->id.'&pt=rwg&type=list"><img src="'.$val->imgurl.'" width="218" height="205"></a>
+							<a href="./?m=article&f=browse&categoryID='.$val->id.'&pt=rwg&type=list&moduleID='.$val->id.'"><img src="'.$val->imgurl.'" width="218" height="205"></a>
                         	<div class="center_titlebg1">
-                            	<a href="./?m=article&f=browse&categoryID='.$val->id.'&pt=rwg&type=list"><div class="center_title">'.$val->name.'</div></a>
+                            	<a href="./?m=article&f=browse&categoryID='.$val->id.'&pt=rwg&type=list&moduleID='.$val->id.'"><div class="center_title">'.$val->name.'</div></a>
                             </div>
                         </div>
                     </div><div class="center_listtxtspace"></div>';
@@ -65,9 +65,9 @@
           }else{
 				$str .= '<div class="center_listtxt">
                     	<div class="center_img">
-							<a href="./?m=article&f=browse&categoryID='.$val->id.'&pt=rwg&type=list"><img src="'.$val->imgurl.'" width="218" height="205"></a>
+							<a href="./?m=article&f=browse&categoryID='.$val->id.'&pt=rwg&type=list&moduleID='.$val->id.'"><img src="'.$val->imgurl.'" width="218" height="205"></a>
                         	<div class="center_titlebg1">
-                            	<a href="./?m=article&f=browse&categoryID='.$val->id.'&pt=rwg&type=list"><div class="center_title">'.$val->name.'</div></a>
+                            	<a href="./?m=article&f=browse&categoryID='.$val->id.'&pt=rwg&type=list&moduleID='.$val->id.'"><div class="center_title">'.$val->name.'</div></a>
                             </div>
                         </div>
                     </div></li>'; 
