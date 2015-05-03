@@ -1,7 +1,6 @@
 <link rel='stylesheet' href='/template/default/theme/default/all.css?v=3.3' type='text/css' media='screen' />
-<link href="<?php echo $themeRoot?>zlk/zlk_list.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
-<div class="center">
+<div class="center" style="margin:0 auto; width:800px; margin-bottom:150px;">
 <div class='row'>
   <div class='col-md-9 col-main'>
     <div class='list list-condensed'>
