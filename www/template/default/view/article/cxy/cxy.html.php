@@ -6,13 +6,13 @@
             	<table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td rowspan="3" width="81"><img src="<?php echo $themeRoot?>cxy/images/1_title.png" width="81" height="227"></td>
-                    <td><img src="<?php echo $themeRoot?>cxy/images/1_1.png" width="183" height="78"></td>
+                    <td><a href="./?m=article&f=browse&categoryID=93&type=list&pt=cxy"><img src="<?php echo $themeRoot?>cxy/images/1_1.png" width="183" height="78"></a></td>
                   </tr>
                   <tr>
-                    <td><img src="<?php echo $themeRoot?>cxy/images/1_2.png" width="183" height="72"></td>
+                    <td><a href="./?m=article&f=browse&categoryID=94&type=list&pt=cxy"><img src="<?php echo $themeRoot?>cxy/images/1_2.png" width="183" height="72"></a></td>
                   </tr>
                   <tr>
-                    <td><img src="<?php echo $themeRoot?>cxy/images/1_3.png" width="183" height="73"></td>
+                    <td><a href="./?m=article&f=browse&categoryID=95&type=list&pt=cxy"><img src="<?php echo $themeRoot?>cxy/images/1_3.png" width="183" height="73"></a></td>
                   </tr>
                 </table>
 
@@ -23,10 +23,10 @@
             <td><img src="<?php echo $themeRoot?>cxy/images/2_title.png" width="263" height="67"></td>
           </tr>
           <tr>
-            <td><img src="<?php echo $themeRoot?>cxy/images/2_1.png" width="263" height="82"></td>
+            <td><a href="./?m=article&f=browse&categoryID=96&type=list&pt=cxy"><img src="<?php echo $themeRoot?>cxy/images/2_1.png" width="263" height="82"></a></td>
           </tr>
           <tr>
-            <td><img src="<?php echo $themeRoot?>cxy/images/2_2.png" width="264" height="73"></td>
+            <td><a href="./?m=article&f=browse&categoryID=97&type=list&pt=cxy"><img src="<?php echo $themeRoot?>cxy/images/2_2.png" width="264" height="73"></a></td>
           </tr>
         </table>
 
@@ -37,10 +37,10 @@
             <td><img src="<?php echo $themeRoot?>cxy/images/3_title.png" width="264" height="65"></td>
           </tr>
           <tr>
-            <td><img src="<?php echo $themeRoot?>cxy/images/3_1.png" width="264" height="80"></td>
+            <td><a href="./?m=article&f=browse&categoryID=98&type=list&pt=cxy"><img src="<?php echo $themeRoot?>cxy/images/3_1.png" width="264" height="80"></a></td>
           </tr>
           <tr>
-            <td><img src="<?php echo $themeRoot?>cxy/images/3_2.png" width="264" height="72"></td>
+            <td><a href="./?m=article&f=browse&categoryID=99&type=list&pt=cxy"><img src="<?php echo $themeRoot?>cxy/images/3_2.png" width="264" height="72"></a></td>
           </tr>
         </table>
 
@@ -49,13 +49,13 @@
       	<table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td rowspan="3" width="81"><img src="<?php echo $themeRoot?>cxy/images/4_title.png" width="81" height="227"></td>
-                    <td><img src="<?php echo $themeRoot?>cxy/images/4_1.png" width="183" height="78"></td>
+                    <td><a href="./?m=article&f=browse&categoryID=100&type=list&pt=cxy"><img src="<?php echo $themeRoot?>cxy/images/4_1.png" width="183" height="78"></a></td>
                   </tr>
                   <tr>
-                    <td><img src="<?php echo $themeRoot?>cxy/images/4_2.png" width="183" height="72"></td>
+                    <td><a href="./?m=article&f=browse&categoryID=101&type=list&pt=cxy"><img src="<?php echo $themeRoot?>cxy/images/4_2.png" width="183" height="72"></a></td>
                   </tr>
                   <tr>
-                    <td><img src="<?php echo $themeRoot?>cxy/images/4_3.png" width="183" height="73"></td>
+                    <td><a href="./?m=article&f=browse&categoryID=102&type=list&pt=cxy"><img src="<?php echo $themeRoot?>cxy/images/4_3.png" width="183" height="73"></a></td>
                   </tr>
                 </table>
       </div>

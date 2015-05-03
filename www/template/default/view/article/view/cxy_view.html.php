@@ -10,7 +10,7 @@ js::execute($article->js);
 ?>
 
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $themeRoot?>klt/klt_view.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $themeRoot?>cxy/cxy_view.css" rel="stylesheet" type="text/css" />
 <!--center-->
     <style type="text/css">
     body {
