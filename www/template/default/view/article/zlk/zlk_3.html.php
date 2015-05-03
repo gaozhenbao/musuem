@@ -50,7 +50,7 @@
 
 			  $str = '<li><div class="center_listtxt">
 
-                    	<div class="center_listimg"><a href="./?m=article&f=browse&categoryID='.$val->id.'&type=list&pt=zlk"><img src="'.$val->imgurl.'"></a></div>
+                    	<div class="center_listimg"><a href="./?m=article&f=browse&categoryID='.$val->id.'&moduleID='.$val->id.'&type=list&pt=zlk"><img src="'.$val->imgurl.'"></a></div>
                         <div class="center_listtitle">'.$val->name.'</div>
                     </div><div class="center_listtxtspace"></div>';
 			  if($i == count($types)){
@@ -58,7 +58,7 @@
 				}
           }else{
 				$str .= '<div class="center_listtxt">
-                    	<div class="center_listimg"><a href="./?m=article&f=browse&categoryID='.$val->id.'&type=list&pt=zlk"><img src="'.$val->imgurl.'"></a></div>
+                    	<div class="center_listimg"><a href="./?m=article&f=browse&categoryID='.$val->id.'&moduleID='.$val->id.'&type=list&pt=zlk"><img src="'.$val->imgurl.'"></a></div>
                         <div class="center_listtitle">'.$val->name.'</div>
                     </div></li>'; 
 				echo $str; 
