@@ -40,9 +40,10 @@ js::execute($article->js);
             	<?php echo $article->content; ?>
             </div>
             <div class="center_bootom_txt2">
-            	作者：<?php echo $article->author; ?><br/>
-                指导教师：<?php echo $article->daoshi; ?><br/>
-                作品时间：<?php echo $article->shijian; ?><br/>
+            	<?php echo empty($article->author)?'':'作者：'.$article->author.'<br/>'; ?>
+            	<?php echo empty($article->keywords)?'':'班级：'.$article->keywords.'<br/>'; ?>
+            	<?php echo empty($article->daoshi)?'':'指导教师：'.$article->daoshi.'<br/>'; ?>
+            	<?php echo empty($article->shijian)?'':'作品时间：'.$article->shijian.'<br/>'; ?>
             </div>
         </div>
     </div>
