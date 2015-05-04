@@ -1,4 +1,5 @@
 .idea/
+nbproject/
 system/tmp
 system/config/my.php
 system/tmp/log/*

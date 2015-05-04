@@ -835,7 +835,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- ----------------------------
 DROP FUNCTION IF EXISTS `hzcode`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` FUNCTION `hzcode`(s CHAR(255)) RETURNS char(1) CHARSET utf8
+CREATE FUNCTION `hzcode`(s CHAR(255)) RETURNS char(1) CHARSET utf8
 BEGIN
 DECLARE hz_code int;
 DECLARE hz_py char;

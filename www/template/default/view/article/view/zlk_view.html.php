@@ -186,7 +186,7 @@ function get_page(){
              </div>
         </div>
     </div>
-<div class="hidden_content" id="menu_mingzi_txt"><?php echo htmlspecialchars_decode($article->content); ?></div>
+<div class="hidden_content" id="menu_mingzi_txt"><?php echo htmlspecialchars_decode($article->mingzi); ?></div>
 <div class="hidden_content" id="menu_shulei_txt"><?php echo htmlspecialchars_decode($article->shulei); ?></div>
 <div class="hidden_content" id="menu_fenlei_txt"><?php echo htmlspecialchars_decode($article->fenlei); ?></div>
 <div class="hidden_content" id="menu_fenbu_txt"><?php echo htmlspecialchars_decode($article->fenbu); ?></div>
@@ -217,22 +217,21 @@ function get_page(){
     	<table width="1020" border="0" cellspacing="0" cellpadding="0" height="44">
           <tr id="load" style="display: none"><td>努力查找资料中,请稍候哦</td></tr>
           <tr>
-            <td width="575">
-            	<span class="search-letter">A</span><span class="search-letter">B</span><span class="search-letter">C</span><span class="search-letter">D</span><span class="search-letter">E</span><span class="search-letter">F</span><span class="search-letter">G</span><span class="search-letter">H</span><span class="search-letter">I</span><span class="search-letter">J</span><span class="search-letter">K</span><span class="search-letter">L</span><span class="search-letter">M</span><span class="search-letter">N</span><span class="search-letter">O</span><span class="search-letter">P</span><span class="search-letter">Q</span><span class="search-letter">R</span><span class="search-letter">S</span><span class="search-letter">T</span><span class="search-letter">U</span><span class="search-letter">V</span><span class="search-letter">W</span><span class="search-letter">X</span><span class="search-letter">Y</span><span class="search-letter">Z</span>
-            </td>
-            <td class="nav_1" width="255">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按首字母查询其他海洋生物</td>
-            <td class="nav_2" width="100"><span id="reback">返回前页</span></td>
+              <td width="575">
+                  <span class="search-letter">A</span><span class="search-letter">B</span><span class="search-letter">C</span><span class="search-letter">D</span><span class="search-letter">E</span><span class="search-letter">F</span><span class="search-letter">G</span><span class="search-letter">H</span><span class="search-letter">I</span><span class="search-letter">J</span><span class="search-letter">K</span><span class="search-letter">L</span><span class="search-letter">M</span><span class="search-letter">N</span><span class="search-letter">O</span><span class="search-letter">P</span><span class="search-letter">Q</span><span class="search-letter">R</span><span class="search-letter">S</span><span class="search-letter">T</span><span class="search-letter">U</span><span class="search-letter">V</span><span class="search-letter">W</span><span class="search-letter">X</span><span class="search-letter">Y</span><span class="search-letter">Z</span></td>
+              <td class="nav_1" width="255">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按首字母查询其他海洋生物</td>
+              <td class="nav_2" width="100"><span id="reback">返回前页</span></td>
             <td align="center"><img src="<?php echo $themeRoot?>/common/images/b_img.gif" width="36" height="38"></td>
           </tr>
         </table>
 
     </div>
 </div>
-<div class="srearch">
-	<div class="search_close">关闭</div>
+<div class="srearch" style="display: none">
+	<div class="search_close" onclick="$('.srearch').hide();">关闭</div>
 	<div class="search_txt">
-    	<div class="search_txt_1"><a href="#">动物馆</a></div>
-        <div class="search_txt_2"><a href="#">大马哈鱼</a></div>
+<!--    	<div class="search_txt_1"><a href="#">动物馆</a></div>-->
+<!--        <div class="search_txt_2"><a href="#">大马哈鱼</a></div>-->
     </div>
 </div>
 <script type="text/javascript">
@@ -243,11 +242,17 @@ function get_page(){
             type: 'GET',
             dataType: 'json',
             beforeSend: function() {
-//                $("#load").attr('style','display: inline');
+                $('.srearch').hide();
+                $('.search_txt_1').remove();
+                $('.search_txt_2').remove();
             },
             success: function(response) {
-                console.log(response);
-//                $("#load").attr('style','display: none');
+                $('.srearch').show();
+                if(response.html == ''){
+                    $('.search_txt').append('<div class="search_txt_2" style="margin: 100px 0 0 50px">哎呀,神马都木有找到,换个字母试试?</div>')
+                }else{
+                    $('.search_txt').append(response.html)
+                }
 
             },
             error:function(){

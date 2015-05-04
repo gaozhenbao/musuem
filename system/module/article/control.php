@@ -208,7 +208,23 @@ class article extends control {
 		$categoryID = $_GET['categoryID'];
 		 $id = $_GET['id'];
         if(isset($_GET['s'])){
-            $result = $this->db->query("select * from eps_category");
+            $result = $this->db->query("select distinct a.id,a.title,c.name,c.id as category_id from ".TABLE_ARTICLE." a INNER JOIN ".TABLE_CATEGORY." c ON find_in_set(10,c.path) INNER JOIN ".TABLE_RELATION." r ON r.type='article' AND r.id=a.id and r.category=c.id WHERE a.id <> '".$articleID."' AND hzcode(a.title) = '".$this->db->escape($_GET['s'])."'");
+            $searchResult = array();
+            $html = '';
+            foreach($result->rows as $key=>$value){
+                if(!isset($searchResult[$value['category_id']])){
+                    $html .= '<div class="search_txt_1">';
+                    $html .= html::a(helper::createLink('article', 'browse', 'categoryID='.$value['category_id'].'&type=list&pt=zlk'), $value['name']);
+                    $html .= '</div>';
+                }
+                $html .= '<div class="search_txt_2">';
+                $html .= html::a(helper::createLink('article', 'view', 'id='.$value['id'].'&pt=zlk'), $value['title']);
+                $html .= '</div>';
+                $searchResult[$value['category_id']][] = $value;
+            }
+
+            echo json_encode(array('html'=>$html));
+            return;
         }else{
 			if($id <> 0){
 				$article = $this->article->getByID($articleID);
