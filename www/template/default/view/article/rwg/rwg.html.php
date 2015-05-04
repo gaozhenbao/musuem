@@ -12,6 +12,7 @@
 				l_s ++;
 				var length = -l_s*474;
 				$(".banner_txt_scro").animate({left:length+'px'});
+                $("#banner_content_img").attr('src',$("#content_img_"+l_s).val());
 			}else{
 				return false;
 			}
@@ -22,6 +23,7 @@
 				l_s --;
 				var length = -l_s*474;
 				$(".banner_txt_scro").animate({left:length+'px'});
+                $("#banner_content_img").attr('src',$("#content_img_"+l_s).val());
 			}else{
 				return false;
 			}
@@ -36,14 +38,15 @@
             <td width="100"><img src="<?php echo $themeRoot?>rwg/images/left_nav.png" width="100" height="90" id="left_nav"></td>
             <td align="center"><div class="banner_center">
             	<div class="banner_txt">
-                	<img src="<?php echo $themeRoot?>rwg/images/rwgbanner_img.jpg" class="banner_txt_img">
+                	<img id="banner_content_img" src="<?php echo $content_img?>" class="banner_txt_img">
                     <div class="banner_txt_scro">
-                    	<?php foreach($types as $value){?>
+                    	<?php $i=0;foreach($types as $value){?>
                             <div class="banner_content">
+                                <input type="hidden" id="content_img_<?php echo $i;?>" value="<?php echo $value->img_url;?>">
                                 <div class="banner_contenttitle"><a href="./?m=article&f=browse&categoryID=<?php echo $value->id; ?>&type=list&pt=rwg"><?php echo $value->name; ?></a></div>
-                                <div class="bcontent"><a href="./?m=article&f=browse&categoryID=<?php echo $value->id; ?>&type=list&pt=rwg"><?php echo $value->desc; ?></a></div>
+                                <div class="bcontent"><a href="./?m=article&f=view&id=<?php echo $value->article_id; ?>&pt=rwg"><?php echo substr(strip_tags(htmlspecialchars_decode($value->content)),0,245).'...[点击查看详细内容]'; ?></a></div>
                             </div>
-                        <?php } ?>
+                        <?php $i++; } ?>
                     </div>
                 </div>
             </div></td>

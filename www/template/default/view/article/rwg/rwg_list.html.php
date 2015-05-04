@@ -33,14 +33,14 @@ function getNewsList(pageID){
 						}
 					}
 									if(count(o_data) < 10 && li_txt != ''){
-					
+
 					li_txt = li_txt+'</li>';
 					$(".center_list>ul").append(li_txt);
 				}
 				}
 
 		  });
-		  
+
 }
 	$(document).ready(function(){
 		//加载数据
@@ -68,7 +68,7 @@ function getNewsList(pageID){
 			}
 			$("#left_nav").removeClass("left_navbg2").addClass("left_navbg1")
 		})
-		
+
 		$("#left_nav").click(function(){
 			size = parseInt($(".center_list li").size());
 			all_length = size*259+(size-1)*22;
@@ -88,7 +88,7 @@ function getNewsList(pageID){
 			$("#right_nav").removeClass("right_navbg2").addClass("right_navbg1")
 		})
 	})
-	
+
 	function count(o){
     var t = typeof o;
     if(t == 'string'){
@@ -101,8 +101,8 @@ function getNewsList(pageID){
             return n;
     }
     return false;
-}; 
- 
+};
+
 </script>
 <!--center-->
 <div class="center">

@@ -51,11 +51,23 @@ class article extends control {
         } else {
             die($this->fetch('error', 'index'));
         }
-        $types = $this->dao->select('id,name,imgurl,`desc`')->from('eps_category')->where('parent')->eq($_GET['categoryID'])->fetchAll();
-         foreach ($types as $key=>$value) {
-                   $chid = $value->id;
-                   $ch_types = $this->dao->select('id,name,imgurl,`desc`')->from('eps_category')->where('parent')->eq($chid)->fetchAll();
-                   $types[$key]->child = $ch_types;
+        $types = $this->dao->select(' c.id,c.name,c.imgurl,c.`desc`,a.id as article_id ,a.title,a.img_url,a.content')->from('eps_category')->alias('c')
+                       ->leftJoin('eps_relation')->alias('r')->on('r.category = c.id')
+                       ->leftJoin('eps_article')->alias('a')->on('r.id = a.id')
+                       ->where('parent')->eq($_GET['categoryID'])
+                       ->orderBy('c.id,a.id desc')->fetchAll();
+        $key_array = array();
+        foreach ($types as $key=>$value) {
+            if(in_array($value->id,$key_array)){
+                unset($types[$key]);
+            }else{
+                $key_array[] = $value->id;
+                $chid = $value->id;
+                $ch_types = $this->dao->select('id,name,imgurl,`desc`')->from('eps_category')
+                    ->where('parent')->eq($chid)
+                    ->fetchAll();
+                $types[$key]->child = $ch_types;
+            }
         }
 		if($_GET['sj'] == 'json'){
 			echo json_encode($articles);
@@ -66,7 +78,8 @@ class article extends control {
 			$this->view->category = $category;
 			$this->view->articles = $articles;
 			$this->view->pager = $pager;
-			$this->view->types = $types;
+			$this->view->content_img = $types[0]->img_url;
+            $this->view->types = $types;
 			$this->view->contact = $this->loadModel('company')->getContact();
 	
 			$this->display();

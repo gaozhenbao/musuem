@@ -23,7 +23,7 @@
 				return false;
 			}
 		})
-		
+
 		$("#left_nav").click(function(){
 			if(size <= 3){
 				return;
@@ -40,7 +40,7 @@
 				return false;
 			}
 		})
-		
+
 	})
 	})
 </script>
@@ -70,20 +70,20 @@
                             	<a href="./?m=article&f=browse&categoryID='.$val->id.'&pt=rwg&type=list&moduleID='.$val->id.'"><div class="center_title">'.$val->name.'</div></a>
                             </div>
                         </div>
-                    </div></li>'; 
-				echo $str; 
+                    </div></li>';
+				echo $str;
 				$str = '';
 
 		 }?>
 			 <?php if($i%2 == 0 && $i < count($types)){?>
               <div class="center_listspace"></div>
               <?php } ?>
-          <?php } ?>       
+          <?php } ?>
             </ul>
         </div>
         </div>
         </div>
-    	
+
         <div class="left_nav left_navbg1" id="left_nav"></div>
         <div class="right_nav right_navbg1" id="right_nav"></div>
     </div>
