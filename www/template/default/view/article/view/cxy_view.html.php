@@ -37,7 +37,12 @@ js::execute($article->js);
     	<div class="center_bootom_titletxt"><?php echo $article->title; ?></div>
         <div class="center_bootom_txt">
         	<div class="center_bootom_txt1">
-            	<?php echo $article->content; ?>
+                <?php   $keys_array = array('content','xingtai','fenbu','shulei','mingzi','fenlei','xixing','qixidi','jiegou','shixing','fanzhi','fayu','qiyuan','wenhua','yongtu','xianzhuang','tupian','qita','dinianji','zhongnianji','gaonianji');?>
+                <?php foreach($keys_array as $value){ ?>
+                    <?php    if(!empty($article->$value) && $article->$value !='默认内容'){ ?>
+                        <?php    echo htmlspecialchars_decode($article->$value);break; ?>
+                    <?php }?>
+                <?php } ?>
             </div>
             <div class="center_bootom_txt2">
             	<?php echo empty($article->author)?'':'作者：'.$article->author.'<br/>'; ?>

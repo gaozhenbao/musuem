@@ -257,8 +257,6 @@ class article extends control {
 			}
             if (!$article)
                 die($this->fetch('error', 'index'));
-            if (!$article)
-                die($this->fetch('error', 'index'));
 
             if ($article->link) {
                 $this->dao->update(TABLE_ARTICLE)->set('views = views + 1')->where('id')->eq($articleID)->exec();
