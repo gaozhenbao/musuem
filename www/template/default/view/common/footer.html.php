@@ -12,7 +12,7 @@
             </td>
             <td class="nav_1" width="255">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="menu_hidden">收起导航栏</span></td>
             <td class="nav_2" width="100"><span id="reback">返回前页</span></td>
-            <td align="center"><img src="<?php echo $themeRoot?>/common/images/b_img.gif" width="36" height="38"></td>
+            <td align="center"><img id="reback_img" src="<?php echo $themeRoot?>/common/images/b_img.gif" width="36" height="38"></td>
           </tr>
         </table>
 
