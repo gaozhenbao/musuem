@@ -15,7 +15,7 @@
 			.tag_nav5{ text-align:center; background:url(../common/images/tag_5bg.png) no-repeat;margin:10px 0 0 0;}
 		.hidden_content{ display:none;}
 		.right{ width:550px; float:right;background:#ffffff;}
-			.right_txt_scro{width:490px; float:right;background:#0099cc; padding:15px; color:#FFF; font-size:14px; line-height:25px; text-indent:2em;  height:420px; overflow-y:auto; overflow-x:hidden; position:relative;}
+			.right_txt_scro{width:490px; float:right;background:#0099cc; padding:15px 15px 0 15px; color:#FFF; font-size:16px; line-height:25px; text-indent:2em;  height:420px; overflow-y:auto; overflow-x:hidden; position:relative;}
 			.right_txt{width:490px;}
 				.right_img{ text-align:center;}
 				.right_img img{ border:10px #FFF solid;}

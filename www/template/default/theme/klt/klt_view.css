@@ -6,7 +6,7 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(images/klt_contentbg
 			.left_title_f a{  width:490px; height:134px; display:block; line-height:120px; font-size:40px; color:#FFF; position:absolute; left:0px; bottom:0px; text-align:center; font-weight:bold; overflow:auto; z-index:1000;}
 			.title_close{ position:absolute; bottom:120px; right:0px; color:#FFF; z-index:1005;}
 		.right{ width:510px; height:518px; float:right; background:url(images/right_bg.png) no-repeat center; overflow-y:auto; overflow-x:hidden; position:relative;}
-		.right_txt{ width:470px; padding:10px; height:348px;color:#FFF; font-size:14px; line-height:25px; margin:80px 0 0 10px; overflow-x:hidden; overflow-y:auto;}
+		.right_txt{ width:470px; padding:10px; height:348px;color:#FFF; font-size:16px; line-height:25px; margin:80px 0 0 10px; overflow-x:hidden; overflow-y:auto;}
 				.page{width:520px; height:75px; float:left; margin:0 0 0 260px; display:inline;}
 					.page_1{ width:115px; height:32px; background:#FFF; line-height:32px; color:#0099cc; text-align:center; float:left; margin:0 0 0 7px;}
 					.page_2{ width:240px; height:42px; float:left;background:url(images/page_bg.png) center repeat-x;; line-height:42px; color:#0099cc;margin:0 0 0 10px;}

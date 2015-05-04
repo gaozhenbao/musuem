@@ -88,7 +88,7 @@ function get_page(){
         	<?php   $keys_array = array('content','xingtai','fenbu','shulei','mingzi','fenlei','xixing','qixidi','jiegou','shixing','fanzhi','fayu','qiyuan','wenhua','yongtu','xianzhuang','tupian','qita','dinianji','zhongnianji','gaonianji');?>
             <?php foreach($keys_array as $value){ ?>
                 <?php    if(!empty($article->$value) && $article->$value !='默认内容'){ ?>
-                    <?php    echo htmlspecialchars_decode($article->$value); ?>
+                    <?php    echo htmlspecialchars_decode($article->$value);break; ?>
                 <?php }?>
                 <?php } ?>
         </div>

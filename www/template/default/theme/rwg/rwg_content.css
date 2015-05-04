@@ -5,7 +5,7 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(images/content_bg.jp
 			.left_title{ width:380px; height:96px; background:#000;filter:alpha(opacity=70); -moz-opacity:0.7; opacity:0.7; position:absolute; left:0px; bottom:0px;}
 			.left_title_f a{ width:328px; height:81px; display:block; background:#0099cc; line-height:81px; font-size:30px; color:#FFF; position:absolute; bottom:20px; left:0px; left:26px; text-align:center; font-weight:bold;}
 		.right{ width:510px; height:518px; float:right; background:url(images/right_txtbg.png) repeat-y #8c8c8c;filter:alpha(opacity=90); -moz-opacity:0.9; opacity:0.9;overflow-y:auto; overflow-x:hidden; position:relative;}
-		.right_txt{ width:410px; padding:10px; float:right; min-height:498px;color:#FFF; font-size:14px; line-height:25px; text-indent:2em;}
+		.right_txt{ width:400px; padding:10px 15px 0 15px; float:right; min-height:498px;color:#FFF; font-size:16px; line-height:25px; text-indent:2em;}
 				.page{width:520px; height:75px; float:left; margin:0 0 0 260px; display:inline; }
 					.page_1{ width:115px; height:32px; background:#FFF; line-height:32px; color:#0099cc; text-align:center; float:left; margin:0 0 0 7px;}
 					.page_2{ width:240px; height:42px; float:left;background:url(images/page_bg.png) center repeat-x;; line-height:42px; color:#0099cc;margin:0 0 0 10px;}
