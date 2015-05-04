@@ -237,12 +237,15 @@ function get_page(){
 <script type="text/javascript">
     $('.search-letter').bind('click',function(){
         var search = $(this).text();
+        var that = $(this);
         $.ajax({
             url: 'index.php?m=article&f=view&id=131&pt=zlk&s='+search,
             type: 'GET',
             dataType: 'json',
             beforeSend: function() {
                 $('.srearch').hide();
+                $('.search-letter').removeClass('search_bg');
+                that.addClass('search_bg');
                 $('.search_txt_1').remove();
                 $('.search_txt_2').remove();
             },

@@ -36,3 +36,5 @@
 				.search_txt_2{ width:430px; height:30px;padding:0 0 0 50px; font-size:16px; font-weight:bold; line-height:30px;}
 				.search_txt_2 a{ color:#000;}
 				.search_close{ width:30px; height:20px; position:absolute; top:0px; right:0px; line-height:20px;}
+                .search_bg{background:#8b0000;}
+                .search-letter{text-align: right;padding: 0 0 0 1px}
