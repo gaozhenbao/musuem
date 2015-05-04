@@ -205,10 +205,29 @@ class article extends control {
      * @return void
      */
     public function view($articleID) {
+		$categoryID = $_GET['categoryID'];
+		 $id = $_GET['id'];
         if(isset($_GET['s'])){
             $result = $this->db->query("select * from eps_category");
         }else{
-            $article = $this->article->getByID($articleID);
+			if($id <> 0){
+				$article = $this->article->getByID($articleID);
+			}else{
+				 $article = $this->db->query("select A.* from eps_article A LEFT JOIN eps_relation B ON A.id = B.id WHERE B.category = $categoryID ORDER BY A.id DESC limit 1"); 
+				if(!empty($article->row)){
+					$new = $article->row;
+					$article = new stdClass();
+					foreach($new AS $key => $val){
+						$article->$key = $val;
+					}
+					$id = $article->id;
+				}else{
+					$this->view->ans = '<h1>暂无内容</h1>';
+				}
+				
+			}
+            if (!$article)
+                die($this->fetch('error', 'index'));
             if (!$article)
                 die($this->fetch('error', 'index'));
 
@@ -239,9 +258,7 @@ class article extends control {
             $keywords = $article->keywords . ' ' . $category->keywords . ' ' . $this->config->site->keywords;
             $desc = strip_tags($article->summary);
             //取上一个，下一个ID
-            if($_GET['pt'] == 'klt'){
-                $id = $_GET['id'];
-                $categoryID = $_GET['categoryID'];
+            if($_GET['pt'] == 'cxy' && $id <> ''){
                 $pre = $this->dao->select('id')->from('eps_relation')->where("id < $id AND category = $categoryID")->orderBy("id DESC")->limit(1)->fetchAll();
                 $next = $this->dao->select('id')->from('eps_relation')->where("id > $id AND category = $categoryID")->orderBy("id ASC")->limit(1)->fetchAll();
             }
@@ -250,8 +267,8 @@ class article extends control {
                 $ch_types = $this->dao->select('id,name,imgurl,`desc`')->from('eps_category')->where('parent')->eq($chid)->fetchAll();
                 $types[$key]->child = $ch_types;
             }
-            $this->view->preid = $pre[0]->id;
-            $this->view->nextid = $next[0]->id;
+            $this->view->preid = $pre[0]->id <>''?$pre[0]->id:'';
+            $this->view->nextid = $next[0]->id <>''?$next[0]->id:'';
             $this->view->title = $title;
             $this->view->keywords = $keywords;
             $this->view->desc = $desc;

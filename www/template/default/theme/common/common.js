@@ -4,5 +4,10 @@ $(document).ready(function(){
 	})
 	$("#menu_hidden").click(function(){
 		$(".bottom").animate({bottom:'-44px'},200);
+		$(".show_btn").animate({bottom:'0px'},200);
+	})
+	$(".show_btn").click(function(){
+		$(".bottom").animate({bottom:'0px'},200);
+		$(".show_btn").animate({bottom:'-51px'},200);
 	})
 })
