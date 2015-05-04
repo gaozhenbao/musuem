@@ -11,7 +11,7 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(../common/images/bg.
 				.center_listimg{ width:220px; height:220px; padding:10px;background:#FFF;}
 				.center_listimg img{ width:220px; height:220px;}
 				.center_listtitle{ width:240px; height:35px; margin:5px 0 0 0; background:#0099ff; line-height:35px; text-align:center; color:#FFF; font-size:16px;}
-                .center_listtitle_a{color: #ffffff}
+				.center_listtitle a{ color:#FFF;}
 		.left_nav{ width:48px; height:57px; position:absolute; left:-55px; top:250px;}
 				.left_navbg1{ background:url(../common/images/left_nav.png)}
 				.left_navbg2{ background:url(../common/images/left_navn.png)}

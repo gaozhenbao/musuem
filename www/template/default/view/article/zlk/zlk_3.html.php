@@ -51,7 +51,7 @@
 			  $str = '<li><div class="center_listtxt">
 
                     	<div class="center_listimg"><a href="./?m=article&f=browse&categoryID='.$val->id.'&moduleID='.$val->id.'&type=list&pt=zlk"><img src="'.$val->imgurl.'"></a></div>
-                        <div class="center_listtitle"><a href="./?m=article&f=browse&categoryID='.$val->id.'&moduleID='.$val->id.'&type=list&pt=zlk" class="center_listtitle_a">'.$val->name.'</a></div>
+                        <div class="center_listtitle"><a href="./?m=article&f=browse&categoryID='.$val->id.'&moduleID='.$val->id.'&type=list&pt=zlk">'.$val->name.'</a></div>
                     </div><div class="center_listtxtspace"></div>';
 			  if($i == count($types)){
 				  echo $str;
@@ -59,8 +59,8 @@
           }else{
 				$str .= '<div class="center_listtxt">
                     	<div class="center_listimg"><a href="./?m=article&f=browse&categoryID='.$val->id.'&moduleID='.$val->id.'&type=list&pt=zlk"><img src="'.$val->imgurl.'"></a></div>
-                        <div class="center_listtitle"><a href="./?m=article&f=browse&categoryID='.$val->id.'&moduleID='.$val->id.'&type=list&pt=zlk" class="center_listtitle_a">'.$val->name.'</a></div>
-                    </div></li>'; 
+                        <div class="center_listtitle"><a href="./?m=article&f=browse&categoryID='.$val->id.'&moduleID='.$val->id.'&type=list&pt=zlk">'.$val->name.'</a></div>
+                    </div></li>';
 				echo $str; 
 				$str = '';
 

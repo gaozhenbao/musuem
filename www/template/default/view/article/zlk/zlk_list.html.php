@@ -32,11 +32,12 @@ function getNewsList(pageID){
 							li_txt = '';
 						}
 					}
-				}
-				if(count(o_data) < 10 && li_txt != ''){
+					if(count(o_data) < 10 && li_txt != ''){
 					li_txt = li_txt+'</li>';
 					$(".center_list>ul").append(li_txt);
 				}
+				}
+				
 		  });
 		  
 }

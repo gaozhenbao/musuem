@@ -18,3 +18,4 @@
 
     </div>
 </div>
+<img src="<?php echo $themeRoot?>common/images/slide.png" class="show_btn">

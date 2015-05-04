@@ -18,15 +18,15 @@ js::execute($article->js);
 }
     </style>
 <div class="center">
+		<?php echo $ans; ?>
 		<?php
-        	if(!empty($preid)){
-			echo 'aaaaaaaaaaaaaa';
-			echo '<a href="./?m=article&f=view&id='.$preid.'&pt='.$_GET['pt'].'&categoryID='.$_GET['categoryID'].'"><div class="left_nav left_navbg1"></div></a>';
+        	if(!empty($nextid)){
+			echo '<a href="./?m=article&f=view&id='.$nextid.'&pt='.$_GET['pt'].'&categoryID='.$_GET['categoryID'].'"><div class="left_nav left_navbg1"></div></a>';
 			}else{
 				echo '<div class="left_nav left_navbg2"></div>';
 			}
-			if(!empty($nextid)){
-				echo '<a href="./?m=article&f=view&id='.$nextid.'&pt='.$_GET['pt'].'&categoryID='.$_GET['categoryID'].'"><div class="right_nav right_navbg1"></div></a>';
+			if(!empty($preid)){
+				echo '<a href="./?m=article&f=view&id='.$preid.'&pt='.$_GET['pt'].'&categoryID='.$_GET['categoryID'].'"><div class="right_nav right_navbg1"></div></a>';
 			}else{
 				echo '<div class="right_nav right_navbg2"></div>';
 			}
