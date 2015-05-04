@@ -3,7 +3,8 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(images/tyg_bg.jpg) c
 		.center_list{ width:316px; height:565px; float:left; background:url(images/center_listbg.png); margin:0 0 100px 34px; text-align:center; padding:10px 0 0 0; position:relative;}
 		.center_list img{ width:296px; height:555px;}
 		.center_listtitle{ position:absolute; width:236px; height:56px; bottom:10px; left:10px;  color:#0099cc; font-size:32px; font-weight:bold; padding:50px 0 0 60px;}
-		.listtitle_bg1{background:url(images/list_titlebg1.png) no-repeat;}
+        .center_listtitle a{color:#0090f0;}
+        .listtitle_bg1{background:url(images/list_titlebg1.png) no-repeat;}
 		.listtitle_bg2{background:url(images/list_titlebg2.png) no-repeat;}
 		.listtitle_bg3{background:url(images/list_titlebg3.png) no-repeat;}
 .bottom{ width:100%; height:44px; position:fixed; background:#000000; bottom:0px;}
