@@ -73,11 +73,11 @@
         <?php echo html::a($this->createLink('message', 'admin'), '<h3>' . $lang->admin->shortcuts->feedback . '</h3>')?>  
       </div>
     </div>
-    <div class='col-md-4 col-sm-6'>
-      <div class="shortcut site-admin">
-        <?php echo html::a($this->createLink('site', 'setBasic'), '<h3>' . $lang->admin->shortcuts->site . '</h3>')?>
-      </div>
-    </div>
+<!--    <div class='col-md-4 col-sm-6'>-->
+<!--      <div class="shortcut site-admin">-->
+<!--        --><?php //echo html::a($this->createLink('site', 'setBasic'), '<h3>' . $lang->admin->shortcuts->site . '</h3>')?>
+<!--      </div>-->
+<!--    </div>-->
 <!--    <div class='col-md-4 col-sm-6'>-->
 <!--      <div class="shortcut company-admin">-->
 <!--        --><?php //echo html::a($this->createLink('company', 'setBasic'), '<h3>' . $lang->admin->shortcuts->company . '</h3>')?>

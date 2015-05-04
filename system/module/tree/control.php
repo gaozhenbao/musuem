@@ -123,7 +123,7 @@ class tree extends control
         $Root = $_SERVER['DOCUMENT_ROOT'];
         $file = '/data/upload/'.date('Ym').'/';
         //上传大小为500kb
-        $s_size = 50000 * 1024 * 1024;
+        $s_size = 500*1024 * 1024 * 1024;
         $s_file_url = $Root.$file;
         $error = "";
         $msg = "";

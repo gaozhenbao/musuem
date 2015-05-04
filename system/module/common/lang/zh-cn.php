@@ -121,12 +121,12 @@ $lang->menu->changxiangyuan  = '畅想园|article|admin|type=article&categoryID=
 //$lang->menu->book     = '手册|book|admin|';
 //$lang->menu->page     = '单页|article|admin|type=page';
 //$lang->menu->forum    = '论坛|forum|admin|';
-//$lang->menu->site     = '站点|site|setbasic|';
 //$lang->menu->ui       = '界面|ui|setlogo|';
 //$lang->menu->company  = '学校|company|setbasic|';
 $lang->menu->grade    = '班级管理|article|admin|type=grade';
 $lang->menu->user     = '会员管理|user|admin|';
 $lang->menu->feedback = '留言管理|message|admin|';
+$lang->menu->site     = '站点设置|site|setbasic|';
 //$lang->menu->package  = '扩展|package|browse|';
 
 /* Menu groups setting. */

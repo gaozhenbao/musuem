@@ -13,7 +13,7 @@ js::execute($article->js);
 <script>
 var now_page = 1;
 $(document).ready(function(){
-	get_page()
+	get_page();
 	//翻页
 	$(".page_2 a").live("click",function(){
 	  	now_page = parseInt($(this).text());
@@ -64,7 +64,7 @@ function get_page(){
 			//分页
 	var s_h = 518;
 	var con_height = parseInt($(".right_txt").height());
-	var n_page = Math.ceil(con_height/s_h);
+	var n_page = Math.ceil(con_height/518);
 	if(n_page ==0){
 		n_page =1;
 	}
