@@ -18,7 +18,7 @@ $(document).ready(function(){
 	$(".page_2 a").live("click",function(){
 	  	now_page = parseInt($(this).text());
 		var top = (now_page -1)*518;
-		$(".right_txt").animate({scrollTop:top+'px'},100);
+		$(".right").animate({scrollTop:top+'px'},100);
 		$(".page_2 a").removeClass("page_2_bg");
 		$(this).addClass('page_2_bg');
 	});
@@ -28,7 +28,7 @@ $(document).ready(function(){
 			return;
 		}else{
 			var top = (parseInt(now_page) -1)*518;
-			$(".right_txt").animate({scrollTop:top+'px'},100);
+			$(".right").animate({scrollTop:top+'px'},100);
 			$(".page_2 a").removeClass("page_2_bg");
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
 		}
@@ -40,7 +40,7 @@ $(document).ready(function(){
 		}else{
 			now_page --;
 			var top = (parseInt(now_page) -1)*518;
-			$(".right_txt").animate({scrollTop:top+'px'},518);
+			$(".right").animate({scrollTop:top+'px'},518);
 			$(".page_2 a").removeClass("page_2_bg");
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
 		}
@@ -53,7 +53,7 @@ $(document).ready(function(){
 		}else{
 			now_page++;
 			var top = (parseInt(now_page) -1)*518;
-			$(".right_txt").animate({scrollTop:top+'px'},100);
+			$(".right").animate({scrollTop:top+'px'},100);
 			$(".page_2 a").removeClass("page_2_bg");
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
 		}
@@ -62,9 +62,9 @@ $(document).ready(function(){
 
 function get_page(){
 			//分页
-	var s_h = 518;
+	var s_h = 510;
 	var con_height = parseInt($(".right_txt").height());
-	var n_page = Math.ceil(con_height/518);
+	var n_page = Math.ceil(con_height/510);
 	if(n_page ==0){
 		n_page =1;
 	}

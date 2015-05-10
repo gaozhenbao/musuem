@@ -1,5 +1,5 @@
 body{background:url(images/hyhlt_bg.jpg) center top no-repeat;}
-.center{ width:947px; margin:0 auto; background:url(images/center_bg.png) no-repeat; height:605px; margin-top:50px;}
+.center{ width:947px; margin:0 auto; background:url(images/center_bg.png) no-repeat; height:605px; margin-top:-20px;}
 	.list{ width:250px; height:376px; float:left; background:#356fba; margin:130px 0 0 0; display:inline;}
 		.list1{ margin-left:25px;}
 		.list2{margin-left:75px;}

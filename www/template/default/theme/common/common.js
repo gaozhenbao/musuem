@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("#reback").click(function(){
+	$("#reback,#reback_img").click(function(){
 		history.back();
 	})
     $("#reback_img").click(function(){

@@ -65,7 +65,7 @@ $(document).ready(function(){
 function get_page(){
 			//分页
 	var s_h = 346;
-	var con_height = parseInt($(".right_txt").height());
+	var con_height = parseInt($(".right_txt_scro").height());
 	var n_page = Math.ceil(con_height/s_h);
 	if(n_page ==0){
 		n_page =1;
@@ -85,12 +85,14 @@ function get_page(){
 <div class="center">
 	<div class="right">
     	<div class="right_txt">
+        	<div class="right_txt_scro">
         	<?php   $keys_array = array('content','xingtai','fenbu','shulei','mingzi','fenlei','xixing','qixidi','jiegou','shixing','fanzhi','fayu','qiyuan','wenhua','yongtu','xianzhuang','tupian','qita','dinianji','zhongnianji','gaonianji');?>
             <?php foreach($keys_array as $value){ ?>
                 <?php    if(!empty($article->$value) && $article->$value !='默认内容'){ ?>
                     <?php    echo htmlspecialchars_decode($article->$value);break; ?>
                 <?php }?>
                 <?php } ?>
+                </div>
         </div>
     </div>
 	<div class="left">

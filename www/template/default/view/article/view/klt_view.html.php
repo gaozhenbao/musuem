@@ -89,7 +89,9 @@ function get_page(){
 <div class="center">
 	<div class="right">
     	<div class="right_txt">
-        	<?php echo $article->content; ?>
+        	<div class="right_txt_sro">
+        		<?php echo $article->content; ?>
+            </div>
         </div>
     </div>
 	<div class="left">
