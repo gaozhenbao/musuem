@@ -3,7 +3,7 @@
 				.nav_1{ letter-spacing:0px;}
 				.nav_2{ letter-spacing:0px; text-align:left;}
 			.bottom_nav{ width:80px; height:44px; float:left;}
-			.bottom_nav a{ display:block; width:80px; height:44px; line-height:44px; color:#FFF; text-align:center;}
+			.bottom_nav a{ display:block; width:75px; height:44px; line-height:44px; color:#FFF; text-align:center;}
 			.bottom_navbg{ background:#990000;}
 			.bottom_nav a:hover{ background:#990000;}
 			#reback{ cursor:pointer;}

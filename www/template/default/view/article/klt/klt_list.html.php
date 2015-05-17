@@ -49,7 +49,7 @@ function getNewsList(pageID){
 			winwidth = parseInt($(".center_s").width());
 			var offset = parseInt($('.center_list').css("left"));
 			if(all_length+offset-winwidth >= liwidth && all_length !== 0){
-				var length = offset - liwidth;
+				var length = offset - 3*liwidth;
 				$(".center_list").animate({left:length+'px'});
 				if((all_length + length - winwidth < winwidth) && sj){
 					//加载数据
@@ -73,7 +73,7 @@ function getNewsList(pageID){
 			winwidth = parseInt($(".center_s").width());
 			var offset = parseInt($('.center_list').css("left"));
 			if(offset <0 && -offset >= liwidth){
-				var length = offset+liwidth;
+				var length = offset+3*liwidth;
 				$(".center_list").animate({left:length+'px'});
 			}else if(offset <0 && -offset < liwidth){
 				var length = 0;

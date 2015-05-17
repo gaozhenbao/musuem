@@ -17,7 +17,7 @@
 				return false;
 			}
 		})
-		
+
 		$("#right_nav").click(function(){
 			if(l_s >0){
 				l_s --;
@@ -28,7 +28,7 @@
 				return false;
 			}
 		})
-		
+
 	})
 </script>
 <div class="center">

@@ -173,14 +173,14 @@ function get_page(){
             	<table width="100%" border="0" cellspacing="0" cellpadding="0" height="75">
                   <tr>
                     <td>
-                    	<div class="page_1" id="pre_page">上一页</div>                    </td>
+                    	<div class="page_1" id="pre_page">上一篇</div>                    </td>
                     <td>
                     	<div class="page_2">
                         	
                         </div>
                     </td>
                     <td>
-                    	<div class="page_1" id="next_page">下一页</div>
+                    	<div class="page_1" id="next_page">下一篇</div>
                     </td>
                   </tr>
                 </table>

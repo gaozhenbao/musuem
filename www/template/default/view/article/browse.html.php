@@ -1,4 +1,4 @@
-<?php 
+<?php
 include TPL_ROOT . 'common/header.html.php';
 $path = array_keys($category->pathNames);
 	$prex = $_GET['pt'];
