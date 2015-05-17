@@ -69,11 +69,11 @@
 
                                         	<?php $i++; if($i%4 == 0){?>
 
-                                        		<li id="bg<?php echo $i; ?>"><a href="./?m=article&f=browse&categoryID=<?php echo $val->id; ?>&type=list&pt=zlk"><?php echo $val->name;?></a></li>
+                                        		<li id="bg<?php echo $i; ?>"><a href="./?m=article&f=browse&categoryID=<?php echo $val->id; ?>&type=list&pt=zlk"><?php echo '&nbsp;'.$val->name.'&nbsp;';?></a></li>
 
                                         	<?php }else {?>
 
-                                            	<li id="bg<?php echo $i; ?>"><a href="./?m=article&f=browse&categoryID=<?php echo $val->id; ?>&type=list&pt=zlk"><?php echo $val->name;?></a></li><span class="center_navspace"></span>
+                                            	<li id="bg<?php echo $i; ?>"><a href="./?m=article&f=browse&categoryID=<?php echo $val->id; ?>&type=list&pt=zlk"><?php echo '&nbsp;'.$val->name.'&nbsp;';?></a></li><span class="center_navspace"></span>
 
                                             <?php } ?>
 
