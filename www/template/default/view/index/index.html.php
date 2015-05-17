@@ -1,6 +1,15 @@
 <?php include TPL_ROOT . 'common/header.html.php';?>
 <link href="<?php echo $themeRoot?>index/index.css" rel="stylesheet" type="text/css" />
-<bgsound src="<?php echo $themeRoot?>common/bg.mp3" loop="-1">
+<div id="div_bg"><embed style="width: 0px;height: 0px;" src="<?php echo $themeRoot?>common/home_bg.mp3" loop="-1" id="bofangqi" autostart="true" hidden="true"></embed></div>
+<script>
+    $("#open_bg").click(function(){
+        stop_click();
+    })
+
+    $("#stop_bg").click(function(){
+        play_click('<?php echo $themeRoot?>common/home_bg.mp3');
+    })
+</script>
 <div class="footer">
 	<div class="footer_txt">
     	<div class="foot_list"><a href="?m=article&f=browse&categoryID=10&type=2&pt=zlk"><img src="<?php echo $themeRoot?>index/images/icon_1.png" width="181" height="188"></a></div>

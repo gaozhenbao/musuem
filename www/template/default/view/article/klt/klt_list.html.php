@@ -115,4 +115,4 @@ function getNewsList(pageID){
   <div class="left_nav left_navbg1" id="left_nav"></div>
   <div class="right_nav right_navbg1" id="right_nav"></div>
 </div>
-<?php include TPL_ROOT . 'common/footer.html.php';?>
+<?php $mp3="klt_bg.mp3";include TPL_ROOT . 'common/footer.html.php';?>

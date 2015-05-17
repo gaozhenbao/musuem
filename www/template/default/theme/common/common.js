@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	$("#reback,#reback_img").click(function(){
 		history.back();
 	})
@@ -14,3 +15,19 @@ $(document).ready(function(){
 		$(".show_btn").animate({bottom:'-51px'},200);
 	})
 })
+
+function play_click(url)
+{
+    var div = document.getElementById('div_bg');
+
+    div.innerHTML = '<embed src="'+url+'" loop="-1" id="bofangqi" autostart="true" hidden="true"></embed>';
+}
+function stop_click()
+{
+    var bofangqi = document.getElementById('bofangqi');
+    try{
+        bofangqi.pause();
+    }catch(e){
+        document.getElementById('div_bg').innerHTML = '';
+    }
+}

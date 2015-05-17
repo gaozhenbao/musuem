@@ -14,6 +14,6 @@
         <div class="list_title"><a href="?m=article&f=browse&categoryID=82&type=list&pt=klt"><img src="<?php echo $themeRoot?>klt/images/hyhlt_title3.jpg"></a></div>
     </div>
 </div>
-<?php include TPL_ROOT . 'common/footer.html.php';?>
+<?php $mp3="klt_bg.mp3";include TPL_ROOT . 'common/footer.html.php';?>
 </body>
 </html>

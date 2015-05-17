@@ -61,6 +61,6 @@
     	<a href="./?m=article&f=browse&categoryID=<?php echo $value->id; ?>&type=list&pt=rwg"><img src="<?php echo $value->imgurl; ?>" width="123" height="266"></a>
     <?php } ?>
 </DIV>
-<?php include TPL_ROOT . 'common/footer.html.php';?>
+<?php $mp3="rwg_bg.mp3";include TPL_ROOT . 'common/footer.html.php';?>
 </body>
 </html>

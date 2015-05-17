@@ -102,4 +102,4 @@
 
     </div>
 
-<?php include TPL_ROOT . 'common/footer.html.php';?>
+<?php $mp3="zlk_bg.mp3";include TPL_ROOT . 'common/footer.html.php';?>

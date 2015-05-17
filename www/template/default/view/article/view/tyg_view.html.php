@@ -119,4 +119,4 @@ function get_page(){
 
             </div>
 </div>
-<?php include TPL_ROOT . 'common/footer.html.php';  ?>
+<?php $mp3="tyg_bg.mp3";include TPL_ROOT . 'common/footer.html.php';  ?>

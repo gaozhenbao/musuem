@@ -46,8 +46,8 @@ $themeRoot = $webRoot . "template/default/theme/";
 
                     </div>
                 </td>
-                <td align="center"><img src="<?php echo $themeRoot?>common/images/sound_off.png" width="29" height="26"></td>
-                <td align="center"><img src="<?php echo $themeRoot?>common/images/sound_on.png" width="29" height="26"></td>
+                <td align="center"><img id="open_bg" src="<?php echo $themeRoot?>common/images/sound_off.png" width="29" height="26" ></td>
+                <td align="center"><img id="stop_bg" src="<?php echo $themeRoot?>common/images/sound_on.png" width="29" height="26" ></td>
               </tr>
             </table>
 

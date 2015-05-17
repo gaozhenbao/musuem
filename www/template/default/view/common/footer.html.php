@@ -18,4 +18,15 @@
 
     </div>
 </div>
+<div id="div_bg"><embed style="width: 0px;height: 0px;" src="<?php echo $themeRoot?>common/<?php echo $mp3;?>" loop="-1" id="bofangqi" autostart="true" hidden="true"></embed></div>
 <img src="<?php echo $themeRoot?>common/images/slide.png" class="show_btn">
+
+<script>
+    $("#open_bg").click(function(){
+        stop_click();
+    })
+
+    $("#stop_bg").click(function(){
+        play_click('<?php echo $themeRoot?>common/<?php echo $mp3;?>');
+    })
+</script>

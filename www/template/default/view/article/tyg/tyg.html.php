@@ -6,4 +6,4 @@
     	<div class="center_list"><a class="center_navimg" href="./?m=article&f=browse&categoryID=<?php echo $value->id; ?>&moduleID=<?php echo $value->id; ?>&pt=tyg&type=list"><img src="<?php echo $value->imgurl; ?>"></a><div class="center_listtitle listtitle_bg1"><a class="center_navimg" href="./?m=article&f=browse&categoryID=<?php echo $value->id; ?>&moduleID=<?php echo $value->id; ?>&pt=tyg&type=list"><?php echo $value->name;?></a></div></div>
         <?php } ?>
     </div>
-    <?php include TPL_ROOT . 'common/footer.html.php';?>
+    <?php $mp3="tyg_bg.mp3";include TPL_ROOT . 'common/footer.html.php';?>

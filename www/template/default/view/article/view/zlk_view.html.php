@@ -214,6 +214,8 @@ function get_page(){
     <td>&nbsp;</td>
   </tr>
 </table>
+<?php $mp3="zlk_bg.mp3";?>
+<div id="div_bg"><embed src="<?php echo $themeRoot?>common/<?php echo $mp3;?>" loop="-1" id="bofangqi" autostart="true" hidden="true"></embed></div>
 <div class="bottom">
 	<div class="bottom_txt">
     	<table width="1020" border="0" cellspacing="0" cellpadding="0" height="44">
@@ -265,4 +267,14 @@ function get_page(){
             }
         });
     });
+</script>
+
+<script>
+    $("#open_bg").click(function(){
+        stop_click();
+    })
+
+    $("#stop_bg").click(function(){
+        play_click('<?php echo $themeRoot?>common/<?php echo $mp3;?>');
+    })
 </script>

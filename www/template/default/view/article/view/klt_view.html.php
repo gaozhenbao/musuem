@@ -142,6 +142,6 @@ so.write("CuPlayer");
 
             </div>
 </div>
-<?php include TPL_ROOT . 'common/footer.html.php';?>
+<?php $mp3="klt_bg.mp3";include TPL_ROOT . 'common/footer.html.php';?>
 </body>
 </html>
