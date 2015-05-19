@@ -97,7 +97,7 @@ function get_page(){
 	<div class="left">
     	<div class="left_txt" id="CuPlayer">
         	<?php
-            	if(!empty($article->flv_url)){
+            	if(!empty($article->flv_url) && strtolower(substr($article->flv_url,strlen($article->flv_url)-3,3)) != 'swf'){
 			?>
         	<script type="text/javascript"> 
 var so = new SWFObject("<?php echo $themeRoot?>/klt/CuPlayerMiniV10_Black_S.swf","CuPlayer","490","498","9","#000000");
@@ -118,7 +118,9 @@ so.addVariable("CuPlayerShowControl","true");
 so.addVariable("CuPlayerAutoHideControl","false");
 so.write("CuPlayer"); 
 </script>
-<?php }else{ ?>
+<?php }else if(strtolower(substr($article->flv_url,strlen($article->flv_url)-3,3)) == 'swf'){ ?>
+<embed src="<?php echo $article->flv_url;?>" type="application/x-shockwave-flash" width="490" height="498">
+<?php  }else{ ?>
 <img src="<?php echo $article->img_url; ?>" width="490" height="498">
 <?php } ?>
             <div class="left_title"></div><div class="left_title_f"><span class="title_close">关闭</span><a href="#"><?php echo $article->title; ?></a></div>
