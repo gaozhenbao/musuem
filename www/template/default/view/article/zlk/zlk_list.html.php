@@ -22,9 +22,9 @@ function getNewsList(pageID){
 							return;
 						}
 						if(li_txt == ''){
-							li_txt = '<li><div class="center_listtxt"><div class="center_listimg" id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'">'+o_data[i].title+'</a></div></div></div><div class="center_listtxtspace"></div>';
+							li_txt = '<li><div class="center_listtxt"><div class="center_listimg" id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&categoryID=<?php echo $_GET['categoryID'] ?>&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'">'+o_data[i].title+'</a></div></div></div><div class="center_listtxtspace"></div>';
 						}else{
-							li_txt += '<div class="center_listtxt"><div class="center_listimg"  id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'">'+o_data[i].title+'</a></div></div></div></li>';
+							li_txt += '<div class="center_listtxt"><div class="center_listimg"  id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&categoryID=<?php echo $_GET['categoryID'] ?>&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'">'+o_data[i].title+'</a></div></div></div></li>';
 						//	if(n < count(o_data) -1){
 								li_txt += '<div class="center_listspace"></div>';
 						//	}
@@ -37,9 +37,9 @@ function getNewsList(pageID){
 					$(".center_list>ul").append(li_txt);
 				}
 				}
-				
+
 		  });
-		  
+
 }
 	$(document).ready(function(){
 		//加载数据
@@ -67,7 +67,7 @@ function getNewsList(pageID){
 			}
 			$("#left_nav").removeClass("left_navbg2").addClass("left_navbg1")
 		})
-		
+
 		$("#left_nav").click(function(){
 			size = parseInt($(".center_list li").size());
 			all_length = size*259+(size-1)*22;
@@ -87,7 +87,7 @@ function getNewsList(pageID){
 			$("#right_nav").removeClass("right_navbg2").addClass("right_navbg1")
 		})
 	})
-	
+
 	function count(o){
     var t = typeof o;
     if(t == 'string'){
@@ -100,8 +100,8 @@ function getNewsList(pageID){
             return n;
     }
     return false;
-}; 
- 
+};
+
 </script>
 <!--center-->
 <div class="center">

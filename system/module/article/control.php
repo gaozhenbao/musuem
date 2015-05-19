@@ -147,9 +147,10 @@ class article extends control {
 
         if ($_POST) {
             $this->article->create($type);
+            $categoryID = isset($_GET['categoryID'])?$_GET['categoryID']:0;
             if (dao::isError())
                 $this->send(array('result' => 'fail', 'message' => dao::getError()));
-            $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'locate' => inlink('admin', "type=$type")));
+            $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'locate' => inlink('admin', "type=$type&categoryID=$categoryID")));
         }
 
         if ($type != 'page') {
@@ -189,9 +190,10 @@ class article extends control {
 
         if ($_POST) {
             $this->article->update($articleID, $type);
+            $categoryID = isset($_GET['categoryID'])?$_GET['categoryID']:0;
             if (dao::isError())
                 $this->send(array('result' => 'fail', 'message' => dao::getError()));
-            $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'locate' => inlink('admin', "type=$type")));
+            $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'locate' => inlink('admin', "type=$type&categoryID=$categoryID")));
         }
 
         if ($type != 'page') {
@@ -285,7 +287,7 @@ class article extends control {
             $keywords = $article->keywords . ' ' . $category->keywords . ' ' . $this->config->site->keywords;
             $desc = strip_tags($article->summary);
             //取上一个，下一个ID
-            if($_GET['pt'] == 'cxy' && $id <> ''){
+            if( $id <> ''){
                 $pre = $this->dao->select('id')->from('eps_relation')->where("id < $id AND category = $categoryID")->orderBy("id DESC")->limit(1)->fetchAll();
                 $next = $this->dao->select('id')->from('eps_relation')->where("id > $id AND category = $categoryID")->orderBy("id ASC")->limit(1)->fetchAll();
             }
