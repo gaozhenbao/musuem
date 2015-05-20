@@ -130,20 +130,39 @@ so.write("CuPlayer");
             	<table width="100%" border="0" cellspacing="0" cellpadding="0" height="75">
                   <tr>
                     <td>
-                    	<div class="page_1" id="pre_page">上一页</div>                    </td>
+                    	<div class="page_1" id="pre_page">上一篇</div>                    </td>
                     <td>
                     	<div class="page_2">
                         	
                         </div>
                     </td>
                     <td>
-                    	<div class="page_1" id="next_page">下一页</div>
+                    	<div class="page_1" id="next_page">下一篇</div>
                     </td>
                   </tr>
                 </table>
 
             </div>
 </div>
+<script>
+        <?php if(!empty($preid)){?>
+        $("#pre_page").click(function(){
+            window.location.href = "<?php echo helper::createLink('article', 'view', 'id='.(int)$preid.'&categoryID='.$category->id.'&pt=klt');?>";
+            return;
+        });
+        <?php }else{?>
+        $('#pre_page').attr('style','color:#808080');
+        <?php }?>
+
+        <?php if(!empty($nextid)){?>
+        $("#next_page").click(function(){
+            window.location.href = "<?php echo helper::createLink('article', 'view', 'id='.(int)$nextid.'&categoryID='.$category->id.'&pt=klt');?>";
+            return;
+        });
+        <?php }else{ ?>
+        $("#next_page").attr('style','color:#808080');
+        <?php } ?>
+</script>
 <?php $mp3="klt_bg.mp3";include TPL_ROOT . 'common/footer.html.php';?>
 </body>
 </html>

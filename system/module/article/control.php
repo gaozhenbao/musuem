@@ -233,7 +233,7 @@ class article extends control {
                     $html .= '</div>';
                 }
                 $html .= '<div class="search_txt_2">';
-                $html .= html::a(helper::createLink('article', 'view', 'id='.$value['id'].'&pt=zlk'), $value['title']);
+                $html .= html::a(helper::createLink('article', 'view', 'id='.$value['id'].'&categoryID='.$value['category_id'].'&pt=zlk'), $value['title']);
                 $html .= '</div>';
                 $searchResult[$value['category_id']][] = $value;
             }

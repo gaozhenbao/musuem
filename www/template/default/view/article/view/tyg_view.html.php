@@ -36,30 +36,23 @@ $(document).ready(function(){
 		}
 	})
 
-		$("#pre_page").click(function(){
-		if(now_page <=1){
-			return;
-		}else{
-			now_page --;
-			var top = (parseInt(now_page) -1)*346;
-			$(".right_txt").animate({scrollTop:top+'px'},100);
-			$(".page_2 a").removeClass("page_2_bg");
-			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
-		}
-	})
+    <?php if(!empty($preid)){?>
+    $("#pre_page").click(function(){
+        window.location.href = "<?php echo helper::createLink('article', 'view', 'id='.(int)$preid.'&categoryID='.$category->id.'&pt=tyg');?>";
+        return;
+    });
+    <?php }else{?>
+    $('#pre_page').attr('style','color:#808080');
+    <?php }?>
 
-			$("#next_page").click(function(){
-				var a_size = $(".page_2 a").size();
-		if(now_page >= a_size){
-			return;
-		}else{
-			now_page++;
-			var top = (parseInt(now_page) -1)*346;
-			$(".right_txt").animate({scrollTop:top+'px'},100);
-			$(".page_2 a").removeClass("page_2_bg");
-			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
-		}
-	})
+    <?php if(!empty($nextid)){?>
+    $("#next_page").click(function(){
+        window.location.href = "<?php echo helper::createLink('article', 'view', 'id='.(int)$nextid.'&categoryID='.$category->id.'&pt=tyg');?>";
+        return;
+    });
+    <?php }else{ ?>
+    $("#next_page").attr('style','color:#808080');
+    <?php } ?>
 })
 
 function get_page(){
@@ -105,14 +98,14 @@ function get_page(){
             	<table width="100%" border="0" cellspacing="0" cellpadding="0" height="75">
                   <tr>
                     <td>
-                    	<div class="page_1" id="pre_page">上一页</div>                    </td>
+                    	<div class="page_1" id="pre_page">上一篇</div>                    </td>
                     <td>
                     	<div class="page_2">
 
                         </div>
                     </td>
                     <td>
-                    	<div class="page_1" id="next_page">下一页</div>
+                    	<div class="page_1" id="next_page">下一篇</div>
                     </td>
                   </tr>
                 </table>
