@@ -13,6 +13,7 @@ js::execute($article->js);
 <script>
 var now_page = 1;
 $(document).ready(function(){
+	var now_height = parseInt($(".right_txt_scro").height());
     $(".tag_nav").click(function(){
         $(".right_txt").html($("#"+$(this).attr("id")+'_txt').html())
 		$(".page_2").html('');
@@ -23,7 +24,7 @@ $(document).ready(function(){
 	//翻页
 	$(".page_2 a").live("click",function(){
 	  	now_page = parseInt($(this).text());
-		var top = (now_page -1)*420;
+		var top = (now_page -1)*now_height;
 		$(".right_txt_scro").animate({scrollTop:top+'px'},100);
 		$(".page_2 a").removeClass("page_2_bg");
 		$(this).addClass('page_2_bg');
@@ -42,7 +43,7 @@ $(document).ready(function(){
 		if(now_page <=2){
 			return;
 		}else{
-			var top = (parseInt(now_page) -1)*420;
+			var top = (parseInt(now_page) -1)*now_height;
 			$(".right_txt_scro").animate({scrollTop:top+'px'},100);
 			$(".page_2 a").removeClass("page_2_bg");
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
@@ -61,9 +62,9 @@ $(document).ready(function(){
 
 function get_page(){
 			//分页
-	var s_h = 420;
+	var s_h = parseInt($(".right_txt_scro").height());
 	var con_height = parseInt($(".right_txt").height());
-	var n_page = Math.ceil(con_height/420);
+	var n_page = Math.ceil(con_height/s_h);
 	if(n_page ==0){
 		n_page =1;
 	}
@@ -91,7 +92,7 @@ function get_page(){
         <div class="left">
         	<div class="left_txt">
                 <div class="left_txt_img">
-                    <img src="<?php echo $article->img_url; ?>" width="367" height="369">
+                    <img src="<?php echo $article->img_url; ?>" >
                 </div>
                 <div class="left_txt_txt">
                     中文名：<?php echo $article->title; ?><br/>
@@ -211,12 +212,12 @@ function get_page(){
 <div id="div_bg"><embed src="<?php echo $themeRoot?>common/<?php echo $mp3;?>" loop="-1" id="bofangqi" autostart="true" hidden="true"></embed></div>
 <div class="bottom">
 	<div class="bottom_txt">
-    	<table width="1020" border="0" cellspacing="0" cellpadding="0" height="44">
+    	<table cellspacing="0"  border="0" cellpadding="0" class="bottom_table">
           <tr id="load" style="display: none"><td>努力查找资料中,请稍候哦</td></tr>
           <tr>
-              <td width="575">
+              <td class="bottom_td">
                   <span class="search-letter">A</span><span class="search-letter">B</span><span class="search-letter">C</span><span class="search-letter">D</span><span class="search-letter">E</span><span class="search-letter">F</span><span class="search-letter">G</span><span class="search-letter">H</span><span class="search-letter">I</span><span class="search-letter">J</span><span class="search-letter">K</span><span class="search-letter">L</span><span class="search-letter">M</span><span class="search-letter">N</span><span class="search-letter">O</span><span class="search-letter">P</span><span class="search-letter">Q</span><span class="search-letter">R</span><span class="search-letter">S</span><span class="search-letter">T</span><span class="search-letter">U</span><span class="search-letter">V</span><span class="search-letter">W</span><span class="search-letter">X</span><span class="search-letter">Y</span><span class="search-letter">Z</span></td>
-              <td class="nav_1" width="255">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按首字母查询其他海洋生物</td>
+              <td class="nav_1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按首字母查询其他海洋生物</td>
               <td class="nav_2" width="100"><span id="reback">返回前页</span></td>
             <td align="center"><img id="reback_img" src="<?php echo $themeRoot?>/common/images/b_img.gif" width="36" height="38"></td>
           </tr>

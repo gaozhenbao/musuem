@@ -14,11 +14,8 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(../common/images/bg.
 				.center_listtitle{ width:240px; height:35px; margin:5px 0 0 0; background:#0099ff; line-height:35px; text-align:center; color:#FFF; font-size:16px;}
 				.center_listtitle a{ color:#FFF;}
 		.left_nav{ width:48px; height:57px; position:absolute; left:-55px; top:250px;}
-				.left_navbg1{ background:url(../common/images/left_nav.png)}
-				.left_navbg2{ background:url(../common/images/left_navn.png)}
 			.right_nav{ width:48px; height:57px; position:absolute;right:-55px; top:250px;}
-				.right_navbg1{background:url(../common/images/right_nav.png)}
-				.right_navbg2{background:url(../common/images/right_navn.png)}
+
 			.center_listtxtspace{ width:240px; height:15px;}
 			.left_nav{ width:48px; height:57px; position:absolute; left:-55px; top:250px;}
 			.right_nav{ width:48px; height:57px; position:absolute;right:-55px; top:250px;}
@@ -38,14 +35,15 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(../common/images/bg.
 				.center_listtitle{ width:350px; height:40px; margin:5px 0 0 0; background:#0099ff; line-height:40px; text-align:center; color:#FFF; font-size:22px;}
 				.center_listtitle a{ color:#FFF;}
 		
-				.left_navbg1{ background:url(../common/images/left_nav.png)}
-				.left_navbg2{ background:url(../common/images/left_navn.png)}
-			
-				.right_navbg1{background:url(../common/images/right_nav.png)}
-				.right_navbg2{background:url(../common/images/right_navn.png)}
+				
 			.center_listtxtspace{ width:240px; height:15px;}
-						.left_nav{ width:48px; height:57px; position:absolute; left:-55px; top:300px;}
-			.right_nav{ width:48px; height:57px; position:absolute;right:-55px; top:300px;}
+						.left_nav{ width:48px; height:57px; position:absolute; left:-55px; top:350px;}
+			.right_nav{ width:48px; height:57px; position:absolute;right:-55px; top:350px;}
 			.center_listspace{ width:40px; height:848px; float:left; }
 }
+
+.left_navbg1{ background:url(../common/images/left_nav.png)}
+				.left_navbg2{ background:url(../common/images/left_navn.png)}
+				.right_navbg1{background:url(../common/images/right_nav.png)}
+				.right_navbg2{background:url(../common/images/right_navn.png)}
 		

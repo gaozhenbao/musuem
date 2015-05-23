@@ -1,14 +1,14 @@
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $themeRoot?>zlk/zlk_list.css" rel="stylesheet" type="text/css" />
 <script>
-if(){
-}
 var size;
 var all_length;
-var liwidth = 281;
 var pageID = 1;
 var li_txt = '';
 var sj = true;
+var s_width;
+var space;
+var liwidth;
 function getNewsList(pageID){
 			  $.get("./?m=article&f=browse&categoryID=<?php echo $_GET['categoryID'] ?>&pageID="+pageID+"&moduleID=<?php echo $_GET['moduleID'] ?>&sj=json", function(result){
 				var o_data = eval( '(' + result + ')' );
@@ -24,9 +24,9 @@ function getNewsList(pageID){
 							return;
 						}
 						if(li_txt == ''){
-							li_txt = '<li><div class="center_listtxt"><div class="center_listimg" id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'&categoryID=<?php echo $_GET['categoryID'] ?>&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&categoryID=<?php echo $_GET['categoryID'] ?>&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'">'+o_data[i].title+'</a></div></div></div><div class="center_listtxtspace"></div>';
+							li_txt = '<li><div class="center_listtxt"><div class="center_listimg" id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'&categoryID=<?php echo $_GET['categoryID'] ?>&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'"><img src="'+o_data[i].img_url+'"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&categoryID=<?php echo $_GET['categoryID'] ?>&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'">'+o_data[i].title+'</a></div></div></div><div class="center_listtxtspace"></div>';
 						}else{
-							li_txt += '<div class="center_listtxt"><div class="center_listimg"  id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'&categoryID=<?php echo $_GET['categoryID'] ?>&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'"><img src="'+o_data[i].img_url+'" width="259" height="262"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&categoryID=<?php echo $_GET['categoryID'] ?>&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'">'+o_data[i].title+'</a></div></div></div></li>';
+							li_txt += '<div class="center_listtxt"><div class="center_listimg"  id="center_listimg_'+o_data[i].id+'"><a href="./?m=article&f=view&id='+o_data[i].id+'&categoryID=<?php echo $_GET['categoryID'] ?>&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'"><img src="'+o_data[i].img_url+'"></a><div class="center_title"></div><div class="center_title_a"><a href="./?m=article&f=view&id='+o_data[i].id+'&categoryID=<?php echo $_GET['categoryID'] ?>&pt=<?php echo $_GET['pt'] ?>" title="'+o_data[i].title+'">'+o_data[i].title+'</a></div></div></div></li>';
 						//	if(n < count(o_data) -1){
 								li_txt += '<div class="center_listspace"></div>';
 						//	}
@@ -38,21 +38,28 @@ function getNewsList(pageID){
 					li_txt = li_txt+'</li>';
 					$(".center_list>ul").append(li_txt);
 				}
+						s_width = parseInt($(".center_list li").width());
+		space = parseInt($(".center_listspace").width());
+		liwidth = s_width+space;
 				}
 
 		  });
-
 }
 	$(document).ready(function(){
+		if($(window).width() < 1420){
+			var num = 3;
+		}else{
+			var num = 4;
+		}	
 		//加载数据
 		getNewsList(pageID);
 		$("#right_nav").click(function(){
 			size = parseInt($(".center_list li").size());
-			all_length = size*259+(size-1)*22;
+			all_length = size*s_width+(size-1)*space;
 			winwidth = parseInt($(".center_s").width());
 			var offset = parseInt($('.center_list').css("left"));
 			if(all_length+offset-winwidth >= liwidth && all_length !== 0){
-				var length = offset - 3*liwidth;
+				var length = offset - num*liwidth;
 				$(".center_list").animate({left:length+'px'});
 				if((all_length + length - winwidth < winwidth) && sj){
 					//加载数据
@@ -72,15 +79,15 @@ function getNewsList(pageID){
 
 		$("#left_nav").click(function(){
 			size = parseInt($(".center_list li").size());
-			all_length = size*259+(size-1)*22;
+			all_length = size*s_width+(size-1)*space;
 			winwidth = parseInt($(".center_s").width());
 			var offset = parseInt($('.center_list').css("left"));
 			if(offset <0 && -offset >= liwidth){
-				var length = offset+3*liwidth;
+				var length = offset+num*liwidth;
 				$(".center_list").animate({left:length+'px'});
 			}else if(offset <0 && -offset < liwidth){
 				var length = 0;
-				var all_length = size*259+(size-1)*22;
+				var all_length = size*s_width+(size-1)*space;
 				$(".center_list").animate({left:length+'px'});
 			}else{
 				$(this).removeClass("right_navbg1").addClass("left_navbg2")
