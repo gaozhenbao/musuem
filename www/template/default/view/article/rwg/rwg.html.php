@@ -55,12 +55,13 @@
         </table>
 
   </div>
-</div>
-<DIV class="footer">
+  <DIV class="footer">
 	<?php foreach($types as $value){?>
     	<a href="./?m=article&f=browse&categoryID=<?php echo $value->id; ?>&type=list&pt=rwg"><img src="<?php echo $value->imgurl; ?>" width="123" height="266"></a>
     <?php } ?>
 </DIV>
+</div>
+
 <?php $mp3="rwg_bg.mp3";include TPL_ROOT . 'common/footer.html.php';?>
 </body>
 </html>

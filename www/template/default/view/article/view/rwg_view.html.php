@@ -13,11 +13,12 @@ js::execute($article->js);
 <script>
 var now_page = 1;
 $(document).ready(function(){
+	var s_heigh  = parseInt($(".right").height());
 	get_page();
 	//翻页
 	$(".page_2 a").live("click",function(){
 	  	now_page = parseInt($(this).text());
-		var top = (now_page -1)*518;
+		var top = (now_page -1)*s_heigh;
 		$(".right").animate({scrollTop:top+'px'},100);
 		$(".page_2 a").removeClass("page_2_bg");
 		$(this).addClass('page_2_bg');
@@ -27,7 +28,7 @@ $(document).ready(function(){
 		if(now_page <=2){
 			return;
 		}else{
-			var top = (parseInt(now_page) -1)*518;
+			var top = (parseInt(now_page) -1)*s_heigh;
 			$(".right").animate({scrollTop:top+'px'},100);
 			$(".page_2 a").removeClass("page_2_bg");
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
@@ -55,9 +56,9 @@ $(document).ready(function(){
 
 function get_page(){
 			//分页
-	var s_h = 510;
+	var s_h = parseInt($(".right").height());;
 	var con_height = parseInt($(".right_txt").height());
-	var n_page = Math.ceil(con_height/510);
+	var n_page = Math.ceil(con_height/s_h);
 	if(n_page ==0){
 		n_page =1;
 	}
@@ -86,7 +87,7 @@ function get_page(){
     </div>
 	<div class="left">
     	<div class="left_txt">
-        	<img src="<?php echo $article->img_url; ?>" width="380" height="372">
+        	<img src="<?php echo $article->img_url; ?>" >
             <div class="left_title"></div><div class="left_title_f"><a href="#"><?php echo $article->title; ?></a></div>
         </div>
     </div>
