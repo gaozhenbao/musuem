@@ -65,7 +65,11 @@ var now = 0;
 <div class="center">
 		<div class="center_nav">
             <?php foreach($imgs as $key=>$val):?>
-        	<span class="bg2"><?php echo $key+1;?></span>
+            	<?php if($key == 0){?>
+        		<span class="bg2"><?php echo $key+1;?></span>
+                <?php }else{ ?>
+                <span class="bg1"><?php echo $key+1;?></span>
+                <?php } ?>
             <?php endforeach;?>
         </div>
 		<?php echo $ans; ?>
