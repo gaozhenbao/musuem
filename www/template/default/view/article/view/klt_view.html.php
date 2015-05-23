@@ -14,11 +14,12 @@ js::execute($article->js);
 <script>
 var now_page = 1;
 $(document).ready(function(){
+	var s_heigh  = parseInt($(".right_txt").height());
 	get_page()
 	//翻页
 	$(".page_2 a").live("click",function(){
 	  	now_page = parseInt($(this).text());
-		var top = (now_page -1)*518;
+		var top = (now_page -1)*s_heigh;
 		$(".right_txt").animate({scrollTop:top+'px'},100);
 		$(".page_2 a").removeClass("page_2_bg");
 		$(this).addClass('page_2_bg');
@@ -28,7 +29,7 @@ $(document).ready(function(){
 		if(now_page <=2){
 			return;
 		}else{
-			var top = (parseInt(now_page) -1)*518;
+			var top = (parseInt(now_page) -1)*s_heigh;
 			$(".right_txt").animate({scrollTop:top+'px'},100);
 			$(".page_2 a").removeClass("page_2_bg");
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
@@ -40,8 +41,8 @@ $(document).ready(function(){
 			return;
 		}else{
 			now_page --;
-			var top = (parseInt(now_page) -1)*518;
-			$(".right_txt").animate({scrollTop:top+'px'},518);
+			var top = (parseInt(now_page) -1)*s_heigh;
+			$(".right_txt").animate({scrollTop:top+'px'},100);
 			$(".page_2 a").removeClass("page_2_bg");
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
 		}
@@ -53,7 +54,7 @@ $(document).ready(function(){
 			return;
 		}else{
 			now_page++;
-			var top = (parseInt(now_page) -1)*518;
+			var top = (parseInt(now_page) -1)*s_heigh;
 			$(".right_txt").animate({scrollTop:top+'px'},100);
 			$(".page_2 a").removeClass("page_2_bg");
 			$(".page_2 a").eq(parseInt(now_page) - 1).addClass('page_2_bg');
@@ -67,7 +68,7 @@ $(document).ready(function(){
 
 function get_page(){
 			//分页
-	var s_h = 518;
+	var s_h = parseInt($(".right_txt").height());;
 	var con_height = parseInt($(".right_txt").height());
 	var n_page = Math.ceil(con_height/s_h);
 	if(n_page ==0){
@@ -99,8 +100,8 @@ function get_page(){
         	<?php
             	if(!empty($article->flv_url) && strtolower(substr($article->flv_url,strlen($article->flv_url)-3,3)) != 'swf'){
 			?>
-        	<script type="text/javascript"> 
-var so = new SWFObject("<?php echo $themeRoot?>/klt/CuPlayerMiniV10_Black_S.swf","CuPlayer","490","498","9","#000000");
+        	<script type="text/javascript">
+var so = new SWFObject("<?php echo $themeRoot?>/klt/CuPlayerMiniV10_Black_S.swf","CuPlayer",$("#left_txt").width(),$("#left_txt").height(),"9","#000000");
 so.addParam("allowfullscreen","true");
 so.addParam("allowscriptaccess","always");
 so.addParam("wmode","opaque");
@@ -109,8 +110,8 @@ so.addParam("salign","lt");
 so.addVariable("CuPlayerFile","<?php echo $article->flv_url; ?>"); //绝对地址 
 so.addVariable("CuPlayerImage","/cu/FreeDown/Images/flashChangfa2.jpg");
 so.addVariable("CuPlayerShowImage","true");
-so.addVariable("CuPlayerWidth","490");
-so.addVariable("CuPlayerHeight","498");
+so.addVariable("CuPlayerWidth",$("#left_txt").width());
+so.addVariable("CuPlayerHeight",$("#left_txt").height());
 so.addVariable("CuPlayerAutoPlay","false");
 so.addVariable("CuPlayerAutoRepeat","false");
 so.addVariable("CuPlayerAutoRepeat","false");
@@ -121,7 +122,7 @@ so.write("CuPlayer");
 <?php }else if(strtolower(substr($article->flv_url,strlen($article->flv_url)-3,3)) == 'swf'){ ?>
 <embed src="<?php echo $article->flv_url;?>" type="application/x-shockwave-flash" width="490" height="498">
 <?php  }else{ ?>
-<img src="<?php echo $article->img_url; ?>" width="490" height="498">
+<img src="<?php echo $article->img_url; ?>">
 <?php } ?>
             <div class="left_title"></div><div class="left_title_f"><span class="title_close">关闭</span><a href="#"><?php echo $article->title; ?></a></div>
         </div>

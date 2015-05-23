@@ -3,10 +3,12 @@
 <script>
 var size;
 var all_length;
-var liwidth = 281;
 var pageID = 1;
 var li_txt = '';
 var sj = true;
+var s_width;
+var space;
+var liwidth;
 function getNewsList(pageID){
 			  $.get("./?m=article&f=browse&categoryID=<?php echo $_GET['categoryID'] ?>&pageID="+pageID+"&moduleID=<?php echo $_GET['moduleID'] ?>&sj=json", function(result){
 				var o_data = eval( '(' + result + ')' );
@@ -37,19 +39,27 @@ function getNewsList(pageID){
 					li_txt = li_txt+'</li>';
 					$(".center_list>ul").append(li_txt);
 				}
+				s_width = parseInt($(".center_list li").width());
+		space = parseInt($(".center_listspace").width());
+		liwidth = s_width+space;
 		  });
 
 }
 	$(document).ready(function(){
+		if($(window).width() < 1420){
+			var num = 3;
+		}else{
+			var num = 4;
+		}	
 		//加载数据
 		getNewsList(pageID);
 		$("#right_nav").click(function(){
 			size = parseInt($(".center_list li").size());
-			all_length = size*259+(size-1)*22;
+			all_length = size*s_width+(size-1)*space;
 			winwidth = parseInt($(".center_s").width());
 			var offset = parseInt($('.center_list').css("left"));
 			if(all_length+offset-winwidth >= liwidth && all_length !== 0){
-				var length = offset - 3*liwidth;
+				var length = offset - num*liwidth;
 				$(".center_list").animate({left:length+'px'});
 				if((all_length + length - winwidth < winwidth) && sj){
 					//加载数据
@@ -69,15 +79,15 @@ function getNewsList(pageID){
 
 		$("#left_nav").click(function(){
 			size = parseInt($(".center_list li").size());
-			all_length = size*259+(size-1)*22;
+			all_length = size*s_width+(size-1)*space;
 			winwidth = parseInt($(".center_s").width());
 			var offset = parseInt($('.center_list').css("left"));
 			if(offset <0 && -offset >= liwidth){
-				var length = offset+3*liwidth;
+				var length = offset+num*liwidth;
 				$(".center_list").animate({left:length+'px'});
 			}else if(offset <0 && -offset < liwidth){
 				var length = 0;
-				var all_length = size*259+(size-1)*22;
+				var all_length = size*s_width+(size-1)*space;
 				$(".center_list").animate({left:length+'px'});
 			}else{
 				$(this).removeClass("right_navbg1").addClass("left_navbg2")

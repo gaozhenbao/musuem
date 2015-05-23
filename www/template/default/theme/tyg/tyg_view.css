@@ -1,14 +1,36 @@
 	body{ font-size:12px;padding:0px;margin:0px; background:url(images/tyg_contentbg.jpg) center no-repeat; font-family: "微软雅黑","Microsoft yahei",Tahoma,Verdana,Arial,sans-serif;}
-	.center{ width:1036px; margin:0 auto; height:488px; margin-bottom:120px; padding:30px 0 0 0;}
+	@media screen and (max-width:1420px) {
+			.center{ width:1036px; margin:0 auto; height:488px; margin-bottom:120px; padding:30px 0 0 0;}
 		.left{ width:477px; height:488px; float:left; background:#473e37;position:relative; background:url(images/left_bg.png);}
 			.left_txt{ width:463px; height:474px; background:#066; position:absolute; left:7px; top:7px;}
+			.left_txt img{ width:463px; height:474px;}
 			.left_title{ width:353px; height:68px; position:absolute; left:0px; bottom:0px; background:url(images/content_titlebg.png) no-repeat; font-size:30px; font-weight:bold; color:#0099ff; display:block; float:right; display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:60px 0 0 110px;text-shadow: 0 1px 0 #158;}
 		.right{ width:550px; height:488px; float:right; background:url(images/right_conbg.png) center no-repeat;overflow-y:auto; overflow-x:hidden; position:relative; overflow:hidden;}
 		.right_txt{ width:550px; position:absolute; top:20px; height:346px;color:#FFF;overflow:hidden-x; overflow-y:auto; overflow-x:hidden;}
 		.right_txt_scro{ width:420px; position:absolute; right:-18px; top:20px; color:#FFF; font-size:16px; line-height:25px; text-indent:2em; overflow-x:hidden;  padding:10px 50px 20px 50px;}
 		
-				.page{width:520px; height:75px; float:left; margin:0 0 0 260px; display:inline;}
+				.page{height:75px; float:left; margin:0 0 0 150px; display:inline;}
 					.page_1{ width:115px; height:32px; background:#FFF; line-height:32px; color:#0099cc; text-align:center; float:left; margin:0 0 0 7px;}
-					.page_2{ width:240px; height:42px; float:left;background:url(../common/images/page_bg.png) center repeat-x;; line-height:42px; color:#0099cc;margin:0 0 0 10px;}
-					.page_2 a{ width:25px; color:0099cc; height:42px; float:left; text-align:center; color:#0099ff;}
+					.page_2{ width:480px; height:42px; float:left;background:url(../common/images/page_bg.png) center repeat-x;; line-height:42px; color:#0099cc;margin:0 0 0 10px;}
+					.page_2 a{ width:35px; color:0099cc; height:42px; float:left; text-align:center; color:#0099ff;}
 					.page_2 a:hover{ background:#ffcc66;}
+		
+	}
+	
+	@media (min-width: 1420px) {
+			.center{ width:1554px; margin:0 auto; height:732px; margin-bottom:120px; padding:30px 0 0 0;}
+		.left{ width:715px; height:732px; float:left; background:#473e37;position:relative; background:url(images/left_bg.png);}
+			.left_txt{ width:694px; height:711px; background:#066; position:absolute; left:10px; top:10px;}
+			.left_txt img{ width:694px; height:711px;}
+			.left_title{ width:589px; height:102px; position:absolute; left:0px; bottom:0px; background:url(images/content_titlebg_1.png) no-repeat; font-size:50px; font-weight:bold; color:#0099ff; display:block; float:right; display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:90px 0 0 110px;text-shadow: 0 1px 0 #158;}
+		.right{ width:825px; height:732px; float:right; background:url(images/right_conbg_1.png) center no-repeat;overflow-y:auto; overflow-x:hidden; position:relative; overflow:hidden;}
+		.right_txt{ width:825px; position:absolute; top:20px; height:519px;color:#FFF;overflow:hidden-x; overflow-y:auto; overflow-x:hidden;}
+		.right_txt_scro{ width:650px; position:absolute; right:-18px; top:20px; color:#FFF; font-size:30px; line-height:45px; text-indent:2em; overflow-x:hidden;  padding:10px 50px 20px 50px;}
+		
+				.page{width:780px; float:left; height:112px; margin:10px 0 0 250px;}
+					.page_1{ width:140px; height:50px; background:#FFF; line-height:50px; color:#0099cc; text-align:center; float:left; margin:0 0 0 30px; font-size:22px;}
+					.page_2{ width:520px; height:50px; float:left;background:url(../common/images/page_bg_2.png) center repeat-x;; line-height:42px; color:#0099cc;margin:0 0 0 40px;}
+					.page_2 a{ width:35px; color:0099cc; height:50px; float:left; text-align:center; cursor:pointer; font-size:20px;}
+					.page_2_bg{background:#ffcc66;}
+					.page_2 a:hover{ background:#ffcc66;}
+	}
