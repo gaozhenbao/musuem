@@ -75,6 +75,7 @@
             </div>
           </td>
         </tr>
+        <?php if(!isCxy):?>
         <tr>
           <th><?php echo $lang->article->en_title;?></th>
           <td colspan='2'>
@@ -83,6 +84,7 @@
             </div>
           </td>
         </tr>
+        <?php endif;?>
         <tr>
           <th>指导教师</th>
           <td colspan='2'>
@@ -134,16 +136,24 @@
         <tr>
           <th><?php echo $lang->category->imgurl?></th>
           <td colspan='2'>
-          	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="230"><?php echo html::file('imgurl_f', $category->imgurl, "class='form-control'");?></td>
-              <td width="50"><input type="button"  id="idphoto_front_btn" onClick="ajaxFileUpload('imgurl_f');" value="上传"></td>
-              <td><span id="toppic"><span></td>
-            </tr>
+          	<table id="image_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <?php
+                    echo '<tr>';
+                    echo '<td width="230"><input type="file" id="imgurl_f0" name="imgurl_f"></td>';
+                    echo '<td width="50"><input type="button"  onClick="ajaxFileUpload(\'imgurl_f0\','.$isCxy.');" value="上传"></td>';
+                    echo '<td><span id="toppic0"><span></td>';
+                    if($isCxy)
+                    echo '<td><input type="button" value="添加图片" id="addImg"/></td>';
+                    echo '</tr>';
+                ?>
           </table>
+          <script>
+              var image_i = 0;
+          </script>
           </td>
           <?php echo html::hidden('img_url', '', "class='form-control' id='img_url'");?>
         </tr>
+        <?php if(!isCxy):?>
         <tr>
             <th>影视文件</th>
             <td colspan='2'>
@@ -165,10 +175,12 @@
             </td>
             <?php echo html::hidden('flv_url', $article->flv_url, "class='form-control' id='flv_url'");?>
         </tr>
+        <?php endif;?>
         <tr >
             <th>整体介绍</th>
             <td colspan='2'><?php echo html::textarea('content', '', "rows='6' class='form-control'");?></td>
         </tr>
+        <?php if(!isCxy):?>
         <tr>
             <th><?php echo $lang->article->mingzi;?></th>
             <td colspan='2'><?php echo html::textarea('mingzi', '', "rows='4' class='form-control'");?></td>
@@ -249,6 +261,7 @@
             <th><?php echo $lang->article->gaonianji;?></th>
             <td colspan='2'><?php echo html::textarea('gaonianji', '', "rows='4' class='form-control'");?></td>
         </tr>
+        <?php endif;?>
 
         <tr>
           <th><?php echo $lang->article->addedDate;?></th>
@@ -273,5 +286,10 @@
     </form>
   </div>
 </div>
-
+<script type="text/javascript">
+    $('#addImg').click(function(){
+        image_i++;
+        $('#image_table').append('<tr><td width="230"><input type="file" id="imgurl_f'+image_i+'" name="imgurl_f"></td><td width="50"><input type="button"  name="idphoto_front_btn" onClick="ajaxFileUpload(\'imgurl_f'+image_i+'\',<?php echo $isCxy;?>);" value="上传"></td><td><span id="toppic'+image_i+'"><span></td></tr>');
+    });
+</script>
 <?php include '../../common/view/footer.admin.html.php';?>

@@ -221,7 +221,9 @@ jQuery.extend({
  * @Output         :对上传各种情况进行提示
  * */
 
-function ajaxFileUpload(clicks) {
+function ajaxFileUpload(clicks,type) {
+    var i;
+    i = clicks.substr(8,clicks.length-8);
     $.ajaxFileUpload({
         url: '/admin.php?m=tree&f=uploadimg&type=article',
         secureuri: false,
@@ -233,8 +235,12 @@ function ajaxFileUpload(clicks) {
                     alert(data.error);
                 } else {
                     alert('上传成功');
-                    $("#toppic").html('<img src="'+data.msg+'" width="50" height="50">');
-                    $("#img_url").val(data.msg);
+                    $("#toppic"+i).html('<img src="'+data.msg+'" width="50" height="50">');
+                    if(type==1 && $('#img_url').val() != ''){
+                        $("#img_url").val($('#img_url').val()+'||'+data.msg);
+                    }else{
+                        $("#img_url").val(data.msg);
+                    }
                 }
             }
         },
