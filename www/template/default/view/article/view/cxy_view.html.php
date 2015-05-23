@@ -8,16 +8,66 @@ js::set('categoryPath', explode(',', trim($category->path, ',')));
 css::internal($article->css);
 js::execute($article->js);
 ?>
-
+<script>
+	var now = 0;
+	var size;
+	$(document).ready(function(){
+		 size = parseInt($(".scroimg ul li").size()) - 1;
+		$(".scroimg li").each(function(){
+			$(this).height($(window).height());
+		})
+	})
+var now = 0;
+	var size;
+	var time = 5000;
+	$(document).ready(function(){
+		 size = parseInt($(".scroimg ul li").size()) - 1;
+		$(".scroimg li").each(function(){
+			$(this).height($(window).height());
+		})
+		$(".center_nav span").click(function(){
+			time = 10000;
+			var val = parseInt($(this).text()) - 1;
+			$(".center_nav span").removeClass('bg2').addClass('bg1');
+			$(this).removeClass('bg1').addClass('bg2');
+			$(".scroimg li").eq(now).fadeOut(1000);
+			now = val;
+			$(".scroimg li").eq(val).fadeIn(2000);
+		})
+	})
+	window.setInterval(scroing, time);
+	function scroing(){
+		if(now < size){
+			$(".scroimg li").eq(now).fadeOut(1000);
+			$(".center_nav span").removeClass('bg2').addClass('bg1');
+			now++;
+			$(".scroimg li").eq(now).fadeIn(2000);
+			$(".center_nav span").eq(now).addClass('bg2');
+		}else{
+			$(".scroimg li").eq(now).fadeOut(1000);
+			$(".center_nav span").removeClass('bg2').addClass('bg1');;
+			now=0;
+			$(".scroimg li").eq(now).fadeIn(2000);
+			$(".center_nav span").eq(now).addClass('bg2');
+		}
+	}
+</script>
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $themeRoot?>cxy/cxy_view.css" rel="stylesheet" type="text/css" />
 <!--center-->
-    <style type="text/css">
-    body {
-		background:url(<?php echo $article->img_url; ?>) no-repeat 50% 50px;
-}
-    </style>
+<div class="scroimg">
+	<ul>
+    	<li style="background:url(<?php echo $article->img_url; ?>);"></li>
+        <li style="background:url(<?php echo $article->img_url; ?>); display:none;"></li>
+        <li style="background:url(<?php echo $article->img_url; ?>); display:none;"></li>
+    </ul>
+</div>
 <div class="center">
+		<div class="center_nav">
+        	<span class="bg2">1</span>
+            <span class="bg1">2</span>
+            <span class="bg1">3</span>
+        </div>
 		<?php echo $ans; ?>
 		<?php
         	if(!empty($nextid)){
