@@ -110,7 +110,7 @@ class article extends control {
 
 
         if ($type != 'page') {
-            $this->view->treeModuleMenu = $this->loadModel('tree')->getTreeMenu($type, 0, array('treeModel', 'createAdminLink'));
+            $this->view->treeModuleMenu = $this->loadModel('tree')->getTreeMenu($type, $categoryID, array('treeModel', 'createAdminLink'));
             if ($type != 'grade') {
                 $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manage);
             } else {
@@ -140,21 +140,21 @@ class article extends control {
         $this->lang->article->menu = $this->lang->{$type}->menu;
         $this->lang->menuGroups->article = $type;
 
-        $categories = $this->loadModel('tree')->getOptionMenu($type, 0, $removeRoot = true);
+        $categoryID = isset($_GET['categoryID'])?$_GET['categoryID']:0;
+        $categories = $this->loadModel('tree')->getOptionMenu($type, $categoryID, $removeRoot = true);
         if (empty($categories) && $type != 'page') {
             die(js::locate($this->createLink('tree', 'redirect', "type=$type")));
         }
 
         if ($_POST) {
             $this->article->create($type);
-            $categoryID = isset($_GET['categoryID'])?$_GET['categoryID']:0;
             if (dao::isError())
                 $this->send(array('result' => 'fail', 'message' => dao::getError()));
             $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'locate' => inlink('admin', "type=$type&categoryID=$categoryID")));
         }
 
         if ($type != 'page') {
-            $this->view->treeModuleMenu = $this->loadModel('tree')->getTreeMenu($type, 0, array('treeModel', 'createAdminLink'));
+            $this->view->treeModuleMenu = $this->loadModel('tree')->getTreeMenu($type, $categoryID, array('treeModel', 'createAdminLink'));
             if ($type != 'grade') {
                 $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manage);
             } else {
@@ -183,21 +183,21 @@ class article extends control {
         $this->lang->menuGroups->article = $type;
 
         $article = $this->article->getByID($articleID, $replaceTag = false);
-        $categories = $this->loadModel('tree')->getOptionMenu($type, 0, $removeRoot = true);
+        $categoryID = isset($_GET['categoryID'])?$_GET['categoryID']:0;
+        $categories = $this->loadModel('tree')->getOptionMenu($type, $categoryID, $removeRoot = true);
         if (empty($categories) && $type != 'page') {
             die(js::alert($this->lang->tree->noCategories) . js::locate($this->createLink('tree', 'browse', "type=$type")));
         }
 
         if ($_POST) {
             $this->article->update($articleID, $type);
-            $categoryID = isset($_GET['categoryID'])?$_GET['categoryID']:0;
             if (dao::isError())
                 $this->send(array('result' => 'fail', 'message' => dao::getError()));
             $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'locate' => inlink('admin', "type=$type&categoryID=$categoryID")));
         }
 
         if ($type != 'page') {
-            $this->view->treeModuleMenu = $this->loadModel('tree')->getTreeMenu($type, 0, array('treeModel', 'createAdminLink'));
+            $this->view->treeModuleMenu = $this->loadModel('tree')->getTreeMenu($type, $categoryID, array('treeModel', 'createAdminLink'));
             if ($type != 'grade') {
                 $this->view->treeManageLink = html::a(helper::createLink('tree', 'browse', "type={$type}"), $this->lang->tree->manage);
             } else {
