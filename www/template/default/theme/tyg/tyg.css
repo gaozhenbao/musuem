@@ -11,9 +11,9 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(images/tyg_bg.jpg) c
 			
 }
 @media (min-width: 1420px) {
-			.center{ width:1620px; margin:0 auto; height:735px;  margin-bottom:50px; margin-top:50px;  position:relative;}
-		.center_list{ width:474px; height:847px; float:left; background:url(images/center_listbg.png); margin:0 0 100px 34px; text-align:center; padding:10px 0 0 0; position:relative;}
-		.center_list img{ width:444px; height:832px;}
+			.center{ width:1620px; margin:0 auto; height:735px;  margin-bottom:30px; margin-top:30px;  position:relative;}
+		.center_list{ width:474px; height:795px; float:left; background:url(images/center_listbg.png); margin:0 0 100px 34px; text-align:center; padding:10px 0 0 0; position:relative;}
+		.center_list img{ width:444px; height:780px;}
 		.center_listtitle{ position:absolute; width:394px; height:94px; bottom:10px; left:10px;  color:#0099cc; font-size:42px; font-weight:bold; padding:70px 0 0 60px;}
         .center_listtitle a{color:#0090f0;}
         .listtitle_bg1{background:url(images/list_titlebg1_1.png) no-repeat;}

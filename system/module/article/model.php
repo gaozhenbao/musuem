@@ -426,7 +426,28 @@ class articleModel extends model
         $article = $this->getByID($articleID);
         if(empty($article)) return null;
         $module  = $article->type;
-        $param   = "articleID=$articleID";
+        $categoryID = isset($_GET['categoryID'])?$_GET['categoryID']:0;
+        $param   = "id=$articleID&categoryID=$categoryID";
+        switch ($categoryID){
+            case 10:
+                $param .='&pt=zlk';
+                break;
+            case 11:
+                $param .='&pt=rwg';
+                break;
+            case 12:
+                $param .='&pt=tyg';
+                break;
+            case 13:
+                $param .='&pt=klt';
+                break;
+            case 14:
+                $param .='&pt=cxy';
+                break;
+            default:
+                $param .='&pt=zlk';
+                break;
+        }
         if($article->type != 'page')
         {
             $categories    = $article->categories;

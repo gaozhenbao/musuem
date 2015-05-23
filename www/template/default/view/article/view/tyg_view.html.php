@@ -91,7 +91,7 @@ function get_page(){
 	<div class="left">
     	<div class="left_txt">
         	<img src="<?php echo $article->img_url; ?>" >
-            <div class="left_title"><?php echo $article->title; ?></div>
+            <div class="left_title"><a title="<?php echo $article->title; ?>"><?php echo $article->title; ?></a></div>
         </div>
     </div>
     <div class="page">
