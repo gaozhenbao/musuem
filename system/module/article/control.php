@@ -164,7 +164,7 @@ class article extends control {
 
         $this->view->title = $this->lang->{$type}->create;
         $this->view->currentCategory = $categoryID;
-        $this->view->categories = $this->loadModel('tree')->getOptionMenu($type, 0, $removeRoot = true);
+        $this->view->categories = $categories;
         $this->view->type = $type;
 
         $this->display();

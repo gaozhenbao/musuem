@@ -27,7 +27,7 @@
   <div class='panel-actions'><?php echo html::a($this->inlink('create', "type={$type}&category={$categoryID}"), '<i class="icon-plus"></i> ' . $lang->grade->create, 'class="btn btn-primary"');?></div>
   <?php else:?>
   <strong><i class="icon-list-ul"></i> <?php echo $lang->article->list;?></strong>
-  <div class='panel-actions'><?php echo html::a($this->inlink('create', "type={$type}&category={$categoryID}"), '<i class="icon-plus"></i> ' . $lang->article->create, 'class="btn btn-primary"');?></div>
+  <div class='panel-actions'><?php echo html::a($this->inlink('create', "type={$type}&categoryID={$categoryID}"), '<i class="icon-plus"></i> ' . $lang->article->create, 'class="btn btn-primary"');?></div>
   <?php endif;?>
   </div>
   <table class='table table-hover table-striped tablesorter'>
