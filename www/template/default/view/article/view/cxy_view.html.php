@@ -57,9 +57,9 @@ var now = 0;
 <!--center-->
 <div class="scroimg">
 	<ul>
-    	<li style="background:url(<?php echo $article->img_url; ?>);"></li>
-        <li style="background:url(<?php echo $article->img_url; ?>); display:none;"></li>
-        <li style="background:url(<?php echo $article->img_url; ?>); display:none;"></li>
+    	<li style="background:url(<?php echo $article->img_url; ?>) no-repeat center;"></li>
+        <li style="background:url(<?php echo $article->img_url; ?>) no-repeat center; display:none;"></li>
+        <li style="background:url(<?php echo $article->img_url; ?>) no-repeat center; display:none;"></li>
     </ul>
 </div>
 <div class="center">
