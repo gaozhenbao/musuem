@@ -30,9 +30,9 @@ var now = 0;
 			var val = parseInt($(this).text()) - 1;
 			$(".center_nav span").removeClass('bg2').addClass('bg1');
 			$(this).removeClass('bg1').addClass('bg2');
-			$(".scroimg li").eq(now).fadeOut(1000);
+			$(".scroimg li").eq(now).hide();
 			now = val;
-			$(".scroimg li").eq(val).fadeIn(2000);
+			$(".scroimg li").eq(val).show();
 		})
 	})
 	window.setInterval(scroing, time);
