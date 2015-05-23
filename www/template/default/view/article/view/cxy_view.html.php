@@ -57,16 +57,16 @@ var now = 0;
 <!--center-->
 <div class="scroimg">
 	<ul>
-    	<li style="background:url(<?php echo $article->img_url; ?>) no-repeat center;"></li>
-        <li style="background:url(<?php echo $article->img_url; ?>) no-repeat center; display:none;"></li>
-        <li style="background:url(<?php echo $article->img_url; ?>) no-repeat center; display:none;"></li>
+        <?php foreach($imgs as $key=>$val):?>
+        <li style="background:url(<?php echo $val ?>) no-repeat center; <?php if($key!=0)echo 'display:none;' ?>"></li>
+        <?php endforeach;?>
     </ul>
 </div>
 <div class="center">
 		<div class="center_nav">
-        	<span class="bg2">1</span>
-            <span class="bg1">2</span>
-            <span class="bg1">3</span>
+            <?php foreach($imgs as $key=>$val):?>
+        	<span class="bg2"><?php echo $key+1;?></span>
+            <?php endforeach;?>
         </div>
 		<?php echo $ans; ?>
 		<?php

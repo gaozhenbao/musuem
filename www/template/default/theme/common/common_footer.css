@@ -8,7 +8,7 @@
 @media (min-width: 1420px) {
 		.bottom{ width:100%; height:88px; position:fixed; background:#000000; bottom:0px;box-sizing:content-box;z-index:10000}
 			.bottom_txt{ width:1020px; margin:0 auto; height:88px; color:#FFF; font-size:24px;}
-			.bottom_nav{ width:100px; height:88px; float:left;}
+			.bottom_nav{ width:110px; height:88px; float:left;}
 			.bottom_nav a{ display:block; width:105px; height:88px; line-height:88px; color:#FFF; text-align:center;}
 			.nav_2{ letter-spacing:0px; text-align:left; width:120px;}
 }

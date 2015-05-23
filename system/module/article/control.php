@@ -317,6 +317,10 @@ class article extends control {
             $this->view->article->preid = $pre[0]->id;
             $this->view->article->nextid = $next[0]->id;
             $this->view->article = $article;
+            if($_GET['pt'] == 'cxy'){
+                $this->view->imgs = explode('||',$article->img_url);
+                array_filter($this->view->imgs);
+            }
             $this->view->prevAndNext = $this->article->getPrevAndNext($article->id, $category->id);
             $this->view->category = $category;
             $this->view->contact = $this->loadModel('company')->getContact();
