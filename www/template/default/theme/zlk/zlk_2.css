@@ -1,13 +1,7 @@
 body{ font-size:12px;padding:0px;margin:0px; background:url(../common/images/bg.jpg) repeat-x; font-family: "微软雅黑","Microsoft yahei",Tahoma,Verdana,Arial,sans-serif;}
-@media (max-width: 1366px) {
+@media screen and (max-width:1420px) {
 	.center{ width:936px; margin:0 auto; height:490px;  margin-bottom:50px; margin-top: 50px; position:relative; }
 		.center_s{ width:936px; height:490px;overflow:hidden;  position:relative;}
-}
-@media (min-width: 1366px) {
-	.center{ width:1280px; margin:0 auto; height:490px;  margin-bottom:50px; margin-top: 200px; position:relative; }
-		.center_s{ width:1280px; height:490px;overflow:hidden;  position:relative;}
-}
-	
 		.center_content{ width:5256622px; height:490px; position:absolute; left:0px; top:0px;}
 		.center_nav{ width:100%; height:490px;}
 			.center_nav ul{ padding:0px; margin:0px;}
@@ -20,6 +14,25 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(../common/images/bg.
 			.center_navmenu{ width:285px; height:120px; margin:10px 0 0 0; overflow-y:hidden;}
 			.center_navmenu ul{ padding:0px; margin:0px;}
 			.center_navmenu ul li{ width:auto; height:38px;  font-size:14px; color:#FFF; line-height:38px; text-align:center; float:left; margin:15px 2px 0 2px;}
+}
+@media (min-width: 1420px) {
+	.center{ width:1664px; margin:0 auto; height:637px;  margin-bottom:50px; margin-top: 100px; position:relative;}
+		.center_s{ width:1664px; height:637px;overflow:hidden;  position:relative;}
+				.center_content{ width:5256622px; height:637px; position:absolute; left:0px; top:0px;}
+		.center_nav{ width:100%; height:637px;}
+			.center_nav ul{ padding:0px; margin:0px;}
+			#scrolling{ position:absolute; left:0px; top:0px;}
+			.center_nav ul li{ width:390px; height:637px; float:left; background:#FFF; margin:0 0 0 23px;}
+				.center_navimg{ display:block; width:364px; height:364px; padding:13px 13px 6px 13px;}
+				.center_navimg img{ width:364px; height:364px;}
+			.center_navtitle{ width:364px; height:45px; padding:0 10px 0 10px; background:url(../images/zlk_2/ziliaoku2_titlebg.png) 0px 10px repeat-x; display:block;}
+			.center_navtitletxt{ width:365px; height:45px; background:#0099ff; line-height:45px; font-size:26px; font-weight:bold; text-align:center; color:#FFF; letter-spacing:5px;}
+			.center_navmenu{ width:365px;  margin:10px 0 0 0; overflow-y:hidden;}
+			.center_navmenu ul{ padding:0px; margin:0px;}
+			.center_navmenu ul li{ width:auto; height:48px;  font-size:21px; color:#FFF; line-height:48px; text-align:center; float:left; margin:15px 2px 0 2px;}
+}
+	
+		
 			.center_navmenu ul li a{ color:#FFF;}
 			#bg1{ background:#9e0dff;}
 			#bg2{ background:#0d9ecf;}

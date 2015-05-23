@@ -3,17 +3,26 @@
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
 <script>
 	$(document).ready(function(){
-        var size = $(".center_nav #list_1").size();
-        var all_length = size*300+(size-1)*12;
-        var liwidth = 312;
+		 var size = $(".center_nav #list_1").size();
+		if($(window).width() < 1420){
+			var s_width = 300;
+			var space = 12;
+			var num = 3;
+		}else{
+			var s_width = 390;
+			var space = 23;
+			var num = 4;
+		}
+		var all_length = size*s_width+(size-1)*space;
+        var liwidth = s_width+space;
         var winwidth = parseInt($(".center_s").width());
         $("#right_nav").click(function(){
 			var offset = parseInt($('.center_content').css("left"));
 			if(all_length+offset-winwidth >= liwidth && all_length !== 0){
-				var length = offset - 3*liwidth;
+				var length = offset - num*liwidth;
 				$(".center_content").animate({left:length+'px'});
-			}else if(all_length+offset-winwidth < liwidth && all_length !== 0){
-				var length = offset - (all_length+offset-winwidth)-12;
+			}else if(0 < all_length+offset-winwidth && all_length+offset-winwidth < liwidth && all_length !== 0){
+				var length = offset - (all_length+offset-winwidth)-space;
 				all_length = 0;
 				$(".center_content").animate({left:length+'px'});
 			}else{
@@ -25,9 +34,9 @@
 
 		$("#left_nav").click(function(){
             var offset = parseInt($('.center_content').css("left"));
-            all_length = size*300+(size-1)*12;
+            all_length = size*s_width+(size-1)*space;
 			if(offset <0 && -offset >= liwidth){
-				var length = offset+3*liwidth;
+				var length = offset+num*liwidth;
                 $(".center_content").animate({left:length+'px'});
             }else if(offset <0 && -offset < liwidth){
                 var length = 0;

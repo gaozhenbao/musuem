@@ -1,6 +1,8 @@
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $themeRoot?>zlk/zlk_list.css" rel="stylesheet" type="text/css" />
 <script>
+if(){
+}
 var size;
 var all_length;
 var liwidth = 281;
