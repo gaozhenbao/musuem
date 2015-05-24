@@ -12,7 +12,7 @@
 include_once '../system/lib/dao/mysqli.php';
 
 echo "现在开始将所有属于畅想园模块的文章中，在‘名字’字段和‘整体介绍’字段录入的图片批处理到当前格式下的图片录入：<br/>";
-echo "处理逻辑：先判断“名字”中内容是否为空，非空则将名字中的图片进行处理；如果名字为空则对整体介绍中的图片进行处理,并清空整体介绍字段<br/>";
+echo "处理逻辑：先判断“名字”中内容是否为空，非空则将名字中的图片进行处理；如果名字为空则对整体介绍中的图片进行处理,并清空对应字段<br/>";
 
 //连接数据库
 $db = new DBMySQLi('localhost','root','123','museum',3306);
@@ -37,7 +37,7 @@ foreach($temp->rows as $k=>$record){
     }
     $str = trim($str,'||');
     $s = '';
-    if($flag) $s = ",content=''";
+    if($flag) {$s = ",content='' ";}else{$s = ",mingzi='' ";};
     if(!empty($str))
         $db->query("update eps_article set img_url =  '".$db->escape($str)."'".$s." where id=".(int)$record['id']);
 }
