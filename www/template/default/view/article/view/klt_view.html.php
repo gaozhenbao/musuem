@@ -110,8 +110,8 @@ so.addParam("salign","lt");
 so.addVariable("CuPlayerFile","<?php echo $article->flv_url; ?>"); //绝对地址 
 so.addVariable("CuPlayerImage","/cu/FreeDown/Images/flashChangfa2.jpg");
 so.addVariable("CuPlayerShowImage","true");
-so.addVariable("CuPlayerWidth",$("#left_txt").width());
-so.addVariable("CuPlayerHeight",$("#left_txt").height());
+so.addVariable("CuPlayerWidth",$(".left_txt").width());
+so.addVariable("CuPlayerHeight",$(".left_txt").height());
 so.addVariable("CuPlayerAutoPlay","false");
 so.addVariable("CuPlayerAutoRepeat","false");
 so.addVariable("CuPlayerAutoRepeat","false");
