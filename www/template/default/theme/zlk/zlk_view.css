@@ -59,7 +59,7 @@
 			.tag_nav5{ text-align:center; background:url(../common/images/tag_5bg.png) no-repeat;margin:10px 0 0 0;}
 		.hidden_content{ display:none;}
 		.right{ width:825px; float:right;background:#ffffff; height:715px;}
-			.right_txt_scro{width:735px; float:right;background:#0099cc; padding:15px 15px 0 15px; color:#FFF; font-size:20px; line-height:35px; text-indent:2em;  height:700px; overflow-y:auto; overflow-x:hidden; position:relative;}
+			.right_txt_scro{width:735px; float:right;background:#0099cc; padding:15px 15px 0 15px; color:#FFF; font-size:23px; line-height:35px; text-indent:2em;  height:700px; overflow-y:auto; overflow-x:hidden; position:relative;}
 			.right_txt_scro img{width:670px;}
 			.right_txt{width:742px;}
 				.right_img{ text-align:center;}

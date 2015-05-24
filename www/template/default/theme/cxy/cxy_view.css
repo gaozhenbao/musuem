@@ -8,8 +8,8 @@ body{ font-size:12px;padding:0px;margin:0px; font-family: "微软雅黑","Micros
 @media screen and (max-width:1420px) {
 
 	.center{ width:822px; margin:0 auto; height:565px; margin-bottom:50px; position:fixed; left:50%; z-index:10000; margin-left:-411px;}
-	.center_nav{ width:170px; height:32px; position:absolute; left:50%; top:370px; margin-left:-85px; line-height:26px;}
-	.center_nav span{ cursor:pointer; font-size:15px; font-weight:bold; margin:0 0 0 10px;  display:block; width:26px; height:26px; float:left;  text-align:center;}	
+	.center_nav{ width:150px; height:26px; position:absolute; right:-40px; top:320px;  line-height:18px;}
+	.center_nav span{ cursor:pointer; font-size:12px; font-weight:bold; margin:5px 0 0 10px;  display:block; width:18px; height:18px; float:left;  text-align:center;}	
 
 		.left_nav{ width:97px; height:97px; position:absolute; left:-105px; top:170px;}
 				.left_navbg1{ background:url(images/left_nav.png)}
@@ -30,8 +30,8 @@ body{ font-size:12px;padding:0px;margin:0px; font-family: "微软雅黑","Micros
 		.header{ position:fixed; top:0px;z-index:200;}
 	.scroimg{ width:100%; position:fixed; z-index:100;}
 	.center{ width:1233px; margin:0 auto; height:565px; margin-bottom:50px; position:fixed; left:50%; z-index:10000; margin-left:-616px;}
-				.center_nav{ width:170px; height:42px; position:absolute; left:50%; top:530px; margin-left:-85px; line-height:42px;}
-	.center_nav span{ cursor:pointer; font-size:24px; font-weight:bold; margin:0 0 0 10px;  display:block; width:42px; height:42px; float:left;  text-align:center;}	
+				.center_nav{ width:210px; height:32px; position:absolute; right:-20px; top:530px; line-height:32px;}
+	.center_nav span{ cursor:pointer; font-size:24px; font-weight:bold; margin:5px 0 0 10px;  display:block; width:32px; height:32px; float:left;  text-align:center;}	
 		.left_nav{ width:97px; height:97px; position:absolute; left:-105px; top:250px;}
 				.left_navbg1{ background:url(images/left_nav.png)}
 				.left_navbg2{ background:url(images/left_navn.png)}

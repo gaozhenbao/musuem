@@ -19,5 +19,5 @@ a:hover{ text-decoration:none;}
 	.top_rght{ width:233px; height:57px; float:right;}
 		.logreg{ width:114px; height:32px; background:url(images/loginregbg.jpg) no-repeat; color:#009fcc; font-size:14px;}
             .logreg a{color: #0d3d88}
-	.top_icon{ width:116px; height:110px; float:left; background:url(images/logo_icon.png) no-repeat;}
+	.top_icon{ width:57px; height:57px; float:left; background:url(images/logo_icon.png) no-repeat;}
 	.top_icon a{ display:block;width:116px; height:110px;}
