@@ -109,7 +109,7 @@
 							echo '</td>';
                             echo '<td><input type="button" value="添加图片" id="addImg"/></td>';
                         }else{
-							echo '&nbsp;<span color=red id="delimg">删</span>';
+//							echo '&nbsp;<span color=red id="delimg">删</span>';
 							echo '</td>';
 						}
                         echo '</tr>';
@@ -270,7 +270,7 @@
 <script type="text/javascript">
     $('#addImg').click(function(){
         image_i++;
-        $('#image_table').append('<tr  id="upload_arr"><td width="230"><input type="file" id="imgurl_f'+image_i+'" name="imgurl_f"></td><td width="50"><input type="button"  name="idphoto_front_btn" onClick="ajaxFileUpload(\'imgurl_f'+image_i+'\',<?php echo $isCxy;?>);" value="上传"></td><td><span id="toppic'+image_i+'"><span><span color=red id="delimg">删</span></td></tr>');
+        $('#image_table').append('<tr  id="upload_arr"><td width="230"><input type="file" id="imgurl_f'+image_i+'" name="imgurl_f"></td><td width="50"><input type="button"  name="idphoto_front_btn" onClick="ajaxFileUpload(\'imgurl_f'+image_i+'\',<?php echo $isCxy;?>);" value="上传"></td><td><span id="toppic'+image_i+'"><span><span color=red id="delimg"></span></td></tr>');
     });
 	$('body').delegate('#delimg','click',function(){
 	$(this).parents("#upload_arr").remove();

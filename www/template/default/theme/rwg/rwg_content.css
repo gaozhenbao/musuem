@@ -21,7 +21,7 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(images/content_bg.jp
 			.left_txt{ width:570px; height:598px; background:#066; margin:0 auto; margin-top:70px; position:relative;}
 			.left_title{ width:570px; height:146px; background:#000;filter:alpha(opacity=70); -moz-opacity:0.7; opacity:0.7; position:absolute; left:0px; bottom:0px;}
 			.left_txt img{ width:570px; height:598px;}
-			.left_title_f a{ width:512px; height:121px; display:block; background:#0099cc; line-height:121px; font-size:50px; color:#FFF; position:absolute; bottom:40px; left:0px; left:26px; text-align:center; font-weight:bold;}
+			.left_title_f a{ width:512px; height:121px; display:block; background:#0099cc; line-height:121px; font-size:40px; color:#FFF; position:absolute; bottom:40px; left:0px; left:26px; text-align:center; font-weight:bold;}
 		.right{ width:765px; height:715px; float:right; background:url(images/right_txtbg.png) repeat-y #807c75;filter:alpha(opacity=90); -moz-opacity:0.9; opacity:0.9;overflow-y:auto; overflow-x:hidden; position:relative;}
 		.right_txt{ width:620px; padding:10px 15px 0 15px; float:right; min-height:747px;color:#FFF; font-size:23px; line-height:35px; text-indent:2em;}
 .page{width:780px; float:left; height:112px; margin:10px 0 0 250px;}

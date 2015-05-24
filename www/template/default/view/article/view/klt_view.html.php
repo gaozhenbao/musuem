@@ -120,7 +120,7 @@ so.addVariable("CuPlayerAutoHideControl","false");
 so.write("CuPlayer"); 
 </script>
 <?php }else if(strtolower(substr($article->flv_url,strlen($article->flv_url)-3,3)) == 'swf'){ ?>
-<embed src="<?php echo $article->flv_url;?>" type="application/x-shockwave-flash" width="490" height="498">
+<embed src="<?php echo $article->flv_url;?>" type="application/x-shockwave-flash" >
 <?php  }else{ ?>
 <img src="<?php echo $article->img_url; ?>">
 <?php } ?>
