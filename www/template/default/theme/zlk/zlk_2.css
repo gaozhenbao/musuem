@@ -18,18 +18,18 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(../common/images/bg.
 			.right_nav{ width:48px; height:57px; position:absolute;right:-67px; top:250px;}
 }
 @media (min-width: 1420px) {
-	.center{ width:1664px; margin:0 auto; height:637px;  margin-bottom:50px; margin-top: 100px; position:relative;}
-		.center_s{ width:1664px; height:637px;overflow:hidden;  position:relative;}
-				.center_content{ width:5256622px; height:637px; position:absolute; left:0px; top:0px;}
-		.center_nav{ width:100%; height:637px;}
+	.center{ width:1331px; margin:0 auto; height:661px;  margin-bottom:50px; margin-top: 100px; position:relative;}
+		.center_s{ width:1331px; height:661px;overflow:hidden;  position:relative;}
+				.center_content{ width:5256622px; height:661px; position:absolute; left:0px; top:0px;}
+		.center_nav{ width:100%; height:661px;}
 			.center_nav ul{ padding:0px; margin:0px;}
 			#scrolling{ position:absolute; left:0px; top:0px;}
-			.center_nav ul li{ width:390px; height:637px; float:left; background:#FFF; margin:0 0 0 23px;}
-				.center_navimg{ display:block; width:364px; height:364px; padding:13px 13px 6px 13px;}
-				.center_navimg img{ width:364px; height:364px;}
-			.center_navtitle{ width:364px; height:45px; padding:0 10px 0 10px; background:url(../images/zlk_2/ziliaoku2_titlebg.png) 0px 10px repeat-x; display:block;}
-			.center_navtitletxt{ width:365px; height:45px; background:#0099ff; line-height:45px; font-size:26px; font-weight:bold; text-align:center; color:#FFF; letter-spacing:5px;}
-			.center_navmenu{ width:365px;  margin:10px 0 0 0; overflow-y:hidden;}
+			.center_nav ul li{ width:421px; height:661px; float:left; background:#FFF; margin:0 0 0 23px;}
+				.center_navimg{ display:block; width:395px; height:395px; padding:13px 13px 6px 13px;}
+				.center_navimg img{ width:395px; height:385px;}
+			.center_navtitle{ width:395px; height:45px; padding:0 10px 0 10px; background:url(../images/zlk_2/ziliaoku2_titlebg.png) 0px 10px repeat-x; display:block;}
+			.center_navtitletxt{ width:395px; height:45px; background:#0099ff; line-height:45px; font-size:26px; font-weight:bold; text-align:center; color:#FFF; letter-spacing:5px;}
+			.center_navmenu{ width:395px;  margin:10px 0 0 0; overflow-y:hidden;}
 			.center_navmenu ul{ padding:0px; margin:0px;}
 			.center_navmenu ul li{ width:auto; height:48px;  font-size:21px; color:#FFF; line-height:48px; text-align:center; float:left; margin:15px 2px 0 2px;}
 						.left_nav{ width:48px; height:57px; position:absolute; left:-55px; top:300px;}

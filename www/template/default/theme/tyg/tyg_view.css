@@ -25,7 +25,7 @@
 			.left_title{ width:589px; height:102px; position:absolute; left:0px; bottom:0px; background:url(images/content_titlebg_1.png) no-repeat; font-size:50px; font-weight:bold; color:#0099ff; display:block; float:right; display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:90px 0 0 110px;text-shadow: 0 1px 0 #158;}
 		.right{ width:825px; height:732px; float:right; background:url(images/right_conbg_1.png) center no-repeat;overflow-y:auto; overflow-x:hidden; position:relative; overflow:hidden;}
 		.right_txt{ width:825px; position:absolute; top:20px; height:519px;color:#FFF;overflow:hidden-x; overflow-y:auto; overflow-x:hidden;}
-		.right_txt_scro{ width:650px; position:absolute; right:-18px; top:20px; color:#FFF; font-size:30px; line-height:45px; text-indent:2em; overflow-x:hidden;  padding:10px 50px 20px 50px;}
+		.right_txt_scro{ width:650px; position:absolute; right:-18px; top:20px; color:#FFF; font-size:23px; line-height:45px; text-indent:2em; overflow-x:hidden;  padding:10px 50px 20px 50px;}
 		
 				.page{width:780px; float:left; height:112px; margin:10px 0 0 250px;}
 					.page_1{ width:140px; height:50px; background:#FFF; line-height:50px; color:#0099cc; text-align:center; float:left; margin:0 0 0 30px; font-size:22px;}

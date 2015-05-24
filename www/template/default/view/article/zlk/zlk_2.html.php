@@ -4,11 +4,7 @@
 <script>
 	$(document).ready(function(){
 		 var size = $(".center_nav #list_1").size();
-		if($(window).width() < 1420){
-			var num = 3;
-		}else{
-			var num = 4;
-		}
+		var num = 3;
 		var s_width = parseInt($(".center_nav #list_1").width());
 		var space = parseInt($(".center_nav #list_1").css("marginLeft"));
 		var all_length = size*s_width+(size-1)*space;
