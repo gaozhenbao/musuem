@@ -100,15 +100,18 @@
                     $img_urls = explode('||', $article->img_url);
                     foreach ($img_urls as $key => $img) {
                         if (!empty($img)) {
-                            echo '<tr>';
+                            echo '<tr id="upload_arr">';
                             echo '<td width="230"><input type="file" id="imgurl_f' . $key . '" name="imgurl_f"></td>';
                             echo '<td width="50"><input type="button"  onClick="ajaxFileUpload(\'imgurl_f0\','.$isCxy.');" value="上传"></td>';
                         echo '<td>';
                         echo '<span><img src="' . $img . '" width="50" height="50"><span>';
-                        echo '</td>';
                         if ($key == 0 && $isCxy) {
+							echo '</td>';
                             echo '<td><input type="button" value="添加图片" id="addImg"/></td>';
-                        }
+                        }else{
+							echo '&nbsp;<span color=red id="delimg">删</span>';
+							echo '</td>';
+						}
                         echo '</tr>';
                     }
                     }
@@ -267,8 +270,11 @@
 <script type="text/javascript">
     $('#addImg').click(function(){
         image_i++;
-        $('#image_table').append('<tr><td width="230"><input type="file" id="imgurl_f'+image_i+'" name="imgurl_f"></td><td width="50"><input type="button"  name="idphoto_front_btn" onClick="ajaxFileUpload(\'imgurl_f'+image_i+'\',<?php echo $isCxy;?>);" value="上传"></td><td><span id="toppic'+image_i+'"><span></td></tr>');
+        $('#image_table').append('<tr  id="upload_arr"><td width="230"><input type="file" id="imgurl_f'+image_i+'" name="imgurl_f"></td><td width="50"><input type="button"  name="idphoto_front_btn" onClick="ajaxFileUpload(\'imgurl_f'+image_i+'\',<?php echo $isCxy;?>);" value="上传"></td><td><span id="toppic'+image_i+'"><span><span color=red id="delimg">删</span></td></tr>');
     });
+	$('body').delegate('#delimg','click',function(){
+	$(this).parents("#upload_arr").remove();
+});  
 </script>
 <?php include '../../common/view/treeview.html.php';?>
 <?php include '../../common/view/footer.admin.html.php';?>
