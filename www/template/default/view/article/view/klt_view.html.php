@@ -101,7 +101,7 @@ function get_page(){
             	if(!empty($article->flv_url) && strtolower(substr($article->flv_url,strlen($article->flv_url)-3,3)) != 'swf'){
 			?>
         	<script type="text/javascript">
-var so = new SWFObject("<?php echo $themeRoot?>/klt/CuPlayerMiniV10_Black_S.swf","CuPlayer",$("#left_txt").width(),$("#left_txt").height(),"9","#000000");
+var so = new SWFObject("<?php echo $themeRoot?>/klt/CuPlayerMiniV10_Black_S.swf","CuPlayer",$(".left_txt").width(),$(".left_txt").height(),"9","#000000");
 so.addParam("allowfullscreen","true");
 so.addParam("allowscriptaccess","always");
 so.addParam("wmode","opaque");
