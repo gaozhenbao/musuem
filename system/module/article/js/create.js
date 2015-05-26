@@ -263,7 +263,7 @@ function ajaxFileUploadFlv(clicks) {
                     alert(data.error);
                 } else {
                     alert('上传成功');
-                    $("#toppic_flv").html('<embed src='+data.msg+' type="application/x-shockwave-flash" width="50" height="50">');
+                    $("#toppic_flv").html(data.msg);
                     $("#flv_url").val(data.msg);
                 }
             }
