@@ -129,10 +129,12 @@
                       <td width="50"><input type="button"  id="idflv_front_btn" onClick="ajaxFileUploadFlv('flvurl_f');" value="上传"></td>
                       <td>
                           <?php
-                          if($article->flv_url <> ''){
-                              echo '<span id="toppic_flv"><embed src="'.$article->flv_url.'" type="application/x-shockwave-flash" width="50" height="50"><span>';
+                          if(!empty($article->flv_url) && strtolower(substr($article->flv_url,strlen($article->flv_url)-3,3)) == 'swf'){
+                              echo '<span id="toppic_flv"><embed src="'.$article->flv_url.'" type="application/x-shockwave-flash" width="50" height="50"></span>';
+                          }else if(!empty($article->flv_url)){
+                              echo '<span id="toppic_flv">'.$article->flv_url.'</span>';
                           }else{
-                              echo '<span id="toppic_flv"><span>';
+                              echo '<span id="toppic_flv"></span>';
                           }
                           ?>
                       </td>
