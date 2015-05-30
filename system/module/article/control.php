@@ -72,7 +72,28 @@ class article extends control {
 		if($_GET['sj'] == 'json'){
 			echo json_encode($articles);
 		}else{
-			 $this->view->title = $title;
+            if($categoryID == '14' && $_GET['pt']=='cxy' && !isset($_GET['type'])){
+                $this->view->hyqm = '83';
+                $this->view->smhy = '84';
+                $this->view->hyjy = '85';
+                $this->view->hywl = '86';
+                $query = $this->db->query("SELECT id,name FROM ".TABLE_CATEGORY." WHERE parent=14;");
+                foreach($query->rows as $record){
+                    if($record['name'] == '我看海洋奇妙'){
+                        $this->view->hyqm = $record['id'];
+                    }
+                    if($record['name'] == '我探神秘海洋' || $record['name'] == '我探海洋神秘'){
+                        $this->view->smhy = $record['id'];
+                    }
+                    if($record['name'] == '我护海洋家园'){
+                        $this->view->hyjy = $record['id'];
+                    }
+                    if($record['name'] == '畅想未来海洋' || $record['name'] == '畅想海洋未来'){
+                        $this->view->hywl = $record['id'];
+                    }
+                }
+            }
+			$this->view->title = $title;
 			$this->view->keywords = $keywords;
 			$this->view->desc = $desc;
 			$this->view->category = $category;
