@@ -38,16 +38,6 @@
           <th>班级</th>
           <td> <?php echo html::input('keywords', $article->keywords, "class='form-control'");?></td>
       </tr>
-<!--      <tr>-->
-<!--        <th>--><?php //echo $lang->article->source;?><!--</th>-->
-<!--        <td>--><?php //echo html::select('source', $lang->article->sourceList, $article->source, "class='form-control chosen'");?><!--</td>-->
-<!--        <td>-->
-<!--          <div id='copyBox' class='row'>-->
-<!--            <div class='col-sm-4'>--><?php //echo html::input('copySite', $article->copySite, "class='form-control' placeholder='{$lang->article->copySite}'"); ?><!-- </div>-->
-<!--            <div class='col-sm-8'>--><?php //echo html::input('copyURL',  $article->copyURL, "class='form-control' placeholder='{$lang->article->copyURL}'"); ?><!--</div>-->
-<!--          </div>-->
-<!--        </td>-->
-<!--      </tr>-->
       </tbody>
       <?php endif; ?>
       <tr>
@@ -55,16 +45,10 @@
         <td colspan='2'>
           <div class='input-group'>
             <?php echo html::input('title', $article->title, "class='form-control'");?>
-<!--            <span class="input-group-addon w-70px">-->
-<!--              <label class='checkbox'>-->
-<!--                --><?php //$checked = $article->link ? 'checked' : '';?>
-<!--                --><?php //echo "<input type='checkbox' name='isLink' id='isLink' value='1' {$checked} /><span>{$lang->article->isLink}</span>"?>
-<!--              </label>-->
-<!--            </span>-->
           </div>
         </td>
       </tr>
-      <?php if(!isCxy):?>
+      <?php if($isZlk):?>
       <tr>
         <th><?php echo $lang->article->en_title;?></th>
         <td colspan='2'>
@@ -74,6 +58,7 @@
         </td>
       </tr>
       <?php endif;?>
+      <?php if($isCxy):?>
               <tr>
           <th>指导教师</th>
           <td colspan='2'>
@@ -90,6 +75,7 @@
             </div>
           </td>
         </tr>
+      <?php endif;?>
       <tbody class='articleInfo'>
       <tr>
           <th><?php echo $lang->category->imgurl?></th>
@@ -109,7 +95,7 @@
 							echo '</td>';
                             echo '<td><input type="button" value="添加图片" id="addImg"/></td>';
                         }else{
-							echo '&nbsp;<span color=red id="delimg">删</span>';
+//							echo '&nbsp;<span color=red id="delimg">删</span>';
 							echo '</td>';
 						}
                         echo '</tr>';
@@ -133,7 +119,7 @@
           <?php echo html::hidden('img_url', $article->img_url, "class='form-control' id='img_url'");?>
         </tr>
 
-      <?php if (!$isCxy) : ?>
+      <?php if ($isKlt) : ?>
       <tr>
           <th>影视文件</th>
           <td colspan='2'>
@@ -143,10 +129,12 @@
                       <td width="50"><input type="button"  id="idflv_front_btn" onClick="ajaxFileUploadFlv('flvurl_f');" value="上传"></td>
                       <td>
                           <?php
-                          if($article->flv_url <> ''){
-                              echo '<span id="toppic_flv"><embed src="'.$article->flv_url.'" type="application/x-shockwave-flash" width="50" height="50"><span>';
+                          if(!empty($article->flv_url) && strtolower(substr($article->flv_url,strlen($article->flv_url)-3,3)) == 'swf'){
+                              echo '<span id="toppic_flv"><embed src="'.$article->flv_url.'" type="application/x-shockwave-flash" width="50" height="50"></span>';
+                          }else if(!empty($article->flv_url)){
+                              echo '<span id="toppic_flv">'.$article->flv_url.'</span>';
                           }else{
-                              echo '<span id="toppic_flv"><span>';
+                              echo '<span id="toppic_flv"></span>';
                           }
                           ?>
                       </td>
@@ -158,11 +146,13 @@
       <?php endif;?>
       </tbody>
       <tbody class='articleInfo'>
+      <?php if(!$isZlk):?>
       <tr>
           <th>整体介绍</th>
-          <td colspan='2'><?php echo html::textarea('content', $article->content, "rows='6' class='form-control'");?></td>
+          <td colspan='2'><?php echo html::textarea('content', $article->content, "rows='18' class='form-control'");?></td>
       </tr>
-      <?php if (!$isCxy) : ?>
+      <?php endif;?>
+      <?php if ($isZlk) : ?>
       <tr>
           <th><?php echo $lang->article->mingzi;?></th>
           <td colspan='2'><?php echo html::textarea('mingzi', $article->mingzi, "rows='4' class='form-control'");?></td>
@@ -270,7 +260,7 @@
 <script type="text/javascript">
     $('#addImg').click(function(){
         image_i++;
-        $('#image_table').append('<tr  id="upload_arr"><td width="230"><input type="file" id="imgurl_f'+image_i+'" name="imgurl_f"></td><td width="50"><input type="button"  name="idphoto_front_btn" onClick="ajaxFileUpload(\'imgurl_f'+image_i+'\',<?php echo $isCxy;?>);" value="上传"></td><td><span id="toppic'+image_i+'"><span><span color=red id="delimg">删</span></td></tr>');
+        $('#image_table').append('<tr  id="upload_arr"><td width="230"><input type="file" id="imgurl_f'+image_i+'" name="imgurl_f"></td><td width="50"><input type="button"  name="idphoto_front_btn" onClick="ajaxFileUpload(\'imgurl_f'+image_i+'\',<?php echo $isCxy;?>);" value="上传"></td><td><span id="toppic'+image_i+'"><span><span color=red id="delimg"></span></td></tr>');
     });
 	$('body').delegate('#delimg','click',function(){
 	$(this).parents("#upload_arr").remove();

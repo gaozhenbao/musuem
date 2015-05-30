@@ -147,6 +147,20 @@ class article extends control {
         }else{
             $this->view->isCxy = 0;
         }
+        $result2 = $this->db->query("SELECT `path` FROM eps_category WHERE find_in_set(10,`path`) AND id=".(int)$categoryID);
+        if($categoryID == '10' || $result2->num_rows > 0 ){
+            $this->view->isZlk = 1;
+        }else{
+            $this->view->isZlk = 0;
+        }
+
+        $result3 = $this->db->query("SELECT `path` FROM eps_category WHERE find_in_set(13,`path`) AND id=".(int)$categoryID);
+        if($categoryID == '13' || $result3->num_rows > 0 ){
+            $this->view->isKlt = 1;
+        }else{
+            $this->view->isKlt = 0;
+        }
+
         $categories = $this->loadModel('tree')->getOptionMenu($type, $categoryID, $removeRoot = true);
         if (empty($categories) && $type != 'page') {
             die(js::locate($this->createLink('tree', 'redirect', "type=$type")));
@@ -197,6 +211,19 @@ class article extends control {
             $this->view->isCxy = 1;
         }else{
             $this->view->isCxy = 0;
+        }
+        $result2 = $this->db->query("SELECT `path` FROM eps_category WHERE find_in_set(10,`path`) AND id=".(int)$categoryID);
+        if($categoryID == '10' || $result2->num_rows > 0 ){
+            $this->view->isZlk = 1;
+        }else{
+            $this->view->isZlk = 0;
+        }
+
+        $result3 = $this->db->query("SELECT `path` FROM eps_category WHERE find_in_set(13,`path`) AND id=".(int)$categoryID);
+        if($categoryID == '13' || $result3->num_rows > 0 ){
+            $this->view->isKlt = 1;
+        }else{
+            $this->view->isKlt = 0;
         }
         if (empty($categories) && $type != 'page') {
             die(js::alert($this->lang->tree->noCategories) . js::locate($this->createLink('tree', 'browse', "type=$type")));

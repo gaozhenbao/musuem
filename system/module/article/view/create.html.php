@@ -46,20 +46,12 @@
           <th><?php echo $lang->article->author;?></th>
           <td><?php echo html::input('author', $app->user->realname, "class='form-control'");?></td>
         </tr>
+        <?php if($isCxy):?>
         <tr>
             <th>班级</th>
             <td> <?php echo html::input('keywords', $article->keywords, "class='form-control'");?></td>
         </tr>
-<!--        <tr>-->
-<!--          <th>--><?php //echo $lang->article->source;?><!--</th>-->
-<!--          <td>--><?php //echo html::select('source', $lang->article->sourceList, 'original', "class='form-control chosen'");?><!--</td>-->
-<!--          <td>-->
-<!--            <div class='row' id='copyBox'>-->
-<!--              <div class='col-md-4'>--><?php //echo html::input('copySite', '', "class='form-control' placeholder='{$lang->article->copySite}'"); ?><!-- </div>-->
-<!--              <div class='col-md-8'>--><?php //echo html::input('copyURL',  '', "class='form-control' placeholder='{$lang->article->copyURL}'"); ?><!--</div>-->
-<!--            </div>-->
-<!--          </td>-->
-<!--        </tr>-->
+        <?php endif;?>
         </tbody>
         <?php endif; ?>
         <tr>
@@ -67,15 +59,10 @@
           <td colspan='2'>
             <div class='input-group'>
               <?php echo html::input('title', '', "class='form-control'");?>
-<!--              <span class="input-group-addon w-70px">-->
-<!--                <label class='checkbox'>-->
-<!--                  --><?php //echo "<input type='checkbox' name='isLink' id='isLink' value='1' /><span>{$lang->article->isLink}</span>" ?>
-<!--                </label>-->
-<!--              </span>-->
             </div>
           </td>
         </tr>
-        <?php if(!isCxy):?>
+        <?php if($isZlk):?>
         <tr>
           <th><?php echo $lang->article->en_title;?></th>
           <td colspan='2'>
@@ -85,6 +72,7 @@
           </td>
         </tr>
         <?php endif;?>
+        <?php if($isCxy):?>
         <tr>
           <th>指导教师</th>
           <td colspan='2'>
@@ -101,36 +89,8 @@
             </div>
           </td>
         </tr>
-<!--        <tr class='link'>-->
-<!--          <th>--><?php //echo $lang->article->link;?><!--</th>-->
-<!--          <td colspan='2'>-->
-<!--            <div></div>-->
-<!--            --><?php //echo html::input('link', '', "class='form-control' placeholder='{$lang->article->placeholder->link}'");?>
-<!--          </td>-->
-<!--        </tr>-->
+        <?php endif;?>
         <tbody class='articleInfo'>
-<!--        <tr>-->
-<!--          <th>--><?php //echo $lang->article->alias;?><!--</th>-->
-<!--          <td colspan='2'>-->
-<!--            <div class='input-group'>-->
-<!--              --><?php //if($type == 'page'):?>
-<!--              <span class='input-group-addon'>http://--><?php //echo $this->server->http_host . $config->webRoot;?><!--page/</span>-->
-<!--              --><?php //else:?>
-<!--              <span class='input-group-addon'>http://--><?php //echo $this->server->http_host . $config->webRoot . $type;?><!--/id_</span>-->
-<!--              --><?php //endif;?>
-<!--              --><?php //echo html::input('alias', '', "class='form-control' placeholder='{$lang->alias}'");?>
-<!--              <span class="input-group-addon w-70px">.html</span>-->
-<!--            </div>-->
-<!--          </td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <th>--><?php //echo $lang->article->keywords;?><!--</th>-->
-<!--          <td colspan='2'>--><?php //echo html::input('keywords', '', "class='form-control'");?><!--</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <th>--><?php //echo $lang->article->summary;?><!--</th>-->
-<!--          <td colspan='2'>--><?php //echo html::textarea('summary', '', "rows='2' class='form-control'");?><!--</td>-->
-<!--        </tr>-->
         </tbody>
         <tbody class='articleInfo'>
         <tr>
@@ -153,7 +113,7 @@
           </td>
           <?php echo html::hidden('img_url', '', "class='form-control' id='img_url'");?>
         </tr>
-        <?php if(!isCxy):?>
+        <?php if($isKlt):?>
         <tr>
             <th>影视文件</th>
             <td colspan='2'>
@@ -176,11 +136,13 @@
             <?php echo html::hidden('flv_url', $article->flv_url, "class='form-control' id='flv_url'");?>
         </tr>
         <?php endif;?>
+        <?php if(!$isZlk):?>
         <tr >
             <th>整体介绍</th>
-            <td colspan='2'><?php echo html::textarea('content', '', "rows='6' class='form-control'");?></td>
+            <td colspan='2'><?php echo html::textarea('content', '', "rows='18' class='form-control'");?></td>
         </tr>
-        <?php if(!isCxy):?>
+        <?php endif;?>
+        <?php if($isZlk):?>
         <tr>
             <th><?php echo $lang->article->mingzi;?></th>
             <td colspan='2'><?php echo html::textarea('mingzi', '', "rows='4' class='form-control'");?></td>

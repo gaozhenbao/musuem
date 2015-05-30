@@ -18,14 +18,15 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(images/klt_contentbg
 	
 }
 @media (min-width: 1420px){
-			.center{ width:1575px; margin:0 auto; height:813px; margin-bottom:100px; padding:30px 0 0 0;}
+			.center{ width:1575px; margin:0 auto; height:813px; margin-bottom:35px;margin-bottom:35px; padding:30px 0 0 0;}
 		.left{ width:735px; height:747px; float:left; background:#fff; padding:10px;}
+            .left embed{ width:735px; height:747px;position: relative}
 			.left_txt{ width:735px; height:747px; position:relative;}
 			.left_txt img{ width:735px; height:747px;}
-			.left_title{ width:735px; height:201px; background:#666; filter:alpha(opacity=80); -moz-opacity:0.8; opacity:0.8; position:absolute; left:0px; bottom:0px;}
-			.left_title_f a{  width:735px; height:201px; display:block; line-height:170px; font-size:80px; color:#FFF; position:absolute; left:0px; bottom:0px; text-align:center; font-weight:bold; overflow:auto; z-index:1000;}
-			.title_close{ position:absolute; bottom:180px; font-size:18px; right:0px; color:#FFF; z-index:1005;}
-		.right{ width:765px; height:777px; float:right; background:url(images/right_bg_1.png) no-repeat center; overflow-y:auto; overflow-x:hidden; position:relative;}
+			.left_title{ width:735px; height:151px; background:#666; filter:alpha(opacity=80); -moz-opacity:0.8; opacity:0.8; position:absolute; left:0px; bottom:0px;}
+			.left_title_f a{  width:735px; height:130px; display:block; line-height:100px; font-size:40px; color:#FFF; position:absolute; left:0px; bottom:0px; text-align:center; font-weight:bold; overflow:auto; z-index:1000;}
+			.title_close{ position:absolute; bottom:130px; font-size:18px; right:0px; color:#FFF; z-index:1005;}
+		.right{ width:765px; height:767px; float:right; background:url(images/right_bg_1.png) no-repeat center; overflow-y:auto; overflow-x:hidden; position:relative;}
 		.right_txt{ width:735px;  height:552px;color:#FFF; margin:120px 0 0 10px; overflow-x:hidden; overflow-y:auto;}
 		.right_txt_sro{ width:705px; padding:15px;color:#FFF; font-size:23px; line-height:35px;overflow-x:hidden;}
 				.page{width:780px; float:left; height:112px; margin:10px 0 0 250px;}
