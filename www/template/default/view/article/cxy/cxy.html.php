@@ -1,5 +1,5 @@
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $themeRoot?>cxy/cxy_list.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $themeRoot?>cxy/cxy.css" rel="stylesheet" type="text/css" />
 <script>
 	$(document).ready(function(){
 		if($(window).width() > 1420){
@@ -14,62 +14,20 @@
 </script>
 <div class="center">
     <div class="center_txt">
-        	<div class="center_list_1">
-            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td rowspan="3" class="img1"><img src="<?php echo $themeRoot?>cxy/images/1_title.png"></td>
-                    <td class="img2"><a href="./?m=article&f=view&categoryID=87&pt=cxy&id=0"><img src="<?php echo $themeRoot?>cxy/images/1_1.png"></a></td>
-                  </tr>
-                  <tr>
-                    <td class="img2"><a href="./?m=article&f=view&categoryID=88&pt=cxy&id=0"><img src="<?php echo $themeRoot?>cxy/images/1_2.png"></a></td>
-                  </tr>
-                  <tr>
-                    <td class="img2"><a href="./?m=article&f=view&categoryID=89&pt=cxy&id=0"><img src="<?php echo $themeRoot?>cxy/images/1_3.png"></a></td>
-                  </tr>
-                </table>
+        	<div class="center_list_1 p1">
+            	<a href="?m=article&f=browse&categoryID=83&pt=cxy&type=list"><img src="<?php echo $themeRoot?>cxy/images/1_title.png"></a>
 
         </div>
-      <div class="center_list_2">
-      	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td class="img1"><img src="<?php echo $themeRoot?>cxy/images/2_title.png"></td>
-          </tr>
-          <tr>
-            <td class="img2"><a href="./?m=article&f=view&categoryID=90&pt=cxy&id=0"><img src="<?php echo $themeRoot?>cxy/images/2_1.png" ></a></td>
-          </tr>
-          <tr>
-            <td class="img2"><a href="./?m=article&f=view&categoryID=91&pt=cxy&id=0"><img src="<?php echo $themeRoot?>cxy/images/2_2.png" ></a></td>
-          </tr>
-        </table>
+      <div class="center_list_2 p2">
+      	<a href="?m=article&f=browse&categoryID=84&pt=cxy&type=2"><img src="<?php echo $themeRoot?>cxy/images/2_title.png"></a>
 
       </div>
-      <div class="center_list_1">
-      	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td class="img2"><img src="<?php echo $themeRoot?>cxy/images/3_title.png"></td>
-          </tr>
-          <tr>
-            <td class="img2"><a href="./?m=article&f=view&categoryID=92&pt=cxy&id=0"><img src="<?php echo $themeRoot?>cxy/images/3_1.png" ></a></td>
-          </tr>
-          <tr>
-            <td class="img2"><a href="./?m=article&f=view&categoryID=90&pt=cxy&id=0"><img src="<?php echo $themeRoot?>cxy/images/3_2.png" ></a></td>
-          </tr>
-        </table>
+      <div class="center_list_1 p3">
+      	<a href="?m=article&f=browse&categoryID=85&pt=cxy&type=list"><img src="<?php echo $themeRoot?>cxy/images/3_title.png"></a>
 
       </div>
-      <div class="center_list_2">
-      	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td rowspan="3" class="img1"><img src="<?php echo $themeRoot?>cxy/images/4_title.png" width="81" height="227"></td>
-                    <td class="img2"><a href="./?m=article&f=view&categoryID=89&pt=cxy&id=0"><img src="<?php echo $themeRoot?>cxy/images/4_1.png"></a></td>
-                  </tr>
-                  <tr>
-                    <td class="img2"><a href="./?m=article&f=view&categoryID=90&pt=cxy&id=0"><img src="<?php echo $themeRoot?>cxy/images/4_2.png"></a></td>
-                  </tr>
-                  <tr>
-                    <td class="img2"><a href="./?m=article&f=view&categoryID=91&pt=cxy&id=0"><img src="<?php echo $themeRoot?>cxy/images/4_3.png" ></a></td>
-                  </tr>
-                </table>
+      <div class="center_list_2 p4">
+      	<a href="?m=article&f=browse&categoryID=83&pt=cxy&type=list"><img src="<?php echo $themeRoot?>cxy/images/4_title.png" width="81" height="227"></a>
       </div>
       </div>
     </div>
