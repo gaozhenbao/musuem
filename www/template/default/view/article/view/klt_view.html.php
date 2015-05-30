@@ -165,5 +165,8 @@ so.write("CuPlayer");
         <?php } ?>
 </script>
 <?php $mp3="klt_bg.mp3";include TPL_ROOT . 'common/footer.html.php';?>
+<script>
+    stop_click();
+</script>
 </body>
 </html>

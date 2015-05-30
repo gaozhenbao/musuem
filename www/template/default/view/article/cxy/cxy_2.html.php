@@ -1,26 +1,25 @@
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $themeRoot?>cxy/cxy_list.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $themeRoot?>cxy/cxy_list2.css" rel="stylesheet" type="text/css" />
 <script>
 var size;
 var all_length;
 var pageID = 1;
 var li_txt = '';
 var sj = true;
-var s_width;
-var space;
-var liwidth;
+var s_width=388;
+var space=22;
+var liwidth=410;
 	$(document).ready(function(){
 		//加载数据
 		if($(window).width() < 1420){
 			var num = 3;
 		}else{
-			var num = 4;
-		}	
-
+			var num = 3;
+		}
 		$("#right_nav").click(function(){
 			size = parseInt($(".center_list li").size());
-			all_length = size*s_width+(size-1)*space;
-			winwidth = parseInt($(".center_s").width());
+			all_length = size*s_width+(size)*space;
+			var winwidth = parseInt($(".center_s").width());
 			var offset = parseInt($('.center_list').css("left"));
 			if(all_length+offset-winwidth >= liwidth && all_length !== 0){
 				var length = offset - num*liwidth;
@@ -38,7 +37,7 @@ var liwidth;
 
 		$("#left_nav").click(function(){
 			size = parseInt($(".center_list li").size());
-			all_length = size*s_width+(size-1)*space;
+			all_length = size*s_width+(size)*space;
 			winwidth = parseInt($(".center_s").width());
 			var offset = parseInt($('.center_list').css("left"));
 			if(offset <0 && -offset >= liwidth){
@@ -81,7 +80,7 @@ var liwidth;
                          <div class="center_listtitle"></div>
 						<div class="center_title_a"><a title="'.$val->name.'" href="./?m=article&f=browse&categoryID='.$val->id.'&moduleID='.$val->id.'&type=list&pt=cxy">'.$val->name.'</a></div>
                     </div></li>';
-				echo $str; 
+				echo $str;
 				$str = '';
 
 		 }?>

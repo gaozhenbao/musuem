@@ -30,10 +30,11 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(images/klt_listbg.jp
     .center_list ul li{ width:388px; height:801px; float:left; overflow-y:hidden;}
     .center_listspace{ width:22px; height:801px; float:left; }
     .center_listtxt{ width:388px; height:393px; position:relative;}
-    .center_title{ width:388px; height:72px; position:absolute; left:0px; bottom:0px; background:#CCC; filter:alpha(opacity=80); -moz-opacity:0.8; opacity:0.8; }
+    .center_title{ width:388px; height:144px; position:absolute; left:0px; bottom:0px; background:#CCC; filter:alpha(opacity=80); -moz-opacity:0.8; opacity:0.8; }
     .center_listimg img{ width:388px; height:393px;}
-    .center_title_a{width:388px; text-align:center; line-height:72px; font-weight:bold; font-size:28px; position:absolute; left:0px; bottom:0px; text-align:center; overflow-x:hidden; text-shadow: #158 0 1px 0;}
-    .center_title_a a{ color:#0090f0;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:0 10px 0 10px;}
+    .center_title_a{width:388px; text-align:center; line-height:72px; font-weight:bold; font-size:28px; position:absolute; left:0px; bottom:0px; text-align:center;  text-shadow: #158 0 1px 0;}
+    .center_title_a a{ color:#0090f0;display:block; overflow:hidden; text-overflow:ellipsis; padding:0 10px 0 10px;}
+    .center_title_a_span { word-wrap: break-word;word-break: normal;}
     .left_nav{ width:97px; height:97px; position:absolute; left:-105px; top:340px;}
     .right_nav{ width:97px; height:97px; position:absolute;right:-105px; top:340px;}
 }

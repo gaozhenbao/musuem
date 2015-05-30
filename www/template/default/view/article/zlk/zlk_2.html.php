@@ -13,7 +13,6 @@
         $("#right_nav").click(function(){
 			var offset = parseInt($('.center_content').css("left"));
 			if(all_length+offset-winwidth >= liwidth && all_length !== 0){
-				alert(1);
 				var length = offset - num*liwidth;
 				$(".center_content").animate({left:length+'px'});
 			}else if(0 < all_length+offset-winwidth && all_length+offset-winwidth < liwidth && all_length !== 0){
