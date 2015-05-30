@@ -70,7 +70,10 @@ class article extends control {
             }
         }
 		if($_GET['sj'] == 'json'){
-			echo json_encode($articles);
+			foreach($articles AS $val){
+				$newarticles[] = $val;
+			}
+			echo json_encode($newarticles);
 		}else{
 			 $this->view->title = $title;
 			$this->view->keywords = $keywords;
