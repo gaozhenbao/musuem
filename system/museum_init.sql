@@ -14,7 +14,7 @@ Date: 2015-03-29 21:32:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
+SET GLOBAL log_bin_trust_function_creators = 1;
 -- ----------------------------
 -- Table structure for `eps_article`
 -- ----------------------------
@@ -817,6 +817,11 @@ CREATE TABLE `eps_wx_response` (
 -- ----------------------------
 -- Records of eps_wx_response
 -- ----------------------------
+-- ----------------------------
+-- View structure for `eps_grade`
+-- ----------------------------
+DROP VIEW IF EXISTS `eps_grade`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `eps_grade` AS select `t1`.`id` AS `gradeId`,`t1`.`name` AS `name`,`t1`.`postedDate` AS `postedDate`,`t1`.`order` AS `order` from `eps_category` `t1` where ((`t1`.`parent` = 0) and (`t1`.`grade` = 1) and (`t1`.`type` = 'grade')) ;
 
 -- ----------------------------
 -- View structure for `eps_class`
@@ -824,11 +829,6 @@ CREATE TABLE `eps_wx_response` (
 DROP VIEW IF EXISTS `eps_class`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `eps_class` AS select `t1`.`id` AS `classId`,`t1`.`name` AS `name`,`t1`.`postedDate` AS `postedDate`,`t1`.`order` AS `order`,`t2`.`gradeId` AS `gradeId` from (`eps_category` `t1` join `eps_grade` `t2`) where ((`t1`.`parent` = `t2`.`gradeId`) and (`t1`.`grade` = 2) and (`t1`.`type` = 'grade')) ;
 
--- ----------------------------
--- View structure for `eps_grade`
--- ----------------------------
-DROP VIEW IF EXISTS `eps_grade`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `eps_grade` AS select `t1`.`id` AS `gradeId`,`t1`.`name` AS `name`,`t1`.`postedDate` AS `postedDate`,`t1`.`order` AS `order` from `eps_category` `t1` where ((`t1`.`parent` = 0) and (`t1`.`grade` = 1) and (`t1`.`type` = 'grade')) ;
 
 -- ----------------------------
 -- Function structure for `hzcode`
