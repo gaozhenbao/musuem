@@ -2,15 +2,20 @@
 <link href="<?php echo $themeRoot?>common/common_footer.css" rel="stylesheet" type="text/css" />
 <script>
 	$(document).ready(function(){
+		if($(window).width() < 1420){
+			var s_width = 474;
+		}else{
+			var s_width = 620;
+		}
 		var size = parseInt($(".banner_content").size());
-		var all_length = size*474;
-		var liwidth = 474;
+		var all_length = size*s_width;
+		var liwidth = s_width;
 		var winwidth = parseInt($(".banner_txt_scro").width());
 		var l_s = 0;
 		$("#left_nav").click(function(){
 			if(l_s < size-1){
 				l_s ++;
-				var length = -l_s*474;
+				var length = -l_s*s_width;
 				$(".banner_txt_scro").animate({left:length+'px'});
                 $("#banner_content_img").attr('src',$("#content_img_"+l_s).val());
 			}else{
@@ -21,7 +26,7 @@
 		$("#right_nav").click(function(){
 			if(l_s >0){
 				l_s --;
-				var length = -l_s*474;
+				var length = -l_s*s_width;
 				$(".banner_txt_scro").animate({left:length+'px'});
                 $("#banner_content_img").attr('src',$("#content_img_"+l_s).val());
 			}else{

@@ -26,6 +26,6 @@ body{background:url(images/rwg_bg.jpg) no-repeat center top;}
 			.banner_content a{ color:#FFF;}
 			.banner_contenttitle{ width:32px; height:140px; background:#0099cc; float:left; margin:-10px 0 0 10px; text-align:center; font-size:16px; letter-spacing:10px; font-weight:bold; color:#FFF; padding:5px 0 0 8px;}
 			.bcontent{ width:544px; height:118px; float:left; line-height:25px; font-size:16px; color:#FFF; padding:10px; overflow-y:auto; text-align:left;}
-.footer{ width:1080px; height:266px; float:left; margin:50px 0 0 0;}
+.footer{ width:1080px; height:266px; float:left; margin:90px 0 0 0;}
 .footer img{ float:left; margin:0 0 44px 9px;}
 }
