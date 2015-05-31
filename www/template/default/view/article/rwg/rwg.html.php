@@ -5,7 +5,7 @@
 		if($(window).width() < 1420){
 			var s_width = 474;
 		}else{
-			var s_width = 620;
+			var s_width = 614;
 		}
 		var size = parseInt($(".banner_content").size());
 		var all_length = size*s_width;
@@ -49,7 +49,7 @@
                             <div class="banner_content">
                                 <input type="hidden" id="content_img_<?php echo $i;?>" value="<?php echo $value->img_url;?>">
                                 <div class="banner_contenttitle"><a href="./?m=article&f=browse&categoryID=<?php echo $value->id; ?>&type=list&pt=rwg"><?php echo $value->name; ?></a></div>
-                                <div class="bcontent"><a href="./?m=article&f=view&id=<?php echo $value->article_id; ?>&pt=rwg"><?php echo substr(strip_tags(htmlspecialchars_decode($value->content)),0,245).'...[点击查看详细内容]'; ?></a></div>
+                                <div class="bcontent"><a href="./?m=article&f=view&id=<?php echo $value->article_id; ?>&pt=rwg"><?php echo substr(strip_tags(htmlspecialchars_decode($value->content)),0,350).'...[点击查看详细内容]'; ?></a></div>
                             </div>
                         <?php $i++; } ?>
                     </div>

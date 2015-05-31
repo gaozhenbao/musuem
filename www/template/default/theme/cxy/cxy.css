@@ -1,7 +1,6 @@
-body{ font-size:12px;padding:0px;margin:0px; background:url(images/cxy_listbg.jpg) no-repeat 50% 50px; font-family: "微软雅黑","Microsoft yahei",Tahoma,Verdana,Arial,sans-serif;}
+body{ font-size:12px;padding:0px;margin:0px; background:url(images/cxy_listbg.jpg) no-repeat center; font-family: "微软雅黑","Microsoft yahei",Tahoma,Verdana,Arial,sans-serif;}
 @media screen and (max-width:1420px) {
-	.center{ width:822px; margin:0 auto;}
-	.center{ width:822px; margin:0 auto; height:565px; margin-bottom:50px; position:relative;}
+	.center{ width:822px; margin:0 auto; height:565px; margin-bottom:50px; position:relative; }
 	.center_txt{ width:534px; height:450px; margin:0 auto;}
 	.center_txt img{ margin:0 0 2px 0;}
 	.center_list_1{ width:262px; height:220px; float:left; margin:5px 0 0 0; overflow:hidden; position:absolute;}
@@ -14,8 +13,7 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(images/cxy_listbg.jp
 
 
 @media (min-width: 1420px) {
-	.center{ width:822px; margin:0 auto;}
-	.center{ width:822px; margin:0 auto; height:565px; margin-bottom:50px; position:relative;}
+	.center{ width:822px; margin:0 0 0 500px; height:801px; margin-bottom:50px; position:relative;margin-top: 100px }
 	.center_txt{ width:534px; height:450px; margin:0 auto;}
 	.center_txt img{ margin:0 0 2px 0;}
 	.center_list_1{ width:340px; height:340px; float:left; margin:5px 0 0 0; overflow:hidden; position:absolute;}
