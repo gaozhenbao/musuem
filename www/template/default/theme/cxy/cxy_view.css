@@ -28,7 +28,7 @@ body{ font-size:12px;padding:0px;margin:0px; font-family: "微软雅黑","Micros
 
 @media (min-width: 1420px) {
 		.header{ position:fixed; top:0px;z-index:200;}
-	.scroimg{ width:100%; position:fixed; z-index:100;}
+	.scroimg{max-width: 1920px;max-height: 1080px; width:100%; position:fixed; z-index:100;}
 	.center{ width:1233px; margin:0 auto; height:565px; margin-bottom:50px; position:fixed; left:50%; z-index:10000; margin-left:-616px;}
 				.center_nav{ width:210px; height:32px; position:absolute; right:-20px; top:530px; line-height:32px;}
 	.center_nav span{ cursor:pointer; font-size:24px; font-weight:bold; margin:5px 0 0 10px;  display:block; width:32px; height:32px; float:left;  text-align:center;}	

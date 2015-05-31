@@ -46,7 +46,7 @@ CREATE TABLE `eps_article` (
   `link` varchar(255) NOT NULL,
   `css` text NOT NULL,
   `js` text NOT NULL,
-  `img_url` varchar(255) DEFAULT NULL COMMENT '图片url',
+  `img_url` varchar(2048) DEFAULT NULL COMMENT '图片url',
   `imgurl_f` varchar(255) DEFAULT NULL COMMENT '多余列',
   PRIMARY KEY (`id`),
   KEY `order` (`order`),
@@ -821,13 +821,13 @@ CREATE TABLE `eps_wx_response` (
 -- View structure for `eps_grade`
 -- ----------------------------
 DROP VIEW IF EXISTS `eps_grade`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `eps_grade` AS select `t1`.`id` AS `gradeId`,`t1`.`name` AS `name`,`t1`.`postedDate` AS `postedDate`,`t1`.`order` AS `order` from `eps_category` `t1` where ((`t1`.`parent` = 0) and (`t1`.`grade` = 1) and (`t1`.`type` = 'grade')) ;
+CREATE VIEW `eps_grade` AS select `t1`.`id` AS `gradeId`,`t1`.`name` AS `name`,`t1`.`postedDate` AS `postedDate`,`t1`.`order` AS `order` from `eps_category` `t1` where ((`t1`.`parent` = 0) and (`t1`.`grade` = 1) and (`t1`.`type` = 'grade')) ;
 
 -- ----------------------------
 -- View structure for `eps_class`
 -- ----------------------------
 DROP VIEW IF EXISTS `eps_class`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `eps_class` AS select `t1`.`id` AS `classId`,`t1`.`name` AS `name`,`t1`.`postedDate` AS `postedDate`,`t1`.`order` AS `order`,`t2`.`gradeId` AS `gradeId` from (`eps_category` `t1` join `eps_grade` `t2`) where ((`t1`.`parent` = `t2`.`gradeId`) and (`t1`.`grade` = 2) and (`t1`.`type` = 'grade')) ;
+CREATE VIEW `eps_class` AS select `t1`.`id` AS `classId`,`t1`.`name` AS `name`,`t1`.`postedDate` AS `postedDate`,`t1`.`order` AS `order`,`t2`.`gradeId` AS `gradeId` from (`eps_category` `t1` join `eps_grade` `t2`) where ((`t1`.`parent` = `t2`.`gradeId`) and (`t1`.`grade` = 2) and (`t1`.`type` = 'grade')) ;
 
 
 -- ----------------------------

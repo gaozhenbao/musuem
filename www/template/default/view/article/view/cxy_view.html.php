@@ -14,6 +14,7 @@ js::execute($article->js);
 	$(document).ready(function(){
 		 size = parseInt($(".scroimg ul li").size()) - 1;
 		$(".scroimg li").each(function(){
+            $(this).width($(window).width());
 			$(this).height($(window).height());
 		})
 	})
@@ -21,9 +22,9 @@ var now = 0;
 	var size;
 	var time = 5000;
 	$(document).ready(function(){
-        scroing();
 		 size = parseInt($(".scroimg ul li").size()) - 1;
 		$(".scroimg li").each(function(){
+            $(this).width($(window).width());
 			$(this).height($(window).height());
 		})
 		$(".center_nav span").click(function(){
