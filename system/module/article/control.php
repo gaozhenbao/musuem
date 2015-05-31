@@ -70,7 +70,14 @@ class article extends control {
             }
         }
 		if($_GET['sj'] == 'json'){
-			foreach($articles AS $val){
+			foreach($articles as $val){
+                $imgs = explode('||',$val->img_url);
+                foreach($imgs as $k=> $v){
+                    if(!empty($v)){
+                        $val->img_url = $v;
+                        break;
+                    }
+                }
 				$newarticles[] = $val;
 			}
 			echo json_encode($newarticles);
@@ -370,7 +377,9 @@ class article extends control {
             $this->view->article = $article;
             if($_GET['pt'] == 'cxy'){
                 $this->view->imgs = explode('||',$article->img_url);
-                array_filter($this->view->imgs);
+                foreach($this->view->imgs as $k=>$val){
+                    if(empty($val)) unset($this->view->imgs[$k]);
+                }
             }
             $this->view->prevAndNext = $this->article->getPrevAndNext($article->id, $category->id);
             $this->view->category = $category;

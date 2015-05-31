@@ -21,6 +21,7 @@ var now = 0;
 	var size;
 	var time = 5000;
 	$(document).ready(function(){
+        scroing();
 		 size = parseInt($(".scroimg ul li").size()) - 1;
 		$(".scroimg li").each(function(){
 			$(this).height($(window).height());
