@@ -9,25 +9,16 @@ css::internal($article->css);
 js::execute($article->js);
 ?>
 <script>
-	var now = 0;
+    var now = 0;
 	var size;
+	var time = 10000;
 	$(document).ready(function(){
 		 size = parseInt($(".scroimg ul li").size()) - 1;
 		$(".scroimg li").each(function(){
             $(this).width($(window).width());
 			$(this).height($(window).height());
 		})
-	})
-var now = 0;
-	var size;
-	var time = 5000;
-	$(document).ready(function(){
-		 size = parseInt($(".scroimg ul li").size()) - 1;
-		$(".scroimg li").each(function(){
-            $(this).width($(window).width());
-			$(this).height($(window).height());
-		})
-		$(".center_nav span").click(function(){
+		$(".c   enter_nav span").click(function(){
 			time = 10000;
 			var val = parseInt($(this).text()) - 1;
 			$(".center_nav span").removeClass('bg2').addClass('bg1');
@@ -36,8 +27,13 @@ var now = 0;
 			now = val;
 			$(".scroimg li").eq(val).show();
 		})
-	})
-	window.setInterval(scroing, time);
+        if(size != 0){
+            window.setInterval(scroing, time);
+        }else{
+            scroing();
+        }
+    })
+
 	function scroing(){
 		if(now < size){
 			$(".scroimg li").eq(now).fadeOut(1000);
@@ -65,15 +61,15 @@ var now = 0;
     </ul>
 </div>
 <div class="center">
-<!--		<div class="center_nav">-->
-<!--            --><?php //foreach($imgs as $key=>$val):?>
-<!--            	--><?php //if($key == 0){?>
-<!--        		<span class="bg2">--><?php //echo $key+1;?><!--</span>-->
-<!--                --><?php //}else{ ?>
-<!--                <span class="bg1">--><?php //echo $key+1;?><!--</span>-->
-<!--                --><?php //} ?>
-<!--            --><?php //endforeach;?>
-<!--        </div>-->
+		<div class="center_nav">
+            <?php foreach($imgs as $key=>$val):?>
+            	<?php if($key == 0){?>
+        		<span class="bg2"><?php echo $key+1;?></span>
+                <?php }else{ ?>
+                <span class="bg1"><?php echo $key+1;?></span>
+                <?php } ?>
+            <?php endforeach;?>
+        </div>
 		<?php echo $ans; ?>
 		<?php
         	if(!empty($nextid)){
