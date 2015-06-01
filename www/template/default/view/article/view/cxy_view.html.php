@@ -18,7 +18,7 @@ js::execute($article->js);
             $(this).width($(window).width());
 			$(this).height($(window).height());
 		})
-		$(".c   enter_nav span").click(function(){
+		$(".center_nav span").click(function(){
 			time = 10000;
 			var val = parseInt($(this).text()) - 1;
 			$(".center_nav span").removeClass('bg2').addClass('bg1');
