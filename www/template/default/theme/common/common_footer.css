@@ -19,5 +19,6 @@
 			.bottom_navbg{ background:#990000;}
 			.bottom_nav a:hover{ background:#990000;}
 			#reback{ cursor:pointer;}
+			#reback_img{ cursor:pointer;z-index: 999999}
 			#menu_hidden{cursor:pointer;}
-.show_btn{ position:fixed; right:0px; bottom:-51px;}
+.show_btn{ position:fixed; right:0px; bottom:-51px;z-index: 999999}
