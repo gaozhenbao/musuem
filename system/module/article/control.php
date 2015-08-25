@@ -83,26 +83,40 @@ class article extends control {
 			echo json_encode($newarticles);
 		}else{
             if($categoryID == '14' && $_GET['pt']=='cxy' && !isset($_GET['type'])){
+                $this->view->dchy = '100';
                 $this->view->hyqm = '83';
                 $this->view->smhy = '84';
                 $this->view->hyjy = '85';
                 $this->view->hywl = '86';
                 $query = $this->db->query("SELECT id,name FROM ".TABLE_CATEGORY." WHERE parent=14;");
                 foreach($query->rows as $record){
+                    if($record['name'] == '我绘多彩海洋'){
+                        $this->view->dchy = $record['id'];
+                        $this->view->dchy_title = $record['name'];
+                    }
                     if($record['name'] == '我看海洋奇妙'){
                         $this->view->hyqm = $record['id'];
+                        $this->view->hyqm_title = $record['name'];
                     }
                     if($record['name'] == '我探神秘海洋' || $record['name'] == '我探海洋神秘'){
                         $this->view->smhy = $record['id'];
+                        $this->view->smhy_title = $record['name'];
                     }
                     if($record['name'] == '我护海洋家园'){
                         $this->view->hyjy = $record['id'];
+                        $this->view->hyjy_title = $record['name'];
                     }
-                    if($record['name'] == '畅想未来海洋' || $record['name'] == '畅想海洋未来'){
+                    if($record['name'] == '畅想未来海洋' || $record['name'] == '畅想海洋未来' || $record['name'] == '我的海洋畅想'){
                         $this->view->hywl = $record['id'];
+                        $this->view->hywl_title = $record['name'];
                     }
                 }
+
+                $query2 = $this->db->query("SELECT a.*,r.category FROM ".TABLE_ARTICLE. " a INNER JOIN eps_relation r ON a.id=r.id WHERE a.id in (SELECT id from eps_relation e where e.category in (select id from eps_category c where find_in_set(14,c.path))) order by a.addedDate desc limit 16;");
+                $this->view->latest_cxy_articles = $query2->rows;
+                $this->view->latest_cxy_count = $query2->num;
             }
+
 			$this->view->title = $title;
 			$this->view->keywords = $keywords;
 			$this->view->desc = $desc;

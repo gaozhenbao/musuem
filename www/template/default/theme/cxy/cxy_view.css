@@ -34,11 +34,11 @@ body{ font-size:12px;padding:0px;margin:0px; font-family: "微软雅黑","Micros
 				.center_nav{ width:260px; height:16px; position:absolute; right:-10px; top:1000px; line-height:16px;z-index:100}
 	.center_nav span{ cursor:pointer; font-size:14px; font-weight:bold; margin:5px 0 0 10px;  display:block; width:16px; height:16px; float:left;  text-align:center;z-index:1000}
 		.left_nav{ width:97px; height:97px; position:absolute; left:-105px; top:350px;}
-				.left_navbg1{ background:url(images/left_nav.png)}
-				.left_navbg2{ background:url(images/left_navn.png)}
+				.left_navbg1{ background:url(images/left_nav.png) no-repeat}
+				.left_navbg2{ background:url(images/left_navn.png) no-repeat}
 			.right_nav{ width:97px; height:97px; position:absolute;right:-105px; top:350px;}
-				.right_navbg1{background:url(images/right_nav.png)}
-				.right_navbg2{background:url(images/right_navn.png)}
+				.right_navbg1{background:url(images/right_nav.png) no-repeat;}
+				.right_navbg2{background:url(images/right_navn.png) no-repeat;}
 			.center_listtxtspace{ width:240px; height:15px;}
 	.center_bottom{ width:1233px; height:135px; position:fixed; left:50%; margin-left:-616px; bottom:88px; background:url(images/content_bottombg.png);z-index:10000}
 	.center_bottom_title{ width:348px; height:125px; background: url(images/bottom_titlebg.png) no-repeat center bottom #0099cc; position:absolute; left:16px;top:-15px;}

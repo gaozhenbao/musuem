@@ -36,8 +36,8 @@ body{ font-size:12px;padding:0px;margin:0px; background:url(images/cxy_listbg.jp
 	.right_nav{ width:97px; height:97px; position:absolute;right:-105px; top:340px;}
 }
 
-		.left_navbg1{ background:url(images/left_nav.png)}
-				.left_navbg2{ background:url(images/left_navn.png)}
-				.right_navbg1{background:url(images/right_nav.png)}
-				.right_navbg2{background:url(images/right_navn.png)}
+		.left_navbg1{ background:url(images/left_nav.png) no-repeat}
+				.left_navbg2{ background:url(images/left_navn.png) no-repeat}
+				.right_navbg1{background:url(images/right_nav.png) no-repeat}
+				.right_navbg2{background:url(images/right_navn.png) no-repeat}
 			.center_listtxtspace{ width:240px; height:15px;}

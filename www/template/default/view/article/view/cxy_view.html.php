@@ -11,7 +11,7 @@ js::execute($article->js);
 <script>
     var now = 0;
 	var size;
-	var time = 10000;
+	var time = 10000000;
 	$(document).ready(function(){
 		 size = parseInt($(".scroimg ul li").size()) - 1;
 		$(".scroimg li").each(function(){
@@ -19,7 +19,7 @@ js::execute($article->js);
 			$(this).height($(window).height());
 		})
 		$(".center_nav span").click(function(){
-			time = 10000;
+			time = 10000000;
 			var val = parseInt($(this).text()) - 1;
 			$(".center_nav span").removeClass('bg2').addClass('bg1');
 			$(this).removeClass('bg1').addClass('bg2');
