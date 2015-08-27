@@ -34,7 +34,8 @@ a:hover{ text-decoration:none;}
 	.titletitle{ font-size:22px;  margin-left:5px;}
 	.titletitle a{ color: #ffffff}
 	.txt_list{ width:145px; height:50px; float:left; text-align:center; font-size:22px; line-height:45px;padding-top: 15px}
-	.bottom_img{ position:absolute; margin-top:-183px; left:50%; margin-left:-372px;width: 750px;}
+    .txt_list a{ color: #ffffff}
+    .bottom_img{ position:absolute; margin-top:-183px; left:50%; margin-left:-372px;width: 750px;}
 	.lititlebg1{ background:#ff9999;}
 	.lititlebg2{ background:#99ccff;}
 	.lititlebg3{ background:#66cc99;}

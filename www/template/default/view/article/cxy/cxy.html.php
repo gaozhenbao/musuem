@@ -77,12 +77,9 @@
                     <span class="titletitle"><a href="?m=article&f=browse&categoryID=<?php echo $dchy;?>&pt=cxy&type=list"><?php echo $dchy_title;?></a></span>
                 </div>
                 <div class="litxt">
-                      <div class="txt_list">彩画</div>
-                      <div class="txt_list">沙画</div>
-                      <div class="txt_list">贴画</div>
-                      <div class="txt_list">贝壳画</div>
-                      <div class="txt_list">版画</div>
-                      <div class="txt_list">七彩石</div>
+                    <?php foreach($dchy_children as $dchy_child):var_dump($dchy_child);?>
+                        <div class="txt_list"><a href="<?php if($dchy_child['isFinal']=='0') echo '?m=article&f=browse&categoryID='.$dchy_child['categoryID'].'&type=list';else echo '';?>"><?php echo $dchy_child['name'];?></a></div>
+                    <?php endforeach;?>
                 </div>
             </div>
         </li>
@@ -93,10 +90,9 @@
                     <span class="titletitle"><a href="?m=article&f=browse&categoryID=<?php echo $hyqm?>&pt=cxy&type=list"><?php echo $hyqm_title;?></a></span>
                 </div>
                 <div class="litxt">
-                    <div class="txt_list">摄影</div>
-                    <div class="txt_list">布艺</div>
-                    <div class="txt_list">手工艺</div>
-                    <div class="txt_list">航模</div>
+                    <?php foreach($hyqm_children as $hyqm_child):?>
+                        <div class="txt_list"><a href=""><?php echo $hyqm_child['name'];?></a></div>
+                    <?php endforeach;?>
                 </div>
             </div>
         </li>
@@ -107,8 +103,9 @@
                     <span class="titletitle"><a href="?m=article&f=browse&categoryID=<?php echo $smhy;?>&pt=cxy&type=list"><?php echo $smhy_title;?></a></span>
                 </div>
                 <div class="litxt">
-                    <div class="txt_list">体验海洋</div>
-                    <div class="txt_list">研究海洋</div>
+                    <?php foreach($smhy_children as $smhy_child):?>
+                        <div class="txt_list"><a href=""><?php echo $smhy_child['name'];?></a></div>
+                    <?php endforeach;?>
                 </div>
             </div>
         </li>
@@ -119,9 +116,9 @@
                     <span class="titletitle"><a href="?m=article&f=browse&categoryID=<?php echo $hyjy;?>&pt=cxy&type=list"><?php echo $hyjy_title;?></a></span>
                 </div>
                 <div class="litxt">
-                    <div class="txt_list">环境保护</div>
-                    <div class="txt_list">污水治理</div>
-                    <div class="txt_list">知识宣传</div>
+                    <?php foreach($hyjy_children as $hyjy_child):?>
+                        <div class="txt_list"><a href=""><?php echo $hyjy_child['name'];?></a></div>
+                    <?php endforeach;?>
                 </div>
             </div>
         </li>
@@ -132,8 +129,9 @@
                     <span class="titletitle"><a href="?m=article&f=browse&categoryID=<?php echo $hywl;?>&pt=cxy&type=list"><?php echo $hywl_title;?></a></span>
                 </div>
                 <div class="litxt">
-                    <div class="txt_list">文学作品</div>
-                    <div class="txt_list">未来海洋</div>
+                    <?php foreach($hywl_children as $hywl_child):?>
+                        <div class="txt_list"><a href=""><?php echo $hywl_child['name'];?></a></div>
+                    <?php endforeach;?>
                 </div>
             </div>
         </li>

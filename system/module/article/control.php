@@ -93,26 +93,36 @@ class article extends control {
                     if($record['name'] == '我绘多彩海洋'){
                         $this->view->dchy = $record['id'];
                         $this->view->dchy_title = $record['name'];
+                        $query_dchy = $this->db->query("SELECT id as categoryID,name,(SELECT COUNT(1) FROM ".TABLE_CATEGORY." WHERE parent=categoryID) AS isFinal FROM ".TABLE_CATEGORY." WHERE parent=".(int)$record['id']." ORDER BY id ASC LIMIT 6");
+                        $this->view->dchy_children = $query_dchy->rows;
                     }
                     if($record['name'] == '我看海洋奇妙'){
                         $this->view->hyqm = $record['id'];
                         $this->view->hyqm_title = $record['name'];
+                        $query_hyqm = $this->db->query("SELECT id as categoryID,name,(SELECT COUNT(1) FROM ".TABLE_CATEGORY." WHERE parent=categoryID) AS isFinal FROM ".TABLE_CATEGORY." WHERE parent=".(int)$record['id']." ORDER BY id ASC LIMIT 6");
+                        $this->view->hyqm_children = $query_hyqm->rows;
                     }
                     if($record['name'] == '我探神秘海洋' || $record['name'] == '我探海洋神秘'){
                         $this->view->smhy = $record['id'];
                         $this->view->smhy_title = $record['name'];
+                        $query_smhy = $this->db->query("SELECT id as categoryID,name,(SELECT COUNT(1) FROM ".TABLE_CATEGORY." WHERE parent=categoryID) AS isFinal FROM ".TABLE_CATEGORY." WHERE parent=".(int)$record['id']." ORDER BY id ASC LIMIT 6");
+                        $this->view->smhy_children = $query_smhy->rows;
                     }
                     if($record['name'] == '我护海洋家园'){
                         $this->view->hyjy = $record['id'];
                         $this->view->hyjy_title = $record['name'];
+                        $query_hyjy = $this->db->query("SELECT id as categoryID,name,(SELECT COUNT(1) FROM ".TABLE_CATEGORY." WHERE parent=categoryID) AS isFinal FROM ".TABLE_CATEGORY." WHERE parent=".(int)$record['id']." ORDER BY id ASC LIMIT 6");
+                        $this->view->hyjy_children = $query_hyjy->rows;
                     }
                     if($record['name'] == '畅想未来海洋' || $record['name'] == '畅想海洋未来' || $record['name'] == '我的海洋畅想'){
                         $this->view->hywl = $record['id'];
                         $this->view->hywl_title = $record['name'];
+                        $query_hywl = $this->db->query("SELECT id as categoryID,name,(SELECT COUNT(1) FROM ".TABLE_CATEGORY." WHERE parent=categoryID) AS isFinal FROM ".TABLE_CATEGORY." WHERE parent=".(int)$record['id']." ORDER BY id ASC LIMIT 6");
+                        $this->view->hywl_children = $query_hywl->rows;
                     }
                 }
 
-                $query2 = $this->db->query("SELECT a.*,r.category FROM ".TABLE_ARTICLE. " a INNER JOIN eps_relation r ON a.id=r.id WHERE a.id in (SELECT id from eps_relation e where e.category in (select id from eps_category c where find_in_set(14,c.path))) order by a.addedDate desc limit 16;");
+                $query2 = $this->db->query("SELECT a.*,r.category FROM ".TABLE_ARTICLE. " a INNER JOIN eps_relation r ON a.id=r.id WHERE a.id in (SELECT id from eps_relation e where e.category in (select id from eps_category c where find_in_set(14,c.path))) order by a.addedDate desc limit 4;");
                 $this->view->latest_cxy_articles = $query2->rows;
                 $this->view->latest_cxy_count = $query2->num;
             }
@@ -130,6 +140,15 @@ class article extends control {
 			$this->display();
 		}
        
+    }
+
+    private function isFinalCategory($category_id){
+        $result = $this->db->query("SELECT id FROM ".TABLE_CATEGORY." WHERE parent=".(int)$category_id);
+        if($result->num_rows > 0 ){
+            return false;
+        }else{
+            return true;
+        }
     }
 
     /**
