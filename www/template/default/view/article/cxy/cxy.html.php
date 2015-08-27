@@ -77,8 +77,8 @@
                     <span class="titletitle"><a href="?m=article&f=browse&categoryID=<?php echo $dchy;?>&pt=cxy&type=list"><?php echo $dchy_title;?></a></span>
                 </div>
                 <div class="litxt">
-                    <?php foreach($dchy_children as $dchy_child):var_dump($dchy_child);?>
-                        <div class="txt_list"><a href="<?php if($dchy_child['isFinal']=='0') echo '?m=article&f=browse&categoryID='.$dchy_child['categoryID'].'&type=list';else echo '';?>"><?php echo $dchy_child['name'];?></a></div>
+                    <?php foreach($dchy_children as $dchy_child):?>
+                        <div class="txt_list"><a href="<?php if($dchy_child['isFinal']=='0') echo '?m=article&f=browse&categoryID='.$dchy_child['categoryID'].'&pt=cxy&type=list';else echo '?m=article&f=browse&categoryID='.$dchy_child['categoryID'].'&pt=cxy&type=2';?>"><?php echo $dchy_child['name'];?></a></div>
                     <?php endforeach;?>
                 </div>
             </div>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="litxt">
                     <?php foreach($hyqm_children as $hyqm_child):?>
-                        <div class="txt_list"><a href=""><?php echo $hyqm_child['name'];?></a></div>
+                        <div class="txt_list"><a href="<?php if($hyqm_child['isFinal']=='0') echo '?m=article&f=browse&categoryID='.$hyqm_child['categoryID'].'&pt=cxy&type=list';else echo '?m=article&f=browse&categoryID='.$hyqm_child['categoryID'].'&pt=cxy&type=2';?>"><?php echo $hyqm_child['name'];?></a></div>
                     <?php endforeach;?>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="litxt">
                     <?php foreach($smhy_children as $smhy_child):?>
-                        <div class="txt_list"><a href=""><?php echo $smhy_child['name'];?></a></div>
+                        <div class="txt_list"><a href="<?php if($smhy_child['isFinal']=='0') echo '?m=article&f=browse&categoryID='.$smhy_child['categoryID'].'&pt=cxy&type=list';else echo '?m=article&f=browse&categoryID='.$smhy_child['categoryID'].'&pt=cxy&type=2';?>"><?php echo $smhy_child['name'];?></a></div>
                     <?php endforeach;?>
                 </div>
             </div>
@@ -117,7 +117,7 @@
                 </div>
                 <div class="litxt">
                     <?php foreach($hyjy_children as $hyjy_child):?>
-                        <div class="txt_list"><a href=""><?php echo $hyjy_child['name'];?></a></div>
+                        <div class="txt_list"><a href="<?php if($hyjy_child['isFinal']=='0') echo '?m=article&f=browse&categoryID='.$hyjy_child['categoryID'].'&pt=cxy&type=list';else echo '?m=article&f=browse&categoryID='.$hyjy_child['categoryID'].'&pt=cxy&type=2';?>"><?php echo $hyjy_child['name'];?></a></div>
                     <?php endforeach;?>
                 </div>
             </div>
@@ -130,7 +130,7 @@
                 </div>
                 <div class="litxt">
                     <?php foreach($hywl_children as $hywl_child):?>
-                        <div class="txt_list"><a href=""><?php echo $hywl_child['name'];?></a></div>
+                        <div class="txt_list"><a href="<?php if($hywl_child['isFinal']=='0') echo '?m=article&f=browse&categoryID='.$hywl_child['categoryID'].'&pt=cxy&type=list';else echo '?m=article&f=browse&categoryID='.$hywl_child['categoryID'].'&pt=cxy&type=2';?>"><?php echo $hywl_child['name'];?></a></div>
                     <?php endforeach;?>
                 </div>
             </div>
@@ -138,24 +138,4 @@
     </ul>
     <img src="<?php echo $themeRoot?>cxy/images/center_bottom_top.png" class="bottom_img">
 </div>
-
-<!--<div class="center">-->
-<!--    <div class="center_txt">-->
-<!--        	<div class="center_list_1 p1">-->
-<!--            	<a href="?m=article&f=browse&categoryID=--><?php //echo $hyqm?><!--&pt=cxy&type=list"><img src="--><?php //echo $themeRoot?><!--cxy/images/1_title.png" width="81" height="227"></a>-->
-<!---->
-<!--        </div>-->
-<!--      <div class="center_list_2 p2">-->
-<!--      	<a href="?m=article&f=browse&categoryID=--><?php //echo $smhy?><!--&pt=cxy&type=2"><img src="--><?php //echo $themeRoot?><!--cxy/images/2_title.png" width="263" height="67"></a>-->
-<!---->
-<!--      </div>-->
-<!--      <div class="center_list_1 p3">-->
-<!--      	<a href="?m=article&f=browse&categoryID=--><?php //echo $hyjy?><!--&pt=cxy&type=list"><img src="--><?php //echo $themeRoot?><!--cxy/images/3_title.png" width="264" height="65"></a>-->
-<!---->
-<!--      </div>-->
-<!--      <div class="center_list_2 p4">-->
-<!--      	<a href="?m=article&f=browse&categoryID=--><?php //echo $hywl?><!--&pt=cxy&type=list"><img src="--><?php //echo $themeRoot?><!--cxy/images/4_title.png" width="81" height="227"></a>-->
-<!--      </div>-->
-<!--      </div>-->
-<!--    </div>-->
 <?php $mp3="cxy_bg.mp3";include TPL_ROOT . 'common/footer.html.php';?>

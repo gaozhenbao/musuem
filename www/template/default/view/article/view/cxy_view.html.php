@@ -13,6 +13,10 @@ js::execute($article->js);
 	var size;
 	var time = 10000000;
 	$(document).ready(function(){
+         var hide_nav = getCookie('hide_menu');
+         if(hide_nav == '1'){
+             $('#menu_hidden').trigger('click');
+         }
 		 size = parseInt($(".scroimg ul li").size()) - 1;
 		$(".scroimg li").each(function(){
             $(this).width($(window).width());
@@ -27,11 +31,11 @@ js::execute($article->js);
 			now = val;
 			$(".scroimg li").eq(val).show();
 		})
-        if(size != 0){
-            window.setInterval(scroing, time);
-        }else{
-            scroing();
-        }
+//        if(size != 0){
+//            window.setInterval(scroing, time);
+//        }else{
+//            scroing();
+//        }
     })
 
 	function scroing(){
