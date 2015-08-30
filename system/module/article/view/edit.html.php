@@ -84,22 +84,29 @@
                 <?php
                 if($article->img_url <> '') {
                     $img_urls = explode('||', $article->img_url);
-                    foreach ($img_urls as $key => $img) {
+                    $img_urls = array_filter($img_urls);
+                    $i = 0;
+                    foreach($img_urls as $img){
+                       $img_urls_new[$i] = $img;
+                        $i++;
+                    }
+                    foreach ($img_urls_new as $key => $img) {
                         if (!empty($img)) {
                             echo '<tr id="upload_arr">';
                             echo '<td width="230"><input type="file" id="imgurl_f' . $key . '" name="imgurl_f"></td>';
                             echo '<td width="50"><input type="button"  onClick="ajaxFileUpload(\'imgurl_f0\','.$isCxy.');" value="上传"></td>';
-                        echo '<td>';
-                        echo '<span><img src="' . $img . '" width="50" height="50"><span>';
-                        if ($key == 0 && $isCxy) {
-							echo '</td>';
-                            echo '<td><input type="button" value="添加图片" id="addImg"/></td>';
-                        }else{
-//							echo '&nbsp;<span color=red id="delimg">删</span>';
-							echo '</td>';
-						}
-                        echo '</tr>';
-                    }
+                            echo '<td>';
+                            echo '<span><img class="uploaded_img" src="' . $img . '" width="50" height="50"><span>';
+                            if ($key == count($img_urls)-1 && $isCxy) {
+                                echo '</td>';
+                                echo '<td><input type="button" value="删除" class="delimg"/></td>';
+                                echo '<td><input type="button" value="添加图片" id="addImg" onclick="addAnImg(this);"/></td>';
+                            }else{
+                                echo '<td><input type="button" value="删除" class="delimg"/></td>';
+                                echo '</td>';
+                            }
+                            echo '</tr>';
+                        }
                     }
                 }else{
                     echo '<tr>';
@@ -107,7 +114,7 @@
                     echo '<td width="50"><input type="button"  onClick="ajaxFileUpload(\'imgurl_f0\','.$isCxy.');" value="上传"></td>';
                     echo '<td><span id="toppic0"><span></td>';
                     if($isCxy)
-                    echo '<td><input type="button" value="添加图片" id="addImg"/></td>';
+                    echo '<td><input type="button" value="添加图片" id="addImg" onclick="addAnImg(this);"/></td>';
                     echo '</tr>';
                 }
                 ?>
@@ -258,13 +265,17 @@
   </div>
 </div>
 <script type="text/javascript">
-    $('#addImg').click(function(){
+    function addAnImg(item){
         image_i++;
-        $('#image_table').append('<tr  id="upload_arr"><td width="230"><input type="file" id="imgurl_f'+image_i+'" name="imgurl_f"></td><td width="50"><input type="button"  name="idphoto_front_btn" onClick="ajaxFileUpload(\'imgurl_f'+image_i+'\',<?php echo $isCxy;?>);" value="上传"></td><td><span id="toppic'+image_i+'"><span><span color=red id="delimg"></span></td></tr>');
+        item.remove();
+        $('#image_table').append('<tr  id="upload_arr"><td width="230"><input type="file" id="imgurl_f'+image_i+'" name="imgurl_f"></td><td width="50"><input type="button"  name="idphoto_front_btn" onClick="ajaxFileUpload(\'imgurl_f'+image_i+'\',<?php echo $isCxy;?>);" value="上传"></td><td><span id="toppic'+image_i+'"><span></td><td><input type="button" value="删除" class="delimg"/></td><td><input type="button" value="添加图片" id="addImg" onclick="addAnImg(this);"/></td></tr>');
+    };
+	$('body').delegate('.delimg','click',function(){
+        var src = $(this).parent().parent().find("span .uploaded_img")[0].src;
+        src = src.replace('http://'+window.location.host,'');
+        $('#img_url').val($('#img_url').val().replace(src,''));
+	    $(this).parents("#upload_arr").remove();
     });
-	$('body').delegate('#delimg','click',function(){
-	$(this).parents("#upload_arr").remove();
-});  
 </script>
 <?php include '../../common/view/treeview.html.php';?>
 <?php include '../../common/view/footer.admin.html.php';?>
