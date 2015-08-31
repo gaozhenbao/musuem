@@ -86,11 +86,9 @@
                     $img_urls = explode('||', $article->img_url);
                     $img_urls = array_filter($img_urls);
                     $i = 0;
-                    foreach($img_urls as $img){
-                       $img_urls_new[$i] = $img;
-                        $i++;
-                    }
-                    foreach ($img_urls_new as $key => $img) {
+                    $img_urls = array_values($img_urls);
+
+                    foreach ($img_urls as $key => $img) {
                         if (!empty($img)) {
                             echo '<tr id="upload_arr">';
                             echo '<td width="230"><input type="file" id="imgurl_f' . $key . '" name="imgurl_f"></td>';

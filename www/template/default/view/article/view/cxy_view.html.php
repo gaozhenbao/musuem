@@ -1,5 +1,5 @@
-<?php 
-include TPL_ROOT . 'common/header.html.php'; 
+<?php
+include TPL_ROOT . 'common/header.html.php';
 /* set categoryPath for topNav highlight. */
 js::set('path', $article->path);
 js::set('articleID', $article->id);
@@ -59,7 +59,7 @@ js::execute($article->js);
 <!--center-->
 <div class="scroimg">
 	<ul>
-        <?php foreach($imgs as $key=>$val):?>
+        <?php $imgs = array_values($imgs);foreach($imgs as $key=>$val):?>
         <li style="background:url(<?php echo $val ?>) no-repeat center; <?php if($key!=0)echo 'display:none;' ?>"></li>
         <?php endforeach;?>
     </ul>
