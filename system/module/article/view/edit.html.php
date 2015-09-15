@@ -269,10 +269,13 @@
         $('#image_table').append('<tr  id="upload_arr"><td width="230"><input type="file" id="imgurl_f'+image_i+'" name="imgurl_f"></td><td width="50"><input type="button"  name="idphoto_front_btn" onClick="ajaxFileUpload(\'imgurl_f'+image_i+'\',<?php echo $isCxy;?>);" value="上传"></td><td><span id="toppic'+image_i+'"><span></td><td><input type="button" value="删除" class="delimg"/></td><td><input type="button" value="添加图片" id="addImg" onclick="addAnImg(this);"/></td></tr>');
     };
 	$('body').delegate('.delimg','click',function(){
-        var src = $(this).parent().parent().find("span .uploaded_img")[0].src;
-        src = src.replace('http://'+window.location.host,'');
-        $('#img_url').val($('#img_url').val().replace(src,''));
-	    $(this).parents("#upload_arr").remove();
+        if(typeof($(this).parent().parent().find("span .uploaded_img")[0]) != 'undefined' ){
+            var src = $(this).parent().parent().find("span .uploaded_img")[0].src;
+            src = src.replace('http://'+window.location.host,'');
+            $('#img_url').val($('#img_url').val().replace(src,''));
+        }
+        $(this).parents("#upload_arr").remove();
+
     });
 </script>
 <?php include '../../common/view/treeview.html.php';?>
