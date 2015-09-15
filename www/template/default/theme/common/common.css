@@ -14,8 +14,8 @@ a:hover{ text-decoration:none;}
 
 .header{ width:100%; height:110px; margin:0 auto; background:url(images/header_bg.gif) repeat-x;filter:alpha(opacity=90); -moz-opacity:0.9; opacity:0.9;z-index:999999}
 	.top{ width:1080px; height:110px; margin:0 auto;}
-	.top_logotxt{ width:330px; height:57px; float:left; }
-	.top_logotxt a{ display:block;width:330px; height:57px;}
+	.top_logotxt{ width:330px; height:57px; float:left; font-size: 21px;}
+	.top_logotxt a{ display:block;width:330px; height:57px;color: #ffffff;white-space: nowrap;font-weight: bolder;font-family: "微软雅黑", "Microsoft yahei", Tahoma, Verdana, Arial, sans-serif;padding-top: 12px;padding-left: 12px}
 	.top_rght{ width:233px; height:57px; float:right;}
 		.logreg{ width:114px; height:32px; background:url(images/loginregbg.jpg) no-repeat; color:#009fcc; font-size:14px;}
             .logreg a{color: #0d3d88}
