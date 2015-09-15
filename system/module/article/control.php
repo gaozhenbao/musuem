@@ -70,6 +70,12 @@ class article extends control {
             }
         }
 		if($_GET['sj'] == 'json'){
+            if($_GET['pt']=='klt' && $_GET['type']==2){
+                $sql_klt = "SELECT a.id,a.title,a.img_url,1 as isFinal,a.addedDate from eps_article a INNER JOIN eps_relation r on a.id=r.id and r.`type`='article' and r.category=".(int)$categoryID."
+                UNION SELECT c.id,c.name as title,c.imgurl as img_url,0 as isFinal,c.postedDate as addedDate FROM eps_category c where c.parent=".(int)$categoryID." ORDER BY addedDate desc";
+                $articles = $this->db->query($sql_klt);
+                echo json_encode($articles->rows);exit;
+            }
 			foreach($articles as $val){
                 $imgs = explode('||',$val->img_url);
                 foreach($imgs as $k=> $v){
